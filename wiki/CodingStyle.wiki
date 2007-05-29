@@ -1,0 +1,39 @@
+#summary Describe the coding style used in Syx
+#labels Featured,Phase-Design
+
+= Basic =
+
+  * The C style is very close to the one adopted by Glib
+  * Tipical GNU indentation, used by Emacs
+  * Names are lower case with underlines, except for structures.
+  * Each structure has its own typedef.
+  * Files are named as syx-COMPONENT.{c,h}
+  * Functions names have this form:
+{{{
+syx_COMPONENT_new
+syx_COMPONENT_do_something
+syx_COMPONENT_set_variable
+syx_COMPONENT_get_variable
+}}}
+  * Use macros or inline functions when we can, depending on the context
+  * Use spaces between function names and parenthesis
+
+= Accessing to objects =
+
+  * Each object has its own data that can be accessed trough the macro SYX_OBJECT_DATA(object), for example:
+{{{
+var = SYX_OBJECT_DATA(object)[index];
+SYX_OBJECT_DATA(object)[index] = var;
+}}}
+  * Usually, there's a macro for each known variable of the most used objects:
+{{{
+SYX_CLASS_SUPERCLASS(class)
+SYX_DICTIONARY_HASH_TABLE(dictionary)
+SYX_METHOD_CONTEXT_STACK(methodContext)
+...
+}}}
+  * Don't use the *class* attribute to access the class of an object, instead call the following inline functions:
+{{{
+syx_object_get_class (SyxObject *object)
+syx_object_set_class (SyxObject *object)
+}}}
