@@ -20,16 +20,21 @@ The *size* field, is the number of elements contained in the *data* field.
 
 The Objects are inserted into a whole space of static memory:
 {{{
-SyxObject *_syx_memory[SYX_MEMORY_SIZE];
+static SyxObject *_syx_memory[SYX_MEMORY_SIZE];
 }}}
 
-= Object representation =
+The *data* is allocated outside this memory, in the heap*.
 
+= SmallInteger and Character =
 
+The pointer to objects can also represent other kind of objects:
+  * *Pointers* have the two least bits set to 0, the other 30 bits is the pointer.
+  * *Small integers* have the least bit set to 1, the other 31 bits is the signed integer.
+  * *Characters* have the the second least bit set to 1, and the least to 0, first 8 bits are the characters.
+  * *nil* is 0
+  * *true* is 1
+  * *false* is 2
 
-= Details =
+This method allows us to avoid allocating unuseful memory. For instance, small integers, characters and constants don't have other *data* to hold.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+*syx_object_get_class()* will return the right class for these special objects.
