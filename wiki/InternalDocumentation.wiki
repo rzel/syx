@@ -1,0 +1,35 @@
+#summary Describe the internals of the Syx VM
+#labels Featured,Phase-Implementation
+
+= Object =
+
+This is the structure of an object:
+{{{
+typedef struct _SyxObject SyxObject;
+
+struct _SyxObject {
+  SyxObject *class;
+  syx_varsize size;
+  SyxObject **data;
+};
+}}}
+
+The *size* field, is the number of elements contained in the *data* field.
+
+= Memory =
+
+The Objects are inserted into a whole space of static memory:
+{{{
+SyxObject *_syx_memory[SYX_MEMORY_SIZE];
+}}}
+
+= Object representation =
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
