@@ -5,9 +5,14 @@
 
   * The C style is very close to the one adopted by Glib
   * Tipical GNU indentation, used by Emacs
+  * Use spaces instead of tabs
+  * Use spaces between function names and parenthesis, not necessary for macros
+
+= Naming
   * Names are lower case with underlines, except for structures.
   * Each structure has its own typedef.
   * Files are named as syx-COMPONENT.{c,h}
+  * Use macros or inline functions when possible
   * Functions names have this form:
 {{{
 syx_COMPONENT_new
@@ -15,8 +20,6 @@ syx_COMPONENT_do_something
 syx_COMPONENT_set_variable
 syx_COMPONENT_get_variable
 }}}
-  * Use macros or inline functions when we can, depending on the context
-  * Use spaces between function names and parenthesis
 
 = Accessing to objects =
 
