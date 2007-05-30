@@ -1,0 +1,27 @@
+#summary Documentation for SyxObject
+#labels Phase-Implementation
+
+= Structure =
+
+This is the structure of an object: 
+{{{
+typedef struct _SyxObject SyxObject;
+
+struct _SyxObject {
+  SyxObject *class;
+  syx_varsize size;
+  SyxObject **data;
+};
+}}}
+
+The *size* field, is the number of elements contained in the *data* field.
+
+= Creating new objects =
+
+This is the most common way to create an object giving a class:
+{{{
+SyxObject *syx_object_new (SyxObject *class);
+}}}
+Automatically allocates the object and the necessary memory to hold instance variables.
+
+If you need to specify the size of an object, 
