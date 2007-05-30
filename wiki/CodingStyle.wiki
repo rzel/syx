@@ -8,7 +8,7 @@
   * Use spaces instead of tabs
   * Use spaces between function names and parenthesis, not necessary for macros
 
-= Naming
+= Naming =
   * Names are lower case with underlines, except for structures.
   * Each structure has its own typedef.
   * Files are named as syx-COMPONENT.{c,h}
