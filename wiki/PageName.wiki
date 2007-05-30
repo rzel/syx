@@ -1,6 +1,0 @@
-#summary Documentation index of SyxObject
-#labels Featured,Phase-Implementation
-
-= Documentation =
-
-SyxObject
