@@ -5,7 +5,7 @@
 
 Syx has been tested on the following platforms:
   * Linux From Scratch 64 bit
-  * Windows XP 32bit
+  * Windows XP 32 bit
 
 = System requirments =
 
