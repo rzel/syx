@@ -5,10 +5,13 @@
 
 Syx has been tested on the following platforms:
   * Linux From Scratch 64 bit
+  * Windows XP 32bit
 
 = System requirments =
 
-Currently you need the [http://www.gtk.org Glib] library to run Syx.
+  * The [http://www.scons.org Scons] build system
+  * [http://www.gtk.org GTK+] toolkit (_optional plugin_)
+  * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not required on Windows_)
 
 = Getting Syx =
 
@@ -20,16 +23,10 @@ svn checkout http://syx.googlecode.com/svn/trunk/ syx
 
 = Compiling Syx =
 
-After you got the sources, type the following command in the syx directory to configure the build environment:
+After you got the sources, type the following command in the syx directory 
 
 {{{
-sh autogen.sh
-}}}
-
-After configure done its work successfully you can compile syx:
-
-{{{
-make
+scons debug=no
 }}}
 
 *If you get any error or warning, please refer everything to me*
@@ -39,7 +36,7 @@ make
 After the build process is done, you can run tests to check if syx works correctly on your system:
 
 {{{
-make test
+scons debug=no test
 }}}
 
 *If get errors from any of the test, contact me*
