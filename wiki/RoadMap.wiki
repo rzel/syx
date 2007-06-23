@@ -7,9 +7,15 @@
   * Fix dictionaries to have coalesced hash table using consistent hash functions
   * Add a mark-and-sweep garbage collector
   * Create an image file format and implement it
+  * Leave glib dependency
+  * Create a basic plugin system
 
 = Syx 0.2 =
 
   * Complete the basic Smalltalk environment
-  * Create a stable plugin system
-  * Leave glib dependency
+
+= Syx 0.3 =
+
+  * Complete the Smalltalk environment
+  * Create a complete GUI environment
+  
