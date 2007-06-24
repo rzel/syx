@@ -40,7 +40,13 @@ After the build process is done, you can run tests to check if syx works correct
 scons test
 }}}
 
-= Installing Syx =
+*If get errors from any of the test, contact me*
+
+= Unix related =
+
+These commands are used on Unix platforms. On Windows, you might use an installer.
+
+== Installing ==
 
 Syx will install the executable in `bindir`, the library in `libdir` and the data (the image, Smalltalk code, plugins) in `datadir/syx`:
 
@@ -48,12 +54,10 @@ Syx will install the executable in `bindir`, the library in `libdir` and the dat
 scons install
 }}}
 
-= Uninstalling Syx =
+== Uninstalling ==
 
 I hope you won't ;)
 
 {{{
 scons install -c
 }}}
-
-*If get errors from any of the test, contact me*
