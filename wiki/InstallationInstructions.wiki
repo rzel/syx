@@ -4,8 +4,9 @@
 = Available platforms =
 
 Syx has been tested on the following platforms:
-  * Linux From Scratch 64 bit
-  * Windows XP 32 bit
+  * Linux From Scratch 64-bit
+  * Gentoo Linux 32-bit
+  * Windows XP 32-bit
 
 = System requirments =
 
@@ -26,7 +27,7 @@ svn checkout http://syx.googlecode.com/svn/trunk/ syx
 After you got the sources, type the following command in the syx directory 
 
 {{{
-scons debug=no
+scons
 }}}
 
 *If you get any error or warning, please refer everything to me*
@@ -36,7 +37,23 @@ scons debug=no
 After the build process is done, you can run tests to check if syx works correctly on your system:
 
 {{{
-scons debug=no test
+scons test
+}}}
+
+= Installing Syx =
+
+Syx will install the executable in `bindir`, the library in `libdir` and the data (the image, Smalltalk code, plugins) in `datadir/syx`:
+
+{{{
+scons install
+}}}
+
+= Uninstalling Syx =
+
+I hope you won't ;)
+
+{{{
+scons install -c
 }}}
 
 *If get errors from any of the test, contact me*
