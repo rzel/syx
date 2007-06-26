@@ -42,11 +42,7 @@ scons test
 
 *If get errors from any of the test, contact me*
 
-= Unix related =
-
-These commands are used on Unix platforms. On Windows, you might use an installer.
-
-== Installing ==
+= Installing =
 
 Syx will install the executable in `bindir`, the library in `libdir` and the data (the image, Smalltalk code, plugins) in `datadir/syx`:
 
@@ -54,7 +50,9 @@ Syx will install the executable in `bindir`, the library in `libdir` and the dat
 scons install
 }}}
 
-== Uninstalling ==
+*NB: on Windows it will install everything in C:\Syx by default*
+
+= Uninstalling =
 
 I hope you won't ;)
 
