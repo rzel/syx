@@ -44,7 +44,7 @@ scons test
 
 = Installing =
 
-Syx will install the executable in `bindir`, the library in `libdir` and the data (the image, Smalltalk code, plugins) in `datadir/syx`:
+Syx will install the executable in `bindir`, the library in `libdir` and the data (the image, Smalltalk code, plugins) in `datadir`:
 
 {{{
 scons install
