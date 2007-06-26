@@ -13,9 +13,17 @@
 = Syx 0.2 =
 
   * Complete the basic Smalltalk environment
+  * Be able to run scripts from the command line
 
 = Syx 0.3 =
 
   * Complete the Smalltalk environment
-  * Create a complete GUI environment
+  * Steal tests from other Smalltalk (e.g. GNU Smalltalk)
+
+= Syx 0.4 =
+
+  * Create a basic GUI environment
   
+= Syx 1.0 =
+
+ * *Big bang*
