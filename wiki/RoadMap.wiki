@@ -4,14 +4,15 @@
 = Syx 0.1 =
 
   * Create a stable API, with a running interpreter and scheduler
-  * Fix dictionaries to have coalesced hash table using consistent hash functions
   * Add a mark-and-sweep garbage collector
   * Create an image file format and implement it
   * Leave glib dependency
   * Create a basic plugin system
+  * A basic method caching
 
 = Syx 0.2 =
 
+  * Fix dictionaries to have coalesced hash table using consistent hash functions
   * Complete the basic Smalltalk environment
   * Be able to run scripts from the command line
 
