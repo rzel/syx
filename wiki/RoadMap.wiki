@@ -3,11 +3,11 @@
 
 = Syx 0.1 =
 
-  * Create a stable API, with a running interpreter and scheduler
-  * Add a mark-and-sweep garbage collector
-  * Create an image file format and implement it
-  * Leave glib dependency
-  * Create a basic plugin system
+  * ~~Create a stable API, with a running interpreter and scheduler~~
+  * ~~Add a mark-and-sweep garbage collector~~
+  * ~~Create an image file format and implement it~~
+  * ~~Leave glib dependency~~
+  * ~~Create a basic plugin system~~
   * A basic method caching
 
 = Syx 0.2 =
