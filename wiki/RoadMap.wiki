@@ -8,7 +8,8 @@
   * ~~Create an image file format and implement it~~
   * ~~Leave glib dependency~~
   * ~~Create a basic plugin system~~
-  * A basic method caching
+  * ~~A basic method caching~~
+  * Large integers, floats and number coercing
 
 = Syx 0.2 =
 
