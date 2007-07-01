@@ -9,10 +9,11 @@
   * ~~Leave glib dependency~~
   * ~~Create a basic plugin system~~
   * ~~A basic method caching~~
-  * Large integers, floats and number coercing
+  * ~~Large integers, floats and number coercing~~
 
 = Syx 0.2 =
 
+  * Cover most of the Smalltalk-80 standard specification
   * Fix dictionaries to have coalesced hash table using consistent hash functions
   * Complete the basic Smalltalk environment
   * Be able to run scripts from the command line
@@ -20,7 +21,7 @@
 = Syx 0.3 =
 
   * Complete the Smalltalk environment
-  * Steal tests from other Smalltalk (e.g. GNU Smalltalk)
+  * Include a complete set of tests from other Smalltalk versions to reach a good compatibility level
 
 = Syx 0.4 =
 
