@@ -32,6 +32,12 @@ scons
 
 *If you get any error or warning, please refer everything to me*
 
+To clean objects and everything in the build directory:
+
+{{{
+scons -c
+}}}
+
 = Testing it =
 
 After the build process is done, you can run tests to check if syx works correctly on your system:
@@ -41,6 +47,12 @@ scons test
 }}}
 
 *If get errors from any of the test, contact me*
+
+To clean test objects and .passed files:
+
+{{{
+scons test -c
+}}}
 
 = Installing =
 
