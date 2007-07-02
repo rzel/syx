@@ -1,0 +1,508 @@
+2007-07-02  Luca Bruno  <lethalman88@gmail.com>
+
+	== Released Syx 0.1 version ==
+
+	* SConstruct: be able to run Syx in every location on Windows using
+	  relative paths
+	
+	* st/kernel/SequenceableCollection.st (at:ifAbsent:): added
+	(after:): added
+	(before:): added
+	(copyFrom:to:): added
+	(copyWith:): 
+
+	* st/kernel/Collection.st (collect:): added
+	(includes:): added
+	(isEmpty): added
+	(detect:ifNone:): added
+	(occurrencesOf:): added
+	(reject:): added
+	(select:): 
+
+	* st/kernel/True.st,False.st (& |): added
+
+	* st/kernel/Object.st (copy): added with relative primitive Object_copy
+	(isKindOf): added
+	(isMemberOf): added
+
+2007-07-01  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx/syx-memory.c (syx_memdup): added
+
+	* Fixed a big bug in block closures. Had to add a new bytecode to fix that
+	
+	* syx/syx-object.c (syx_object_copy): added
+
+	* syx/syx-object.h (SYX_CLASS_SUBCLASSES): added instance variable to Behavior
+
+	* syx/syx-memory.h (SYX_MEMORY_INDEX_OF): added
+
+	* syx/syx-object.c (syx_object_hash): hash of small integers and characters are the oop itself. The hash of an object is its index in the object table
+	(syx_array_remove): added
+	(syx_array_add): added
+
+	* syx/syx-error.c (syx_error_init): message not understoods are handled differently
+
+	* st/kernel/Object.st (doesNotUnderstand). added (issue #2)
+
+	* syx/syx-interp.c (syx_interp_send_unary): use syx_does_not_understand (issue #2)
+	(syx_interp_send_binary): idem
+	(syx_interp_send_message): idem
+	(syx_interp_send_super): idem
+
+	* syx/syx-error.h (syx_does_not_understand): added (issue #2)
+
+	* syx/syx-init.c (_syx_file_in_basic): load Magnitude.st
+
+	* src/main.c (_getopt_do): do not set the ImageFileName
+
+	* syx/syx-primitives.c (Object_identifyHash): added
+
+	* Added LargeNegativeInteger support
+
+2007-06-30  Luca Bruno  <lethalman88@gmail.com>
+
+	* Reenstablished sequence of key/value pairs in hash tables
+
+	* Done some changes to the Smalltalk code
+
+2007-06-29  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx/syx-primitives.c: added support for both positive and negative large integers
+	
+	* syx/syx-init.c (syx_quit): free initial paths
+
+	* syx/syx-interp.h (SYX_PRIM_FAIL): fixed a big memory leak. Message arguments are freed by the interpreter, we need a new reference to them
+
+	* syx/syx-interp.c (syx_process_execute_blocking): do not take care of yields
+	(syx_exec_state_fetch): reset bytecodes count to stop execution of blocking processes
+
+	* syx/syx-parser.c (_syx_parser_parse_term): support for large integers
+
+	* syx/syx-types.h (SYX_SMALL_INTEGER_CAN_EMBED): added
+	(SYX_SMALL_INTEGER_OVERFLOW): added
+
+	* syx/syx-lexer.c (_syx_lexer_token_number): added support for large integers
+
+2007-06-28  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx/syx-primitives.c (SmallInteger_asFloat): added
+
+	* Smalltalk: add number coercing, now you can do arithmetic between integers and floats
+
+	* src/main.c (_help): added
+
+	* Added sdist target to scons files to create a source distribution
+
+	* Added the license to all files
+	
+	* syx/syx-interp.c (syx_interp_send_message): simple method caching
+	(syx_interp_send_super): idem
+
+	* syx/syx-bytecode.c (syx_bytecode_gen_message): create an unbound method reference
+
+	* syx/syx-object.c (syx_dictionary_binding_at_symbol): renamed. Return an Association of key -> value to bind variables
+	(syx_dictionary_binding_at_symbol_if_absent): idem
+	(syx_dictionary_bind): added
+	(syx_dictionary_bind_if_absent): added
+	(syx_dictionary_bind_set_value): added
+	(syx_class_lookup_method_binding): added
+	
+2007-06-27  Luca Bruno  <lethalman88@gmail.com>
+
+	* Fixed initializing the image path
+
+	* SConstruct (win32 options): fixed image path
+	(install): fixed st files installation
+
+	* tests/testinterp.c (main): added tests for class variables
+
+	* syx/syx-bytecode.c (syx_bytecode_push_global): renamed to push_binding_variable, so it can be used also for class variables
+	(syx_bytecode_assign_binding_variable): added
+
+	* syx/syx-parser.c (_syx_parser_parse_name_term): search for class variables
+
+	* syx/syx-utils.c (_syx_cold_parse_names): added to be reused with class variables
+	(_syx_cold_parse_class): added class variables
+
+	* syx/syx-interp.c (syx_interp_push_global): push the value of the variable binding instead of looking up the symbol each time
+	(syx_interp_push_global): renamed to push_binding_variable, to push class variables or globals
+
+	* syx/syx-init.h (syx_globals_link_at): added
+
+	* syx/syx-object.c: removed unused syx_dictionary_at_const and syx_dictionary_at_const_if_absent
+	(syx_dictionary_new): hold Associations instead of a sequence of keys and values
+	(syx_dictionary_link_at_symbol): added
+	(syx_dictionary_link_at_symbol_if_absent): added
+
+2007-06-26  Luca Bruno  <lethalman88@gmail.com>
+
+	* src/main.c (_getopt_do): added option -S to quit once built the image from scratch
+
+	* src/SConscript (syx executable): create the default image once installed
+
+	* SConstruct: added win32 installation with only a single root prefix
+
+	* syx/syx-init.c (syx_quit): missed scheduler quitting
+
+	* syx/syx-primitives.c (Semaphore_waitFor): added
+
+	* syx/syx-scheduler.h (struct SyxSchedulerPoll): added
+
+	* syx/syx-scheduler.c: added syncronized I/O multi-plexing with select during scheduling
+	(syx_scheduler_poll_read_register): added
+	(syx_scheduler_poll_write_register): added
+	(syx_scheduler_quit): free allocated memory for read/write polls
+
+	* plugins/readline/plugin-init.c (Readline_readline): free returned string
+
+	* syx/SConscript (install): added includes
+
+	* tests/testscheduler.c (main): added semaphores test
+
+2007-06-25  Luca Bruno  <lethalman88@gmail.com>
+
+	* st/kernel/initialDecl.st (Semaphore): be fixed containing an array of waiting processes
+
+	* syx/syx-object.h (SYX_SEMAPHORE_LIST): added
+	(SYX_SEMAPHORE_SIGNALS): added
+
+	* syx/syx-utils.c (syx_semaphore_wait): readded
+	(syx_semaphore_signal): readded
+
+	* syx/syx-object.c (syx_object_grow_by): changed to a macro
+	(syx_object_resize): added
+
+	* INSTALL: changed to reflect the Syx building system
+
+2007-06-24  Luca Bruno  <lethalman88@gmail.com>
+
+	* SConstruct (install): remove Smalltalk files when uninstalling
+
+	* syx/syx-object.c (syx_symbol_new): return nil if NULL is supplied
+	(syx_string_new): idem
+
+	* syx/syx-primitives.c (BlockClosure_asContext): fixed GC transaction
+	(BlockClosure_valueWithArguments): idem
+	(BlockClosure_newProcess): idem
+	(BlockClosure_value): use nil instead of an empty array
+	(BlockClosure_on_do): idem
+
+	* syx/syx-interp.h (SYX_PRIM_ARGS): added to assert the number of arguments
+
+	* Added install target
+	
+	* syx/syx-plugins.c (syx_plugin_call): load the plugin not loaded yet
+
+	* syx/syx-error.h (syx_warning): added
+
+	* src/main.c (_getopt_do): added error checks
+
+2007-06-23  Luca Bruno  <lethalman88@gmail.com>
+
+	* src/main.c: added getopt
+
+	* Added readline plugin
+
+	* syx/syx-lexer.c (_syx_lexer_token_number): added exponent for floats
+
+2007-06-22  Luca Bruno  <lethalman88@gmail.com>
+
+	* Doxyfile (LATEX_OUTPUT): added
+	(OUTPUT): moved to build directory
+
+	* Separated executable binaries from libraries by adding directory src
+	
+	* Now the build process is done in a separate directory named 'build'
+
+	* Fixed scheduled processes
+
+	* Added plugins support
+	
+	* Added a basic Gtk plugin for test
+
+2007-06-21  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx/syx-object.c (syx_object_new_size): alloc for byte size if object has no references
+
+	* Use timeval to benchmark the tests
+
+	* Removed SmallFloats and added only Floats. Therefore, SmallIntegers are again 31 bit wide
+
+2007-06-19  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx/syx-memory.c (syx_memory_load_image): fixed
+	
+	* syx/syx-platform.h: added
+	
+	* syx/syx-enums.h (SyxVariables): added Metaclass instanceClass
+	
+	* Smalltalk: added tracebacks and other stuff
+
+2007-06-18  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx/syx-parser.c (_syx_parser_parse_term): added negation
+
+	* syx/syx-lexer.c (_syx_lexer_token_number): added radix numbers
+
+	* Done a refactoring to use pointers instead of indexes for oops
+	
+
+2007-06-17  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx/syx-primitives.c (Signal_findHandlerContext): fixed
+
+	* syx/syx-error.h (syx_debug): added
+
+	* syx/syx-utils.c (syx_send_message): added
+
+2007-06-15  Luca Bruno  <lethalman88@gmail.com>
+
+	* Added floats
+
+	* syx/syx-memory.c (syx_memory_load_image): do not add extra byte for strings
+	(strndup): added if missing in other environments
+	(memdup): same
+
+	* SConstruct: added various options and organized for a better debugging
+
+	* syx/syx-object.c (syx_string_new): add 1 to the size to hold NULL char
+	(syx_symbol_new): same
+
+	* syx/syx-interp.c (syx_interp_mark_arguments): do not alloc if not arguments are given.
+	Fixed memory leaks.
+	Do not pass the execution state trough parameters, instead keep it global.
+	This would produce a better C/Smalltalk interface
+
+	* st/kernel/ObjectMemory.st: adjusted
+	
+	* st/kernel/SystemDictionary.st (quit:): added with relative primitive
+
+	* syx/syx-error.c: added
+	
+	* st/kernel/String.st (size): subtract 1 whith is the NULL char
+
+2007-06-14  Luca Bruno  <lethalman88@gmail.com>
+
+	* Removed Glib dependency
+
+	* Removed autotools replaced with Scons build system
+
+2007-06-13  Luca Bruno  <lethalman88@gmail.com>
+
+	* Just work on Windows using MinGW
+
+	* syx/syx-interp.c (syx_interp_send_message): if the message is unary don't create an empty array
+	(syx_interp_send_super): same
+	(syx_interp_send_unary): same
+
+	* syx/syx-parser.h (struct SyxParser): renamed with starting _
+
+	* syx/syx-scheduler.c (syx_scheduler_quit): fixed for now
+
+	* Everything has been documented for Doxygen
+	
+	* syx/syx-scheduler.c (syx_scheduler_quit): rewrote after GMainLoop has been removed
+
+	* syx/syx-bytecode.c (syx_bytecode_free): free_segment is not needed anymore
+
+	* syx/syx-primitives.c (ArrayedCollection_replaceFromWith): added
+
+	* syx/syx-memory.c (syx_memory_alloc): removed _syx_memory_top
+	(syx_memory_init): removed _syx_memory_top and fill _syx_freed_memory_top. Realloc _syx_freed_memory too
+	(syx_memory_free_all): removed, we can use syx_memory_clear
+
+2007-06-12  Luca Bruno  <lethalman88@gmail.com>
+
+	* Everything we need to let the Console work men
+
+	* syx/syx-utils.c (_syx_cold_parse_class): if superclass changed, we must update the metaclass too
+
+	* syx/syx-lexer.c (_syx_lexer_token_symbol): fixed, now includes colons
+
+	* tests/*: removed all memory leaks
+	
+	* st/kernel/Number.st (to:by:do:): added because needed by dictionary hash tables
+
+	* st/kernel/False.st (or:): added
+
+	* st/kernel/True.st (or:): added
+
+	* st/kernel/Dictionary.st: added
+
+	* syx/syx-primitives.c (syx_primitive_at_put): fixed index
+	(syx_primitive_at): fixed index
+
+2007-06-11  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx/syx-memory.c (syx_memory_init): realloc only if memory must be larger
+	(syx_memory_load_image): if we load an image over another one, be sure we free the previous data
+
+	* syx/main.c (main): something new to try out
+
+	* syx/syx-init.c (syx_build_basic): SYX_IS_OBJECT returns FALSE if it's a constant, so we have to set the class ourselves
+	(syx_init_basic_streams): removed
+	(syx_init_system): added, initialize the system from within Smalltalk itself
+
+	* syx/syx-interp.c (syx_process_execute_blocking): don't schedule process if has no context to enter
+	(syx_process_execute_scheduled): same
+
+	* syx/syx-utils.c (syx_send_unary_message): added
+	(syx_send_binary_message): added
+
+	* syx/syx-parser.c (_syx_parser_parse_method_message_pattern): removed GString dependency to use a stack'd array
+	(_syx_parser_do_key_continuation): same
+
+	* syx/syx-parser.h (struct SyxParser): removed GTrashStack dependency
+
+	* syx/syx-primitives.c (FileStream_fileOp): added and removed others
+
+	* syx/syx-memory.h (syx_alloca): added
+	
+	* syx/syx-object.h (SYX_NIL, SYX_TRUE, SYX_FALSE): removed
+
+	* syx/syx-bytecode.c (syx_bytecode_duplicate_at): fixed
+
+2007-06-10  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx/syx-init.h (syx_globals_at_if_absent): added
+
+	* syx/syx-object.c (syx_dictionary_at_const_if_absent): added
+	(syx_dictionary_at_symbol_if_absent): added
+	(syx_dictionary_at_symbol): raise an error if the key has not been found
+	(syx_dictionary_at_const): same
+
+	* syx/syx-parser.h (struct SyxParser): removed GPtrArrays and added regular stacks for temporary and argument names
+
+	* syx/syx-object.c (syx_symbol_new): increase size to hold '\0'
+	(syx_string_new): increase size to hold '\0'
+
+	* tests/testimage.c: added
+
+	* syx/syx-interp.c: use transactions when creating new method contexts
+
+	* syx/syx-memory.c (syx_memory_clear): added, do the inverse of syx_memory_init
+	(syx_memory_free_all): added, free all objects except nil, true and false
+	(syx_memory_save_image): added
+	(syx_memory_load_image): added
+	(syx_memory_init): now specify how many objects must be allocated in the heap
+
+	* syx/syx-init.c (syx_build_basic): splitted to own only image building process
+	(syx_quit): added
+	(syx_fetch_basic): added by splitting syx_build_basic. This function will be used also when loading the image
+
+2007-06-08  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx-primitives.c (BlockClosure_newProcess): ovverride parent context with nil
+
+2007-06-07  Luca Bruno  <lethalman88@gmail.com>
+	    
+	* syx-scheduler.c, syx-interp.c: fixed the process scheduler
+	
+	* syx-interp.c (syx_interp_do_primitive): removed
+	* syx-interp.c (syx_interp_call_primitive): added
+	* syx-primitives.c (SYX_PRIM_FAIL): added
+	* syx-primitives.c (SyxPrimitiveFunc): added the method containing the primitive call as argument
+	* syx-scheduler.c (syx_processor_first_process): added
+	Added as instance variable
+
+	* syx-primitives.c (BlockContext_asContext, BlockContext_valueWithArguments): copy the array to avoid memory leaks
+	* syx-object.h (SYX_METHOD_PRIMITIVE): added
+	* syx-interp.c, syx-parser.c: removed do_primitive bytecode to
+	inline primitive calls
+
+2007-06-05  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx-bytecode.c (syx_bytecode_unary_messages, syx_bytecode_binary_messages): used to avoid memory allocation for well known symbol literals
+	* syx-bytecode.c (syx_bytecode_gen_message): finds any occurrence of the given message into known symbols
+	All calls have been updated
+	* syx-interp.c (syx_interp_send_unary, syx_interp_send_binary): handles and send a common message
+
+	* syx-object.c: removed is_static field not needed at the moment
+	All parts have been updated
+	* syx-init.c (_syx_create_class): changed from FALSE to TRUE the value to be put in has_refs (was a bad mistake)
+	* syx-memory.c (syx_memory_gc): added some debugging informations
+	* syx-memory.c (syx_memory_gc_begin, syx_memory_gc_end): added for creating GC transactions
+	* syx-bytecode.c (syx_bytecode_gen_instruction): generate 16 bit-wide instructions
+	All calls to it and the interpreter have been updated
+
+2007-06-04  Luca Bruno  <lethalman88@gmail.com>
+
+	* configure.ac: removed -pedantic since we use bitfields that are a GCC extension
+	* Everything has been refactored using SyxOop instead of working on raw pointers. This can be slower but allows all platforms (32bit or 64bit) to access the memory by indexes
+
+	* syx-interp.c (syx_interp_leave_context_and_answer): removed an argument because the return context has been inserted into method contexts
+	* syx-interp.c (syx_interp_send_message): fixed message arguments array creation
+	* syx-object.c (syx_byte_array_*): added
+	* syx-object.c (syx_*_context_new): copy arguments to the context arguments stack
+	* syx-object.h (SYX_METHOD_CONTEXT_RETURN_CONTEXT): moved from block contexts for speed matters
+	* syx-object.h (SYX_BLOCK_ARGUMENTS_TOP): holds the index to the arguments stack
+	* syx-object.h (SYX_PROCESSOR_SCHEDULER_*): old mistake SYX_PROCESS_SCHEDULER
+	* syx-primitives.c (SmallInteger_*): bug fix
+	* syx-parser.c (_syx_parser_parse_block): now operate on the same parser instead of creating a new one, to share arguments and temporaries
+	* syx-parser.c (syx_parser_new): removed last two arguments, not needed anymore because of shared scopes
+	* syx-parser.c (syx_parser_parse): store bytecodes as a ByteArray
+	* syx-parser.c (_syx_parser_find_*): return -1 instead of 0 since syx_varsize now is not unsigned anymore
+	* syx-parser.h (SyxParserScope, SyxParserScopeStack): added to share arguments and temporaries between methods and nested blocks
+	* syx-memory.c (syx_memory_alloc): call syx_memory_gc once the heap is full
+	* syx-types.h (SYX_IS_POINTER): fixed
+	* syx-init.c (syx_build_basic): added syx_byte_array_class
+
+2007-06-03  Luca Bruno  <lethalman88@gmail.com>
+
+	* syx-memory.c (syx_memory_gc): added a basic implementation of a mark and sweep garbage collector
+	* syx-memory.c (syx_memory_get_heap): added function
+	* syx-memory.c (syx_memory_get_heap_size): added function
+	* syx-utils.c (syx_path_join): removed
+
+	* syx-object.c (SyxObject): added is_static, has_refs and is_marked bitfields to use for garbage collection with relative macro accesses
+	* syx-types.h (syx_varsize): small integers can hold only signed ints
+	* syx-memory.c (syx_memory_get_heap): added function
+	* syx-memory.c (syx_memory_free): added function
+	* syx-utils.c (syx_path_join): fixed possible memory leaks
+	Calls to syx_object_new* have been fixed
+
+	* Added a TODO file
+	* syx-utils.c (syx_path_join): some stylistic fixes
+
+	* Added Doxygen documentation
+
+	* syx-types.h: defining TRUE and FALSE booleans when not defined (e.g. when not including glib.h)
+	* syx-types.h (SYX_SMALL_INTEGER): use double shifting instead of AND/INVERT
+	* syx-object.c (syx_class_lookup_method): added function and removed the issued macro
+	* syx-utils.c: removed GError when not needed
+	* syx-init.c: removed unused GHashTable
+	* syx-interp.c (syx_exec_state_free): added inline function
+	* syx-interp.c (syx_exec_state_save): fixed saving the execution state of a process
+	* Removed all G_BEGIN_DECLS / G_END_DECLS to make use of Doxygen
+
+2007-06-01  Luca Bruno  <lethalman88@gmail.com>
+
+	* configure.ac: override standard CFLAGS
+	* syx-object.c (syx_dictionary_at_symbol_put): return once we found the right place to put the data
+	* syx-object.c (syx_metaclass_new, syx_class_new): avoid nil values to speed up lookups
+	* syx-object.c (syx_symbol_new): put the symbol itself instead of SYX_TRUE
+	* syx-enums.h (SyxTokenType): put string-based token types at the end so that syx_token_free can free strings
+	* syx-lexer.h: Added SyxToken structure to get rid of GValue
+	* syx-lexer.c: removed GValue dependency and Glib ascii functions usage
+	Renamed all static functions
+	All parts of Syx have been updated with the new behavior of the lexer, including the parser and the tests
+	* syx-lexer.c (syx_lexer_free): added function
+	* syx-lexer.c (syx_token_free): added function
+	* syx-bytecode.c (syx_bytecode_free): added function
+	* syx-parser.c (syx_parser_free): added function
+	Renamed all static functions.
+	* syx-utils.c: completely refactored without using Glib
+	* syx-utils.h: removed G_VALUE_STRCMP
+	* Replaced all g_strcasecmp and g_strdup with strcmp and strdup
+	* syx-init.c (syx_init): removed g_type_init, we do not need GObject for GValue anymore
+	* st/kernel/initialDecl.st: fixed instance variables according to syx-enums.h
+	* syx-memory.c (syx_freev): new function to free NULL terminated arrays
+	* syx-memory.c (_syx_memory): moved from static to dynamic
+	* syx-memory.c (syx_memory_free): removed because of future garbage collector
+	* syx-memory.h (SyxMemoryLink): removed with syx_memory_free
+	* syx-types.h (syx_small_integer_new, syx_character_new): be sure we work on a long before doing bitwise operations
+	* syx-types.h (syx_char): added type
+	* syx-types.h (syx_size): changed from unsigned long to long according to standard size_t
+	Removed lots of Glib memory related dependencies.
+	Recovered a bunch of memory leaks
