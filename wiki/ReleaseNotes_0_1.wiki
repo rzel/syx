@@ -1,0 +1,32 @@
+#summary Release notes for Smalltalk YX 0.1 version
+#labels Phase-Deploy
+
+= Release notes =
+
+=== Released Syx 0.1 version ===
+
+This is the first version of Syx and includes an almost stable VM without memory leaks till now (we hope).
+  * Added a simple garbage collector.
+  * Covered a limited number of Smalltalk-80 standards.
+  * Image compatible with both 32-bit and 64-bit platforms.
+  * The VM works indifferently on Win32 and Posix.
+  * Use Scons as building system
+  * Interactive console from whithin Smalltalk itself
+  * Immediate SmallIntegers and Characters
+  * A basic plugin system
+  * Support for Floats and LargeIntegers
+  * Fixed operations between different numbers
+  * Easy C to Smalltalk interaction
+  * Added class variables
+  * Variable bindings for globals and class variables
+  * Added OrderedCollection
+  * Very simple method caching
+  * Still limited exceptions and tracebacks
+  * Remove Glib dependency
+  * Syncronous I/O multi-plexing trough Semaphores
+  * Use direct pointers instead of indexes for oops
+  * Organized better debugging informations
+  * Documented using Doxygen
+  * Reorganized Syx initialization
+
+See the [http://syx.googlecode.com/svn/trunk/ChangeLog ChangeLog] for a complete list of things that changed.
