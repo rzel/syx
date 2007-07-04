@@ -14,7 +14,7 @@
 = Syx 0.2 =
 
   * Cover most of the Smalltalk-80 standard specification
-  * Fix dictionaries to have coalesced hash table using consistent hash functions
+  * ~~Fix dictionaries to use hashing~~
   * Complete the basic Smalltalk environment
   * Be able to run scripts from the command line
 
