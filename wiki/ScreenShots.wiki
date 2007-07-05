@@ -3,7 +3,13 @@
 
 = Screenshots =
 
-*23 June 2007*
+*July 02 2007*
+
+_Release 0.1. This screenshot has been [http://astares.blogspot.com/2007/07/syx-01.html blogged here]_
+
+[http://syx.googlecode.com/files/syxwd2.png]
+
+*June 23 2007*
 
 _Gtk+ runs for the first time from Syx_
 
