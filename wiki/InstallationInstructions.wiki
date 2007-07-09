@@ -4,9 +4,12 @@
 = Available platforms =
 
 Syx has been tested on the following platforms:
+  * SunOS 5.10
+  * FreeBSD 6.1
   * Linux From Scratch 64-bit
   * Gentoo Linux 32-bit
-  * Windows XP 32-bit
+  * Windows XP
+  * Windows Vista
 
 = System requirments =
 
