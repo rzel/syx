@@ -15,7 +15,7 @@ Syx has been tested on the following platforms:
 
   * The [http://www.scons.org Scons] build system
   * [http://www.gtk.org GTK+] toolkit (_optional plugin_)
-  * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not required on Windows_)
+  * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not supported on Windows_)
 
 = Getting Syx =
 
