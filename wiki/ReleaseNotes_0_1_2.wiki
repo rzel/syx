@@ -20,4 +20,4 @@ This version has a bunch of new features added to the Smalltalk environment, and
 _Note that Syx can be compiled also without GMP. Eventough you use an   
 image containing LargeIntegers, Syx will run without problems but won't understand that numbers._
 
-See the [http://syx.googlecode.com/svn/trunk/ChangeLog ChangeLog] for a complete list of things that changed.
+See the [http://syx.googlecode.com/svn/tags/syx-0.1.2/ChangeLog ChangeLog] for a complete list of things that changed.
