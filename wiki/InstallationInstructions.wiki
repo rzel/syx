@@ -8,12 +8,13 @@ Syx has been tested on the following platforms:
   * FreeBSD 6.1
   * Linux From Scratch 64-bit
   * Gentoo Linux 32-bit
-  * Windows XP
-  * Windows Vista
+  * Windows 98, XP, Vista
+  * Mac OSX
 
 = System requirments =
 
   * The [http://www.scons.org Scons] build system
+  * [http://gmplib.org/ GNU MP Bignum Library] (_reccomended_)
   * [http://www.gtk.org GTK+] toolkit (_optional plugin_)
   * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not supported on Windows_)
 
