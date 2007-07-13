@@ -1,0 +1,19 @@
+Major:
+- Add pool dictionaries
+- System signal handling
+- Object printing
+- Streams
+- Be able to run st files from command line
+- Support for big endian platforms
+
+Minor:
+- Use radix for floats in the lexer
+- Object inspecting
+- Fix special unary and binary messages without being too expensive
+
+Later:
+- Create a series of Smalltalk tests and benchmarks
+- Use math libraries for Floats
+
+Very later:
+- Method inlining
