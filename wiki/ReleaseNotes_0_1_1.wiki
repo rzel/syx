@@ -16,4 +16,4 @@ I wanted to release this version just after 3 days because i think these changes
   * Covered most of PositionableStream standard
   * Added basic subclassing at runtime
 
-See the [http://syx.googlecode.com/svn/trunk/ChangeLog ChangeLog] for a complete list of things that changed.
+See the [http://syx.googlecode.com/svn/tags/syx-0.1.1/ChangeLog ChangeLog] for a complete list of things that changed.
