@@ -9,7 +9,7 @@ Syx has been tested on the following platforms:
   * Linux From Scratch 64-bit
   * Gentoo Linux 32-bit
   * Windows 98, XP, Vista
-  * Mac OSX
+  * Mac OSX (PPC and Intel)
 
 = System requirments =
 
