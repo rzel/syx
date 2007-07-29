@@ -3,6 +3,12 @@
 
 = Screenshots =
 
+*August 29 2007*
+
+_Release 0.1.3. Screenshot of Syx running on the PocketPC emulator. The last image is the result after clicking over *DoIt* button._
+
+[http://syx.googlecode.com/files/pocketpc-start-08-29-07.jpg] [http://syx.googlecode.com/files/pocketpc-workspace-08-29-07.jpg] [http://syx.googlecode.com/files/pocketpc-doit-08-29-07.jpg]
+
 *July 02 2007*
 
 _Release 0.1. This screenshot has been [http://astares.blogspot.com/2007/07/syx-01.html blogged here]_
