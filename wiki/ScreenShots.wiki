@@ -3,7 +3,7 @@
 
 = Screenshots =
 
-*August 29 2007*
+*July 29 2007*
 
 _Release 0.1.3. Screenshot of Syx running on the PocketPC emulator. The last image is the result after clicking over *DoIt* button._
 
