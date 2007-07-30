@@ -9,6 +9,7 @@ Syx has been tested on the following platforms:
   * Linux From Scratch 64-bit
   * Gentoo Linux 32-bit
   * Windows 98, XP, Vista
+  * Windows CE (PocketPC and SmartPhone)
   * Mac OSX (PPC and Intel)
 
 = System requirments =
@@ -20,7 +21,10 @@ Syx has been tested on the following platforms:
 
 = Getting Syx =
 
-There currently no Syx releases, but you can find the current source in the [http://code.google.com/p/syx/source Subversion repository]:
+Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.3.tar.gz]
+Find more archives in the [http://code.google.com/p/syx/downloads/list Downloads] section.
+
+You can also get a working copy of the [http://code.google.com/p/syx/source Subversion repository]:
 
 {{{
 svn checkout http://syx.googlecode.com/svn/trunk/ syx
@@ -34,7 +38,7 @@ After you got the sources, type the following command in the syx directory
 scons
 }}}
 
-*NB:* _if the readline plugin didn't compile, try running the following command_:
+*NB:* _if some plugin didn't compile, try running the following command_:
 
 {{{
 scons --config=force
