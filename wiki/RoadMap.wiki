@@ -16,7 +16,7 @@
   * Cover most of the Smalltalk-80 standard specification
   * ~~Fix dictionaries to use hashing~~
   * Complete the basic Smalltalk environment
-  * Be able to run scripts from the command line
+  * ~~Be able to run scripts from the command line~~
 
 = Syx 0.3 =
 
