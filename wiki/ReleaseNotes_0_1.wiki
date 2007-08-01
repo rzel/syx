@@ -5,13 +5,13 @@
 
 === Released Syx 0.1 version ===
 
-This is the first version of Syx and includes an almost stable VM without memory leaks till now (we hope).
+This is the first version of Syx which includes an almost stable VM without memory leaks till now (we hope).
   * Added a simple garbage collector.
   * Covered a limited number of Smalltalk-80 standards.
   * Image compatible with both 32-bit and 64-bit platforms.
-  * The VM works indifferently on Win32 and Posix.
+  * The VM indifferently works on Win32 and Posix.
   * Use Scons as building system
-  * Interactive console from whithin Smalltalk itself
+  * Interactive console from within Smalltalk itself
   * Immediate SmallIntegers and Characters
   * A basic plugin system
   * Support for Floats and LargeIntegers
@@ -23,9 +23,9 @@ This is the first version of Syx and includes an almost stable VM without memory
   * Very simple method caching
   * Still limited exceptions and tracebacks
   * Remove Glib dependency
-  * Syncronous I/O multi-plexing trough Semaphores
+  * Synchronous I/O multi-plexing through Semaphores
   * Use direct pointers instead of indexes for oops
-  * Organized better debugging informations
+  * Better organized debugging informations
   * Documented using Doxygen
   * Reorganized Syx initialization
 
