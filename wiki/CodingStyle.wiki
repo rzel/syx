@@ -4,9 +4,9 @@
 = Basic =
 
   * The C style is very close to the one adopted by Glib
-  * Tipical GNU indentation, used by Emacs
+  * Typical GNU indentation, used by Emacs
   * Use spaces instead of tabs
-  * Use spaces between function names and parenthesis, not necessary for macros
+  * Use spaces between function names and parenthesis, not necessarily for macros
 
 = Naming =
   * Names are lower case with underlines, except for structures.
@@ -23,7 +23,7 @@ syx_COMPONENT_get_variable
 
 = Accessing to objects =
 
-  * Each object has its own data that can be accessed trough the macro SYX_OBJECT_DATA(object), for example:
+  * Each object has its own data that can be accessed through the macro SYX_OBJECT_DATA(object), for example:
 {{{
 var = SYX_OBJECT_DATA(object)[index];
 SYX_OBJECT_DATA(object)[index] = var;
@@ -35,7 +35,7 @@ SYX_DICTIONARY_HASH_TABLE(dictionary)
 SYX_METHOD_CONTEXT_STACK(methodContext)
 ...
 }}}
-  * Don't use the *class* attribute to access the class of an object, instead call the following inline functions:
+  * Don't use the *class* attribute to access the class of an object, call the following inline functions instead:
 {{{
 syx_object_get_class (SyxObject *object)
 syx_object_set_class (SyxObject *object)
