@@ -13,11 +13,11 @@ This version has a bunch of new features added to the Smalltalk environment, and
  * Added basic WriteStream 
  * Doubled initial memory size to hold 20000 objects 
  * Fixed ByteArray/String small integer to character conversion 
- * Added object finalization by fixing GC transactions 
+ * Added object finalization by having fixed GC transactions 
  * Added support for infinite-precision numbers using GMP 
  * Integer overflow checks when doing sum, difference, multiplication and bit-shift 
 
-_Note that Syx can be compiled also without GMP. Eventough you use an   
+_Note that Syx can be compiled also without GMP. Even though you use an   
 image containing LargeIntegers, Syx will run without problems but won't understand that numbers._
 
 See the [http://syx.googlecode.com/svn/tags/syx-0.1.2/ChangeLog ChangeLog] for a complete list of things that changed.
