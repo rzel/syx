@@ -54,13 +54,13 @@ scons -c
 
 = Testing it =
 
-After the build process is done, you can run tests to check if syx works correctly on your system:
+Once the build process is over, you can run tests to check if syx works correctly on your system:
 
 {{{
 scons test
 }}}
 
-*If get errors from any of the test, contact me*
+*If you get errors from any of the tests, please contact me*
 
 To clean test objects and .passed files:
 
