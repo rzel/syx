@@ -1,4 +1,4 @@
-#summary Lua to Syx: Embedding a scripting language inside your C/C++ code. The original [http://www.debian-administration.org/articles/264 article is here]
+#summary Lua to Syx: Embedding a scripting language inside your C/C++ code
 #labels Phase-Support
 
 = Disclaimer =
@@ -14,28 +14,28 @@ There many languages (such as Lua) with the main purpose to be used as scripting
 
 This article, briefly describes the main operations you can perform trough the C interface provided by Syx:
  * Initialise Syx
- * Call from C into a Lua script.
- * Call from Lua into your C application
+ * Call from C into a Syx script.
+ * Call from Syx into your C application
 
-= Initialising Lua =
+= Initialising Smalltalk YX =
 
 The main thing to do before start scripting with Syx into your application, is to initialise the entire interpreter engine:
 
 {{{
-#include "syx.h"
+#include <syx/syx.h>
 
-int main ( int argc, char *argv[] )
+int main (int argc, char *argv[])
 {
-	/* initialize Syx */
-	syx_init (NULL);
-
-	/* load the default image */
-        syx_memory_load_image (NULL);
-    
-	/* cleanup Syx */
-        syx_quit ();
-
-	return 0;
+  /* initialize Syx */
+  syx_init (argc, argv, NULL);
+  
+  /* load the default image */
+  syx_memory_load_image (NULL);
+  
+  /* cleanup Syx */
+  syx_quit ();
+  
+  return 0;
 }
 }}}
 
@@ -52,4 +52,4 @@ $ ./init
 $
 }}}
 
-The `syx_init()` function prepares the external environment of Syx such as the root path and the image path. `syx_memory_load_image()` loads the image at the given location: in this case with specified NULL which belongs to the default image path. `syx_quit()` frees all the memory used by Syx without saving the image.
+The `syx_init()` function prepares the external environment of Syx such as the root path and the image path. `syx_memory_load_image()` loads the image at the given location: in this case we specified NULL which belongs to the default image path. Finally, `syx_quit()` frees all the memory used by Syx without saving the image.
