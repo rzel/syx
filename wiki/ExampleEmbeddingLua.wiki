@@ -1,25 +1,27 @@
 #summary Lua to Syx: Embedding a scripting language inside your C/C++ code
 #labels Phase-Support
 
-= Disclaimer =
+= Embedding a scripting language inside your C/C++ code =
+
+== Disclaimer ==
 
 *First of all, this is a remake of the article "[http://www.debian-administration.org/articles/264 Embedding a scripting language inside your C/C++ code]" of the Lua programming language for Smalltalk YX.*
 
-= Introduction =
+== Introduction ==
 
 *_These examples can be found in the source distribution of Syx in the `examples/embedding` directory._*
 
 Smalltalk is a well known programming language thanks to its pure object-oriented programming phylosophy and its powerful features such as the graphical environment and reflection.
 At all, many people don't know what are all the features that Smalltalk YX offers to developers. One of these is the easy embeddability into C/C++ applications.
 
-There many languages (such as Lua) with the main purpose to be used as scripting languages, but this is the first Smalltalk version you can use for both general and embedding purposes.
+There are many languages (such as Lua) with the main purpose to be used as scripting languages, but this is the first Smalltalk version you can use for both general and embedding purposes.
 
 This article, briefly describes the main operations you can perform trough the C interface provided by Syx:
  * Initialise Syx
  * Call from C into a Syx script.
  * Call from Syx into your C application
 
-= Initialising Smalltalk YX =
+== Initialising Smalltalk YX ==
 
 The main thing to do before start scripting with Syx into your application, is to initialise the entire interpreter engine:
 
@@ -56,7 +58,7 @@ $
 
 The `syx_init()` function prepares the external environment of Syx such as the root path and the image path. `syx_memory_load_image()` loads the image at the given location: in this case we specified NULL which belongs to the default image path. Finally, `syx_quit()` frees all the memory used by Syx without saving the image.
 
-= Calling from C into a Lua script =
+== Calling from C into a Lua script ==
 
 Now it's time code more and know how C can interact with Syx. These two examples show the basic operations you can perform to reach the most common purposes for your application.
 
@@ -193,7 +195,7 @@ The result of the sum is: 63
 $
 }}}
 
-= Call from Syx into your C application =
+== Call from Syx into your C application ==
 
 Smalltalk YX is also able to do the inverse thing as above very easily.
 There're several methods to call C from Smalltalk:
@@ -221,18 +223,26 @@ SYX_FUNC_PRIMITIVE(average)
 {
   syx_int32 i;
   syx_int32 sum = 0;
-  syx_int32 args = es->message_arguments_count;
   SyxOop oop;
+
+  /* obtain the number of arguments that has been sent */
+  syx_int32 args = es->message_arguments_count;
+
+  /* create the array to hold both the average and the sum */
   SyxOop result = syx_array_new_size (2);
 
   for (i=0; i < args; i++)
     {
+      /* get the nth argument */
       oop = es->message_arguments[i];
+
+      /* assert the object is a SmallInteger */
       if (!SYX_IS_SMALL_INTEGER (oop))
 	{
 	  SYX_PRIM_FAIL;
 	}
 
+      /* get the integer value of the object and sum */
       sum += SYX_SMALL_INTEGER (oop);
     }
   
