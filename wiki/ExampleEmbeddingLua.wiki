@@ -23,7 +23,7 @@ This article, briefly describes the main operations you can perform trough the C
 
 == Initialising Smalltalk YX ==
 
-The main thing to do before start scripting with Syx into your application, is to initialise the entire interpreter engine:
+The main thing to do before start scripting with Syx into your application, is initializing the entire interpreter engine:
 
 {{{
 #include <syx/syx.h>
