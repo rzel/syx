@@ -1,0 +1,14 @@
+#summary Smalltalk YX usage examples
+#labels Phase-Support,Featured
+
+= Introduction =
+
+Before trying to run these examples, you must [InstallationInstructions install Smalltalk YX] and have a basic knowledge of programming.
+
+= Console =
+
+ * [ExampleConsoleMenu A menu with different choices that let the end user interact with Smalltalk]
+
+= Embedding =
+
+ * [ExampleEmbeddingSimple An article which shows how to call C from Smalltalk and viceversa from another application]
