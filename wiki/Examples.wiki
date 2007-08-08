@@ -11,4 +11,4 @@ Before trying to run these examples, you must [InstallationInstructions install 
 
 = Embedding =
 
- * [ExampleEmbeddingLua Lua to Syx: an article which shows how to call C from Smalltalk and viceversa from another application] using the same approach of the [http://www.lua.org Lua programming language]
+ * Lua to Syx: [ExampleEmbeddingLua Embedding a scripting language inside your C/C++ code]. The original article related to Lua can be [http://www.debian-administration.org/articles/264 found here]
