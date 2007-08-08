@@ -1,0 +1,55 @@
+#summary Lua to Syx: Embedding a scripting language inside your C/C++ code. The original [http://www.debian-administration.org/articles/264 article is here]
+#labels Phase-Support
+
+= Disclaimer =
+
+*First of all, this is a remake of the article "[http://www.debian-administration.org/articles/264 Embedding a scripting language inside your C/C++ code]" of the Lua programming language for Smalltalk YX.*
+
+= Introduction =
+
+Smalltalk is a well known programming language thanks to its pure object-oriented programming phylosophy and its powerful features such as the graphical environment and reflection.
+At all, many people don't know what are all the features that Smalltalk YX offers to developers. One of these is the easy embeddability into C/C++ applications.
+
+There many languages (such as Lua) with the main purpose to be used as scripting languages, but this is the first Smalltalk version you can use for both general and embedding purposes.
+
+This article, briefly describes the main operations you can perform trough the C interface provided by Syx:
+ * Initialise Syx
+ * Call from C into a Lua script.
+ * Call from Lua into your C application
+
+= Initialising Lua =
+
+The main thing to do before start scripting with Syx into your application, is to initialise the entire interpreter engine:
+
+{{{
+#include "syx.h"
+
+int main ( int argc, char *argv[] )
+{
+	/* initialize Syx */
+	syx_init (NULL);
+
+	/* load the default image */
+        syx_memory_load_image (NULL);
+    
+	/* cleanup Syx */
+        syx_quit ();
+
+	return 0;
+}
+}}}
+
+Once you have saved this as init.c you can compile it by typeing:
+
+{{{
+$ gcc -o init init.c -Wall -lsyx
+}}}
+
+If you didn't get any errors, you should be able to execute the program and get no output from it:
+
+{{{
+$ ./init
+$
+}}}
+
+The `syx_init()` function prepares the external environment of Syx such as the root path and the image path. `syx_memory_load_image()` loads the image at the given location: in this case with specified NULL which belongs to the default image path. `syx_quit()` frees all the memory used by Syx without saving the image.
