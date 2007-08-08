@@ -7,8 +7,8 @@ Before trying to run these examples, you must [InstallationInstructions install 
 
 = Console =
 
- * [ExampleConsoleMenu A menu with different choices that let the end user interact with Smalltalk]
+ * [ExampleConsoleMenu A console menu with different choices that let the end user interact with Smalltalk]
 
 = Embedding =
 
- * [ExampleEmbeddingSimple An article which shows how to call C from Smalltalk and viceversa from another application]
+ * [ExampleEmbeddingSimple Lua to Syx: an article which shows how to call C from Smalltalk and viceversa from another application] using the same approach of the [http://www.lua.org Lua programming language]
