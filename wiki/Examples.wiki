@@ -1,14 +1,14 @@
 #summary Smalltalk YX usage examples
 #labels Phase-Support,Featured
 
-= Introduction =
+= Examples =
 
 Before trying to run these examples, you must [InstallationInstructions install Smalltalk YX] and have a basic knowledge of programming.
 
-= Console =
+== Console ==
 
  * [ExampleConsoleMenu A console menu with different choices that let the end user interact with Smalltalk]
 
-= Embedding =
+== Embedding ==
 
  * Lua to Syx: [ExampleEmbeddingLua Embedding a scripting language inside your C/C++ code]. The original article related to Lua can be [http://www.debian-administration.org/articles/264 found here]
