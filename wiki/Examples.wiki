@@ -11,4 +11,4 @@ Before trying to run these examples, you must [InstallationInstructions install 
 
 = Embedding =
 
- * [ExampleEmbeddingSimple Lua to Syx: an article which shows how to call C from Smalltalk and viceversa from another application] using the same approach of the [http://www.lua.org Lua programming language]
+ * [ExampleEmbeddingLua Lua to Syx: an article which shows how to call C from Smalltalk and viceversa from another application] using the same approach of the [http://www.lua.org Lua programming language]
