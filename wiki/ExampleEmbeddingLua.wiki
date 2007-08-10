@@ -58,7 +58,7 @@ $
 
 The `syx_init()` function prepares the external environment of Syx such as the root path and the image path. `syx_memory_load_image()` loads the image at the given location: in this case we specified NULL which belongs to the default image path. Finally, `syx_quit()` frees all the memory used by Syx without saving the image.
 
-== Calling from C into a Lua script ==
+== Calling from C into a Smalltalk script ==
 
 Now it's time code more and know how C can interact with Syx. These two examples show the basic operations you can perform to reach the most common purposes for your application.
 
