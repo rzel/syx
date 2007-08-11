@@ -3,6 +3,12 @@
 
 = Screenshots =
 
+*August 11 2007*
+
+_Release 0.1.4. Screenshot of the Syx GTK+ wrapper, built using SWIG, handling signal callbacks._
+
+[http://syx.googlecode.com/files/syxgtk-08-11-07.jpg]
+
 *July 29 2007*
 
 _Release 0.1.3. Screenshot of Syx running on the PocketPC emulator. The last image is the result after clicking over the *DoIt* button._
