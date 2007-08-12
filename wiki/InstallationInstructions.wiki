@@ -1,5 +1,5 @@
 #summary Syx installation instructions
-#labels Featured,Phase-Deploy
+#labels Phase-Deploy
 
 = Available platforms =
 
