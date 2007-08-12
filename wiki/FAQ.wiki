@@ -3,7 +3,7 @@
 
 = Frequently asked questions =
 
-== Why Scons doesn't install files in $prefix? ==
+== Why doesn't Scons install files under $prefix? ==
 
 If you are creating a binary package for Syx, the behavior is not the same as other software using mainstream building tools such as GNU Make.
 I would invite you to follow the [PackagingInstructions Syx packaging instructions].
