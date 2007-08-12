@@ -1,5 +1,5 @@
 #summary How to create Smalltalk YX binary packages
-#labels Phase-Deploy,Featured
+#labels Phase-Deploy
 
 = Create a binary package =
 
