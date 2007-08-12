@@ -2,3 +2,10 @@
 #labels Phase-Support,Featured
 
 = Frequently asked questions =
+
+== Why Scons doesn't install files in $prefix? ==
+
+If you are creating a binary package for Syx, the behavior is not the same as other software using mainstream building tools such as GNU Make.
+I would invite you to follow the [PackagingInstructions Syx packaging instructions].
+
+Instead if you are not going to create such package, [mailto:lethalman88@gmail.com please contact me] or subscribe to the [http://groups.google.com/group/syx-discuss discussion mailing list]
