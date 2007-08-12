@@ -1,0 +1,8 @@
+#summary Index of the Smalltalk YX documentation
+#labels Phase-Support,Featured
+
+= Documentation =
+
+ * [InstallationInstructions Source distribution installation instructions]
+ * [PackagingInstructions How to create a binary package for Syx]
+ * [FAQ Frequently asked questions]
