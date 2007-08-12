@@ -12,13 +12,13 @@ This because the binary package contains an image created from scratch, therefor
 
 The first step, is to configure Syx and compile it. If you want Syx to be configured in /usr then append *prefix=/usr*:
 {{{
-@/src/syx $ scons prefix=/usr
+@/syx $ scons prefix=/usr
 }}}
 
 == Create a binary distribution ==
 After a successful compilation, now it's time to create the binary distribution:
 {{{
-@/src/syx # scons bdist
+@/syx # scons bdist
 }}}
 This will create a directory named *syx-_version_* under the source directory containing binaries ready to be distributed.
 
@@ -26,5 +26,5 @@ This will create a directory named *syx-_version_* under the source directory co
 
 The *scons bdist* command installed needed files in your system to let Syx be able to create the image. If you want, you can clean everything with the following command
 {{{
-# scons install -c
+@/syx # scons install -c
 }}}
