@@ -1,5 +1,5 @@
 #summary Describe the coding style used in Syx
-#labels Featured,Phase-Design
+#labels Phase-Design
 
 = Basic =
 
@@ -21,7 +21,7 @@ syx_COMPONENT_set_variable
 syx_COMPONENT_get_variable
 }}}
 
-= Accessing to objects =
+= Accessing objects =
 
   * Each object has its own data that can be accessed through the macro SYX_OBJECT_DATA(object), for example:
 {{{
