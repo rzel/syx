@@ -27,6 +27,12 @@
 = Syx 0.4 =
 
   * Create a basic GUI environment
+  * Include a basic packaging system
+
+= Syx 0.5 =
+
+  * Support multiple execution states of the interpreter
+  * Add support for OS-level threads and parallel computing
   
 = Syx 1.0 =
 
