@@ -19,7 +19,7 @@
   * ~~Fix dictionaries to use hashing~~
   * Complete the basic Smalltalk environment
   * ~~Be able to run scripts from the command line~~
-  * Image compatible with both big and little endian machines
+  * ~~Image compatible with both big and little endian machines~~
 
 == Syx 0.3 ==
 
