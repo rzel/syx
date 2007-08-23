@@ -1,5 +1,5 @@
 #summary Release notes for Smalltalk YX 0.1.3 version
-#labels Phase-Deploy
+#labels Phase-Deploy,Deprecated
 
 = Release notes =
 
