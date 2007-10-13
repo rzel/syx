@@ -1,0 +1,6 @@
+#summary Architecture of the Syx scheduler
+#labels Phase-Design
+
+= Scheduler Architecture =
+
+[http://syx.googlecode.com/svn/wiki/images/arch-scheduler.png]
