@@ -1,0 +1,6 @@
+#summary The architecture of the Syx initialization process
+#labels Phase-Design
+
+= Initialization Architecture =
+
+[http://syx.googlecode.com/svn/wiki/images/arch-init.png]
