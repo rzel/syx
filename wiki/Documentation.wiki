@@ -6,3 +6,8 @@
  * [InstallationInstructions Source distribution installation instructions]
  * [PackagingInstructions How to create a binary package for Syx]
  * [FAQ Frequently asked questions]
+
+== Architecture ==
+
+ * [InitArch Initialization of Smalltalk YX]
+ * [SchedulerArch The process of the scheduler in Syx]
