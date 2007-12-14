@@ -9,6 +9,7 @@
   * Use spaces between function names and parenthesis, not necessarily for macros
 
 = Naming =
+
   * Names are lower case with underlines, except for structures.
   * Each structure has its own typedef.
   * Files are named as syx-COMPONENT.{c,h}
@@ -20,6 +21,10 @@ syx_COMPONENT_do_something
 syx_COMPONENT_set_variable
 syx_COMPONENT_get_variable
 }}}
+
+= Patches =
+
+Once you create a patch, if you can, also add a ChangeLog entry with your name, email and the files you changed and why.
 
 = Accessing objects =
 
