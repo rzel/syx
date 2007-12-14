@@ -4,7 +4,7 @@
 = Basic =
 
   * The C style is very close to the one adopted by Glib
-  * Typical GNU indentation, used by Emacs
+  * Typical GNU indentation 2 spaces, default in Emacs
   * Use spaces instead of tabs
   * Use spaces between function names and parenthesis, not necessarily for macros
 
@@ -25,17 +25,30 @@ syx_COMPONENT_get_variable
 
   * Each object has its own data that can be accessed through the macro SYX_OBJECT_DATA(object), for example:
 {{{
-var = SYX_OBJECT_DATA(object)[index];
+SyxOop var = SYX_OBJECT_DATA(object)[index];
 SYX_OBJECT_DATA(object)[index] = var;
+}}}
+  * Variables in objects are accessed with the following macro:
+{{{
+SyxOop var = SYX_OBJECT_VARS(object)[index];
+SYX_OBJECT_VARS(object)[index] = var;
+}}}
+  * Get data as syx_symbol, syx_string, byte array, float or large integer as shown below:
+{{{
+syx_symbol symbol = SYX_OBJECT_SYMBOL(oop);
+syx_string string = SYX_OBJECT_STRING(oop);
+syx_uint8 *byte_array = SYX_OBJECT_BYTE_ARRAY(oop);
+syx_double float_num = SYX_OBJECT_FLOAT(oop);
+mpz_t large_num = SYX_OBJECT_LARGE_INTEGER(oop);
 }}}
   * Usually, there's a macro for each known variable of the most used objects:
 {{{
 SYX_CLASS_SUPERCLASS(class)
-SYX_DICTIONARY_HASH_TABLE(dictionary)
-SYX_METHOD_CONTEXT_STACK(methodContext)
+SYX_METHOD_SELECTOR(method)
+SYX_PROCESS_STACK(process)
 ...
 }}}
-  * Don't use the *class* attribute to access the class of an object, call the following inline functions instead:
+  * Don't use the *class* attribute to access the class of an object, call the following inlined functions instead:
 {{{
 syx_object_get_class (SyxObject *object)
 syx_object_set_class (SyxObject *object)
