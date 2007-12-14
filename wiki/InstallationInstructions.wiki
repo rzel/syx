@@ -4,6 +4,7 @@
 = Available platforms =
 
 Syx has been tested on the following platforms:
+  * Gentoo Linux Base System 1.12.9
   * SunOS 5.10
   * FreeBSD 6.1
   * Linux From Scratch 64-bit
