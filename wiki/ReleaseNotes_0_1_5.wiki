@@ -25,3 +25,5 @@ A list of the major changes:
 
 This version breaks the API for creating new processes and contexts from C and ST too.
 Thanks for anyone who contributed to Syx.
+
+See the [http://syx.googlecode.com/svn/tags/syx-0.1.5/ChangeLog ChangeLog] for a complete list of things that changed.
