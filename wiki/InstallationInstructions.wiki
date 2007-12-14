@@ -15,8 +15,8 @@ Syx has been tested on the following platforms:
 
 = System requirments =
 
-  * The [http://www.scons.org Scons] build system
   * [http://gmplib.org/ GNU MP Bignum Library] (_recommended_)
+  * [http://www.scons.org Scons] build system (_optional_)
   * [http://www.gtk.org GTK+] toolkit (_optional plugin_)
   * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not supported on Windows_)
 
