@@ -6,6 +6,7 @@
 Syx has been tested on the following platforms:
   * Gentoo Linux (x86 and x64)
   * Slackware Linux 12.0
+  * Foresight Linux 1.4.1
   * SunOS 5.10
   * Solaris 11 (Sparc and x86-64)
   * FreeBSD 6.1
