@@ -3,7 +3,8 @@
 
 = Introduction =
 
-The GTK+ plugin is installed by default, anyway if you installed the GTK+ libraries after you installed Syx, you'll need to recompile Syx with the support of the GTK+ plugin.
+_The GTK+ plugin is installed by default, anyway if you installed the GTK+ libraries after you installed Syx, you'll need to recompile Syx with the support of the GTK+ plugin._
+
 Before you continue reading this very short tutorial, make sure that your copy of Smalltalk YX has been compiled with the GTK+ plugin support. If not, recompile Syx as shown below:
 {{{
 scons GTK=yes
@@ -47,3 +48,23 @@ GtkWindow new
 But, creating it won't mean showing it, so we had to call the *showAll* method on it.
 
 Finally, we had to start the GTK+ main loop with `Gtk main`
+
+= Show a label =
+
+*If you restarted Syx, be sure to load the GTK+ plugin as explained above.*
+
+We know how to create a Window but not how to add something cool into it.
+So let's add a simple label and show it:
+{{{
+| window label |
+label = GtkLabel new: 'Hello world'.
+window = GtkWindow new.
+window add: label; showAll!
+}}}
+
+*If you restarted Syx, now you have to run the GTK+ main loop as shown above.*
+
+If you want a one-row version of that, read:
+{{{
+GtkWindow new add: (GtkLabel new: 'Hello world'); showAll!
+}}}
