@@ -3,6 +3,7 @@
 
 = Introduction =
 
+The GTK+ plugin is installed by default, anyway if you installed the GTK+ libraries after you installed Syx, you'll need to recompile Syx with the support of the GTK+ plugin.
 Before you continue reading this very short tutorial, make sure that your copy of Smalltalk YX has been compiled with the GTK+ plugin support. If not, recompile Syx as shown below:
 {{{
 scons GTK=yes
