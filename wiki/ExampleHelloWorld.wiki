@@ -29,7 +29,7 @@ This means Syx is ready and it's waiting for your input.
 
 = Say Hello World =
 
-Let's say something for the first time with Syx:
+Let's say something for the first time with Syx, type the following in the _syx_ interpreter:
 {{{
 'Hello world'!
 }}}
@@ -41,7 +41,7 @@ Well, you can see now *Hello world* in output.
 Strings in Smalltalk are represented using single quotes.
 The exclamation mark at the end says to Syx to end the current block of statements.
 
-Anyway, what you did was only creating a string, not printing it. It has been printed to the output because Syx automatically prints the latest evaluated object, which in this case was our input string `'Hello world'`.
+Anyway, what you did was only creating a string, not printing it. It has been printed out because Syx automatically prints the latest evaluated object, which in this case was our input string `'Hello world'`.
 
 To really print our string type the following command:
 {{{
@@ -50,4 +50,18 @@ To really print our string type the following command:
 
 You'll see *Hello world* printed two times. This because we print the `'Hello world'` string and finally Syx prints the latest evaluated object, which is `'Hello world'` as explained above.
 
-= Alternative Hello world =
+= Standard Hello world =
+
+The *printNl* method used above is a method introduced by Syx to print objects out the easy way.
+By default on other Smalltalk, this is done by using the *Transcript* object, which represent an output buffer shown to the user.
+We are working on a console, in fact our Transcript is just the stdout stream.
+Try it:
+{{{
+Transcript showCr: 'Hello world'!
+}}}
+
+You'll see *Hello world* and *a TextCollector* printed below. What's that? Well, each object in Syx has a class. Here, the Transcript is an object created by the `TextCollector ` class. Since here the latest evaluated object is the Transcript, Syx will print out the class to which the object belongs to.
+
+= Conclusion =
+
+That's it :)
