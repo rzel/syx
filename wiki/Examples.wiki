@@ -12,3 +12,7 @@ Before trying to run these examples, you must [InstallationInstructions install 
 == Embedding ==
 
  * Lua to Syx: [ExampleEmbeddingLua Embedding a scripting language inside your C/C++ code]. The original article related to Lua can be [http://www.debian-administration.org/articles/264 found here]
+
+== Web ==
+
+ * [http://dominicletz.de/cgi-bin/syx A CGI code browser for Syx]
