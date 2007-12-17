@@ -1,0 +1,53 @@
+#summary Say Hello World with Smalltalk YX
+#labels Phase-Support
+
+= Introduction =
+
+Smalltalk YX is an interpreted programming language based on the Smalltalk-80 standard.
+_"Interpreted programming language"_ means the code is not compiled in machine code instead each command is interpreted at run-time.
+
+The interpreter frontend of Smalltalk YX is called *syx*. On Linux it's an ELF file, on Windows it's an executable file with the EXE extension, and so on other platforms.
+
+The all you need is a Syx version working on your computer.
+
+= Launch Syx =
+
+To launch Syx on Linux just type syx as follows:
+{{{
+$ syx
+}}}
+
+On Windows, if you used the installer, you'll find the executable in Start->Programs->Smalltalk YX menu.
+
+
+You'll see this once Syx has been launched:
+{{{
+>
+}}}
+
+This means Syx is ready and it's waiting for your input.
+
+= Say Hello World =
+
+Let's say something for the first time with Syx:
+{{{
+'Hello world'!
+}}}
+
+Well, you can see now *Hello world* in output.
+
+== Explanation ==
+
+Strings in Smalltalk are represented using single quotes.
+The exclamation mark at the end says to Syx to end the current block of statements.
+
+Anyway, what you did was only creating a string, not printing it. It has been printed to the output because Syx automatically prints the latest evaluated object, which in this case was our input string `'Hello world'`.
+
+To really print our string type the following command:
+{{{
+'Hello world' printNl!
+}}}
+
+You'll see *Hello world* printed two times. This because we print the `'Hello world'` string and finally Syx prints the latest evaluated object, which is `'Hello world'` as explained above.
+
+= Alternative Hello world =
