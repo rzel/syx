@@ -22,7 +22,7 @@ Syx has been tested on the following platforms:
 
 = Getting Syx =
 
-Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.3.tar.gz]
+Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.5.tar.gz]
 Find more archives in the [http://code.google.com/p/syx/downloads/list Downloads] section.
 
 You can also get a working copy of the [http://code.google.com/p/syx/source Subversion repository]:
