@@ -9,3 +9,8 @@ If you are creating a binary package for Syx, the behavior is not the same as ot
 I would invite you to follow the [PackagingInstructions Syx packaging instructions].
 
 Instead if you are not going to create such package, [mailto:lethalman88@gmail.com please contact me] or subscribe to the [http://groups.google.com/group/syx-discuss discussion mailing list]
+
+== Why use #printNl instead of Transcript? ==
+
+The Transcript is always available, but since Syx has been modeled to be *also* a scripting programming language, using the #printNl method is more readable and eye-candy for scripts.
+Tough Object>>#print is a faster way to write `Transcript show: anObject` and Object>>#printNl to write `Transcript showCr: anObject`.
