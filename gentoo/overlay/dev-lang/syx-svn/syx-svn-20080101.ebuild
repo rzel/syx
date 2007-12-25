@@ -4,9 +4,8 @@
 
 inherit autotools eutils subversion flag-o-matic
 
-PN="syx"
 ESVN_REPO_URI="http://syx.googlecode.com/svn/trunk"
-ESVN_PROJECT="${PN/-svn}"
+ESVN_PROJECT="syx-svn"
 ESVN_BOOTSTRAP="autogen.sh"
 
 MY_P="syx-${PV}"
