@@ -29,7 +29,7 @@ src_unpack() {
         eautoreconf
 }
 
-src_configure() {
+src_compile() {
     local myconf="$(use_enable gtk) \
                   $(use_enable readline) \
                   $(use_enable X x11) \
@@ -38,9 +38,7 @@ src_configure() {
     use debug && myconf="${myconf} --enable-debug=info"
 
     econf ${myconf} || die "configure failed"
-}
 
-src_compile() {
     emake || die "compile failed"
 }
 
