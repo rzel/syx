@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<layman>
+  <overlay
+     contact = "lethalman88@gmail.com"
+     type = "svn"
+     src  = "http://syx.googlecode.com/svn/gentoo/overlay"
+     name = "syx">
+    <link>
+      http://syx.googlecode.com
+    </link>
+    <description>
+      Smalltalk YX ebuilds.
+    </description>
+  </overlay>
+</layman>
