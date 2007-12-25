@@ -15,12 +15,13 @@ HOMEPAGE="http://syx.googlecode.com"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 ~arm ~ia64 ppc ppc64 sparc sparc-fbsd x86 x86-fbsd"
-IUSE="gmp readline gtk debug profile iprofile"
+IUSE="gmp readline gtk X debug profile iprofile"
 
 RDEPEND="!build? (
 		gmp? ( dev-libs/gmp )
 		readline? ( sys-libs/readline )
                 gtk? ( >=x11-libs/gtk+-2.12 )
+                X? ( x11-libs/libX11 )
 	 )"
 
 PROVIDE="virtual/syx"
@@ -28,9 +29,10 @@ PROVIDE="virtual/syx"
 src_compile() {
     local myconf="$(use_enable gtk) \
                   $(use_enable readline) \
+                  $(use_enable X x11) \
                   $(use_with gmp)"
 
-    use debug && myconf="${myconf} --enable-debug=normal"
+    use debug && myconf="${myconf} --enable-debug=info"
 
     econf ${myconf} || die "configure failed"
 
