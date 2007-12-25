@@ -25,6 +25,7 @@
 
   * Complete the Smalltalk environment
   * Include a complete set of tests from other Smalltalk versions to reach a good compatibility level
+  * Improve the memory management including a remake of the garbage collector
 
 == Syx 0.4 ==
 
