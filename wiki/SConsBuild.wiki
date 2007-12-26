@@ -1,17 +1,6 @@
 #summary Build Smalltalk YX using the SCons build system
 #labels Phase-Deploy
 
-= Getting Syx =
-
-Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.5.tar.gz]
-Find more archives in the [http://code.google.com/p/syx/downloads/list Downloads] section.
-
-You can also get a working copy of the [http://code.google.com/p/syx/source Subversion repository]:
-
-{{{
-svn checkout http://syx.googlecode.com/svn/trunk/ syx
-}}}
-
 = Compiling Syx =
 
 After you got the sources, type the following command in the syx directory 
@@ -20,13 +9,9 @@ After you got the sources, type the following command in the syx directory
 scons
 }}}
 
-*NB:* _if some plugin didn't compile, try running the following command_:
+*NB:* _to know what you can enable/disable please run `scons -h`_:
 
-{{{
-scons --config=force
-}}}
-
-*If you get any error or warning, please refer everything to me*
+*If you get any error or warning, please refer everything to me or create an issue in the tracker*
 
 To clean objects and everything in the build directory:
 
