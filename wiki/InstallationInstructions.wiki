@@ -18,7 +18,6 @@ Syx has been tested on the following platforms:
 
 = System requirments =
 
-  * [http://www.scons.org Scons] build system (_recommended_)
   * [http://gmplib.org/ GNU MP Bignum Library] (_recommended_)
   * [http://www.gtk.org GTK+] toolkit (_optional plugin_)
   * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not supported on Windows_)
@@ -34,60 +33,14 @@ You can also get a working copy of the [http://code.google.com/p/syx/source Subv
 svn checkout http://syx.googlecode.com/svn/trunk/ syx
 }}}
 
-= Compiling Syx =
+= Building with GNU build (autotools) =
 
-After you got the sources, type the following command in the syx directory 
+To build Smalltalk YX with this building system you need a *make* program (for example [http://www.gnu.org/software/make/ GNU make]).
 
-{{{
-scons
-}}}
+*[GNUBuild Then click here and follow the instructions]*
 
-*NB:* _if some plugin didn't compile, try running the following command_:
+= Building with SCons =
 
-{{{
-scons --config=force
-}}}
+In order to compile and install Smalltalk YX successfully you have to get [http://www.scons.org SCons] installed on your system.
 
-*If you get any error or warning, please refer everything to me*
-
-To clean objects and everything in the build directory:
-
-{{{
-scons -c
-}}}
-
-= Testing it =
-
-Once the build process is over, you can run tests to check if syx works correctly on your system:
-
-{{{
-scons test
-}}}
-
-*If you get errors from any of the tests, please contact me*
-
-To clean test objects and .passed files:
-
-{{{
-scons test -c
-}}}
-
-= Installing =
-
-Syx will install the executable in `bindir`, the library in `libdir` and the data (the image, Smalltalk code, plugins) in `datadir`:
-
-{{{
-scons install
-}}}
-
-On Windows, it will install everything in C:\Syx by default. Do `scons -h` for a complete list of options.
-
-*NB:* _on Linux, you should update the libraries with `ldconfig`
-
-= Uninstalling =
-
-I hope you won't ;)
-
-{{{
-scons install -c
-}}}
+*[GNUBuild Then click here and follow the instructions]*
