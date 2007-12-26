@@ -43,4 +43,4 @@ To build Smalltalk YX with this building system you need a *make* program (for e
 
 In order to compile and install Smalltalk YX successfully you have to get [http://www.scons.org SCons] installed on your system.
 
-*[GNUBuild Then click here and follow the instructions]*
+*[SConsBuild Then click here and follow the instructions]*
