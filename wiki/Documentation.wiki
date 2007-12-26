@@ -6,6 +6,7 @@
  * [InstallationInstructions Source distribution installation instructions]
  * [PackagingInstructions How to create a binary package for Syx]
  * [FAQ Frequently asked questions]
+ * [Examples Examples of common uses of Syx]
 
 == Architecture ==
 
