@@ -1,0 +1,71 @@
+#summary Build Smalltalk YX using the SCons build system
+#labels Phase-Deploy
+
+= Getting Syx =
+
+Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.5.tar.gz]
+Find more archives in the [http://code.google.com/p/syx/downloads/list Downloads] section.
+
+You can also get a working copy of the [http://code.google.com/p/syx/source Subversion repository]:
+
+{{{
+svn checkout http://syx.googlecode.com/svn/trunk/ syx
+}}}
+
+= Compiling Syx =
+
+After you got the sources, type the following command in the syx directory 
+
+{{{
+scons
+}}}
+
+*NB:* _if some plugin didn't compile, try running the following command_:
+
+{{{
+scons --config=force
+}}}
+
+*If you get any error or warning, please refer everything to me*
+
+To clean objects and everything in the build directory:
+
+{{{
+scons -c
+}}}
+
+= Testing it =
+
+Once the build process is over, you can run tests to check if syx works correctly on your system:
+
+{{{
+scons test
+}}}
+
+*If you get errors from any of the tests, please contact me*
+
+To clean test objects and .passed files:
+
+{{{
+scons test -c
+}}}
+
+= Installing =
+
+Syx will install the executable in `bindir`, the library in `libdir` and the data (the image, Smalltalk code, plugins) in `datadir`:
+
+{{{
+scons install
+}}}
+
+On Windows, it will install everything in C:\Syx by default. Do `scons -h` for a complete list of options.
+
+*NB:* _on Linux, you should update the libraries with `ldconfig`
+
+= Uninstalling =
+
+Hopefully you won't ;)
+
+{{{
+scons install -c
+}}}
