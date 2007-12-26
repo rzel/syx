@@ -37,15 +37,13 @@ scons test -c
 
 = Installing =
 
-Syx will install the executable in `bindir`, the library in `libdir` and the data (the image, Smalltalk code, plugins) in `datadir`:
+Syx will install the executable in `bindir`, the library and plugins in `libdir` and the data (the image, Smalltalk code) in `datadir`:
 
 {{{
 scons install
 }}}
 
 On Windows, it will install everything in C:\Syx by default. Do `scons -h` for a complete list of options.
-
-*NB:* _on Linux, you should update the libraries with `ldconfig`
 
 = Uninstalling =
 
