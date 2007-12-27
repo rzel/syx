@@ -40,7 +40,7 @@ src_unpack() {
 
 	if use gtk; then
 		elibtoolize
-		eautoreconf
+		eautoreconf --add-missing
 	fi
 }
 
