@@ -25,7 +25,7 @@ RDEPEND=">=dev-db/sqlite-3
 				>=net-misc/curl-7.15
 				media-libs/jpeg
 				media-libs/libpng
-                                gstreamer? ( >=media-libs/gstreamer-0.10 )
+				gstreamer? ( >=media-libs/gstreamer-0.10 )
 			 )"
 
 DEPEND="${RDEPEND}
@@ -35,33 +35,33 @@ DEPEND="${RDEPEND}
 		>=sys-devel/flex-2.5.33"
 
 src_unpack() {
-        unpack ${A}
+	unpack ${A}
 	cd "${S}"
 
-        if use gtk; then
-                elibtoolize
-                eautoreconf    
-        fi
+	if use gtk; then
+		elibtoolize
+		eautoreconf
+	fi
 }
 
 src_compile_autotools() {
-        local myconf="$(use_enable xslt) \
-                      $(use_enable svg) \
-                      $(use_enable gstreamer video) \
-                      $(use_enable debug)"
+	local myconf="$(use_enable xslt)		\
+			$(use_enable svg)		\
+			$(use_enable gstreamer video)	\
+			$(use_enable debug)"
 
-        econf ${myconf} || die "configure failed"
+	econf ${myconf} || die "configure failed"
 }
 
 src_compile_qmake() {
 	myconf="CONFIG-=gtk-port CONFIG+=qt-port"
-        if use debug; then
-	       myconf="${myconf} CONFIG+=debug CONFIG-=release"
-        else
-               myconf="${myconf} CONFIG+=release CONFIG-=debug"
-        fi
+	if use debug; then
+		myconf="${myconf} CONFIG+=debug CONFIG-=release"
+	else
+		myconf="${myconf} CONFIG+=release CONFIG-=debug"
+	fi
 
-        eqmake4 WebKit.pro -recursive \
+	eqmake4 WebKit.pro -recursive \
 	OUTPUT_DIR=${S} \
 	WEBKIT_INC_DIR=/usr/include/${PN} \
 	WEBKIT_LIB_DIR=/usr/$(get_libdir) \
@@ -70,23 +70,23 @@ src_compile_qmake() {
 }
 
 src_compile() {
-        ewarn "This ebuild installs directly from a nightly build."
-        ewarn "The program might ne unstable some times."
-        einfo "If anything goes erroneous, please file a bug report at http://bugs.webkit.org."
+	ewarn "This ebuild installs directly from a nightly build."
+	ewarn "The program might ne unstable some times."
+	einfo "If anything goes erroneous, please file a bug report at http://bugs.webkit.org."
 
 	if use gtk; then
-                src_compile_autotools
+		src_compile_autotools
 	else
-                src_compile_qmake
-        fi
+		src_compile_qmake
+	fi
 
 	emake || die "emake failed"
 }
 
 src_install() {
-        if use gtk; then
-                einstall || die "Installation failed"
-        else
-                emake INSTALL_ROOT="${D}" install || die "Installation failed"
-        fi
+	if use gtk; then
+		einstall || die "Installation failed"
+	else
+		emake INSTALL_ROOT="${D}" install || die "Installation failed"
+	fi
 }
