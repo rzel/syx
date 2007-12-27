@@ -12,4 +12,16 @@
       Smalltalk YX ebuilds.
     </description>
   </overlay>
+  <overlay
+     contact = "lethalman88@gmail.com"
+     type = "svn"
+     src  = "http://syx.googlecode.com/svn/gentoo/webkit-overlay"
+     name = "webkit">
+    <link>
+     http://syx.googlecode.com
+    </link>
+    <description>
+     WebKit overlay.
+    </description>
+  </overlay>
 </layman>
