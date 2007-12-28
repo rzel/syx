@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOMAKE="1.9"
+
 inherit qt4 multilib autotools
 
 DESCRIPTION="Open source web browser engine"
@@ -11,7 +13,7 @@ SRC_URI="http://nightly.webkit.org/files/trunk/src/${MY_P}.tar.bz2"
 
 LICENSE="LGPL-2 LGPL-2.1 BSD"
 SLOT="0"
-KEYWORDS="~x86 amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE="qt4 gtk xslt svg gstreamer debug"
 
 S="${WORKDIR}/${MY_P}"
@@ -29,7 +31,7 @@ RDEPEND=">=dev-db/sqlite-3
 			 )"
 
 DEPEND="${RDEPEND}
-		$(qt4_min_version 4)
+		qt4? ( $(qt4_min_version 4) )
 		sys-devel/bison
 		dev-util/gperf
 		>=sys-devel/flex-2.5.33"
@@ -39,16 +41,21 @@ src_unpack() {
 	cd "${S}"
 
 	if use gtk; then
-		elibtoolize
-		eautoreconf --add-missing
+		eautoreconf
+		automake --add-missing
 	fi
 }
 
 src_compile_autotools() {
 	local myconf="$(use_enable xslt)		\
-			$(use_enable svg)		\
-			$(use_enable gstreamer video)	\
-			$(use_enable debug)"
+			$(use_enable svg)"
+
+	if use debug; then
+		myconf="${myconf} --enable-debug"
+	fi
+	if use gstreamer ; then
+		myconf="${myconf} --enable-video"
+	fi
 
 	econf ${myconf} || die "configure failed"
 }
@@ -71,7 +78,7 @@ src_compile_qmake() {
 
 src_compile() {
 	ewarn "This ebuild installs directly from a nightly build."
-	ewarn "The program might ne unstable some times."
+	ewarn "The program might be unstable some times."
 	einfo "If anything goes erroneous, please file a bug report at http://bugs.webkit.org."
 
 	if use gtk; then
@@ -80,7 +87,7 @@ src_compile() {
 		src_compile_qmake
 	fi
 
-	emake || die "emake failed"
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
