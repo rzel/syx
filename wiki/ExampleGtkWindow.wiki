@@ -57,8 +57,8 @@ We know how to create a Window but not how to add something cool into it.
 So let's add a simple label and show it:
 {{{
 | window label |
-label = GtkLabel new: 'Hello world'.
-window = GtkWindow new.
+label := GtkLabel new: 'Hello world'.
+window := GtkWindow new.
 window add: label; showAll!
 }}}
 
