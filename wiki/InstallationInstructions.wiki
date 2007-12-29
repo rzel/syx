@@ -22,6 +22,8 @@ Syx has been tested on the following platforms:
   * [http://www.gtk.org GTK+] toolkit (_optional plugin_)
   * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not supported on Windows_)
 
+*SEE BELOW FOR SOURCES INSTALLATION INSTRUCTIONS*
+
 = Windows XP =
 
 To install Syx on your Windows XP system, you must [http://code.google.com/p/syx/downloads/detail?name=Syx-0.1.5.exe&can=2&q= download the installer here].
@@ -56,9 +58,70 @@ This will install the *syx* package or update it if already installed.
 
 = Gentoo Linux =
 
+There's no Gentoo official ebuild at the moment, but you may use Layman to install it from our local overlay.
+If you don't have layman yet, you can emerge it with the following commands:
+{{{
+emerge layman
+echo "source /usr/portage/local/layman/make.conf" >> /etc/make.conf
+}}}
 
+Once this is done without troubles, we can go ahead installing Syx:
+{{{
+layman -f -o http://syx.googlecode.com/svn/gentoo/overlays.xml -a syx
+emerge syx
+}}}
 
-= Generic GNU/Linux
+= FreeBSD 6.1 x86 =
+
+To install Smalltalk YX on FreeBSD 6.1 x86 [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-FreeBSD.6.1-x86-32.tar.gz&can=2&q=  the archive here].
+Now extract it:
+{{{
+tar -vxzf syx-0.1.5-bin-FreeBSD.6.1-x86-32.tar.gz
+}}}
+
+A new directory will be created, now copy all files from the directory to the root of your system:
+{{{
+cp -rf syx-0.1.5-bin-FreeBSD.6.1-x86-32/*  /
+}}}
+
+= Solaris 11 Sparc 64-bit =
+
+To install Smalltalk YX on Solaris 11 Sparc 64-bit [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-solaris11-sparc-64.tar.gz&can=2&q=  download the archive here].
+Now extract it:
+{{{
+tar -vxzf syx-0.1.5-bin-solaris11-sparc-64.tar.gz
+}}}
+
+A new directory will be created, now copy all files from the directory to the root of your system:
+{{{
+cp -rf syx-0.1.5-bin-solaris11-sparc-64/*  /
+}}}
+
+= Solaris 11 x86-64 =
+
+To install Smalltalk YX on Solaris 11 Sparc 64-bit [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-solaris11-x86-64.tar.gz&can=2&q=  download the archive here].
+Now extract it:
+{{{
+tar -vxzf ssyx-0.1.5-bin-solaris11-x86-64.tar.gz
+}}}
+
+A new directory will be created, now copy all files from the directory to the root of your system:
+{{{
+cp -rf syx-0.1.5-bin-solaris11-x86-64/*  /
+}}}
+
+= Generic GNU/Linux x86-64 =
+
+To install Smalltalk YX on GNU/Linux 64-bit [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-linux-x86_64.tar.gz&can=2&q= download the archive here].
+Now extract it:
+{{{
+tar -vxzf syx-0.1.5-bin-linux-x86_64.tar.gz
+}}}
+
+A new directory will be created, now copy all files from the directory to the root of your system:
+{{{
+cp -rf syx-0.1.5-bin-linux-x86_64/*  /
+}}}
 
 = Installing from Sources =
 
