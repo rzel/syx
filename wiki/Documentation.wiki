@@ -3,7 +3,7 @@
 
 = Documentation =
 
- * [InstallationInstructions Source distribution installation instructions]
+ * [InstallationInstructions Get and install Smalltalk YX]
  * [PackagingInstructions How to create a binary package for Syx]
  * [FAQ Frequently asked questions]
  * [Examples Examples of common uses of Syx]
