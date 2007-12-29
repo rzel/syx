@@ -16,13 +16,51 @@ Syx has been tested on the following platforms:
   * Windows CE (PocketPC and SmartPhone)
   * Mac OSX (PPC and Intel)
 
-= System requirments =
+= System requirements =
 
   * [http://gmplib.org/ GNU MP Bignum Library] (_recommended_)
   * [http://www.gtk.org GTK+] toolkit (_optional plugin_)
   * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not supported on Windows_)
 
-= Getting Syx =
+= Windows XP =
+
+To install Syx on your Windows XP system, you must [http://code.google.com/p/syx/downloads/detail?name=Syx-0.1.5.exe&can=2&q= download the installer here].
+
+Once you downloaded it, double click on it and then follow the instructions.
+
+= Windows CE (PocketPC and Smartphone) =
+
+To install Syx on your handled system you must [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-wince.zip&can=2&q= download the binary archive here].
+
+Extract the archive; a new directory will be created named *syx-0.1.5-bin-wince*. Upload the contents of the directory (not the directory) into the root of your device.
+
+To run it just click on the *syx* application in your handled device.
+
+= Foresight Linux =
+
+To install Syx on your linux distribution perform the following command in a root shell prompt:
+{{{
+# conary update syx
+}}}
+
+This will install the *syx* package or update it if already installed.
+
+= Arch Linux =
+
+To install Syx on your linux distribution perform the following command in a root shell prompt:
+{{{
+# pacman -U syx
+}}}
+
+This will install the *syx* package or update it if already installed.
+
+= Gentoo Linux =
+
+
+
+= Generic GNU/Linux
+
+= Installing from Sources =
 
 Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.5.tar.gz]
 Find more archives in the [http://code.google.com/p/syx/downloads/list Downloads] section.
@@ -33,13 +71,13 @@ You can also get a working copy of the [http://code.google.com/p/syx/source Subv
 svn checkout http://syx.googlecode.com/svn/trunk/ syx
 }}}
 
-= Building with GNU build (autotools) =
+== Building with GNU build (autotools) ==
 
 To build Smalltalk YX with this building system you need a *make* program (for example [http://www.gnu.org/software/make/ GNU make]).
 
 *[GNUBuild Then click here and follow the instructions]*
 
-= Building with SCons =
+== Building with SCons ==
 
 In order to compile and install Smalltalk YX successfully you have to get [http://www.scons.org SCons] installed on your system.
 
