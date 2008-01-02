@@ -18,7 +18,7 @@
      src  = "http://syx.googlecode.com/svn/gentoo/webkit-overlay"
      name = "webkit">
     <link>
-     http://syx.googlecode.com
+     http://www.webkit.org
     </link>
     <description>
      WebKit overlay.
