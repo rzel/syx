@@ -23,6 +23,7 @@ Syx has been tested on the following platforms:
   * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not supported on Windows_)
 
 *SEE BELOW FOR SOURCES INSTALLATION INSTRUCTIONS*
+
 *SOME PACKAGES/ARCHIVES ARE NOT UPDATED YET TO VERSION 0.1.6*
 
 = Windows XP =
