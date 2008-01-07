@@ -1,0 +1,56 @@
+#################################################################################
+#                                                                               #
+# Copyright (c) 2007 Rahul, Luca Bruno                                          #
+# This file is part of Smalltalk YX.                                            #
+#                                                                               #
+# Permission is hereby granted, free of charge, to any person obtaining a copy  #
+# of this software and associated documentation files (the "Software"), to deal #
+# in the Software without restriction, including without limitation the rights  #
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell     #
+# copies of the Software, and to permit persons to whom the Software is         #
+# furnished to do so, subject to the following conditions:                      #
+#                                                                               #
+# The above copyright notice and this permission notice shall be included in    #
+# all copies or substantial portions of the Software.                           #
+#                                                                               #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR    #
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,      #
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE   #
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER        #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING       #
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER           #
+# DEALINGS IN THE SOFTWARE.                                                     #
+#                                                                               #
+#################################################################################
+
+import os
+
+Import ('penv', 'distdir')
+
+lib_sources = Split ("plugin-init.c Xlib_wrap.c")
+st_sources = Split("""st/XDisplay.st st/XEvent.st st/Xlib.st""")
+extras = Split("""SConscript Makefile.am""")
+
+if penv['plugins'] and penv['X11']:
+   env = penv.Clone ()
+   if env['PLATFORM'] != 'win32':
+      try:
+         env.ParseConfig ('pkg-config x11 --cflags --libs')
+         lib_objects = env.SharedObject (lib_sources)
+         lib_shared = env.SharedLibrary (target='syx-x11', source=lib_objects)
+         Default (lib_shared)        
+
+         instdir = os.path.join (env['plugindir'], 'x11')
+         env.SyxInstall (instdir, lib_shared)
+
+         path = os.path.join (env['rootdir'], 'st', 'x11')
+         env.SyxInstall (path, st_sources)
+      except:
+         print "WARNING: building without X11 plugin support"
+
+target = penv.Install (os.path.join (distdir, 'plugins', 'x11'), lib_sources + extras)
+penv.Alias ('sdist', target)
+
+path = os.path.join (distdir, 'plugins', 'x11', 'st')
+target = penv.Install (path, st_sources)
+penv.Alias ('sdist', target)
