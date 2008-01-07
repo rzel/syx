@@ -17,7 +17,7 @@ First of all this release put the GNU build (autotools) as first build system, a
   * FileStream fileIn has been fixed
   * Class declaration from Smalltalk has been fixed
   * Lexer fixes for symbols, identifier and strings
-  * FileStream now handles FILE* instead of file descriptors and this fixed several bugs
+  * FileStream now handles {{{FILE*}}} instead of file descriptors and this fixed several bugs
   * System startup has been fixed when fileing in files
   * Dictionary rehashing has been fixed
   * Basic support for handling foreign C structs and unions from Smalltalk has been added
