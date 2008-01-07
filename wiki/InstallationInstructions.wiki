@@ -73,6 +73,12 @@ layman -f -o http://syx.googlecode.com/svn/gentoo/overlays.xml -a syx
 emerge syx
 }}}
 
+To upgrade to a newer version of Syx:
+{{{
+layman -s syx
+emerge syx
+}}}
+
 = Other binary packages =
 
 _*Syx works on many other platforms, but below you'll see only available downloads from this website.*_
