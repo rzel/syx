@@ -23,18 +23,19 @@ Syx has been tested on the following platforms:
   * [http://ftp.gnu.org/gnu/readline/ Readline] for the console (_optional plugin, not supported on Windows_)
 
 *SEE BELOW FOR SOURCES INSTALLATION INSTRUCTIONS*
+*SOME PACKAGES/ARCHIVES ARE NOT UPDATED YET TO VERSION 0.1.6*
 
 = Windows XP =
 
-To install Syx on your Windows XP system, you must [http://code.google.com/p/syx/downloads/detail?name=Syx-0.1.5.exe&can=2&q= download the installer here].
+To install Syx on your Windows XP system, you must [http://code.google.com/p/syx/downloads/detail?name=Syx-0.1.6.exe&can=2&q= download the installer here].
 
 Once you downloaded it, double click on it and then follow the instructions.
 
 = Windows CE (PocketPC and Smartphone) =
 
-To install Syx on your handled system you must [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-wince.zip&can=2&q= download the binary archive here].
+To install Syx on your handled system you must [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.6-bin-wince.zip&can=2&q= download the binary archive here].
 
-Extract the archive; a new directory will be created named *syx-0.1.5-bin-wince*. Upload the contents of the directory (not the directory) into the root of your device.
+Extract the archive; a new directory will be created named *syx-0.1.6-bin-wince*. Upload the contents of the directory (not the directory) into the root of your device.
 
 To run it just click on the *syx* application in your handled device.
 
@@ -75,9 +76,9 @@ emerge syx
 
 _*Syx works on many other platforms, but below you'll see only available downloads from this website.*_
 
-The following are the Smalltalk YX 0.1.5 archives:
+The following are the Smalltalk YX 0.1.6 archives:
 
-[http://syx.googlecode.com/svn/wiki/images/linux-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-linux-x86_64.tar.gz&can=2&q= Linux x86-64]
+[http://syx.googlecode.com/svn/wiki/images/linux-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.6-bin-linux-x86_64.tar.gz&can=2&q= Linux x86-64]
 
 [http://syx.googlecode.com/svn/wiki/images/freebsd-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-FreeBSD.6.1-x86-32.tar.gz&can=2&q= FreeBSD 6.1 x86] (thanks to blufox)
 
@@ -89,7 +90,7 @@ Once downloaded, please read the *README* or *README-BINARIES* file.
 
 = Installing from Sources =
 
-Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.5.tar.gz]
+Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.6.tar.gz]
 Find more archives in the [http://code.google.com/p/syx/downloads/list Downloads] section.
 
 You can also get a working copy of the [http://code.google.com/p/syx/source Subversion repository]:
