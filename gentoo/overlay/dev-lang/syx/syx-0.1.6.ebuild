@@ -1,27 +1,43 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit autotools eutils multilib versionator toolchain-funcs
-
-P="syx-0.1.6"
-PN="syx"
-PV="0.1.6"
-A="syx-0.1.6.tar.gz"
-
-MY_P="syx-${PV}"
+MY_P="${PN}-${PV}"
 S="${WORKDIR}/${MY_P}"
 DESCRIPTION="Smalltalk YX is an open source implementation of the Smalltalk-80 programming language."
 HOMEPAGE="http://syx.googlecode.com"
-SRC_URI="http://syx.googlecode.com/files/syx-0.1.6.tar.gz"
+SRC_URI="http://syx.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~ia64 ppc ppc64 sparc sparc-fbsd x86 x86-fbsd"
-IUSE="gmp readline gtk debug profile iprofile"
+KEYWORDS="amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~sparc-fbsd x86 ~x86-fbsd"
+IUSE="gmp readline gtk X debug profile iprofile"
 
-DEPEND="!build? (
-		gmp? ( >=dev-libs/gmp-4.2 )
-		readline? ( >=sys-libs/readline-4.1 )
-                gtk? ( >=x11-libs/gtk+-2.12 )
+RDEPEND="!build? (
+		gmp? ( dev-libs/gmp )
+		readline? ( sys-libs/readline )
+		gtk? ( >=x11-libs/gtk+-2.12 )
+		X? ( x11-libs/libX11 )
 	)"
 
+src_compile() {
+	local myconf="$(use_enable gtk) \
+			$(use_enable readline) \
+			$(use_enable X x11) \
+			$(use_with gmp)"
+
+	use debug && myconf="${myconf} --enable-debug=info"
+	use profile && myconf="${myconf} --enable-profile"
+	use iprofile && myconf="${myconf} --enable-iprofile"
+
+	econf ${myconf} || die "configure failed"
+
+	emake || die "compile failed"
+}
+
+src_test() {
+	make check || die
+}
+
+src_install() {
+	make DESTDIR="${D}" install || die "Installation failed"
+}
