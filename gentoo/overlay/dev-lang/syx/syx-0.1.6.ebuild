@@ -27,7 +27,12 @@ src_compile() {
 
 	use debug && myconf="${myconf} --enable-debug=info"
 
-	econf ${myconf} || die "configure failed"
+	econf ${myconf} || die "Configure failed"
 
-	emake || die "compile failed"
+	emake || die "Compile failed"
+}
+
+src_install() {
+	einstall || die "Installation failed"
+	dodoc README ChangeLog TODO
 }
