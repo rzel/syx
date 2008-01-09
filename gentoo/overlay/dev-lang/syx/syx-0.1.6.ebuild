@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-DESCRIPTION="Smalltalk YX is an open source implementation of the Smalltalk-80 programming language."
+DESCRIPTION="Open source implementation of the Smalltalk-80 programming language."
 HOMEPAGE="http://syx.googlecode.com"
 SRC_URI="http://syx.googlecode.com/files/${P}.tar.gz"
 LICENSE="MIT"
@@ -33,6 +33,6 @@ src_compile() {
 }
 
 src_install() {
-	einstall || die "Installation failed"
+	emake DESTDIR="${D}" install || die "Install failed"
 	dodoc README ChangeLog TODO
 }
