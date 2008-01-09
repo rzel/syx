@@ -2,14 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_P="${PN}-${PV}"
-S="${WORKDIR}/${MY_P}"
 DESCRIPTION="Smalltalk YX is an open source implementation of the Smalltalk-80 programming language."
 HOMEPAGE="http://syx.googlecode.com"
-SRC_URI="http://syx.googlecode.com/files/${MY_P}.tar.gz"
+SRC_URI="http://syx.googlecode.com/files/${P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="~amd64"
 IUSE="gmp readline gtk X debug profile iprofile"
 
 RDEPEND="!build? (
@@ -22,22 +20,14 @@ RDEPEND="!build? (
 src_compile() {
 	local myconf="$(use_enable gtk) \
 			$(use_enable readline) \
-			$(use_enable X x11) \
+			$(use_enable X x11)
+			$(use_enable profile)
+			$(use_enable iprofile) \
 			$(use_with gmp)"
 
 	use debug && myconf="${myconf} --enable-debug=info"
-	use profile && myconf="${myconf} --enable-profile"
-	use iprofile && myconf="${myconf} --enable-iprofile"
 
 	econf ${myconf} || die "configure failed"
 
 	emake || die "compile failed"
-}
-
-src_test() {
-	make check || die
-}
-
-src_install() {
-	make DESTDIR="${D}" install || die "Installation failed"
 }
