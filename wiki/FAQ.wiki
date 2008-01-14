@@ -1,6 +1,5 @@
 #labels Phase-Support,Featured
 
-
 #summary Frequently asked questions
 
 = Frequently asked questions =
@@ -14,12 +13,19 @@ Instead if you are not going to create such package, [mailto:lethalman88@gmail.c
 
 == Why use #printNl instead of Transcript? ==
 
-The Transcript is always available, but since Syx has been modeled to be *also* a scripting programming language, using the #printNl method is more readable and eye-candy for scripts.
-
-Tough Object>>#print is a faster way to write `Transcript show: anObject` and Object>>#printNl to write `Transcript showCr: anObject`.
+The `#printNl` method is just a faster way to call `Transcript showCr: object printString`.
 
 == Is Syx available only on 64-bit platforms? ==
 
 *No, it's very portable and runs on many platforms including 32-bit platforms*. You see mostly 64-bit packages in the homepage and downloads because me and other contributors work on 64-bit system so we can create only 64-bit binary packages.
 
 This doesn't mean you can't get Syx sources, compile it for your platform and run it successfully.
+
+== Why the configure script can't find any x11.pc on Solaris?
+
+This might seem weird but it's a bug of Solaris. It's missing the x11.pc file which is the configuration file for the X11 library which is required to compile the X11 plugin of Smalltalk YX.
+If you want to disable the plugin, you can issue the configure script as follows:
+{{{
+./configure --disable-x11 ...
+}}}
+If you want to install the X11 plugin, please [http://code.google.com/p/syx/issues/detail?id=27 read the issue #27] for more informations.
