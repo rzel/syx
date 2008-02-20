@@ -60,22 +60,22 @@ This will install the *syx* package or update it if already installed.
 
 = Gentoo Linux =
 
-There's no Gentoo official ebuild at the moment, but you may use Layman to install it from our local overlay.
+There's no Gentoo official ebuild at the moment, but you may use Layman to install it from the Gentoo Sunrise User Overlay.
 If you don't have layman yet, you can emerge it with the following commands:
 {{{
-emerge layman
+emerge -va layman
 echo "source /usr/portage/local/layman/make.conf" >> /etc/make.conf
+layman -f -a sunrise
 }}}
 
 Once this is done without troubles, we can go ahead installing Syx:
 {{{
-layman -f -o http://syx.googlecode.com/svn/gentoo/overlays.xml -a syx
 emerge syx
 }}}
 
 To upgrade to a newer version of Syx:
 {{{
-layman -s syx
+layman -s sunrise
 emerge syx
 }}}
 
