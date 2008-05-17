@@ -4,6 +4,7 @@
 = Available platforms =
 
 Syx has been tested on the following platforms:
+  * Debian GNU/Linux (x64)
   * Gentoo Linux (x86 and x64)
   * Slackware Linux 12.0
   * Foresight Linux 1.4.1
