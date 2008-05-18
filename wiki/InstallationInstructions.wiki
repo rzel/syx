@@ -101,10 +101,14 @@ Once downloaded, please read the *README* or *README-BINARIES* file.
 Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.6.tar.gz]
 Find more archives in the [http://code.google.com/p/syx/downloads/list Downloads] section.
 
-You can also get a working copy of the [http://code.google.com/p/syx/source Subversion repository]:
+You can also get a working copy of the [http://code.google.com/p/syx/wiki/GitSource?tm=4 Git repository]:
 
 {{{
-svn checkout http://syx.googlecode.com/svn/trunk/ syx
+git clone http://repo.or.cz/r/syx.git
+}}}
+or
+{{{
+git clone git://repo.or.cz/syx.git
 }}}
 
 == Building with GNU build (autotools) ==
