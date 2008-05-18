@@ -1,0 +1,28 @@
+#summary Access the source versioning control of Smalltalk YX
+
+The VCS of Syx is now Git. Google SVN gave us a lot of troubles with SSL when committing changes. The project is hosted at http://repo.or.cz.
+
+Please read the [http://git.or.cz/ crash courses] for more details.
+
+= Command-Line Access =
+
+If you plan to make changes, please [http://repo.or.cz/m/reguser.cgi register here] then [mailto:lethalman88@gmail.com contact the administrator] to gain push access. Use this command to clone the code as yourself using SSH:
+
+{{{
+# Project members authenticate over SSH to allow committing changes.
+git clone git+ssh://repo.or.cz/srv/git/syx.git
+}}}
+
+Use this command to anonymously clone the latest project source code:
+
+{{{
+# Non-members may clone a working copy anonymously over HTTP.
+git clone http://repo.or.cz/r/syx.git
+
+# Or over GIT
+git clone git://repo.or.cz/syx.git
+}}}
+
+= Web Access =
+
+You can see the tree, branches, tags and download a tarball snapshot of Syx at http://repo.or.cz/w/syx.git.
