@@ -2,7 +2,7 @@
 
 = Why? =
 
-The VCS of Syx is now Git. Google SVN gave us a lot of troubles with SSL when committing changes. The project is hosted at http://repo.or.cz.
+The VCS of Syx is now Git. Google SVN gave us a lot of troubles with SSL when committing changes. The project is now hosted at http://repo.or.cz.
 
 Please read the [http://git.or.cz/ crash courses] for more details.
 
