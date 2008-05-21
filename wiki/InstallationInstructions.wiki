@@ -101,7 +101,11 @@ Once downloaded, please read the *README* or *README-BINARIES* file.
 Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.6.tar.gz]
 Find more archives in the [http://code.google.com/p/syx/downloads/list Downloads] section.
 
-You can also get a working copy of the [http://code.google.com/p/syx/wiki/GitSource?tm=4 Git repository]:
+=== Unstable ===
+
+If you want to hack on Syx or being updated with the latest changes, you can download the snapshot of the master branch here: [http://repo.or.cz/w/syx.git?a=snapshot;h=master;sf=tgz].
+
+Alternatively, you can also get a working copy of the [http://code.google.com/p/syx/wiki/GitSource?tm=4 Git repository]:
 
 {{{
 git clone http://repo.or.cz/r/syx.git
