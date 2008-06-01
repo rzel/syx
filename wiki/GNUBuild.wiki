@@ -1,4 +1,4 @@
-#summary Build Smalltalk YX using the SCons build system
+#summary Build Smalltalk YX using the GNU build system
 #labels Phase-Deploy
 
 = Compiling Syx =
