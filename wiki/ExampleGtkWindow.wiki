@@ -7,6 +7,14 @@ _The GTK+ plugin is installed by default, anyway if you installed the GTK+ libra
 
 Before you continue reading this very short tutorial, make sure that your copy of Smalltalk YX has been compiled with the GTK+ plugin support. If not, recompile Syx as shown below:
 {{{
+./configure --enable-gtk
+make
+make install
+}}}
+
+Or if you like to use SCons:
+
+{{{
 scons GTK=yes
 }}}
 
