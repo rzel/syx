@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="struct_syx_error_entry" kind="struct" prot="public">
+    <compoundname>SyxErrorEntry</compoundname>
+    <includes refid="syx-error_8h" local="no">syx-error.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_syx_error_entry_1eb4ec14186b3f633afa8dbd1719050cd" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+        <definition>syx_symbol SyxErrorEntry::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="48" bodyfile="/media/common/projects/syx/syx/syx-error.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="syx-error_8h_14c29dc7eb28340f780caced4fca607d3" compoundref="syx-error_8c" startline="87" endline="101">syx_error_register</referencedby>
+        <referencedby refid="syx-error_8h_19e42294f55fa2b19c5bd23202111d7e2" compoundref="syx-error_8c" startline="125" endline="159">syx_signal</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_error_entry_1d33ddd6ec297c2055ddb62b8bf04de9f" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxErrorEntry::klass</definition>
+        <argsstring></argsstring>
+        <name>klass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="49" bodyfile="/media/common/projects/syx/syx/syx-error.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="syx-error_8h_14c29dc7eb28340f780caced4fca607d3" compoundref="syx-error_8c" startline="87" endline="101">syx_error_register</referencedby>
+        <referencedby refid="syx-error_8h_19e42294f55fa2b19c5bd23202111d7e2" compoundref="syx-error_8c" startline="125" endline="159">syx_signal</referencedby>
+        <referencedby refid="syx-error_8h_16069be5517f12619d0ffa9d6e3f8345d" compoundref="syx-error_8c" startline="167" endline="182">syx_signal_create_context</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Hold the name and the Error subclass to invoke in the Smalltalk environment </para>    </detaileddescription>
+    <location file="/media/common/projects/syx/syx/syx-error.h" line="47" bodyfile="/media/common/projects/syx/syx/syx-error.h" bodystart="46" bodyend="50"/>
+    <listofallmembers>
+      <member refid="struct_syx_error_entry_1d33ddd6ec297c2055ddb62b8bf04de9f" prot="public" virt="non-virtual"><scope>SyxErrorEntry</scope><name>klass</name></member>
+      <member refid="struct_syx_error_entry_1eb4ec14186b3f633afa8dbd1719050cd" prot="public" virt="non-virtual"><scope>SyxErrorEntry</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,30 @@
+\hypertarget{syx-signal_8h}{
+\section{syx/syx-signal.h File Reference}
+\label{syx-signal_8h}\index{syx/syx-signal.h@{syx/syx-signal.h}}
+}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+SYX\_\-BEGIN\_\-DECLS EXPORT void \hyperlink{syx-signal_8h_b462b271c25417787c0bf2d00a2c1e44}{syx\_\-signal\_\-init} (void)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{syx-signal_8h_b462b271c25417787c0bf2d00a2c1e44}{
+\index{syx-signal.h@{syx-signal.h}!syx\_\-signal\_\-init@{syx\_\-signal\_\-init}}
+\index{syx\_\-signal\_\-init@{syx\_\-signal\_\-init}!syx-signal.h@{syx-signal.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SYX\_\-BEGIN\_\-DECLS EXPORT void syx\_\-signal\_\-init (void)}}
+\label{syx-signal_8h_b462b271c25417787c0bf2d00a2c1e44}
+
+
+Initialize the system signal handling system.
+
+This function is called internally by Syx and should not be used by applications.
+
+Register SIGINT, SIGFPE, SIGTERM and SIGABRT to be signaled in the Smalltalk environment respectively with UserInterrupt, FloatingPointException, TerminationSignal and AbornmalTermination.
+
+SIGILL and SIGSEGV, are handled internally and control shouldn't be given to the Smalltalk environment 
+
+Definition at line 135 of file syx-signal.c.
+
+Referenced by syx\_\-fetch\_\-basic().

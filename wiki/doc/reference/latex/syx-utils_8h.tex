@@ -1,0 +1,299 @@
+\hypertarget{syx-utils_8h}{
+\section{syx/syx-utils.h File Reference}
+\label{syx-utils_8h}\index{syx/syx-utils.h@{syx/syx-utils.h}}
+}
+{\tt \#include \char`\"{}syx-platform.h\char`\"{}}\par
+{\tt \#include $<$stdarg.h$>$}\par
+{\tt \#include \char`\"{}syx-types.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-lexer.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{syx-utils_8h_880e9ca9f6d068301042531820aa473a}{SYX\_\-IFDEF\_\-UNICODE}(s)~s
+\item 
+\#define \hyperlink{syx-utils_8h_f825cdcdcf8c4abef4ffd0877aa201c5}{SYX\_\-IFDEF\_\-ANSI}(ws)~ws
+\item 
+\#define \hyperlink{syx-utils_8h_47eb1a8eeabab0af8148bbf785800e6a}{SYX\_\-IFDEF\_\-CHAR\_\-T}~\hyperlink{syx-types_8h_22636fad803dd674d2640c323df20a11}{syx\_\-char}
+\item 
+\#define \hyperlink{syx-utils_8h_91e1a9f99651d305d28a9624c8461d68}{SYX\_\-VSPRINTF}(fmt, var)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+SYX\_\-BEGIN\_\-DECLS EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-utils_8h_64a1dbecdc9c844cd8e09dba2b7adf6d}{syx\_\-cold\_\-parse} (\hyperlink{struct_syx_lexer}{SyxLexer} $\ast$lexer)
+\item 
+EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-utils_8h_a7c09f55d7e8a1e33a4f40b6e3644995}{syx\_\-cold\_\-parse\_\-methods} (\hyperlink{struct_syx_lexer}{SyxLexer} $\ast$lexer)
+\item 
+EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-utils_8h_9c1676e48ea8f4339d62a426ad283f7a}{syx\_\-cold\_\-file\_\-in} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} filename)
+\item 
+EXPORT void \hyperlink{syx-utils_8h_a326bae67d329a47893ba0224ae445df}{syx\_\-semaphore\_\-signal} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} semaphore)
+\item 
+EXPORT void \hyperlink{syx-utils_8h_44b0b96c5f8639eb3aa467b6dc440b6d}{syx\_\-semaphore\_\-wait} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} semaphore)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-utils_8h_d543a115819575f96b987ee4c42594d6}{syx\_\-send\_\-unary\_\-message} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} receiver, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} selector)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-utils_8h_61a3e2addfd2720091b195c9a29741a7}{syx\_\-send\_\-binary\_\-message} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} receiver, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} selector, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} argument)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-utils_8h_1c63f0484b51652efbaecb22a6a5d2ed}{syx\_\-send\_\-message} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} receiver, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} selector, \hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} num\_\-args,...)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-utils_8h_cea22d4450dbe695ee66ed7d1211666d}{syx\_\-vsend\_\-message} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} receiver, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} selector, \hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} num\_\-args, va\_\-list ap)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-utils_8h_fa9f19b7a2fc29dc3b06a5d21e894040}{syx\_\-file\_\-in\_\-blocking} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} file)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-utils_8h_c6b5dd77f43dc814af8ac022d9cd81d7}{syx\_\-do\_\-it\_\-blocking} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} code)
+\item 
+EXPORT void \hyperlink{syx-utils_8h_82cfea58c47c3a90582124eb1f9c3b4b}{syx\_\-show\_\-traceback} (void)
+\item 
+EXPORT \hyperlink{syx-types_8h_049e6bf08a24efd298a398b5e8c27ead}{syx\_\-wstring} \hyperlink{syx-utils_8h_2d9ceb54c05ac4eb22988697388a1409}{syx\_\-to\_\-wstring} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} s)
+\item 
+EXPORT \hyperlink{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}{syx\_\-string} \hyperlink{syx-utils_8h_c90ca4dadc5e5807bf91d19cbf96c6a6}{syx\_\-to\_\-string} (\hyperlink{syx-types_8h_6fab7c0dab70ca1ee8812c0b5a6e0819}{syx\_\-wsymbol} ws)
+\item 
+EXPORT \hyperlink{syx-types_8h_eb2d8221bf07737360750e4c0ec66a99}{syx\_\-uint32} \hyperlink{syx-utils_8h_c13460f83b6da41da4c7181730fe5673}{syx\_\-find\_\-first\_\-non\_\-whitespace} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} string)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{syx-utils_8h_f825cdcdcf8c4abef4ffd0877aa201c5}{
+\index{syx-utils.h@{syx-utils.h}!SYX\_\-IFDEF\_\-ANSI@{SYX\_\-IFDEF\_\-ANSI}}
+\index{SYX\_\-IFDEF\_\-ANSI@{SYX\_\-IFDEF\_\-ANSI}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IFDEF\_\-ANSI(ws)~ws}}
+\label{syx-utils_8h_f825cdcdcf8c4abef4ffd0877aa201c5}
+
+
+If UNICODE is defined, convert the given wide string (syx\_\-wchar) to an ANSI string (syx\_\-char) 
+
+Definition at line 80 of file syx-utils.h.\hypertarget{syx-utils_8h_47eb1a8eeabab0af8148bbf785800e6a}{
+\index{syx-utils.h@{syx-utils.h}!SYX\_\-IFDEF\_\-CHAR\_\-T@{SYX\_\-IFDEF\_\-CHAR\_\-T}}
+\index{SYX\_\-IFDEF\_\-CHAR\_\-T@{SYX\_\-IFDEF\_\-CHAR\_\-T}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IFDEF\_\-CHAR\_\-T~{\bf syx\_\-char}}}
+\label{syx-utils_8h_47eb1a8eeabab0af8148bbf785800e6a}
+
+
+If UNICODE is defined, expand to syx\_\-wchar, else syx\_\-char 
+
+Definition at line 82 of file syx-utils.h.\hypertarget{syx-utils_8h_880e9ca9f6d068301042531820aa473a}{
+\index{syx-utils.h@{syx-utils.h}!SYX\_\-IFDEF\_\-UNICODE@{SYX\_\-IFDEF\_\-UNICODE}}
+\index{SYX\_\-IFDEF\_\-UNICODE@{SYX\_\-IFDEF\_\-UNICODE}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IFDEF\_\-UNICODE(s)~s}}
+\label{syx-utils_8h_880e9ca9f6d068301042531820aa473a}
+
+
+If UNICODE is defined, convert the given ANSI string (syx\_\-char) to a wide string (syx\_\-wchar) 
+
+Definition at line 78 of file syx-utils.h.
+
+Referenced by syx\_\-library\_\-open(), and syx\_\-library\_\-symbol().\hypertarget{syx-utils_8h_91e1a9f99651d305d28a9624c8461d68}{
+\index{syx-utils.h@{syx-utils.h}!SYX\_\-VSPRINTF@{SYX\_\-VSPRINTF}}
+\index{SYX\_\-VSPRINTF@{SYX\_\-VSPRINTF}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-VSPRINTF(fmt, \/  var)}}
+\label{syx-utils_8h_91e1a9f99651d305d28a9624c8461d68}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}{                                             \
+    syx_int32 n;                                \
+    va_list ap;                                 \
+    syx_int32 size;                             \
+    syx_string s;                               \
+                                                \
+    var = NULL;                                 \
+    if (fmt)                                    \
+      {                                         \
+        size = 100;                             \
+        s = NULL;                               \
+        while (TRUE)                            \
+          {                                     \
+            s = syx_realloc(s, size);           \
+            va_start(ap, fmt);                  \
+            n = vsnprintf (s, size, fmt, ap);   \
+            va_end(ap);                         \
+            if (n > -1 && n < size)             \
+              {                                 \
+                var = s;                        \
+                break;                          \
+              }                                 \
+                                                \
+            size *= 2;                          \
+          }                                     \
+      }                                         \
+  }                                             \
+\end{verbatim}
+\end{Code}
+
+
+Definition at line 86 of file syx-utils.h.
+
+Referenced by syx\_\-string\_\-new().
+
+\subsection{Function Documentation}
+\hypertarget{syx-utils_8h_9c1676e48ea8f4339d62a426ad283f7a}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-cold\_\-file\_\-in@{syx\_\-cold\_\-file\_\-in}}
+\index{syx\_\-cold\_\-file\_\-in@{syx\_\-cold\_\-file\_\-in}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-bool} syx\_\-cold\_\-file\_\-in ({\bf syx\_\-symbol} {\em filename})}}
+\label{syx-utils_8h_9c1676e48ea8f4339d62a426ad283f7a}
+
+
+Parse a declaration file.
+
+\begin{Desc}
+\item[Returns:]TRUE if no error has occurred \end{Desc}
+
+
+Definition at line 383 of file syx-utils.c.\hypertarget{syx-utils_8h_64a1dbecdc9c844cd8e09dba2b7adf6d}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-cold\_\-parse@{syx\_\-cold\_\-parse}}
+\index{syx\_\-cold\_\-parse@{syx\_\-cold\_\-parse}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SYX\_\-BEGIN\_\-DECLS EXPORT {\bf syx\_\-bool} syx\_\-cold\_\-parse ({\bf SyxLexer} $\ast$ {\em lexer})}}
+\label{syx-utils_8h_64a1dbecdc9c844cd8e09dba2b7adf6d}
+
+
+Parse simple declarations like classes and methods.
+
+\begin{Desc}
+\item[Returns:]TRUE if no error has occurred \end{Desc}
+
+
+Definition at line 356 of file syx-utils.c.
+
+Referenced by syx\_\-cold\_\-file\_\-in().\hypertarget{syx-utils_8h_a7c09f55d7e8a1e33a4f40b6e3644995}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-cold\_\-parse\_\-methods@{syx\_\-cold\_\-parse\_\-methods}}
+\index{syx\_\-cold\_\-parse\_\-methods@{syx\_\-cold\_\-parse\_\-methods}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-bool} syx\_\-cold\_\-parse\_\-methods ({\bf SyxLexer} $\ast$ {\em lexer})}}
+\label{syx-utils_8h_a7c09f55d7e8a1e33a4f40b6e3644995}
+
+
+
+
+Definition at line 269 of file syx-utils.c.
+
+Referenced by syx\_\-cold\_\-parse().\hypertarget{syx-utils_8h_c6b5dd77f43dc814af8ac022d9cd81d7}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-do\_\-it\_\-blocking@{syx\_\-do\_\-it\_\-blocking}}
+\index{syx\_\-do\_\-it\_\-blocking@{syx\_\-do\_\-it\_\-blocking}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-do\_\-it\_\-blocking ({\bf syx\_\-symbol} {\em code})}}
+\label{syx-utils_8h_c6b5dd77f43dc814af8ac022d9cd81d7}
+
+
+Do it in blocking mode. This function send a message to String$>$$>$doIt.
+
+\begin{Desc}
+\item[Returns:]Return the last returned object from the process \end{Desc}
+
+
+Definition at line 560 of file syx-utils.c.\hypertarget{syx-utils_8h_fa9f19b7a2fc29dc3b06a5d21e894040}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-file\_\-in\_\-blocking@{syx\_\-file\_\-in\_\-blocking}}
+\index{syx\_\-file\_\-in\_\-blocking@{syx\_\-file\_\-in\_\-blocking}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-file\_\-in\_\-blocking ({\bf syx\_\-symbol} {\em file})}}
+\label{syx-utils_8h_fa9f19b7a2fc29dc3b06a5d21e894040}
+
+
+Files in a file in blocking mode. This function send a message to FileStream$>$$>$fileIn:.
+
+\begin{Desc}
+\item[Returns:]Return the last returned object from the process \end{Desc}
+
+
+Definition at line 539 of file syx-utils.c.\hypertarget{syx-utils_8h_c13460f83b6da41da4c7181730fe5673}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-find\_\-first\_\-non\_\-whitespace@{syx\_\-find\_\-first\_\-non\_\-whitespace}}
+\index{syx\_\-find\_\-first\_\-non\_\-whitespace@{syx\_\-find\_\-first\_\-non\_\-whitespace}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-uint32} syx\_\-find\_\-first\_\-non\_\-whitespace ({\bf syx\_\-symbol} {\em string})}}
+\label{syx-utils_8h_c13460f83b6da41da4c7181730fe5673}
+
+
+Returns the first index in the string that is not a whitespace 
+
+Definition at line 595 of file syx-utils.c.
+
+Referenced by syx\_\-parser\_\-parse().\hypertarget{syx-utils_8h_a326bae67d329a47893ba0224ae445df}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-semaphore\_\-signal@{syx\_\-semaphore\_\-signal}}
+\index{syx\_\-semaphore\_\-signal@{syx\_\-semaphore\_\-signal}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-semaphore\_\-signal ({\bf SyxOop} {\em semaphore})}}
+\label{syx-utils_8h_a326bae67d329a47893ba0224ae445df}
+
+
+Send a signal to a Semaphore to wake up waiting processes.
+
+The function is thread-safe 
+
+Definition at line 954 of file syx-object.c.\hypertarget{syx-utils_8h_44b0b96c5f8639eb3aa467b6dc440b6d}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-semaphore\_\-wait@{syx\_\-semaphore\_\-wait}}
+\index{syx\_\-semaphore\_\-wait@{syx\_\-semaphore\_\-wait}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-semaphore\_\-wait ({\bf SyxOop} {\em semaphore})}}
+\label{syx-utils_8h_44b0b96c5f8639eb3aa467b6dc440b6d}
+
+
+Put the active process in waiting state until semaphore is signaled.
+
+The function is thread-safe 
+
+Definition at line 990 of file syx-object.c.\hypertarget{syx-utils_8h_61a3e2addfd2720091b195c9a29741a7}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-send\_\-binary\_\-message@{syx\_\-send\_\-binary\_\-message}}
+\index{syx\_\-send\_\-binary\_\-message@{syx\_\-send\_\-binary\_\-message}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-send\_\-binary\_\-message ({\bf SyxOop} {\em receiver}, \/  {\bf syx\_\-symbol} {\em selector}, \/  {\bf SyxOop} {\em argument})}}
+\label{syx-utils_8h_61a3e2addfd2720091b195c9a29741a7}
+
+
+Create a MethodContext for a binary message ready to enter a Process 
+
+Definition at line 457 of file syx-utils.c.
+
+Referenced by syx\_\-file\_\-in\_\-blocking(), syx\_\-initialize\_\-system(), syx\_\-signal(), syx\_\-signal\_\-create\_\-context(), and syx\_\-signal\_\-does\_\-not\_\-understand().\hypertarget{syx-utils_8h_1c63f0484b51652efbaecb22a6a5d2ed}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-send\_\-message@{syx\_\-send\_\-message}}
+\index{syx\_\-send\_\-message@{syx\_\-send\_\-message}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-send\_\-message ({\bf SyxOop} {\em receiver}, \/  {\bf syx\_\-symbol} {\em selector}, \/  {\bf syx\_\-varsize} {\em num\_\-args}, \/   {\em ...})}}
+\label{syx-utils_8h_1c63f0484b51652efbaecb22a6a5d2ed}
+
+
+Create a MethodContext for an arbitrary message ready to enter a Process.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em num\_\-args}]number of variadic SyxOop arguments \end{description}
+\end{Desc}
+
+
+Definition at line 484 of file syx-utils.c.\hypertarget{syx-utils_8h_d543a115819575f96b987ee4c42594d6}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-send\_\-unary\_\-message@{syx\_\-send\_\-unary\_\-message}}
+\index{syx\_\-send\_\-unary\_\-message@{syx\_\-send\_\-unary\_\-message}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-send\_\-unary\_\-message ({\bf SyxOop} {\em receiver}, \/  {\bf syx\_\-symbol} {\em selector})}}
+\label{syx-utils_8h_d543a115819575f96b987ee4c42594d6}
+
+
+Create a MethodContext for a unary message ready to enter a Process 
+
+Definition at line 436 of file syx-utils.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-do\_\-it\_\-blocking(), syx\_\-memory\_\-clear(), syx\_\-object\_\-free(), syx\_\-object\_\-initialize(), syx\_\-signal(), syx\_\-signal\_\-create\_\-context(), and syx\_\-vsend\_\-message().\hypertarget{syx-utils_8h_82cfea58c47c3a90582124eb1f9c3b4b}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-show\_\-traceback@{syx\_\-show\_\-traceback}}
+\index{syx\_\-show\_\-traceback@{syx\_\-show\_\-traceback}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-show\_\-traceback (void)}}
+\label{syx-utils_8h_82cfea58c47c3a90582124eb1f9c3b4b}
+
+
+Print to stdout the current execution state of the interpreter and the Process traceback 
+
+Definition at line 609 of file syx-utils.c.\hypertarget{syx-utils_8h_c90ca4dadc5e5807bf91d19cbf96c6a6}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-to\_\-string@{syx\_\-to\_\-string}}
+\index{syx\_\-to\_\-string@{syx\_\-to\_\-string}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-string} syx\_\-to\_\-string ({\bf syx\_\-wsymbol} {\em ws})}}
+\label{syx-utils_8h_c90ca4dadc5e5807bf91d19cbf96c6a6}
+
+
+Returns a syx\_\-string from a syx\_\-wstring 
+
+Definition at line 585 of file syx-utils.c.\hypertarget{syx-utils_8h_2d9ceb54c05ac4eb22988697388a1409}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-to\_\-wstring@{syx\_\-to\_\-wstring}}
+\index{syx\_\-to\_\-wstring@{syx\_\-to\_\-wstring}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-wstring} syx\_\-to\_\-wstring ({\bf syx\_\-symbol} {\em s})}}
+\label{syx-utils_8h_2d9ceb54c05ac4eb22988697388a1409}
+
+
+Returns a syx\_\-wstring from a syx\_\-string 
+
+Definition at line 575 of file syx-utils.c.\hypertarget{syx-utils_8h_cea22d4450dbe695ee66ed7d1211666d}{
+\index{syx-utils.h@{syx-utils.h}!syx\_\-vsend\_\-message@{syx\_\-vsend\_\-message}}
+\index{syx\_\-vsend\_\-message@{syx\_\-vsend\_\-message}!syx-utils.h@{syx-utils.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-vsend\_\-message ({\bf SyxOop} {\em receiver}, \/  {\bf syx\_\-symbol} {\em selector}, \/  {\bf syx\_\-varsize} {\em num\_\-args}, \/  va\_\-list {\em ap})}}
+\label{syx-utils_8h_cea22d4450dbe695ee66ed7d1211666d}
+
+

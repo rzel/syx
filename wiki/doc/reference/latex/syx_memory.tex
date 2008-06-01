@@ -1,0 +1,15 @@
+The objects are inserted into a whole space allocated in the heap (\hyperlink{syx-memory_8c}{syx-memory.c}):
+
+
+
+\begin{Code}\begin{verbatim}    SyxObject *_syx_memory;
+    SyxObject **_syx_freed_memory;
+\end{verbatim}
+\end{Code}
+
+
+
+The idea is to keep a stack containing free memory pointers. Once we free an object, we push on top of the stack of freed locations When we allocate a new \hyperlink{struct_syx_object}{SyxObject}, we just pop the pointer from this stack.
+
+Take a look at \hyperlink{syx-memory_8c}{syx-memory.c} for more detailed informations. \begin{Desc}
+\item[Note:]the \hyperlink{struct_syx_object_1613092e651dd77e4a0c1d0a1ec413cb}{SyxObject::data} field, containing \hyperlink{struct_syx_object}{SyxObject} pointers, is allocated outside this memory. \end{Desc}

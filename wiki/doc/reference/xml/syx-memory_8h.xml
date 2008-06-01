@@ -1,0 +1,564 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="syx-memory_8h" kind="file">
+    <compoundname>syx-memory.h</compoundname>
+    <includes local="yes">syx-config.h</includes>
+    <includes refid="syx-platform_8h" local="yes">syx-platform.h</includes>
+    <includes refid="syx-object_8h" local="yes">syx-object.h</includes>
+    <includes refid="syx-init_8h" local="yes">syx-init.h</includes>
+    <includedby refid="syx-bytecode_8c" local="yes">syx/syx-bytecode.c</includedby>
+    <includedby refid="syx-bytecode_8h" local="yes">syx/syx-bytecode.h</includedby>
+    <includedby refid="syx-error_8c" local="yes">syx/syx-error.c</includedby>
+    <includedby refid="syx-init_8c" local="yes">syx/syx-init.c</includedby>
+    <includedby refid="syx-interp_8c" local="yes">syx/syx-interp.c</includedby>
+    <includedby refid="syx-lexer_8c" local="yes">syx/syx-lexer.c</includedby>
+    <includedby refid="syx-memory_8c" local="yes">syx/syx-memory.c</includedby>
+    <includedby refid="syx-object_8c" local="yes">syx/syx-object.c</includedby>
+    <includedby refid="syx-parser_8c" local="yes">syx/syx-parser.c</includedby>
+    <includedby refid="syx-plugins_8c" local="yes">syx/syx-plugins.c</includedby>
+    <includedby refid="syx-primitives_8c" local="yes">syx/syx-primitives.c</includedby>
+    <includedby refid="syx-scheduler_8c" local="yes">syx/syx-scheduler.c</includedby>
+    <includedby refid="syx-signal_8c" local="yes">syx/syx-signal.c</includedby>
+    <includedby refid="syx-utils_8c" local="yes">syx/syx-utils.c</includedby>
+    <incdepgraph>
+      <node id="371">
+        <label>syx-types.h</label>
+        <link refid="syx-types_8h"/>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+        <childnode refid="373" relation="include">
+        </childnode>
+        <childnode refid="374" relation="include">
+        </childnode>
+        <childnode refid="375" relation="include">
+        </childnode>
+        <childnode refid="376" relation="include">
+        </childnode>
+        <childnode refid="377" relation="include">
+        </childnode>
+        <childnode refid="378" relation="include">
+        </childnode>
+      </node>
+      <node id="370">
+        <label>stdarg.h</label>
+      </node>
+      <node id="379">
+        <label>syx-lexer.h</label>
+        <link refid="syx-lexer_8h"/>
+        <childnode refid="366" relation="include">
+        </childnode>
+        <childnode refid="371" relation="include">
+        </childnode>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="380" relation="include">
+        </childnode>
+      </node>
+      <node id="374">
+        <label>stdint.h</label>
+      </node>
+      <node id="377">
+        <label>stdlib.h</label>
+      </node>
+      <node id="381">
+        <label>syx-error.h</label>
+        <link refid="syx-error_8h"/>
+        <childnode refid="376" relation="include">
+        </childnode>
+        <childnode refid="371" relation="include">
+        </childnode>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="369" relation="include">
+        </childnode>
+        <childnode refid="370" relation="include">
+        </childnode>
+      </node>
+      <node id="373">
+        <label>limits.h</label>
+      </node>
+      <node id="368">
+        <label>syx-object.h</label>
+        <link refid="syx-object_8h"/>
+        <childnode refid="369" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+        <childnode refid="372" relation="include">
+        </childnode>
+        <childnode refid="381" relation="include">
+        </childnode>
+        <childnode refid="382" relation="include">
+        </childnode>
+        <childnode refid="377" relation="include">
+        </childnode>
+        <childnode refid="378" relation="include">
+        </childnode>
+        <childnode refid="380" relation="include">
+        </childnode>
+      </node>
+      <node id="375">
+        <label>wchar.h</label>
+      </node>
+      <node id="378">
+        <label>string.h</label>
+      </node>
+      <node id="369">
+        <label>syx-utils.h</label>
+        <link refid="syx-utils_8h"/>
+        <childnode refid="366" relation="include">
+        </childnode>
+        <childnode refid="370" relation="include">
+        </childnode>
+        <childnode refid="371" relation="include">
+        </childnode>
+        <childnode refid="379" relation="include">
+        </childnode>
+      </node>
+      <node id="364">
+        <label>syx/syx-memory.h</label>
+        <link refid="syx-memory.h"/>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="366" relation="include">
+        </childnode>
+        <childnode refid="368" relation="include">
+        </childnode>
+        <childnode refid="382" relation="include">
+        </childnode>
+      </node>
+      <node id="367">
+        <label>byteswap.h</label>
+      </node>
+      <node id="382">
+        <label>syx-init.h</label>
+        <link refid="syx-init_8h"/>
+        <childnode refid="366" relation="include">
+        </childnode>
+        <childnode refid="371" relation="include">
+        </childnode>
+        <childnode refid="368" relation="include">
+        </childnode>
+      </node>
+      <node id="365">
+        <label>syx-config.h</label>
+      </node>
+      <node id="380">
+        <label>gmp.h</label>
+      </node>
+      <node id="372">
+        <label>syx-enums.h</label>
+        <link refid="syx-enums_8h"/>
+        <childnode refid="366" relation="include">
+        </childnode>
+      </node>
+      <node id="366">
+        <label>syx-platform.h</label>
+        <link refid="syx-platform_8h"/>
+        <childnode refid="365" relation="include">
+        </childnode>
+        <childnode refid="367" relation="include">
+        </childnode>
+      </node>
+      <node id="376">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="398">
+        <label>syx/syx-signal.c</label>
+        <link refid="syx-signal_8c"/>
+      </node>
+      <node id="394">
+        <label>syx/syx-lexer.c</label>
+        <link refid="syx-lexer_8c"/>
+      </node>
+      <node id="384">
+        <label>syx/syx-bytecode.c</label>
+        <link refid="syx-bytecode_8c"/>
+      </node>
+      <node id="397">
+        <label>syx/syx-scheduler.c</label>
+        <link refid="syx-scheduler_8c"/>
+      </node>
+      <node id="385">
+        <label>syx/syx-bytecode.h</label>
+        <link refid="syx-bytecode_8h"/>
+        <childnode refid="384" relation="include">
+        </childnode>
+        <childnode refid="386" relation="include">
+        </childnode>
+        <childnode refid="387" relation="include">
+        </childnode>
+        <childnode refid="388" relation="include">
+        </childnode>
+      </node>
+      <node id="392">
+        <label>syx/syx-error.c</label>
+        <link refid="syx-error_8c"/>
+      </node>
+      <node id="387">
+        <label>syx/syx-parser.c</label>
+        <link refid="syx-parser_8c"/>
+      </node>
+      <node id="388">
+        <label>syx/syx-parser.h</label>
+        <link refid="syx-parser_8h"/>
+        <childnode refid="387" relation="include">
+        </childnode>
+        <childnode refid="389" relation="include">
+        </childnode>
+        <childnode refid="390" relation="include">
+        </childnode>
+        <childnode refid="391" relation="include">
+        </childnode>
+      </node>
+      <node id="386">
+        <label>syx/syx-interp.c</label>
+        <link refid="syx-interp_8c"/>
+      </node>
+      <node id="396">
+        <label>syx/syx-object.c</label>
+        <link refid="syx-object_8c"/>
+      </node>
+      <node id="391">
+        <label>syx/syx-utils.c</label>
+        <link refid="syx-utils_8c"/>
+      </node>
+      <node id="395">
+        <label>syx/syx-memory.c</label>
+        <link refid="syx-memory_8c"/>
+      </node>
+      <node id="383">
+        <label>syx/syx-memory.h</label>
+        <link refid="syx-memory.h"/>
+        <childnode refid="384" relation="include">
+        </childnode>
+        <childnode refid="385" relation="include">
+        </childnode>
+        <childnode refid="392" relation="include">
+        </childnode>
+        <childnode refid="393" relation="include">
+        </childnode>
+        <childnode refid="386" relation="include">
+        </childnode>
+        <childnode refid="394" relation="include">
+        </childnode>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="387" relation="include">
+        </childnode>
+        <childnode refid="389" relation="include">
+        </childnode>
+        <childnode refid="390" relation="include">
+        </childnode>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="391" relation="include">
+        </childnode>
+      </node>
+      <node id="393">
+        <label>syx/syx-init.c</label>
+        <link refid="syx-init_8c"/>
+      </node>
+      <node id="389">
+        <label>syx/syx-plugins.c</label>
+        <link refid="syx-plugins_8c"/>
+      </node>
+      <node id="390">
+        <label>syx/syx-primitives.c</label>
+        <link refid="syx-primitives_8c"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="syx-memory_8h_1565e4803168ca5fa99145c0d15d2da24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT void</type>
+        <definition>EXPORT void syx_memory_init</definition>
+        <argsstring>(syx_int32 size)</argsstring>
+        <name>syx_memory_init</name>
+        <param>
+          <type><ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref></type>
+          <declname>size</declname>
+          <defname>mem_size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize or realloc the memory according to the given size </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="43" bodyfile="/media/common/projects/syx/syx/syx-memory.c" bodystart="109" bodyend="138"/>
+        <referencedby refid="syx-init_8h_131c41be993642afd482b099c468212d7" compoundref="syx-init_8c" startline="183" endline="267">syx_build_basic</referencedby>
+        <referencedby refid="syx-memory_8h_14d442554bbb25bf71781ba6abfa30819" compoundref="syx-memory_8c" startline="840" endline="950">syx_memory_load_image</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-memory_8h_1cbf4870c020690e41fd38b02adfdd62e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT void</type>
+        <definition>EXPORT void syx_memory_clear</definition>
+        <argsstring>(void)</argsstring>
+        <name>syx_memory_clear</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clears all the allocated memory </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="44" bodyfile="/media/common/projects/syx/syx/syx-memory.c" bodystart="142" bodyend="179"/>
+        <referencedby refid="syx-init_8h_131c41be993642afd482b099c468212d7" compoundref="syx-init_8c" startline="183" endline="267">syx_build_basic</referencedby>
+        <referencedby refid="syx-init_8h_1ce263c15141e6de68d951cfc57d672cb" compoundref="syx-init_8c" startline="404" endline="416">syx_quit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-memory_8h_154ca482cf9491f7baea6c2ad0f26ae66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT <ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>EXPORT SyxOop syx_memory_alloc</definition>
+        <argsstring>(void)</argsstring>
+        <name>syx_memory_alloc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a new SyxOop </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="45" bodyfile="/media/common/projects/syx/syx/syx-memory.c" bodystart="183" bodyend="209"/>
+        <referencedby refid="syx-init_8h_131c41be993642afd482b099c468212d7" compoundref="syx-init_8c" startline="183" endline="267">syx_build_basic</referencedby>
+        <referencedby refid="syx-object_8h_14495a25fcf21daa1fff65760198a6f0c" compoundref="syx-object_8c" startline="776" endline="806">syx_object_copy</referencedby>
+        <referencedby refid="syx-object_8h_12ad72ae9f822633bd80b9960fb758961" compoundref="syx-object_8c" startline="721" endline="734">syx_object_new_vars</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-memory_8h_1a5c424be57b4ec70548f0162b9d8792d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT void</type>
+        <definition>EXPORT void syx_memory_gc</definition>
+        <argsstring>(void)</argsstring>
+        <name>syx_memory_gc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calls the Syx garbage collector </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="46" bodyfile="/media/common/projects/syx/syx/syx-memory.c" bodystart="295" bodyend="327"/>
+        <referencedby refid="syx-memory_8h_154ca482cf9491f7baea6c2ad0f26ae66" compoundref="syx-memory_8c" startline="183" endline="209">syx_memory_alloc</referencedby>
+        <referencedby refid="syx-memory_8h_1b5e20fcf4ca01f3925d67c4854209ba3" compoundref="syx-memory_8c" startline="594" endline="720">syx_memory_save_image</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-memory_8h_1b5e20fcf4ca01f3925d67c4854209ba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT <ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref></type>
+        <definition>EXPORT syx_bool syx_memory_save_image</definition>
+        <argsstring>(syx_symbol path)</argsstring>
+        <name>syx_memory_save_image</name>
+        <param>
+          <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dumps all the memory.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file path to put all inside </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>FALSE if an error occurred </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="48" bodyfile="/media/common/projects/syx/syx/syx-memory.c" bodystart="594" bodyend="720"/>
+      </memberdef>
+      <memberdef kind="function" id="syx-memory_8h_14d442554bbb25bf71781ba6abfa30819" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT <ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref></type>
+        <definition>EXPORT syx_bool syx_memory_load_image</definition>
+        <argsstring>(syx_symbol path)</argsstring>
+        <name>syx_memory_load_image</name>
+        <param>
+          <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads the memory.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file containing the data dumped by syx_memory_save_image </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>FALSE if an error occurred </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="49" bodyfile="/media/common/projects/syx/syx/syx-memory.c" bodystart="840" bodyend="950"/>
+      </memberdef>
+      <memberdef kind="function" id="syx-memory_8h_1e529b61f2ebc2e51211c4bac3c810c69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INLINE void</type>
+        <definition>INLINE void syx_memory_free</definition>
+        <argsstring>(SyxOop oop)</argsstring>
+        <name>syx_memory_free</name>
+        <param>
+          <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+          <declname>oop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Frees the memory of a SyxOop and saves it to be reused for the next syx_memory_alloc </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="54" bodyfile="/media/common/projects/syx/syx/syx-memory.h" bodystart="53" bodyend="57"/>
+        <referencedby refid="syx-object_8h_129f9745780d60c8acb1ad0dc4364fe57" compoundref="syx-object_8c" startline="605" endline="630">syx_dictionary_rehash</referencedby>
+        <referencedby refid="syx-object_8h_11183dd2393eabdaf754948e182dcb287" compoundref="syx-object_8c" startline="814" endline="837">syx_object_free</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-memory_8h_1d7aa0c051c34d4da60dcb1bfb4a39775" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INLINE <ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref></type>
+        <definition>INLINE syx_int32 syx_memory_get_size</definition>
+        <argsstring>(void)</argsstring>
+        <name>syx_memory_get_size</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the size of the memory </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="63" bodyfile="/media/common/projects/syx/syx/syx-memory.h" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="syx-memory_8h_1ccbca387b22bf3764007fa893f78cefd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>INLINE void</type>
+        <definition>INLINE void syx_memory_gc_begin</definition>
+        <argsstring>(void)</argsstring>
+        <name>syx_memory_gc_begin</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Begins a garbage collection transaction.</para><para>In this transaction, all objects being allocated must not be freed because marked. The transaction can hold up to 256 objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="75" bodyfile="/media/common/projects/syx/syx/syx-memory.h" bodystart="74" bodyend="77"/>
+        <referencedby refid="syx-interp_8h_1237d9e66928c5fb95a9b6e273512951e" compoundref="syx-interp_8c" startline="179" endline="211">syx_interp_frame_to_context</referencedby>
+        <referencedby refid="syx-object_8h_1ff5c03485bac91b5a79c29a2a6b98dd7" compoundref="syx-object_8c" startline="665" endline="685">syx_method_context_new</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-memory_8h_1e191746fd44dca483c40c1b06454c357" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT void</type>
+        <definition>EXPORT void syx_memory_gc_end</definition>
+        <argsstring>(void)</argsstring>
+        <name>syx_memory_gc_end</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release a transaction started with syx_memory_gc_begin and unmark all objects in the transaction </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-memory.h" line="80" bodyfile="/media/common/projects/syx/syx/syx-memory.c" bodystart="954" bodyend="965"/>
+        <referencedby refid="syx-interp_8h_1237d9e66928c5fb95a9b6e273512951e" compoundref="syx-interp_8c" startline="179" endline="211">syx_interp_frame_to_context</referencedby>
+        <referencedby refid="syx-object_8h_1ff5c03485bac91b5a79c29a2a6b98dd7" compoundref="syx-object_8c" startline="665" endline="685">syx_method_context_new</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/>Copyright<sp/>(c)<sp/>2007-2008<sp/>Luca<sp/>Bruno</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Smalltalk<sp/>YX.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,<sp/><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SYX_MEMORY_H</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SYX_MEMORY_H</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;syx-config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-platform_8h" kindref="compound">syx-platform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-object_8h" kindref="compound">syx-object.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-init_8h" kindref="compound">syx-init.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><ref refid="syx-platform_8h_16dde3825f7593345ee918459df0e3868" kindref="member">SYX_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>*_syx_freed_memory;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/><ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref><sp/>_syx_freed_memory_top;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>_syx_memory_gc_trans[0x100];</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/><ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref><sp/>_syx_memory_gc_trans_top;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/><ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref><sp/>_syx_memory_gc_trans_running;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="syx-memory_8c_1f05eed3c8106e186265edf51194b912c" kindref="member">syx_memory_init</ref><sp/>(<ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref><sp/>size);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="syx-memory_8c_1a035cb5cf9b570cb6584d6cd4aafe512" kindref="member">syx_memory_clear</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/><ref refid="syx-memory_8c_1bcaea59428ce48c03c68b1058a089fb2" kindref="member">syx_memory_alloc</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="syx-memory_8c_1af66c4dd6200e6cc9bb87e7b28921599" kindref="member">syx_memory_gc</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/><ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref><sp/><ref refid="syx-memory_8c_1693fc1a91ed11515e100275d7f99b413" kindref="member">syx_memory_save_image</ref><sp/>(<ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/>path);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/><ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref><sp/><ref refid="syx-memory_8c_16a35f8cdd18f1615df7de7ac81911c95" kindref="member">syx_memory_load_image</ref><sp/>(<ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/>path);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="syx-memory_8h_1e529b61f2ebc2e51211c4bac3c810c69" refkind="member"><highlight class="normal"><ref refid="syx-memory_8h_1e529b61f2ebc2e51211c4bac3c810c69" kindref="member">syx_memory_free</ref><sp/>(<ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>oop)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>memset<sp/>(<ref refid="syx-object_8h_1cfb2a79cbeaf42326b56948d009d6719" kindref="member">SYX_OBJECT</ref>(oop),<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<ref refid="struct_syx_object" kindref="compound">SyxObject</ref>));</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>_syx_freed_memory[_syx_freed_memory_top++]<sp/>=<sp/>oop;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">INLINE<sp/><ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref></highlight></codeline>
+<codeline lineno="62" refid="syx-memory_8h_1d7aa0c051c34d4da60dcb1bfb4a39775" refkind="member"><highlight class="normal"><ref refid="syx-memory_8h_1d7aa0c051c34d4da60dcb1bfb4a39775" kindref="member">syx_memory_get_size</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_syx_memory_size;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">INLINE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="syx-memory_8h_1ccbca387b22bf3764007fa893f78cefd" refkind="member"><highlight class="normal"><ref refid="syx-memory_8h_1ccbca387b22bf3764007fa893f78cefd" kindref="member">syx_memory_gc_begin</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>_syx_memory_gc_trans_running++;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="syx-memory_8c_131d33852bc51d3d58ea0bc9fbfd4d9e1" kindref="member">syx_memory_gc_end</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><ref refid="syx-platform_8h_1b49d39cb21f00cde506d2f96b695233d" kindref="member">SYX_END_DECLS</ref></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SYX_MEMORY_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/media/common/projects/syx/syx/syx-memory.h"/>
+  </compounddef>
+</doxygen>

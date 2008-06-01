@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="union_syx_token_1_1_syx_token_value" kind="union" prot="public">
+    <compoundname>SyxToken::SyxTokenValue</compoundname>
+    <includes refid="syx-lexer_8h" local="no">syx-lexer.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="union_syx_token_1_1_syx_token_value_1aff389114cfd08b13cb9b47a5be9c32e" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref></type>
+        <definition>syx_int32 SyxToken::SyxTokenValue::integer</definition>
+        <argsstring></argsstring>
+        <name>integer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-lexer.h" line="47" bodyfile="/media/common/projects/syx/syx/syx-lexer.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_syx_token_1_1_syx_token_value_1746b44169806ed1ce69f218acdfd96a8" prot="public" static="no" mutable="no">
+        <type>mpz_t *</type>
+        <definition>mpz_t* SyxToken::SyxTokenValue::large_integer</definition>
+        <argsstring></argsstring>
+        <name>large_integer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-lexer.h" line="49" bodyfile="/media/common/projects/syx/syx/syx-lexer.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_syx_token_1_1_syx_token_value_18095519ab2c784b2b293d542c5da5a8d" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_1cc7fcb78741daa005b6897ad40b7472b" kindref="member">syx_double</ref></type>
+        <definition>syx_double SyxToken::SyxTokenValue::floating</definition>
+        <argsstring></argsstring>
+        <name>floating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-lexer.h" line="51" bodyfile="/media/common/projects/syx/syx/syx-lexer.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_syx_token_1_1_syx_token_value_14fa2b3de43d0695fd219dee73801d20e" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_122636fad803dd674d2640c323df20a11" kindref="member">syx_char</ref></type>
+        <definition>syx_char SyxToken::SyxTokenValue::character</definition>
+        <argsstring></argsstring>
+        <name>character</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-lexer.h" line="52" bodyfile="/media/common/projects/syx/syx/syx-lexer.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="union_syx_token_1_1_syx_token_value_15470a0f27530896e0f104d948124df1c" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11bff1fd86072dd98849437bc9dcb35c3" kindref="member">syx_string</ref></type>
+        <definition>syx_string SyxToken::SyxTokenValue::string</definition>
+        <argsstring></argsstring>
+        <name>string</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-lexer.h" line="53" bodyfile="/media/common/projects/syx/syx/syx-lexer.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/media/common/projects/syx/syx/syx-lexer.h" line="46" bodyfile="/media/common/projects/syx/syx/syx-lexer.h" bodystart="45" bodyend="54"/>
+    <listofallmembers>
+      <member refid="union_syx_token_1_1_syx_token_value_14fa2b3de43d0695fd219dee73801d20e" prot="public" virt="non-virtual"><scope>SyxToken::SyxTokenValue</scope><name>character</name></member>
+      <member refid="union_syx_token_1_1_syx_token_value_18095519ab2c784b2b293d542c5da5a8d" prot="public" virt="non-virtual"><scope>SyxToken::SyxTokenValue</scope><name>floating</name></member>
+      <member refid="union_syx_token_1_1_syx_token_value_1aff389114cfd08b13cb9b47a5be9c32e" prot="public" virt="non-virtual"><scope>SyxToken::SyxTokenValue</scope><name>integer</name></member>
+      <member refid="union_syx_token_1_1_syx_token_value_1746b44169806ed1ce69f218acdfd96a8" prot="public" virt="non-virtual"><scope>SyxToken::SyxTokenValue</scope><name>large_integer</name></member>
+      <member refid="union_syx_token_1_1_syx_token_value_15470a0f27530896e0f104d948124df1c" prot="public" virt="non-virtual"><scope>SyxToken::SyxTokenValue</scope><name>string</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,190 @@
+\hypertarget{syx-init_8c}{
+\section{syx/syx-init.c File Reference}
+\label{syx-init_8c}\index{syx/syx-init.c@{syx/syx-init.c}}
+}
+{\tt \#include \char`\"{}syx-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-types.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-error.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-plugins.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-init.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-signal.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-utils.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-scheduler.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-object.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-interp.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-profile.h\char`\"{}}\par
+{\tt \#include $<$unistd.h$>$}\par
+{\tt \#include $<$assert.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}{syx\_\-string} \hyperlink{syx-init_8c_0a366be8ef1ce96df07d6084ccfaa249}{syx\_\-find\_\-file} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} domain, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} package, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} filename)
+\item 
+void \hyperlink{syx-init_8c_efeb166ace07f37fd380e8e290b18368}{syx\_\-build\_\-basic} (void)
+\item 
+void \hyperlink{syx-init_8c_7b86f133ac732b3916ff9b295a719b9c}{syx\_\-fetch\_\-basic} (void)
+\item 
+void \hyperlink{syx-init_8c_f7b7206eb53c182199d80bb08e014990}{syx\_\-initialize\_\-system} (void)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-init_8c_890a4fe6fc8c8b546c995f03fb19d67d}{syx\_\-init} (\hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} argc, \hyperlink{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}{syx\_\-string} $\ast$argv, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} root\_\-path)
+\item 
+void \hyperlink{syx-init_8c_22715c2da20aedb6ef06b32053dc8a80}{syx\_\-quit} (void)
+\item 
+\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} \hyperlink{syx-init_8c_481a3f64c46f5b828aea978939c74e4c}{syx\_\-get\_\-root\_\-path} (void)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-init_8c_ff01e7545e5741ba55b0584816243b05}{syx\_\-set\_\-root\_\-path} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} root\_\-path)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-init_8c_40ee7fef8570d7cf610390faa9b1b0b1}{syx\_\-set\_\-image\_\-path} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} image\_\-path)
+\item 
+\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} \hyperlink{syx-init_8c_f196de4e97fe418abd021a26120fdc3c}{syx\_\-get\_\-image\_\-path} (void)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-init_8c_a635a8b40fe35e17b7d2441eb9c11623}{syx\_\-system\_\-initialized} = FALSE
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{syx-init_8c_efeb166ace07f37fd380e8e290b18368}{
+\index{syx-init.c@{syx-init.c}!syx\_\-build\_\-basic@{syx\_\-build\_\-basic}}
+\index{syx\_\-build\_\-basic@{syx\_\-build\_\-basic}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-build\_\-basic (void)}}
+\label{syx-init_8c_efeb166ace07f37fd380e8e290b18368}
+
+
+Builds a basic running image from scratch.
+
+This functions first reinitialize the memory with the size defined in SYX\_\-INIT\_\-MEMORY\_\-SIZE. After, creates the 3 common constants syx\_\-nil, syx\_\-true and syx\_\-false. Then creates all the classes needed by the VM, the Smalltalk dictionary and a dictionary containing all the symbols. Sets up the basic object hierarchy and insert each class into Smalltalk. Ends up this process by fileing in the basic declarations from initialDecl.st and the other $\ast$.st files, and calls syx\_\-fetch\_\-basic to fetch all classes in the VM. Finally, prepares the environment by running a blocking Process that calls Smalltalk$>$$>$initializeFirstSystem and initialize everything else from within Smalltalk itself. 
+
+Definition at line 183 of file syx-init.c.\hypertarget{syx-init_8c_7b86f133ac732b3916ff9b295a719b9c}{
+\index{syx-init.c@{syx-init.c}!syx\_\-fetch\_\-basic@{syx\_\-fetch\_\-basic}}
+\index{syx\_\-fetch\_\-basic@{syx\_\-fetch\_\-basic}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-fetch\_\-basic (void)}}
+\label{syx-init_8c_7b86f133ac732b3916ff9b295a719b9c}
+
+
+
+
+Definition at line 278 of file syx-init.c.
+
+Referenced by syx\_\-build\_\-basic(), and syx\_\-memory\_\-load\_\-image().\hypertarget{syx-init_8c_0a366be8ef1ce96df07d6084ccfaa249}{
+\index{syx-init.c@{syx-init.c}!syx\_\-find\_\-file@{syx\_\-find\_\-file}}
+\index{syx\_\-find\_\-file@{syx\_\-find\_\-file}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-string} syx\_\-find\_\-file ({\bf syx\_\-symbol} {\em domain}, \/  {\bf syx\_\-symbol} {\em package}, \/  {\bf syx\_\-symbol} {\em filename})}}
+\label{syx-init_8c_0a366be8ef1ce96df07d6084ccfaa249}
+
+
+Creates a file path inside the Syx environment
+
+For example if you want a Smalltalk file of a package, specify the domain \char`\"{}st\char`\"{}, the package name and the file name. 
+
+Definition at line 77 of file syx-init.c.\hypertarget{syx-init_8c_f196de4e97fe418abd021a26120fdc3c}{
+\index{syx-init.c@{syx-init.c}!syx\_\-get\_\-image\_\-path@{syx\_\-get\_\-image\_\-path}}
+\index{syx\_\-get\_\-image\_\-path@{syx\_\-get\_\-image\_\-path}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-symbol} syx\_\-get\_\-image\_\-path (void)}}
+\label{syx-init_8c_f196de4e97fe418abd021a26120fdc3c}
+
+
+Returns the initial image path.
+
+This path won't be used once Syx is initialized. The image path will be obtained from the ImageFileName global 
+
+Definition at line 481 of file syx-init.c.
+
+Referenced by syx\_\-memory\_\-load\_\-image().\hypertarget{syx-init_8c_481a3f64c46f5b828aea978939c74e4c}{
+\index{syx-init.c@{syx-init.c}!syx\_\-get\_\-root\_\-path@{syx\_\-get\_\-root\_\-path}}
+\index{syx\_\-get\_\-root\_\-path@{syx\_\-get\_\-root\_\-path}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-symbol} syx\_\-get\_\-root\_\-path (void)}}
+\label{syx-init_8c_481a3f64c46f5b828aea978939c74e4c}
+
+
+Returns the root directory of Syx.
+
+\begin{Desc}
+\item[Returns:]a constant string containing the path of the root directory \end{Desc}
+
+
+Definition at line 424 of file syx-init.c.\hypertarget{syx-init_8c_890a4fe6fc8c8b546c995f03fb19d67d}{
+\index{syx-init.c@{syx-init.c}!syx\_\-init@{syx\_\-init}}
+\index{syx\_\-init@{syx\_\-init}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-init ({\bf syx\_\-varsize} {\em argc}, \/  {\bf syx\_\-string} $\ast$ {\em argv}, \/  {\bf syx\_\-symbol} {\em root\_\-path})}}
+\label{syx-init_8c_890a4fe6fc8c8b546c995f03fb19d67d}
+
+
+Setup the basic external environment of Syx, such as the root and the image path.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em root\_\-path}]an arbitrary root directory for Syx or NULL \end{description}
+\end{Desc}
+
+
+Definition at line 347 of file syx-init.c.\hypertarget{syx-init_8c_f7b7206eb53c182199d80bb08e014990}{
+\index{syx-init.c@{syx-init.c}!syx\_\-initialize\_\-system@{syx\_\-initialize\_\-system}}
+\index{syx\_\-initialize\_\-system@{syx\_\-initialize\_\-system}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-initialize\_\-system (void)}}
+\label{syx-init_8c_f7b7206eb53c182199d80bb08e014990}
+
+
+Remove Smalltalk startupProcess from being scheduled and send startupSystem: to Smalltalk in a scheduled process 
+
+Definition at line 318 of file syx-init.c.
+
+Referenced by syx\_\-memory\_\-load\_\-image().\hypertarget{syx-init_8c_22715c2da20aedb6ef06b32053dc8a80}{
+\index{syx-init.c@{syx-init.c}!syx\_\-quit@{syx\_\-quit}}
+\index{syx\_\-quit@{syx\_\-quit}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-quit (void)}}
+\label{syx-init_8c_22715c2da20aedb6ef06b32053dc8a80}
+
+
+Finalize Syx.
+
+Run special tasks to finalize the Syx process, such as clearing all the allocated memory 
+
+Definition at line 404 of file syx-init.c.\hypertarget{syx-init_8c_40ee7fef8570d7cf610390faa9b1b0b1}{
+\index{syx-init.c@{syx-init.c}!syx\_\-set\_\-image\_\-path@{syx\_\-set\_\-image\_\-path}}
+\index{syx\_\-set\_\-image\_\-path@{syx\_\-set\_\-image\_\-path}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-set\_\-image\_\-path ({\bf syx\_\-symbol} {\em image\_\-path})}}
+\label{syx-init_8c_40ee7fef8570d7cf610390faa9b1b0b1}
+
+
+Sets the initial image path 
+
+Definition at line 463 of file syx-init.c.\hypertarget{syx-init_8c_ff01e7545e5741ba55b0584816243b05}{
+\index{syx-init.c@{syx-init.c}!syx\_\-set\_\-root\_\-path@{syx\_\-set\_\-root\_\-path}}
+\index{syx\_\-set\_\-root\_\-path@{syx\_\-set\_\-root\_\-path}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-set\_\-root\_\-path ({\bf syx\_\-symbol} {\em root\_\-path})}}
+\label{syx-init_8c_ff01e7545e5741ba55b0584816243b05}
+
+
+Sets the root directory of Syx.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em root\_\-path}]the new path \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if the path exists and is readable \end{Desc}
+
+
+Definition at line 436 of file syx-init.c.
+
+Referenced by syx\_\-init().
+
+\subsection{Variable Documentation}
+\hypertarget{syx-init_8c_a635a8b40fe35e17b7d2441eb9c11623}{
+\index{syx-init.c@{syx-init.c}!syx\_\-system\_\-initialized@{syx\_\-system\_\-initialized}}
+\index{syx\_\-system\_\-initialized@{syx\_\-system\_\-initialized}!syx-init.c@{syx-init.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} {\bf syx\_\-system\_\-initialized} = FALSE}}
+\label{syx-init_8c_a635a8b40fe35e17b7d2441eb9c11623}
+
+
+
+
+Definition at line 59 of file syx-init.c.
+
+Referenced by syx\_\-initialize\_\-system(), syx\_\-object\_\-initialize(), and syx\_\-signal().

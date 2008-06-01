@@ -1,0 +1,662 @@
+\hypertarget{syx-types_8h}{
+\section{syx/syx-types.h File Reference}
+\label{syx-types_8h}\index{syx/syx-types.h@{syx/syx-types.h}}
+}
+{\tt \#include \char`\"{}syx-config.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-enums.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-platform.h\char`\"{}}\par
+{\tt \#include $<$limits.h$>$}\par
+{\tt \#include $<$stdint.h$>$}\par
+{\tt \#include $<$wchar.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{syx-types_8h_c3d7742cf3e6fe2ebda18c509a0ee172}{SYX\_\-IS\_\-POINTER}(oop)~((oop) \&\& ((oop) \& 3) == SYX\_\-TYPE\_\-POINTER)
+\item 
+\#define \hyperlink{syx-types_8h_521de84329f41e260c96d79b17f066a9}{SYX\_\-IS\_\-SMALL\_\-INTEGER}(oop)~(((oop) \& 1) == SYX\_\-TYPE\_\-SMALL\_\-INTEGER)
+\item 
+\#define \hyperlink{syx-types_8h_519a5430d5368974ee1ec05b10b11edf}{SYX\_\-IS\_\-CHARACTER}(oop)~(((oop) \& 3) == SYX\_\-TYPE\_\-CHARACTER)
+\item 
+\#define \hyperlink{syx-types_8h_11cbe8792a6a199aa5562be393851ab5}{SYX\_\-OOP\_\-EQ}(oop1, oop2)~((oop1) == (oop2))
+\item 
+\#define \hyperlink{syx-types_8h_77fa18bf2a99d480c1947546d2f4d3da}{SYX\_\-OOP\_\-NE}(oop1, oop2)~((oop1) != (oop2))
+\item 
+\#define \hyperlink{syx-types_8h_e109977ff8e34b7265d4442c9ec39560}{SYX\_\-POINTERS\_\-OFFSET}(top, base)~((\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32})(((\hyperlink{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}{syx\_\-nint})(top) - (\hyperlink{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}{syx\_\-nint})(base))/sizeof (\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer})))
+\item 
+\#define \hyperlink{syx-types_8h_c1fcc0de09d041e08a21ae518c09037a}{SYX\_\-OOP\_\-CAST\_\-POINTER}(oop)~((\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer}) (oop))
+\item 
+\#define \hyperlink{syx-types_8h_8efde12e307dd616a32f42327b3e80cc}{SYX\_\-POINTER\_\-CAST\_\-OOP}(ptr)~((\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop}) (ptr))
+\item 
+\#define \hyperlink{syx-types_8h_d51ca7a68a6122d41d94b97807b4b0d0}{SYX\_\-SMALL\_\-INTEGER\_\-CAN\_\-EMBED}(num)~((num) $>$= (-1 $<$$<$ 30) \&\& (num) $<$ (1 $<$$<$ 30))
+\item 
+\#define \hyperlink{syx-types_8h_4e849ad177c1b33faf9d4c5719361f77}{SYX\_\-SMALL\_\-INTEGER\_\-SUM\_\-OVERFLOW}(a, b)~(((a $^\wedge$ b) $|$ (((a $^\wedge$ ($\sim$(a $^\wedge$ b) \& (1 $<$$<$ (sizeof(\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32}) $\ast$ CHAR\_\-BIT - 1)))) + b) $^\wedge$ b)) $>$= 0)
+\item 
+\#define \hyperlink{syx-types_8h_8340970f9f58f4f659e4b88649757fc2}{SYX\_\-SMALL\_\-INTEGER\_\-DIFF\_\-OVERFLOW}(a, b)~(((a $^\wedge$ b) \& (((a $^\wedge$ ((a $^\wedge$ b) \& (1 $<$$<$ (sizeof(\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32}) $\ast$ CHAR\_\-BIT - 1)))) - b) $^\wedge$ b)) $<$ 0)
+\item 
+\#define \hyperlink{syx-types_8h_2677bd5120489b2e976f3977d7701f26}{SYX\_\-SMALL\_\-INTEGER\_\-DIV\_\-OVERFLOW}(a, b)~((b == 0) $|$$|$ ((a == INT\_\-MIN) \&\& (b == -1)))
+\item 
+\#define \hyperlink{syx-types_8h_45b7f40283a751d5e2dcd24472168b9f}{SYX\_\-SMALL\_\-INTEGER\_\-EMBED}(num)~((\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32})(num) \& $\sim$(3 $<$$<$ 30))
+\item 
+\#define \hyperlink{syx-types_8h_a93f0eb578d23995850d61f7d61c55c1}{FALSE}~0
+\item 
+\#define \hyperlink{syx-types_8h_a8cecfc5c5c054d2875c03e77b7be15d}{TRUE}~1
+\item 
+\#define \hyperlink{syx-types_8h_7143a326eced154ac29a1b799ba21bb3}{syx\_\-boolean\_\-new}(cond)~((cond) ? \hyperlink{syx-object_8h_ac2fe13e9bd66770ef58d98f2be8629d}{syx\_\-true} : \hyperlink{syx-object_8h_d3170f4cecf092ffa04e6f55351d12d0}{syx\_\-false})
+\item 
+\#define \hyperlink{syx-types_8h_a374195520da5e9f09f3ba4cfacf66fc}{syx\_\-small\_\-integer\_\-new}(num)~(((\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop})(num) $<$$<$ 1) + SYX\_\-TYPE\_\-SMALL\_\-INTEGER)
+\item 
+\#define \hyperlink{syx-types_8h_7f419887cd49c9167b1d79a701afa9b4}{syx\_\-character\_\-new}(ch)~(((\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop})(ch) $<$$<$ 2) + SYX\_\-TYPE\_\-CHARACTER)
+\item 
+\#define \hyperlink{syx-types_8h_1776ff2dcc28f7ba6cb59366b5c741cc}{SYX\_\-SMALL\_\-INTEGER}(oop)~((\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32})(oop) $>$$>$ 1)
+\item 
+\#define \hyperlink{syx-types_8h_23b08fedbb0ef681b2d61ce88bd6dc4c}{SYX\_\-CHARACTER}(oop)~((\hyperlink{syx-types_8h_fba920bf291b2a86b5a180e867d0dadf}{syx\_\-uchar})((oop) $>$$>$ 2))
+\item 
+\#define \hyperlink{syx-types_8h_1659cf99572438c55385f05f6a090d03}{syx\_\-free}~free
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef unsigned char \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool}
+\item 
+typedef char \hyperlink{syx-types_8h_22636fad803dd674d2640c323df20a11}{syx\_\-char}
+\item 
+typedef unsigned char \hyperlink{syx-types_8h_fba920bf291b2a86b5a180e867d0dadf}{syx\_\-uchar}
+\item 
+typedef wchar\_\-t \hyperlink{syx-types_8h_a9acd2e71d424e11b9124acd0d3bae12}{syx\_\-wchar}
+\item 
+typedef \hyperlink{syx-types_8h_22636fad803dd674d2640c323df20a11}{syx\_\-char} $\ast$ \hyperlink{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}{syx\_\-string}
+\item 
+typedef const \hyperlink{syx-types_8h_22636fad803dd674d2640c323df20a11}{syx\_\-char} $\ast$ \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol}
+\item 
+typedef \hyperlink{syx-types_8h_a9acd2e71d424e11b9124acd0d3bae12}{syx\_\-wchar} $\ast$ \hyperlink{syx-types_8h_049e6bf08a24efd298a398b5e8c27ead}{syx\_\-wstring}
+\item 
+typedef const \hyperlink{syx-types_8h_a9acd2e71d424e11b9124acd0d3bae12}{syx\_\-wchar} $\ast$ \hyperlink{syx-types_8h_6fab7c0dab70ca1ee8812c0b5a6e0819}{syx\_\-wsymbol}
+\item 
+typedef int8\_\-t \hyperlink{syx-types_8h_8d3f27f7874e163d9fcda71e7540bdd7}{syx\_\-int8}
+\item 
+typedef uint8\_\-t \hyperlink{syx-types_8h_7cb1870b8124a88e807c98f315f3d923}{syx\_\-uint8}
+\item 
+typedef int16\_\-t \hyperlink{syx-types_8h_2d6178ce3abc15f1a0df5bbd7eb5e302}{syx\_\-int16}
+\item 
+typedef uint16\_\-t \hyperlink{syx-types_8h_5c0caeeeb45b4575061ab7f368f10337}{syx\_\-uint16}
+\item 
+typedef int32\_\-t \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32}
+\item 
+typedef uint32\_\-t \hyperlink{syx-types_8h_eb2d8221bf07737360750e4c0ec66a99}{syx\_\-uint32}
+\item 
+typedef int64\_\-t \hyperlink{syx-types_8h_3e43d32ed4089e8e06e1f8d9576af15c}{syx\_\-int64}
+\item 
+typedef uint64\_\-t \hyperlink{syx-types_8h_5a7750bec2122e7d3fccdffa19e87efe}{syx\_\-uint64}
+\item 
+typedef long \hyperlink{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}{syx\_\-nint}
+\item 
+typedef unsigned long \hyperlink{syx-types_8h_8126e64ffb4098d51f48eb5c7c1167ed}{syx\_\-unint}
+\item 
+typedef long \hyperlink{syx-types_8h_c33c3b1cda2a02ee8987fd22f1ce89be}{syx\_\-size}
+\item 
+typedef \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} \hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize}
+\item 
+typedef float \hyperlink{syx-types_8h_06247c78a325efbaa525b201c733efdb}{syx\_\-float}
+\item 
+typedef double \hyperlink{syx-types_8h_cc7fcb78741daa005b6897ad40b7472b}{syx\_\-double}
+\item 
+typedef void $\ast$ \hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer}
+\item 
+typedef \hyperlink{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}{syx\_\-nint} \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-types_8h_22b049e1ad0335e6870a1dbb7376980d}{SYX\_\-SMALL\_\-INTEGER\_\-MUL\_\-OVERFLOW} (\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} a, \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} b)
+\item 
+EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-types_8h_a74d34881c9ff57dcaee88b24a2868fb}{SYX\_\-SMALL\_\-INTEGER\_\-SHIFT\_\-OVERFLOW} (\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} a, \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} b)
+\item 
+INLINE \hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} \hyperlink{syx-types_8h_7446426502808204156e54c87ac180bf}{syx\_\-malloc} (\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} size)
+\item 
+INLINE \hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} \hyperlink{syx-types_8h_d3289765fe9f49b5fcc601baa1dc2757}{syx\_\-malloc0} (\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} size)
+\item 
+INLINE \hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} \hyperlink{syx-types_8h_0a7e373cdf0766342290aa127715542a}{syx\_\-calloc} (\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} elements, \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} element\_\-size)
+\item 
+INLINE \hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} \hyperlink{syx-types_8h_ee5c4c5cdd6c2b10174a78548375f1fe}{syx\_\-realloc} (\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} ptr, \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} size)
+\item 
+INLINE \hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} \hyperlink{syx-types_8h_47f29ccdb2ad4cdc7664fcc6ecaf2519}{syx\_\-memdup} (\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} ptr, \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} elements, \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} element\_\-size)
+\item 
+INLINE \hyperlink{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}{syx\_\-string} \hyperlink{syx-types_8h_d155efe16b514198d225ce33322cca13}{syx\_\-strndup} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} src, \hyperlink{syx-types_8h_c33c3b1cda2a02ee8987fd22f1ce89be}{syx\_\-size} n)
+\item 
+INLINE \hyperlink{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}{syx\_\-string} \hyperlink{syx-types_8h_c622723fb87eeb4c68598e317e0b1ed1}{syx\_\-strdup} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} src)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{syx-types_8h_a93f0eb578d23995850d61f7d61c55c1}{
+\index{syx-types.h@{syx-types.h}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FALSE~0}}
+\label{syx-types_8h_a93f0eb578d23995850d61f7d61c55c1}
+
+
+
+
+Definition at line 74 of file syx-types.h.
+
+Referenced by syx\_\-array\_\-remove(), syx\_\-byte\_\-array\_\-new(), syx\_\-byte\_\-array\_\-new\_\-size(), syx\_\-class\_\-is\_\-superclass\_\-of(), syx\_\-cold\_\-file\_\-in(), syx\_\-cold\_\-parse\_\-methods(), syx\_\-dictionary\_\-at\_\-symbol(), syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent(), syx\_\-float\_\-new(), syx\_\-init(), syx\_\-interp\_\-call\_\-primitive(), syx\_\-interp\_\-enter\_\-context(), syx\_\-interp\_\-leave\_\-and\_\-answer(), syx\_\-interp\_\-swap\_\-context(), syx\_\-large\_\-integer\_\-new(), syx\_\-large\_\-integer\_\-new\_\-integer(), syx\_\-large\_\-integer\_\-new\_\-mpz(), syx\_\-library\_\-close(), syx\_\-memory\_\-alloc(), syx\_\-memory\_\-clear(), syx\_\-memory\_\-gc\_\-end(), syx\_\-memory\_\-load\_\-image(), syx\_\-memory\_\-save\_\-image(), syx\_\-object\_\-copy(), syx\_\-object\_\-new\_\-vars(), syx\_\-parser\_\-new(), syx\_\-plugin\_\-unload(), syx\_\-scheduler\_\-add\_\-process(), syx\_\-scheduler\_\-iterate(), syx\_\-scheduler\_\-remove\_\-process(), syx\_\-scheduler\_\-run(), syx\_\-set\_\-image\_\-path(), syx\_\-set\_\-root\_\-path(), syx\_\-signal(), syx\_\-string\_\-new(), syx\_\-string\_\-new\_\-ref(), and syx\_\-symbol\_\-new().\hypertarget{syx-types_8h_7143a326eced154ac29a1b799ba21bb3}{
+\index{syx-types.h@{syx-types.h}!syx\_\-boolean\_\-new@{syx\_\-boolean\_\-new}}
+\index{syx\_\-boolean\_\-new@{syx\_\-boolean\_\-new}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-boolean\_\-new(cond)~((cond) ? {\bf syx\_\-true} : {\bf syx\_\-false})}}
+\label{syx-types_8h_7143a326eced154ac29a1b799ba21bb3}
+
+
+Expands to syx\_\-true or syx\_\-false depending on the given condition 
+
+Definition at line 139 of file syx-types.h.\hypertarget{syx-types_8h_23b08fedbb0ef681b2d61ce88bd6dc4c}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-CHARACTER@{SYX\_\-CHARACTER}}
+\index{SYX\_\-CHARACTER@{SYX\_\-CHARACTER}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CHARACTER(oop)~(({\bf syx\_\-uchar})((oop) $>$$>$ 2))}}
+\label{syx-types_8h_23b08fedbb0ef681b2d61ce88bd6dc4c}
+
+
+Retrieve a syx\_\-uchar from a SyxOop 
+
+Definition at line 148 of file syx-types.h.\hypertarget{syx-types_8h_7f419887cd49c9167b1d79a701afa9b4}{
+\index{syx-types.h@{syx-types.h}!syx\_\-character\_\-new@{syx\_\-character\_\-new}}
+\index{syx\_\-character\_\-new@{syx\_\-character\_\-new}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-character\_\-new(ch)~((({\bf SyxOop})(ch) $<$$<$ 2) + SYX\_\-TYPE\_\-CHARACTER)}}
+\label{syx-types_8h_7f419887cd49c9167b1d79a701afa9b4}
+
+
+Create a new Character 
+
+Definition at line 143 of file syx-types.h.\hypertarget{syx-types_8h_1659cf99572438c55385f05f6a090d03}{
+\index{syx-types.h@{syx-types.h}!syx\_\-free@{syx\_\-free}}
+\index{syx\_\-free@{syx\_\-free}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-free~free}}
+\label{syx-types_8h_1659cf99572438c55385f05f6a090d03}
+
+
+
+
+Definition at line 158 of file syx-types.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-bytecode\_\-free(), syx\_\-cold\_\-file\_\-in(), syx\_\-dictionary\_\-rehash(), syx\_\-error\_\-clear(), syx\_\-lexer\_\-free(), syx\_\-memory\_\-clear(), syx\_\-memory\_\-load\_\-image(), syx\_\-object\_\-free(), syx\_\-parser\_\-free(), syx\_\-plugin\_\-finalize\_\-all(), syx\_\-plugin\_\-load(), syx\_\-plugin\_\-unload(), syx\_\-plugins\_\-init(), syx\_\-plugins\_\-quit(), syx\_\-quit(), syx\_\-scheduler\_\-poll\_\-unregister\_\-source(), syx\_\-set\_\-image\_\-path(), syx\_\-set\_\-root\_\-path(), and syx\_\-token\_\-free().\hypertarget{syx-types_8h_519a5430d5368974ee1ec05b10b11edf}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-IS\_\-CHARACTER@{SYX\_\-IS\_\-CHARACTER}}
+\index{SYX\_\-IS\_\-CHARACTER@{SYX\_\-IS\_\-CHARACTER}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IS\_\-CHARACTER(oop)~(((oop) \& 3) == SYX\_\-TYPE\_\-CHARACTER)}}
+\label{syx-types_8h_519a5430d5368974ee1ec05b10b11edf}
+
+
+
+
+Definition at line 50 of file syx-types.h.
+
+Referenced by syx\_\-object\_\-get\_\-class().\hypertarget{syx-types_8h_c3d7742cf3e6fe2ebda18c509a0ee172}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-IS\_\-POINTER@{SYX\_\-IS\_\-POINTER}}
+\index{SYX\_\-IS\_\-POINTER@{SYX\_\-IS\_\-POINTER}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IS\_\-POINTER(oop)~((oop) \&\& ((oop) \& 3) == SYX\_\-TYPE\_\-POINTER)}}
+\label{syx-types_8h_c3d7742cf3e6fe2ebda18c509a0ee172}
+
+
+
+
+Definition at line 48 of file syx-types.h.\hypertarget{syx-types_8h_521de84329f41e260c96d79b17f066a9}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-IS\_\-SMALL\_\-INTEGER@{SYX\_\-IS\_\-SMALL\_\-INTEGER}}
+\index{SYX\_\-IS\_\-SMALL\_\-INTEGER@{SYX\_\-IS\_\-SMALL\_\-INTEGER}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IS\_\-SMALL\_\-INTEGER(oop)~(((oop) \& 1) == SYX\_\-TYPE\_\-SMALL\_\-INTEGER)}}
+\label{syx-types_8h_521de84329f41e260c96d79b17f066a9}
+
+
+
+
+Definition at line 49 of file syx-types.h.
+
+Referenced by syx\_\-object\_\-get\_\-class().\hypertarget{syx-types_8h_c1fcc0de09d041e08a21ae518c09037a}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-OOP\_\-CAST\_\-POINTER@{SYX\_\-OOP\_\-CAST\_\-POINTER}}
+\index{SYX\_\-OOP\_\-CAST\_\-POINTER@{SYX\_\-OOP\_\-CAST\_\-POINTER}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OOP\_\-CAST\_\-POINTER(oop)~(({\bf syx\_\-pointer}) (oop))}}
+\label{syx-types_8h_c1fcc0de09d041e08a21ae518c09037a}
+
+
+Cast a SyxOop to a native pointer type 
+
+Definition at line 58 of file syx-types.h.
+
+Referenced by syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-interp\_\-context\_\-to\_\-frame(), syx\_\-interp\_\-enter\_\-context(), syx\_\-send\_\-binary\_\-message(), syx\_\-send\_\-unary\_\-message(), syx\_\-show\_\-traceback(), syx\_\-symbol\_\-new(), and syx\_\-vsend\_\-message().\hypertarget{syx-types_8h_11cbe8792a6a199aa5562be393851ab5}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-OOP\_\-EQ@{SYX\_\-OOP\_\-EQ}}
+\index{SYX\_\-OOP\_\-EQ@{SYX\_\-OOP\_\-EQ}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OOP\_\-EQ(oop1, \/  oop2)~((oop1) == (oop2))}}
+\label{syx-types_8h_11cbe8792a6a199aa5562be393851ab5}
+
+
+
+
+Definition at line 52 of file syx-types.h.
+
+Referenced by syx\_\-array\_\-add(), syx\_\-array\_\-remove(), syx\_\-bytecode\_\-gen\_\-literal(), syx\_\-class\_\-is\_\-superclass\_\-of(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-interp\_\-enter\_\-context(), syx\_\-interp\_\-swap\_\-context(), syx\_\-memory\_\-save\_\-image(), and syx\_\-scheduler\_\-remove\_\-process().\hypertarget{syx-types_8h_77fa18bf2a99d480c1947546d2f4d3da}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-OOP\_\-NE@{SYX\_\-OOP\_\-NE}}
+\index{SYX\_\-OOP\_\-NE@{SYX\_\-OOP\_\-NE}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OOP\_\-NE(oop1, \/  oop2)~((oop1) != (oop2))}}
+\label{syx-types_8h_77fa18bf2a99d480c1947546d2f4d3da}
+
+
+
+
+Definition at line 53 of file syx-types.h.
+
+Referenced by syx\_\-class\_\-is\_\-superclass\_\-of(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), syx\_\-memory\_\-save\_\-image(), and syx\_\-scheduler\_\-remove\_\-process().\hypertarget{syx-types_8h_8efde12e307dd616a32f42327b3e80cc}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-POINTER\_\-CAST\_\-OOP@{SYX\_\-POINTER\_\-CAST\_\-OOP}}
+\index{SYX\_\-POINTER\_\-CAST\_\-OOP@{SYX\_\-POINTER\_\-CAST\_\-OOP}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-POINTER\_\-CAST\_\-OOP(ptr)~(({\bf SyxOop}) (ptr))}}
+\label{syx-types_8h_8efde12e307dd616a32f42327b3e80cc}
+
+
+Cast a pointer to a SyxOop 
+
+Definition at line 60 of file syx-types.h.
+
+Referenced by syx\_\-block\_\-context\_\-new(), syx\_\-interp\_\-enter\_\-context(), syx\_\-interp\_\-frame\_\-to\_\-context(), syx\_\-memory\_\-clear(), syx\_\-memory\_\-load\_\-image(), syx\_\-memory\_\-save\_\-image(), syx\_\-method\_\-context\_\-new(), and syx\_\-process\_\-new().\hypertarget{syx-types_8h_e109977ff8e34b7265d4442c9ec39560}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-POINTERS\_\-OFFSET@{SYX\_\-POINTERS\_\-OFFSET}}
+\index{SYX\_\-POINTERS\_\-OFFSET@{SYX\_\-POINTERS\_\-OFFSET}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-POINTERS\_\-OFFSET(top, \/  base)~(({\bf syx\_\-int32})((({\bf syx\_\-nint})(top) - ({\bf syx\_\-nint})(base))/sizeof ({\bf syx\_\-pointer})))}}
+\label{syx-types_8h_e109977ff8e34b7265d4442c9ec39560}
+
+
+
+
+Definition at line 55 of file syx-types.h.
+
+Referenced by syx\_\-show\_\-traceback().\hypertarget{syx-types_8h_1776ff2dcc28f7ba6cb59366b5c741cc}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-SMALL\_\-INTEGER@{SYX\_\-SMALL\_\-INTEGER}}
+\index{SYX\_\-SMALL\_\-INTEGER@{SYX\_\-SMALL\_\-INTEGER}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-SMALL\_\-INTEGER(oop)~(({\bf syx\_\-int32})(oop) $>$$>$ 1)}}
+\label{syx-types_8h_1776ff2dcc28f7ba6cb59366b5c741cc}
+
+
+Retrieve a syx\_\-int32 from a SyxOop 
+
+Definition at line 146 of file syx-types.h.
+
+Referenced by syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), syx\_\-dictionary\_\-index\_\-of(), syx\_\-dictionary\_\-rehash(), syx\_\-object\_\-copy(), syx\_\-object\_\-vars\_\-size(), syx\_\-semaphore\_\-signal(), and syx\_\-symbol\_\-new().\hypertarget{syx-types_8h_d51ca7a68a6122d41d94b97807b4b0d0}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-SMALL\_\-INTEGER\_\-CAN\_\-EMBED@{SYX\_\-SMALL\_\-INTEGER\_\-CAN\_\-EMBED}}
+\index{SYX\_\-SMALL\_\-INTEGER\_\-CAN\_\-EMBED@{SYX\_\-SMALL\_\-INTEGER\_\-CAN\_\-EMBED}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-SMALL\_\-INTEGER\_\-CAN\_\-EMBED(num)~((num) $>$= (-1 $<$$<$ 30) \&\& (num) $<$ (1 $<$$<$ 30))}}
+\label{syx-types_8h_d51ca7a68a6122d41d94b97807b4b0d0}
+
+
+TRUE if the number can be embedded 
+
+Definition at line 63 of file syx-types.h.
+
+Referenced by syx\_\-string\_\-hash().\hypertarget{syx-types_8h_8340970f9f58f4f659e4b88649757fc2}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-SMALL\_\-INTEGER\_\-DIFF\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-DIFF\_\-OVERFLOW}}
+\index{SYX\_\-SMALL\_\-INTEGER\_\-DIFF\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-DIFF\_\-OVERFLOW}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-SMALL\_\-INTEGER\_\-DIFF\_\-OVERFLOW(a, \/  b)~(((a $^\wedge$ b) \& (((a $^\wedge$ ((a $^\wedge$ b) \& (1 $<$$<$ (sizeof({\bf syx\_\-int32}) $\ast$ CHAR\_\-BIT - 1)))) - b) $^\wedge$ b)) $<$ 0)}}
+\label{syx-types_8h_8340970f9f58f4f659e4b88649757fc2}
+
+
+TRUE if an overflow occurs when doing the difference between a and b 
+
+Definition at line 67 of file syx-types.h.\hypertarget{syx-types_8h_2677bd5120489b2e976f3977d7701f26}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-SMALL\_\-INTEGER\_\-DIV\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-DIV\_\-OVERFLOW}}
+\index{SYX\_\-SMALL\_\-INTEGER\_\-DIV\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-DIV\_\-OVERFLOW}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-SMALL\_\-INTEGER\_\-DIV\_\-OVERFLOW(a, \/  b)~((b == 0) $|$$|$ ((a == INT\_\-MIN) \&\& (b == -1)))}}
+\label{syx-types_8h_2677bd5120489b2e976f3977d7701f26}
+
+
+TRUE if an overflow occurs when doing division between a and b 
+
+Definition at line 69 of file syx-types.h.\hypertarget{syx-types_8h_45b7f40283a751d5e2dcd24472168b9f}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-SMALL\_\-INTEGER\_\-EMBED@{SYX\_\-SMALL\_\-INTEGER\_\-EMBED}}
+\index{SYX\_\-SMALL\_\-INTEGER\_\-EMBED@{SYX\_\-SMALL\_\-INTEGER\_\-EMBED}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-SMALL\_\-INTEGER\_\-EMBED(num)~(({\bf syx\_\-int32})(num) \& $\sim$(3 $<$$<$ 30))}}
+\label{syx-types_8h_45b7f40283a751d5e2dcd24472168b9f}
+
+
+Force the embedding of an integer 
+
+Definition at line 71 of file syx-types.h.
+
+Referenced by syx\_\-object\_\-hash(), and syx\_\-string\_\-hash().\hypertarget{syx-types_8h_a374195520da5e9f09f3ba4cfacf66fc}{
+\index{syx-types.h@{syx-types.h}!syx\_\-small\_\-integer\_\-new@{syx\_\-small\_\-integer\_\-new}}
+\index{syx\_\-small\_\-integer\_\-new@{syx\_\-small\_\-integer\_\-new}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-small\_\-integer\_\-new(num)~((({\bf SyxOop})(num) $<$$<$ 1) + SYX\_\-TYPE\_\-SMALL\_\-INTEGER)}}
+\label{syx-types_8h_a374195520da5e9f09f3ba4cfacf66fc}
+
+
+Create a new SmallInteger 
+
+Definition at line 141 of file syx-types.h.
+
+Referenced by syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), syx\_\-dictionary\_\-new(), syx\_\-parser\_\-parse(), syx\_\-scheduler\_\-init(), syx\_\-semaphore\_\-signal(), syx\_\-symbol\_\-new(), and syx\_\-variable\_\-binding\_\-new().\hypertarget{syx-types_8h_4e849ad177c1b33faf9d4c5719361f77}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-SMALL\_\-INTEGER\_\-SUM\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-SUM\_\-OVERFLOW}}
+\index{SYX\_\-SMALL\_\-INTEGER\_\-SUM\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-SUM\_\-OVERFLOW}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-SMALL\_\-INTEGER\_\-SUM\_\-OVERFLOW(a, \/  b)~(((a $^\wedge$ b) $|$ (((a $^\wedge$ ($\sim$(a $^\wedge$ b) \& (1 $<$$<$ (sizeof({\bf syx\_\-int32}) $\ast$ CHAR\_\-BIT - 1)))) + b) $^\wedge$ b)) $>$= 0)}}
+\label{syx-types_8h_4e849ad177c1b33faf9d4c5719361f77}
+
+
+TRUE if an overflow occurs when doing the sum of a and b 
+
+Definition at line 65 of file syx-types.h.\hypertarget{syx-types_8h_a8cecfc5c5c054d2875c03e77b7be15d}{
+\index{syx-types.h@{syx-types.h}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TRUE~1}}
+\label{syx-types_8h_a8cecfc5c5c054d2875c03e77b7be15d}
+
+
+
+
+Definition at line 75 of file syx-types.h.
+
+Referenced by syx\_\-array\_\-new(), syx\_\-array\_\-new\_\-size(), syx\_\-array\_\-remove(), syx\_\-bytecode\_\-gen\_\-literal(), syx\_\-class\_\-new(), syx\_\-cold\_\-file\_\-in(), syx\_\-cold\_\-parse(), syx\_\-cold\_\-parse\_\-methods(), syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-dictionary\_\-new(), syx\_\-init(), syx\_\-initialize\_\-system(), syx\_\-interp\_\-enter\_\-context(), syx\_\-interp\_\-leave\_\-and\_\-answer(), syx\_\-interp\_\-swap\_\-context(), syx\_\-library\_\-close(), syx\_\-memory\_\-alloc(), syx\_\-memory\_\-init(), syx\_\-memory\_\-load\_\-image(), syx\_\-memory\_\-save\_\-image(), syx\_\-metaclass\_\-new(), syx\_\-parser\_\-free(), syx\_\-parser\_\-parse(), syx\_\-plugin\_\-unload(), syx\_\-scheduler\_\-add\_\-process(), syx\_\-scheduler\_\-iterate(), syx\_\-scheduler\_\-remove\_\-process(), syx\_\-scheduler\_\-run(), syx\_\-set\_\-image\_\-path(), syx\_\-set\_\-root\_\-path(), syx\_\-signal(), and syx\_\-symbol\_\-new().
+
+\subsection{Typedef Documentation}
+\hypertarget{syx-types_8h_c6dc09b276b99fa1956364359139daab}{
+\index{syx-types.h@{syx-types.h}!syx\_\-bool@{syx\_\-bool}}
+\index{syx\_\-bool@{syx\_\-bool}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf syx\_\-bool}}}
+\label{syx-types_8h_c6dc09b276b99fa1956364359139daab}
+
+
+
+
+Definition at line 78 of file syx-types.h.\hypertarget{syx-types_8h_22636fad803dd674d2640c323df20a11}{
+\index{syx-types.h@{syx-types.h}!syx\_\-char@{syx\_\-char}}
+\index{syx\_\-char@{syx\_\-char}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef char {\bf syx\_\-char}}}
+\label{syx-types_8h_22636fad803dd674d2640c323df20a11}
+
+
+
+
+Definition at line 80 of file syx-types.h.\hypertarget{syx-types_8h_cc7fcb78741daa005b6897ad40b7472b}{
+\index{syx-types.h@{syx-types.h}!syx\_\-double@{syx\_\-double}}
+\index{syx\_\-double@{syx\_\-double}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef double {\bf syx\_\-double}}}
+\label{syx-types_8h_cc7fcb78741daa005b6897ad40b7472b}
+
+
+
+
+Definition at line 130 of file syx-types.h.\hypertarget{syx-types_8h_06247c78a325efbaa525b201c733efdb}{
+\index{syx-types.h@{syx-types.h}!syx\_\-float@{syx\_\-float}}
+\index{syx\_\-float@{syx\_\-float}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef float {\bf syx\_\-float}}}
+\label{syx-types_8h_06247c78a325efbaa525b201c733efdb}
+
+
+
+
+Definition at line 129 of file syx-types.h.\hypertarget{syx-types_8h_2d6178ce3abc15f1a0df5bbd7eb5e302}{
+\index{syx-types.h@{syx-types.h}!syx\_\-int16@{syx\_\-int16}}
+\index{syx\_\-int16@{syx\_\-int16}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef int16\_\-t {\bf syx\_\-int16}}}
+\label{syx-types_8h_2d6178ce3abc15f1a0df5bbd7eb5e302}
+
+
+
+
+Definition at line 95 of file syx-types.h.\hypertarget{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{
+\index{syx-types.h@{syx-types.h}!syx\_\-int32@{syx\_\-int32}}
+\index{syx\_\-int32@{syx\_\-int32}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef int32\_\-t {\bf syx\_\-int32}}}
+\label{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}
+
+
+
+
+Definition at line 98 of file syx-types.h.\hypertarget{syx-types_8h_3e43d32ed4089e8e06e1f8d9576af15c}{
+\index{syx-types.h@{syx-types.h}!syx\_\-int64@{syx\_\-int64}}
+\index{syx\_\-int64@{syx\_\-int64}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef int64\_\-t {\bf syx\_\-int64}}}
+\label{syx-types_8h_3e43d32ed4089e8e06e1f8d9576af15c}
+
+
+
+
+Definition at line 102 of file syx-types.h.\hypertarget{syx-types_8h_8d3f27f7874e163d9fcda71e7540bdd7}{
+\index{syx-types.h@{syx-types.h}!syx\_\-int8@{syx\_\-int8}}
+\index{syx\_\-int8@{syx\_\-int8}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef int8\_\-t {\bf syx\_\-int8}}}
+\label{syx-types_8h_8d3f27f7874e163d9fcda71e7540bdd7}
+
+
+
+
+Definition at line 92 of file syx-types.h.\hypertarget{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}{
+\index{syx-types.h@{syx-types.h}!syx\_\-nint@{syx\_\-nint}}
+\index{syx\_\-nint@{syx\_\-nint}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef long {\bf syx\_\-nint}}}
+\label{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}
+
+
+
+
+Definition at line 123 of file syx-types.h.\hypertarget{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{
+\index{syx-types.h@{syx-types.h}!syx\_\-pointer@{syx\_\-pointer}}
+\index{syx\_\-pointer@{syx\_\-pointer}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ {\bf syx\_\-pointer}}}
+\label{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}
+
+
+
+
+Definition at line 132 of file syx-types.h.\hypertarget{syx-types_8h_c33c3b1cda2a02ee8987fd22f1ce89be}{
+\index{syx-types.h@{syx-types.h}!syx\_\-size@{syx\_\-size}}
+\index{syx\_\-size@{syx\_\-size}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef long {\bf syx\_\-size}}}
+\label{syx-types_8h_c33c3b1cda2a02ee8987fd22f1ce89be}
+
+
+
+
+Definition at line 126 of file syx-types.h.\hypertarget{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}{
+\index{syx-types.h@{syx-types.h}!syx\_\-string@{syx\_\-string}}
+\index{syx\_\-string@{syx\_\-string}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf syx\_\-char}$\ast$ {\bf syx\_\-string}}}
+\label{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}
+
+
+
+
+Definition at line 86 of file syx-types.h.\hypertarget{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{
+\index{syx-types.h@{syx-types.h}!syx\_\-symbol@{syx\_\-symbol}}
+\index{syx\_\-symbol@{syx\_\-symbol}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef const {\bf syx\_\-char}$\ast$ {\bf syx\_\-symbol}}}
+\label{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}
+
+
+
+
+Definition at line 87 of file syx-types.h.\hypertarget{syx-types_8h_fba920bf291b2a86b5a180e867d0dadf}{
+\index{syx-types.h@{syx-types.h}!syx\_\-uchar@{syx\_\-uchar}}
+\index{syx\_\-uchar@{syx\_\-uchar}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf syx\_\-uchar}}}
+\label{syx-types_8h_fba920bf291b2a86b5a180e867d0dadf}
+
+
+
+
+Definition at line 81 of file syx-types.h.\hypertarget{syx-types_8h_5c0caeeeb45b4575061ab7f368f10337}{
+\index{syx-types.h@{syx-types.h}!syx\_\-uint16@{syx\_\-uint16}}
+\index{syx\_\-uint16@{syx\_\-uint16}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\_\-t {\bf syx\_\-uint16}}}
+\label{syx-types_8h_5c0caeeeb45b4575061ab7f368f10337}
+
+
+
+
+Definition at line 96 of file syx-types.h.\hypertarget{syx-types_8h_eb2d8221bf07737360750e4c0ec66a99}{
+\index{syx-types.h@{syx-types.h}!syx\_\-uint32@{syx\_\-uint32}}
+\index{syx\_\-uint32@{syx\_\-uint32}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\_\-t {\bf syx\_\-uint32}}}
+\label{syx-types_8h_eb2d8221bf07737360750e4c0ec66a99}
+
+
+
+
+Definition at line 99 of file syx-types.h.\hypertarget{syx-types_8h_5a7750bec2122e7d3fccdffa19e87efe}{
+\index{syx-types.h@{syx-types.h}!syx\_\-uint64@{syx\_\-uint64}}
+\index{syx\_\-uint64@{syx\_\-uint64}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint64\_\-t {\bf syx\_\-uint64}}}
+\label{syx-types_8h_5a7750bec2122e7d3fccdffa19e87efe}
+
+
+
+
+Definition at line 103 of file syx-types.h.\hypertarget{syx-types_8h_7cb1870b8124a88e807c98f315f3d923}{
+\index{syx-types.h@{syx-types.h}!syx\_\-uint8@{syx\_\-uint8}}
+\index{syx\_\-uint8@{syx\_\-uint8}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf syx\_\-uint8}}}
+\label{syx-types_8h_7cb1870b8124a88e807c98f315f3d923}
+
+
+
+
+Definition at line 93 of file syx-types.h.\hypertarget{syx-types_8h_8126e64ffb4098d51f48eb5c7c1167ed}{
+\index{syx-types.h@{syx-types.h}!syx\_\-unint@{syx\_\-unint}}
+\index{syx\_\-unint@{syx\_\-unint}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long {\bf syx\_\-unint}}}
+\label{syx-types_8h_8126e64ffb4098d51f48eb5c7c1167ed}
+
+
+
+
+Definition at line 124 of file syx-types.h.\hypertarget{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{
+\index{syx-types.h@{syx-types.h}!syx\_\-varsize@{syx\_\-varsize}}
+\index{syx\_\-varsize@{syx\_\-varsize}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf syx\_\-int32} {\bf syx\_\-varsize}}}
+\label{syx-types_8h_18e1a1417591a1efb670b97ce320f535}
+
+
+
+
+Definition at line 127 of file syx-types.h.\hypertarget{syx-types_8h_a9acd2e71d424e11b9124acd0d3bae12}{
+\index{syx-types.h@{syx-types.h}!syx\_\-wchar@{syx\_\-wchar}}
+\index{syx\_\-wchar@{syx\_\-wchar}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef wchar\_\-t {\bf syx\_\-wchar}}}
+\label{syx-types_8h_a9acd2e71d424e11b9124acd0d3bae12}
+
+
+
+
+Definition at line 83 of file syx-types.h.\hypertarget{syx-types_8h_049e6bf08a24efd298a398b5e8c27ead}{
+\index{syx-types.h@{syx-types.h}!syx\_\-wstring@{syx\_\-wstring}}
+\index{syx\_\-wstring@{syx\_\-wstring}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf syx\_\-wchar}$\ast$ {\bf syx\_\-wstring}}}
+\label{syx-types_8h_049e6bf08a24efd298a398b5e8c27ead}
+
+
+
+
+Definition at line 88 of file syx-types.h.\hypertarget{syx-types_8h_6fab7c0dab70ca1ee8812c0b5a6e0819}{
+\index{syx-types.h@{syx-types.h}!syx\_\-wsymbol@{syx\_\-wsymbol}}
+\index{syx\_\-wsymbol@{syx\_\-wsymbol}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef const {\bf syx\_\-wchar}$\ast$ {\bf syx\_\-wsymbol}}}
+\label{syx-types_8h_6fab7c0dab70ca1ee8812c0b5a6e0819}
+
+
+
+
+Definition at line 89 of file syx-types.h.\hypertarget{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{
+\index{syx-types.h@{syx-types.h}!SyxOop@{SyxOop}}
+\index{SyxOop@{SyxOop}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf syx\_\-nint} {\bf SyxOop}}}
+\label{syx-types_8h_1121caba2d40b2ce090b640762744ccd}
+
+
+
+
+Definition at line 134 of file syx-types.h.
+
+\subsection{Function Documentation}
+\hypertarget{syx-types_8h_0a7e373cdf0766342290aa127715542a}{
+\index{syx-types.h@{syx-types.h}!syx\_\-calloc@{syx\_\-calloc}}
+\index{syx\_\-calloc@{syx\_\-calloc}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-pointer} syx\_\-calloc ({\bf syx\_\-int32} {\em elements}, \/  {\bf syx\_\-int32} {\em element\_\-size})}}
+\label{syx-types_8h_0a7e373cdf0766342290aa127715542a}
+
+
+
+
+Definition at line 199 of file syx-types.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names(), syx\_\-error\_\-register(), syx\_\-find\_\-file(), syx\_\-large\_\-integer\_\-new(), syx\_\-large\_\-integer\_\-new\_\-integer(), syx\_\-lexer\_\-next\_\-token(), syx\_\-memory\_\-init(), syx\_\-memory\_\-load\_\-image(), syx\_\-object\_\-new\_\-size(), syx\_\-object\_\-new\_\-vars(), syx\_\-plugin\_\-load(), syx\_\-to\_\-string(), and syx\_\-to\_\-wstring().\hypertarget{syx-types_8h_7446426502808204156e54c87ac180bf}{
+\index{syx-types.h@{syx-types.h}!syx\_\-malloc@{syx\_\-malloc}}
+\index{syx\_\-malloc@{syx\_\-malloc}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-pointer} syx\_\-malloc ({\bf syx\_\-int32} {\em size})}}
+\label{syx-types_8h_7446426502808204156e54c87ac180bf}
+
+
+
+
+Definition at line 162 of file syx-types.h.
+
+Referenced by syx\_\-bytecode\_\-new(), syx\_\-cold\_\-file\_\-in(), syx\_\-init(), syx\_\-lexer\_\-new(), syx\_\-memdup(), syx\_\-parser\_\-new(), syx\_\-plugins\_\-init(), syx\_\-scheduler\_\-poll\_\-read\_\-register(), syx\_\-scheduler\_\-poll\_\-register\_\-source(), syx\_\-scheduler\_\-poll\_\-write\_\-register(), and syx\_\-strndup().\hypertarget{syx-types_8h_d3289765fe9f49b5fcc601baa1dc2757}{
+\index{syx-types.h@{syx-types.h}!syx\_\-malloc0@{syx\_\-malloc0}}
+\index{syx\_\-malloc0@{syx\_\-malloc0}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-pointer} syx\_\-malloc0 ({\bf syx\_\-int32} {\em size})}}
+\label{syx-types_8h_d3289765fe9f49b5fcc601baa1dc2757}
+
+
+
+
+Definition at line 180 of file syx-types.h.\hypertarget{syx-types_8h_47f29ccdb2ad4cdc7664fcc6ecaf2519}{
+\index{syx-types.h@{syx-types.h}!syx\_\-memdup@{syx\_\-memdup}}
+\index{syx\_\-memdup@{syx\_\-memdup}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-pointer} syx\_\-memdup ({\bf syx\_\-pointer} {\em ptr}, \/  {\bf syx\_\-int32} {\em elements}, \/  {\bf syx\_\-int32} {\em element\_\-size})}}
+\label{syx-types_8h_47f29ccdb2ad4cdc7664fcc6ecaf2519}
+
+
+Return a new allocated memory which is a copy of the given one 
+
+Definition at line 233 of file syx-types.h.
+
+Referenced by syx\_\-object\_\-copy().\hypertarget{syx-types_8h_ee5c4c5cdd6c2b10174a78548375f1fe}{
+\index{syx-types.h@{syx-types.h}!syx\_\-realloc@{syx\_\-realloc}}
+\index{syx\_\-realloc@{syx\_\-realloc}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-pointer} syx\_\-realloc ({\bf syx\_\-pointer} {\em ptr}, \/  {\bf syx\_\-int32} {\em size})}}
+\label{syx-types_8h_ee5c4c5cdd6c2b10174a78548375f1fe}
+
+
+
+
+Definition at line 217 of file syx-types.h.
+
+Referenced by syx\_\-error\_\-register(), syx\_\-memory\_\-init(), syx\_\-object\_\-resize(), syx\_\-plugin\_\-load(), and syx\_\-plugins\_\-init().\hypertarget{syx-types_8h_22b049e1ad0335e6870a1dbb7376980d}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-SMALL\_\-INTEGER\_\-MUL\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-MUL\_\-OVERFLOW}}
+\index{SYX\_\-SMALL\_\-INTEGER\_\-MUL\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-MUL\_\-OVERFLOW}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-bool} SYX\_\-SMALL\_\-INTEGER\_\-MUL\_\-OVERFLOW ({\bf syx\_\-int32} {\em a}, \/  {\bf syx\_\-int32} {\em b})}}
+\label{syx-types_8h_22b049e1ad0335e6870a1dbb7376980d}
+
+
+TRUE if an overflow occurs when doing b times a \hypertarget{syx-types_8h_a74d34881c9ff57dcaee88b24a2868fb}{
+\index{syx-types.h@{syx-types.h}!SYX\_\-SMALL\_\-INTEGER\_\-SHIFT\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-SHIFT\_\-OVERFLOW}}
+\index{SYX\_\-SMALL\_\-INTEGER\_\-SHIFT\_\-OVERFLOW@{SYX\_\-SMALL\_\-INTEGER\_\-SHIFT\_\-OVERFLOW}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-bool} SYX\_\-SMALL\_\-INTEGER\_\-SHIFT\_\-OVERFLOW ({\bf syx\_\-int32} {\em a}, \/  {\bf syx\_\-int32} {\em b})}}
+\label{syx-types_8h_a74d34881c9ff57dcaee88b24a2868fb}
+
+
+TRUE if an overflow occurs when shifting a on the left by b \hypertarget{syx-types_8h_c622723fb87eeb4c68598e317e0b1ed1}{
+\index{syx-types.h@{syx-types.h}!syx\_\-strdup@{syx\_\-strdup}}
+\index{syx\_\-strdup@{syx\_\-strdup}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-string} syx\_\-strdup ({\bf syx\_\-symbol} {\em src})}}
+\label{syx-types_8h_c622723fb87eeb4c68598e317e0b1ed1}
+
+
+
+
+Definition at line 254 of file syx-types.h.
+
+Referenced by syx\_\-init(), syx\_\-plugin\_\-load(), syx\_\-plugins\_\-init(), syx\_\-set\_\-image\_\-path(), syx\_\-set\_\-root\_\-path(), and syx\_\-symbol\_\-new().\hypertarget{syx-types_8h_d155efe16b514198d225ce33322cca13}{
+\index{syx-types.h@{syx-types.h}!syx\_\-strndup@{syx\_\-strndup}}
+\index{syx\_\-strndup@{syx\_\-strndup}!syx-types.h@{syx-types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-string} syx\_\-strndup ({\bf syx\_\-symbol} {\em src}, \/  {\bf syx\_\-size} {\em n})}}
+\label{syx-types_8h_d155efe16b514198d225ce33322cca13}
+
+
+
+
+Definition at line 245 of file syx-types.h.
+
+Referenced by syx\_\-lexer\_\-next\_\-chunk(), and syx\_\-strdup().

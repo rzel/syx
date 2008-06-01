@@ -1,0 +1,159 @@
+\hypertarget{syx-scheduler_8c}{
+\section{syx/syx-scheduler.c File Reference}
+\label{syx-scheduler_8c}\index{syx/syx-scheduler.c@{syx/syx-scheduler.c}}
+}
+{\tt \#include \char`\"{}syx-object.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-types.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-enums.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-scheduler.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-utils.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-error.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-interp.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-init.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-profile.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{syx-scheduler_8c_826bd9cb537fa7b575471e55d4a22096}{syx\_\-scheduler\_\-init} (void)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-scheduler_8c_f057361452bd4dc5c068977fbeed3930}{syx\_\-scheduler\_\-iterate} (void)
+\item 
+void \hyperlink{syx-scheduler_8c_b2a6b8c50609209c4ce77e0ee93ad15c}{syx\_\-scheduler\_\-run} (void)
+\item 
+void \hyperlink{syx-scheduler_8c_55fca0fb039850c253fbb76132099c19}{syx\_\-scheduler\_\-poll\_\-register\_\-source} (\hyperlink{syx-scheduler_8h_6c2e31a7f026cdd3d5eb1fc0d263c63a}{SyxSchedulerSourceFunc} callback, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} semaphore)
+\item 
+void \hyperlink{syx-scheduler_8c_3f55059f958063f4332db465abe11958}{syx\_\-scheduler\_\-poll\_\-unregister\_\-source} (\hyperlink{syx-scheduler_8h_6c2e31a7f026cdd3d5eb1fc0d263c63a}{SyxSchedulerSourceFunc} callback, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} semaphore)
+\item 
+void \hyperlink{syx-scheduler_8c_4a871e11c8c343aee6d766dab4b59383}{syx\_\-scheduler\_\-quit} (void)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-scheduler_8c_a79a002ea5114a6fbdea9d617e6b75e5}{syx\_\-scheduler\_\-add\_\-process} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} process)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-scheduler_8c_5eed9263555dd5245c7ab05cdf59d995}{syx\_\-scheduler\_\-remove\_\-process} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} process)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-scheduler_8c_cd76972884d834c2095b727889851064}{syx\_\-processor}
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{syx-scheduler_8c_a79a002ea5114a6fbdea9d617e6b75e5}{
+\index{syx-scheduler.c@{syx-scheduler.c}!syx\_\-scheduler\_\-add\_\-process@{syx\_\-scheduler\_\-add\_\-process}}
+\index{syx\_\-scheduler\_\-add\_\-process@{syx\_\-scheduler\_\-add\_\-process}!syx-scheduler.c@{syx-scheduler.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-scheduler\_\-add\_\-process ({\bf SyxOop} {\em process})}}
+\label{syx-scheduler_8c_a79a002ea5114a6fbdea9d617e6b75e5}
+
+
+Add a Process to be scheduled. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em process}]a valid Process \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if the given Process has been scheduled successfully, FALSE otherwise \end{Desc}
+
+
+Definition at line 209 of file syx-scheduler.c.
+
+Referenced by syx\_\-process\_\-new().\hypertarget{syx-scheduler_8c_826bd9cb537fa7b575471e55d4a22096}{
+\index{syx-scheduler.c@{syx-scheduler.c}!syx\_\-scheduler\_\-init@{syx\_\-scheduler\_\-init}}
+\index{syx\_\-scheduler\_\-init@{syx\_\-scheduler\_\-init}!syx-scheduler.c@{syx-scheduler.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-scheduler\_\-init (void)}}
+\label{syx-scheduler_8c_826bd9cb537fa7b575471e55d4a22096}
+
+
+Initialize the scheduler.
+
+If absent, create a ProcessorScheduler instance named Processor and insert it into the Smalltalk dictionary. 
+
+Definition at line 97 of file syx-scheduler.c.
+
+Referenced by syx\_\-fetch\_\-basic().\hypertarget{syx-scheduler_8c_f057361452bd4dc5c068977fbeed3930}{
+\index{syx-scheduler.c@{syx-scheduler.c}!syx\_\-scheduler\_\-iterate@{syx\_\-scheduler\_\-iterate}}
+\index{syx\_\-scheduler\_\-iterate@{syx\_\-scheduler\_\-iterate}!syx-scheduler.c@{syx-scheduler.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-scheduler\_\-iterate (void)}}
+\label{syx-scheduler_8c_f057361452bd4dc5c068977fbeed3930}
+
+
+Do a single iteration of the scheduler. Returns FALSE when no pending processes are left. 
+
+Definition at line 118 of file syx-scheduler.c.\hypertarget{syx-scheduler_8c_55fca0fb039850c253fbb76132099c19}{
+\index{syx-scheduler.c@{syx-scheduler.c}!syx\_\-scheduler\_\-poll\_\-register\_\-source@{syx\_\-scheduler\_\-poll\_\-register\_\-source}}
+\index{syx\_\-scheduler\_\-poll\_\-register\_\-source@{syx\_\-scheduler\_\-poll\_\-register\_\-source}!syx-scheduler.c@{syx-scheduler.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-scheduler\_\-poll\_\-register\_\-source ({\bf SyxSchedulerSourceFunc} {\em callback}, \/  {\bf SyxOop} {\em semaphore})}}
+\label{syx-scheduler_8c_55fca0fb039850c253fbb76132099c19}
+
+
+The scheduler runs the callback to check whether the source is ready then signal the semaphore. To tell that the source is ready, return TRUE from the callback, otherwise FALSE.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em callback}]the callback to call for each scheduler iteration \item[{\em semaphore}]the semaphore to signal when the source is ready \end{description}
+\end{Desc}
+
+
+Definition at line 166 of file syx-scheduler.c.\hypertarget{syx-scheduler_8c_3f55059f958063f4332db465abe11958}{
+\index{syx-scheduler.c@{syx-scheduler.c}!syx\_\-scheduler\_\-poll\_\-unregister\_\-source@{syx\_\-scheduler\_\-poll\_\-unregister\_\-source}}
+\index{syx\_\-scheduler\_\-poll\_\-unregister\_\-source@{syx\_\-scheduler\_\-poll\_\-unregister\_\-source}!syx-scheduler.c@{syx-scheduler.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-scheduler\_\-poll\_\-unregister\_\-source ({\bf SyxSchedulerSourceFunc} {\em callback}, \/  {\bf SyxOop} {\em semaphore})}}
+\label{syx-scheduler_8c_3f55059f958063f4332db465abe11958}
+
+
+Remove an idle source previously added with syx\_\-scheduler\_\-poll\_\-register\_\-source 
+
+Definition at line 179 of file syx-scheduler.c.\hypertarget{syx-scheduler_8c_4a871e11c8c343aee6d766dab4b59383}{
+\index{syx-scheduler.c@{syx-scheduler.c}!syx\_\-scheduler\_\-quit@{syx\_\-scheduler\_\-quit}}
+\index{syx\_\-scheduler\_\-quit@{syx\_\-scheduler\_\-quit}!syx-scheduler.c@{syx-scheduler.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-scheduler\_\-quit (void)}}
+\label{syx-scheduler_8c_4a871e11c8c343aee6d766dab4b59383}
+
+
+Stop the scheduler 
+
+Definition at line 200 of file syx-scheduler.c.
+
+Referenced by syx\_\-quit().\hypertarget{syx-scheduler_8c_5eed9263555dd5245c7ab05cdf59d995}{
+\index{syx-scheduler.c@{syx-scheduler.c}!syx\_\-scheduler\_\-remove\_\-process@{syx\_\-scheduler\_\-remove\_\-process}}
+\index{syx\_\-scheduler\_\-remove\_\-process@{syx\_\-scheduler\_\-remove\_\-process}!syx-scheduler.c@{syx-scheduler.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-scheduler\_\-remove\_\-process ({\bf SyxOop} {\em process})}}
+\label{syx-scheduler_8c_5eed9263555dd5245c7ab05cdf59d995}
+
+
+Remove a Process from being scheduled. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em process}]a valid Process \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if the given Process has been found and removed successfully, FALSE otherwise \end{Desc}
+
+
+Definition at line 229 of file syx-scheduler.c.
+
+Referenced by syx\_\-initialize\_\-system(), syx\_\-interp\_\-leave\_\-and\_\-answer(), and syx\_\-process\_\-execute\_\-blocking().\hypertarget{syx-scheduler_8c_b2a6b8c50609209c4ce77e0ee93ad15c}{
+\index{syx-scheduler.c@{syx-scheduler.c}!syx\_\-scheduler\_\-run@{syx\_\-scheduler\_\-run}}
+\index{syx\_\-scheduler\_\-run@{syx\_\-scheduler\_\-run}!syx-scheduler.c@{syx-scheduler.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-scheduler\_\-run (void)}}
+\label{syx-scheduler_8c_b2a6b8c50609209c4ce77e0ee93ad15c}
+
+
+Run the scheduler in blocking mode. Exits once no Process is scheduled 
+
+Definition at line 132 of file syx-scheduler.c.
+
+\subsection{Variable Documentation}
+\hypertarget{syx-scheduler_8c_cd76972884d834c2095b727889851064}{
+\index{syx-scheduler.c@{syx-scheduler.c}!syx\_\-processor@{syx\_\-processor}}
+\index{syx\_\-processor@{syx\_\-processor}!syx-scheduler.c@{syx-scheduler.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf SyxOop} {\bf syx\_\-processor}}}
+\label{syx-scheduler_8c_cd76972884d834c2095b727889851064}
+
+
+
+
+Definition at line 41 of file syx-scheduler.c.
+
+Referenced by syx\_\-scheduler\_\-init().

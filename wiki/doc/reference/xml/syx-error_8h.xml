@@ -1,0 +1,776 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="syx-error_8h" kind="file">
+    <compoundname>syx-error.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes refid="syx-types_8h" local="yes">syx-types.h</includes>
+    <includes local="yes">syx-config.h</includes>
+    <includes refid="syx-utils_8h" local="yes">syx-utils.h</includes>
+    <includes local="no">stdarg.h</includes>
+    <includedby refid="syx-object_8h" local="yes">syx/syx-object.h</includedby>
+    <includedby refid="syx-error_8c" local="yes">syx/syx-error.c</includedby>
+    <includedby refid="syx-init_8c" local="yes">syx/syx-init.c</includedby>
+    <includedby refid="syx-interp_8c" local="yes">syx/syx-interp.c</includedby>
+    <includedby refid="syx-lexer_8c" local="yes">syx/syx-lexer.c</includedby>
+    <includedby refid="syx-memory_8c" local="yes">syx/syx-memory.c</includedby>
+    <includedby refid="syx-object_8c" local="yes">syx/syx-object.c</includedby>
+    <includedby refid="syx-parser_8c" local="yes">syx/syx-parser.c</includedby>
+    <includedby refid="syx-plugins_8c" local="yes">syx/syx-plugins.c</includedby>
+    <includedby refid="syx-primitives_8c" local="yes">syx/syx-primitives.c</includedby>
+    <includedby refid="syx-scheduler_8c" local="yes">syx/syx-scheduler.c</includedby>
+    <includedby refid="syx-utils_8c" local="yes">syx/syx-utils.c</includedby>
+    <incdepgraph>
+      <node id="120">
+        <label>stdarg.h</label>
+      </node>
+      <node id="109">
+        <label>syx-types.h</label>
+        <link refid="syx-types_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>syx-lexer.h</label>
+        <link refid="syx-lexer_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>stdint.h</label>
+      </node>
+      <node id="117">
+        <label>stdlib.h</label>
+      </node>
+      <node id="107">
+        <label>syx/syx-error.h</label>
+        <link refid="syx-error.h"/>
+        <childnode refid="108" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+      </node>
+      <node id="114">
+        <label>limits.h</label>
+      </node>
+      <node id="116">
+        <label>wchar.h</label>
+      </node>
+      <node id="118">
+        <label>string.h</label>
+      </node>
+      <node id="119">
+        <label>syx-utils.h</label>
+        <link refid="syx-utils_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="121" relation="include">
+        </childnode>
+      </node>
+      <node id="113">
+        <label>byteswap.h</label>
+      </node>
+      <node id="110">
+        <label>syx-config.h</label>
+      </node>
+      <node id="122">
+        <label>gmp.h</label>
+      </node>
+      <node id="111">
+        <label>syx-enums.h</label>
+        <link refid="syx-enums_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>syx-platform.h</label>
+        <link refid="syx-platform_8h"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="140">
+        <label>syx/syx-signal.c</label>
+        <link refid="syx-signal_8c"/>
+      </node>
+      <node id="136">
+        <label>syx/syx-lexer.c</label>
+        <link refid="syx-lexer_8c"/>
+      </node>
+      <node id="126">
+        <label>syx/syx-bytecode.c</label>
+        <link refid="syx-bytecode_8c"/>
+      </node>
+      <node id="139">
+        <label>syx/syx-scheduler.c</label>
+        <link refid="syx-scheduler_8c"/>
+      </node>
+      <node id="127">
+        <label>syx/syx-bytecode.h</label>
+        <link refid="syx-bytecode_8h"/>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>syx/syx-scheduler.h</label>
+        <link refid="syx-scheduler_8h"/>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>syx/syx-error.c</label>
+        <link refid="syx-error_8c"/>
+      </node>
+      <node id="123">
+        <label>syx/syx-error.h</label>
+        <link refid="syx-error.h"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>syx/syx-parser.c</label>
+        <link refid="syx-parser_8c"/>
+      </node>
+      <node id="130">
+        <label>syx/syx-parser.h</label>
+        <link refid="syx-parser_8h"/>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>syx/syx-interp.c</label>
+        <link refid="syx-interp_8c"/>
+      </node>
+      <node id="142">
+        <label>syx/syx-interp.h</label>
+        <link refid="syx-interp_8h"/>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>syx/syx-scheduler-posix.c</label>
+        <link refid="syx-scheduler-posix_8c"/>
+      </node>
+      <node id="138">
+        <label>syx/syx-object.c</label>
+        <link refid="syx-object_8c"/>
+      </node>
+      <node id="124">
+        <label>syx/syx-object.h</label>
+        <link refid="syx-object_8h"/>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="133">
+        <label>syx/syx-utils.c</label>
+        <link refid="syx-utils_8c"/>
+      </node>
+      <node id="137">
+        <label>syx/syx-memory.c</label>
+        <link refid="syx-memory_8c"/>
+      </node>
+      <node id="125">
+        <label>syx/syx-memory.h</label>
+        <link refid="syx-memory_8h"/>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="134" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="136" relation="include">
+        </childnode>
+        <childnode refid="137" relation="include">
+        </childnode>
+        <childnode refid="138" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>syx/syx-init.c</label>
+        <link refid="syx-init_8c"/>
+      </node>
+      <node id="141">
+        <label>syx/syx-init.h</label>
+        <link refid="syx-init_8h"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="133" relation="include">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>syx/syx-plugins.c</label>
+        <link refid="syx-plugins_8c"/>
+      </node>
+      <node id="143">
+        <label>syx/syx-plugins.h</label>
+        <link refid="syx-plugins_8h"/>
+        <childnode refid="135" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>syx/syx-scheduler-win.c</label>
+        <link refid="syx-scheduler-win_8c"/>
+      </node>
+      <node id="132">
+        <label>syx/syx-primitives.c</label>
+        <link refid="syx-primitives_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_syx_error_entry" prot="public">SyxErrorEntry</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="syx-error_8h_1b1279ef115dd518ef5b63b51ae495fa5" prot="public" static="no">
+        <name>syx_debug</name>
+        <initializer>printf</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display debugging messages </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="66" bodyfile="/media/common/projects/syx/syx/syx-error.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="syx-interp_8h_191229ee5f9766714c7bdfb51cfb34258" compoundref="syx-interp_8h" startline="168" endline="186">syx_interp_call_primitive</referencedby>
+        <referencedby refid="syx-interp_8h_1f677bca3ba7ff8315ce0b1406b7a97b5" compoundref="syx-interp_8c" startline="334" endline="359">syx_interp_leave_and_answer</referencedby>
+        <referencedby refid="syx-memory_8h_1a5c424be57b4ec70548f0162b9d8792d" compoundref="syx-memory_8c" startline="295" endline="327">syx_memory_gc</referencedby>
+        <referencedby refid="syx-plugins_8h_16bbfab98888c3c4094f8c686971df84f" compoundref="syx-plugins_8c" startline="233" endline="307">syx_plugin_load</referencedby>
+        <referencedby refid="syx-plugins_8h_1de5e4570fa91b561d987fcd4d95d4bc2" compoundref="syx-plugins_8c" startline="320" endline="355">syx_plugin_unload</referencedby>
+        <referencedby refid="syx-scheduler_8h_125f4d9193e601faf10f5937fb7c6b32e" compoundref="syx-scheduler_8c" startline="132" endline="156">syx_scheduler_run</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" prot="public" static="no" mutable="no">
+        <type>SYX_BEGIN_DECLS typedef <ref refid="syx-types_8h_1eb2d8221bf07737360750e4c0ec66a99" kindref="member">syx_uint32</ref></type>
+        <definition>SYX_BEGIN_DECLS typedef syx_uint32 SyxErrorType</definition>
+        <argsstring></argsstring>
+        <name>SyxErrorType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="41" bodyfile="/media/common/projects/syx/syx/syx-error.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="syx-error_8h_1e71af3dc427617903fb6a6542c2fcc54" prot="public" static="no">
+        <type>struct <ref refid="struct_syx_error_entry" kindref="compound">SyxErrorEntry</ref></type>
+        <definition>typedef struct SyxErrorEntry SyxErrorEntry</definition>
+        <argsstring></argsstring>
+        <name>SyxErrorEntry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="43" bodyfile="/media/common/projects/syx/syx/syx-error.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="syx-error_8h_14b54eb4814b39373904c5e43c46cdf11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT void</type>
+        <definition>EXPORT void syx_error_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>syx_error_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize the error reporting system.</para><para>This function must be called after the image has been loaded or a new image is built. Usually, user programs don&apos;t need to call this directly. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="52" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="52" bodyend="64"/>
+        <referencedby refid="syx-init_8h_1c06c3bb03991f52f068cee7e52ff868e" compoundref="syx-init_8c" startline="278" endline="313">syx_fetch_basic</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-error_8h_163b0a157b3a7fd7c288561556813094f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT void</type>
+        <definition>EXPORT void syx_error_clear</definition>
+        <argsstring>(void)</argsstring>
+        <name>syx_error_clear</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clear all memory allocated to by the error reporting system.</para><para>This function must be called after all other memory has been released and we&apos;re really ready to quit, so that any other call won&apos;t report errors. Usually, user programs don&apos;t need to call this directly. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="53" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="74" bodyend="77"/>
+        <referencedby refid="syx-init_8h_1ce263c15141e6de68d951cfc57d672cb" compoundref="syx-init_8c" startline="404" endline="416">syx_quit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-error_8h_14c29dc7eb28340f780caced4fca607d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT <ref refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" kindref="member">SyxErrorType</ref></type>
+        <definition>EXPORT SyxErrorType syx_error_register</definition>
+        <argsstring>(syx_symbol name, SyxOop klass)</argsstring>
+        <name>syx_error_register</name>
+        <param>
+          <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+          <declname>klass</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register a kind of error.</para><para>Create a new hook for reporting errors from C to the Smalltalk environment.</para><para><simplesect kind="return"><para>a number identifying the king of error for future lookups </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="54" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="87" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="syx-error_8h_189af9f1f8208fc5c7f81a1dc2c4bb3ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT <ref refid="struct_syx_error_entry" kindref="compound">SyxErrorEntry</ref> *</type>
+        <definition>EXPORT SyxErrorEntry* syx_error_lookup</definition>
+        <argsstring>(SyxErrorType type)</argsstring>
+        <name>syx_error_lookup</name>
+        <param>
+          <type><ref refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" kindref="member">SyxErrorType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Lookup for an error.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type return from syx_error_register </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the entry of the error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="55" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="110" bodyend="116"/>
+        <referencedby refid="syx-error_8h_19e42294f55fa2b19c5bd23202111d7e2" compoundref="syx-error_8c" startline="125" endline="159">syx_signal</referencedby>
+        <referencedby refid="syx-error_8h_16069be5517f12619d0ffa9d6e3f8345d" compoundref="syx-error_8c" startline="167" endline="182">syx_signal_create_context</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-error_8h_19e42294f55fa2b19c5bd23202111d7e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT <ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref></type>
+        <definition>EXPORT syx_bool syx_signal</definition>
+        <argsstring>(SyxErrorType type, SyxOop message)</argsstring>
+        <name>syx_signal</name>
+        <param>
+          <type><ref refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" kindref="member">SyxErrorType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Signal an error in the Smalltalk environment, sending signal to he requested class.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type returned by syx_error_register </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>TRUE if signal succeeded, otherwise FALSE </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="56" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="125" bodyend="159"/>
+        <referencedby refid="syx-object_8h_1b4f98861384da9ef7ae4017b0639e2ab" compoundref="syx-object_8c" startline="576" endline="586">syx_dictionary_at_symbol</referencedby>
+        <referencedby refid="syx-object_8h_192ca3959db07b272c56e9ba5cb22dd7a" compoundref="syx-object_8c" startline="467" endline="495">syx_dictionary_bind</referencedby>
+        <referencedby refid="syx-object_8h_105356bb26948688722ef15999e182fff" compoundref="syx-object_8c" startline="540" endline="568">syx_dictionary_bind_set_value</referencedby>
+        <referencedby refid="syx-object_8h_1a7e087f1a8becf74a1e37463e3a7c5cc" compoundref="syx-object_8c" startline="426" endline="438">syx_dictionary_binding_at_symbol</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-error_8h_16069be5517f12619d0ffa9d6e3f8345d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT <ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>EXPORT SyxOop syx_signal_create_context</definition>
+        <argsstring>(SyxErrorType type, SyxOop message)</argsstring>
+        <name>syx_signal_create_context</name>
+        <param>
+          <type><ref refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" kindref="member">SyxErrorType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create an error Context in the Smalltalk environment ready to enter a Process.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type returned by syx_error_register </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="57" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="167" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="syx-error_8h_1d4d9bee8d3e66d1127c3be0d5a2c6213" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT void</type>
+        <definition>EXPORT void syx_warning</definition>
+        <argsstring>(syx_symbol fmt,...)</argsstring>
+        <name>syx_warning</name>
+        <param>
+          <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display a warning message </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="58" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="227" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="syx-error_8h_132ccf51e335c35ba5c51d75a62590e63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT void</type>
+        <definition>EXPORT void syx_error</definition>
+        <argsstring>(syx_symbol fmt,...)</argsstring>
+        <name>syx_error</name>
+        <param>
+          <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display an error then exits.</para><para>This function will show an error MessageBox on Windows CE </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="59" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="206" bodyend="215"/>
+        <referencedby refid="syx-utils_8h_19c1676e48ea8f4339d62a426ad283f7a" compoundref="syx-utils_8c" startline="383" endline="430">syx_cold_file_in</referencedby>
+        <referencedby refid="syx-object_8h_11a46d03f5dad054ace2cc9bbe258f62e" compoundref="syx-object_8c" startline="635" endline="654">syx_dictionary_at_symbol_put</referencedby>
+        <referencedby refid="syx-memory_8h_154ca482cf9491f7baea6c2ad0f26ae66" compoundref="syx-memory_8c" startline="183" endline="209">syx_memory_alloc</referencedby>
+        <referencedby refid="syx-object_8h_188d1e4f8e61fb948d275e3900cec21fe" compoundref="syx-object_8h" startline="180" endline="201">syx_object_get_class</referencedby>
+        <referencedby refid="syx-utils_8h_161a3e2addfd2720091b195c9a29741a7" compoundref="syx-utils_8c" startline="457" endline="476">syx_send_binary_message</referencedby>
+        <referencedby refid="syx-utils_8h_1d543a115819575f96b987ee4c42594d6" compoundref="syx-utils_8c" startline="436" endline="453">syx_send_unary_message</referencedby>
+        <referencedby refid="syx-error_8h_19e42294f55fa2b19c5bd23202111d7e2" compoundref="syx-error_8c" startline="125" endline="159">syx_signal</referencedby>
+        <referencedby refid="syx-object_8h_166d94b213daa6f81d344a80f6449c0ea" compoundref="syx-object_8c" startline="315" endline="353">syx_symbol_new</referencedby>
+        <referencedby refid="syx-utils_8c_137be9deb681cffcf8f9301dc95e31d5e" compoundref="syx-utils_8c" startline="504" endline="529">syx_vsend_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-error_8h_15498659f88970b75f4e9391eed50d5b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT void</type>
+        <definition>EXPORT void syx_perror</definition>
+        <argsstring>(syx_symbol message)</argsstring>
+        <name>syx_perror</name>
+        <param>
+          <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Display perror message and exit </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="60" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="238" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="syx-error_8h_123779d3e58bbb0dcbaa8af8e77b919da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>EXPORT <ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref></type>
+        <definition>EXPORT syx_bool syx_signal_does_not_understand</definition>
+        <argsstring>(SyxOop receiver, SyxOop selector)</argsstring>
+        <name>syx_signal_does_not_understand</name>
+        <param>
+          <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+          <declname>receiver</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+          <declname>selector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Useful stuff</para><para>Send receiver&gt;&gt;doesNotUnderstand: with selector.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>receiver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>selector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-error.h" line="63" bodyfile="/media/common/projects/syx/syx/syx-error.c" bodystart="191" bodyend="197"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/>Copyright<sp/>(c)<sp/>2007-2008<sp/>Luca<sp/>Bruno</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Smalltalk<sp/>YX.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,<sp/><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SYX_ERROR_H</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>SYX_ERROR_H</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-types_8h" kindref="compound">syx-types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;syx-config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-utils_8h" kindref="compound">syx-utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WINCE</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="syx-platform_8h_16dde3825f7593345ee918459df0e3868" kindref="member">SYX_BEGIN_DECLS</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="syx-types_8h_1eb2d8221bf07737360750e4c0ec66a99" kindref="member">syx_uint32</ref><sp/><ref refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" kindref="member">SyxErrorType</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="syx-error_8h_1e71af3dc427617903fb6a6542c2fcc54" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_syx_error_entry" kindref="compound">SyxErrorEntry</ref><sp/><ref refid="struct_syx_error_entry" kindref="compound">SyxErrorEntry</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="struct_syx_error_entry" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_syx_error_entry" kindref="compound">SyxErrorEntry</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48" refid="struct_syx_error_entry_1eb4ec14186b3f633afa8dbd1719050cd" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/><ref refid="struct_syx_error_entry_1eb4ec14186b3f633afa8dbd1719050cd" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="49" refid="struct_syx_error_entry_1d33ddd6ec297c2055ddb62b8bf04de9f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/><ref refid="struct_syx_error_entry_1d33ddd6ec297c2055ddb62b8bf04de9f" kindref="member">klass</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="syx-error_8c_110bc732864cef02c21c3956aa28cb7a5" kindref="member">syx_error_init</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="syx-error_8c_10b7d5b2e98bf782f1ae853345938c529" kindref="member">syx_error_clear</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" kindref="member">SyxErrorType</ref><sp/><ref refid="syx-error_8c_18bfbf6b690f699fb8e74ab4d0b48fc32" kindref="member">syx_error_register</ref><sp/>(<ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/>name,<sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>klass);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="struct_syx_error_entry" kindref="compound">SyxErrorEntry</ref><sp/>*<ref refid="syx-error_8c_10917cc39dfeb4a377f015a0c7a28fe10" kindref="member">syx_error_lookup</ref><sp/>(<ref refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" kindref="member">SyxErrorType</ref><sp/>type);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref><sp/><ref refid="syx-error_8c_10b4ecf0c440811157a5bc63545665742" kindref="member">syx_signal</ref><sp/>(<ref refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" kindref="member">SyxErrorType</ref><sp/>type,<sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>message);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/><ref refid="syx-error_8c_194600ae5844a012288943b78c0d1fc6c" kindref="member">syx_signal_create_context</ref><sp/>(<ref refid="syx-error_8h_1514c3f7a5b2ca79dc0d2ba5e1464a36e" kindref="member">SyxErrorType</ref><sp/>type,<sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>message);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="syx-error_8c_1d59b90d0a65496b7c93929d6b767b391" kindref="member">syx_warning</ref><sp/>(<ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/>fmt,<sp/>...);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="syx-error_8c_1611db78bd74a63c244274e1af9426c2f" kindref="member">syx_error</ref><sp/>(<ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/>fmt,<sp/>...);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="syx-error_8c_1fa1c783d0fae07f610888805115a6733" kindref="member">syx_perror</ref><sp/>(<ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/>message);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><ref refid="syx-platform_8h_13472d8cdbb788d5f1815b3522595bc49" kindref="member">EXPORT</ref><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref><sp/><ref refid="syx-error_8c_18211271c20a9e598b2c395b60bd892a0" kindref="member">syx_signal_does_not_understand</ref>(<ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>receiver,<sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>selector);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="syx-error_8h_1b1279ef115dd518ef5b63b51ae495fa5" refkind="member"><highlight class="preprocessor">#define<sp/>syx_debug<sp/>printf</highlight></codeline>
+<codeline lineno="67"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><ref refid="syx-platform_8h_1b49d39cb21f00cde506d2f96b695233d" kindref="member">SYX_END_DECLS</ref><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SYX_ERROR_H<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/media/common/projects/syx/syx/syx-error.h"/>
+  </compounddef>
+</doxygen>

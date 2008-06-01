@@ -1,0 +1,50 @@
+\hypertarget{syx-scheduler-win_8c}{
+\section{syx/syx-scheduler-win.c File Reference}
+\label{syx-scheduler-win_8c}\index{syx/syx-scheduler-win.c@{syx/syx-scheduler-win.c}}
+}
+{\tt \#include \char`\"{}syx-object.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-scheduler.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-platform.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{syx-scheduler-win_8c_0f6beab52e1173b6a531ba23d437b2bf}{syx\_\-scheduler\_\-poll\_\-read\_\-register} (\hyperlink{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}{syx\_\-nint} fd, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} semaphore)
+\item 
+void \hyperlink{syx-scheduler-win_8c_28eac1f77d3be9549426a9166ac5a9f3}{syx\_\-scheduler\_\-poll\_\-write\_\-register} (\hyperlink{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}{syx\_\-nint} fd, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} semaphore)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{syx-scheduler-win_8c_0f6beab52e1173b6a531ba23d437b2bf}{
+\index{syx-scheduler-win.c@{syx-scheduler-win.c}!syx\_\-scheduler\_\-poll\_\-read\_\-register@{syx\_\-scheduler\_\-poll\_\-read\_\-register}}
+\index{syx\_\-scheduler\_\-poll\_\-read\_\-register@{syx\_\-scheduler\_\-poll\_\-read\_\-register}!syx-scheduler-win.c@{syx-scheduler-win.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-scheduler\_\-poll\_\-read\_\-register ({\bf syx\_\-nint} {\em fd}, \/  {\bf SyxOop} {\em semaphore})}}
+\label{syx-scheduler-win_8c_0f6beab52e1173b6a531ba23d437b2bf}
+
+
+Watch a file descriptor for writing
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fd}]the HANDLE \item[{\em semaphore}]to signal when fd is ready for reading \end{description}
+\end{Desc}
+
+
+Definition at line 112 of file syx-scheduler-win.c.\hypertarget{syx-scheduler-win_8c_28eac1f77d3be9549426a9166ac5a9f3}{
+\index{syx-scheduler-win.c@{syx-scheduler-win.c}!syx\_\-scheduler\_\-poll\_\-write\_\-register@{syx\_\-scheduler\_\-poll\_\-write\_\-register}}
+\index{syx\_\-scheduler\_\-poll\_\-write\_\-register@{syx\_\-scheduler\_\-poll\_\-write\_\-register}!syx-scheduler-win.c@{syx-scheduler-win.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-scheduler\_\-poll\_\-write\_\-register ({\bf syx\_\-nint} {\em fd}, \/  {\bf SyxOop} {\em semaphore})}}
+\label{syx-scheduler-win_8c_28eac1f77d3be9549426a9166ac5a9f3}
+
+
+Watch a file descriptor for writing
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fd}]the HANDLE \item[{\em semaphore}]to signal when fd is ready for writing \end{description}
+\end{Desc}
+
+
+Definition at line 129 of file syx-scheduler-win.c.

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="syx_interpreter" kind="page">
+    <compoundname>syx_interpreter</compoundname>
+    <title>Syx Interpreter</title>
+    <detaileddescription>
+<para>The stack pointer points to arguments, temporaries and the method local stack.</para><para>When a context is needed from the Smalltalk-side (e.g. thisContext, Processor activeProcess context, context parent), a MethodContext or BlockContext is created on the fly, or returned the existing one. Working on the context instance will affect Process stack. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

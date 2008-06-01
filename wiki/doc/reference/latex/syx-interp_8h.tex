@@ -1,0 +1,612 @@
+\hypertarget{syx-interp_8h}{
+\section{syx/syx-interp.h File Reference}
+\label{syx-interp_8h}\index{syx/syx-interp.h@{syx/syx-interp.h}}
+}
+{\tt \#include \char`\"{}syx-object.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-types.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-scheduler.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-init.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_syx_interp_frame}{SyxInterpFrame}
+\item 
+struct \hyperlink{struct_syx_interp_state}{SyxInterpState}
+\item 
+struct \hyperlink{struct_syx_primitive_entry}{SyxPrimitiveEntry}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{syx-interp_8h_36ed8b83722f6b5db96c921d75914c8b}{SYX\_\-INTERP\_\-STATE\_\-NEW}~\{0, 0, 0, 0, 0, 0, 0, 0, 0, \{0\}, 0\}
+\item 
+\#define \hyperlink{syx-interp_8h_1fbd6d0a8b4dd7990d38e6ecb49a4a75}{SYX\_\-PRIM\_\-RETURN}(object)
+\item 
+\#define \hyperlink{syx-interp_8h_f3fa65412c46c97a00e4a496bfb07abe}{SYX\_\-PRIM\_\-YIELD}(object)
+\item 
+\#define \hyperlink{syx-interp_8h_0662d99c9b3fec34c01003ae66463756}{SYX\_\-PRIM\_\-FAIL}
+\item 
+\#define \hyperlink{syx-interp_8h_d4c3512abbc543dc8804970eef8b2ea3}{SYX\_\-PRIM\_\-ARGS}(count)
+\item 
+\#define \hyperlink{syx-interp_8h_74a8bedcef0fe39a058e5c6beb5f6662}{SYX\_\-PRIMITIVES\_\-MAX}~112
+\item 
+\#define \hyperlink{syx-interp_8h_6d605406b1f829cbafb73bff1b959841}{SYX\_\-FUNC\_\-PRIMITIVE}(name)
+\item 
+\#define \hyperlink{syx-interp_8h_c8a67ae79ddd303b4bbdbc71573a5090}{SYX\_\-FUNC\_\-INTERPRETER}(name)
+\item 
+\#define \hyperlink{syx-interp_8h_72950794ade0181c2f6dbb4f7eb56188}{syx\_\-interp\_\-stack\_\-push}(oop)~($\ast$(\_\-syx\_\-interp\_\-state.frame $\rightarrow$ stack++) = (oop))
+\item 
+\#define \hyperlink{syx-interp_8h_45923c7b4635a8225267ddd73d208b1d}{syx\_\-interp\_\-stack\_\-pop}()~($\ast$(--\_\-syx\_\-interp\_\-state.frame $\rightarrow$ stack))
+\item 
+\#define \hyperlink{syx-interp_8h_441849bafd3d13926bea2008361f6d47}{syx\_\-interp\_\-stack\_\-peek}()~($\ast$(\_\-syx\_\-interp\_\-state.frame $\rightarrow$ stack-1))
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct \hyperlink{struct_syx_interp_frame}{SyxInterpFrame} \hyperlink{syx-interp_8h_feb9a871de0ca32c4f2ee87a346b1125}{SyxInterpFrame}
+\item 
+typedef struct \hyperlink{struct_syx_interp_state}{SyxInterpState} \hyperlink{syx-interp_8h_c5d43af3b7df53e03c2abec53c7a25c5}{SyxInterpState}
+\item 
+typedef \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool}($\ast$ \hyperlink{syx-interp_8h_3c7eb85b3ff9105a45f6ff8a4efb6462}{SyxPrimitiveFunc} )(\hyperlink{struct_syx_interp_state}{SyxInterpState} $\ast$es, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} method)
+\item 
+typedef struct \hyperlink{struct_syx_primitive_entry}{SyxPrimitiveEntry} \hyperlink{syx-interp_8h_b335395931e5fbbf25141d208000a91f}{SyxPrimitiveEntry}
+\item 
+typedef \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool}($\ast$ \hyperlink{syx-interp_8h_17bf8fdae73c510d8e75076664ce9e4b}{SyxInterpreterFunc} )(\hyperlink{syx-types_8h_5c0caeeeb45b4575061ab7f368f10337}{syx\_\-uint16} argument)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+EXPORT \hyperlink{struct_syx_interp_frame}{SyxInterpFrame} $\ast$ \hyperlink{syx-interp_8h_5dffc11604b4760e555186fb26cce54c}{syx\_\-interp\_\-context\_\-to\_\-frame} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} context)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-interp_8h_237d9e66928c5fb95a9b6e273512951e}{syx\_\-interp\_\-frame\_\-to\_\-context} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} stack, \hyperlink{struct_syx_interp_frame}{SyxInterpFrame} $\ast$frame)
+\item 
+INLINE \hyperlink{struct_syx_primitive_entry}{SyxPrimitiveEntry} $\ast$ \hyperlink{syx-interp_8h_029bfe3a640d83819e4734b9994107b8}{syx\_\-primitive\_\-get\_\-entry} (\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} index)
+\item 
+EXPORT \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} \hyperlink{syx-interp_8h_ffbeb6d55f75e60ad16f0a87bb65a8a2}{syx\_\-primitive\_\-get\_\-index} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} name)
+\item 
+EXPORT void \hyperlink{syx-interp_8h_dbf95deb73b49620ce9b5c884e6cbcae}{syx\_\-interp\_\-init} (void)
+\item 
+EXPORT void \hyperlink{syx-interp_8h_7e6dca8bac2c5fc57dae4cb0d76f23eb}{syx\_\-interp\_\-quit} (void)
+\item 
+EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-interp_8h_aaa4ae62114dedc402940a51711c5c14}{syx\_\-interp\_\-swap\_\-context} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} process, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} context)
+\item 
+EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-interp_8h_9a508ea64c04f29c84de6c4a320c86f8}{syx\_\-interp\_\-enter\_\-context} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} process, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} context)
+\item 
+EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-interp_8h_f677bca3ba7ff8315ce0b1406b7a97b5}{syx\_\-interp\_\-leave\_\-and\_\-answer} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} return\_\-object, \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} use\_\-stack\_\-return)
+\item 
+INLINE \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-interp_8h_91229ee5f9766714c7bdfb51cfb34258}{syx\_\-interp\_\-call\_\-primitive} (\hyperlink{syx-types_8h_2d6178ce3abc15f1a0df5bbd7eb5e302}{syx\_\-int16} primitive, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} method)
+\item 
+EXPORT void \hyperlink{syx-interp_8h_eafe6b33c73dafb5b724de995c487e1b}{syx\_\-process\_\-execute\_\-scheduled} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} process)
+\item 
+EXPORT void \hyperlink{syx-interp_8h_1260b0caa0982d0e6d2d0a858bea5867}{syx\_\-process\_\-execute\_\-blocking} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} process)
+\item 
+EXPORT \hyperlink{syx-interp_8h_54820f46e37cdbc55742dbe9280161a3}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-push\_\-instance)
+\item 
+EXPORT \hyperlink{syx-interp_8h_b3211faac2a5031ccc2cf7377e9e0588}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-push\_\-argument)
+\item 
+EXPORT \hyperlink{syx-interp_8h_bd9368dc223c16d153755a3c683b6147}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-push\_\-temporary)
+\item 
+EXPORT \hyperlink{syx-interp_8h_2355b0e443b14065e6e4425c159e5783}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-push\_\-literal)
+\item 
+EXPORT \hyperlink{syx-interp_8h_25428c9656a55f62d7bb473387f53638}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-push\_\-constant)
+\item 
+EXPORT \hyperlink{syx-interp_8h_06ccc6ddebb2f2c838192a2696c61515}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-push\_\-binding\_\-variable)
+\item 
+EXPORT \hyperlink{syx-interp_8h_bf880c666489c64cdd903d3d88d94ead}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-push\_\-array)
+\item 
+EXPORT \hyperlink{syx-interp_8h_10b1b7a3e4254ef8fc5b78d527494502}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-push\_\-block\_\-closure)
+\item 
+EXPORT \hyperlink{syx-interp_8h_de8bfe87ab591e15d025f6a3d768ec28}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-assign\_\-instance)
+\item 
+EXPORT \hyperlink{syx-interp_8h_533bdb40c884765460fe0bae489a5e53}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-assign\_\-temporary)
+\item 
+EXPORT \hyperlink{syx-interp_8h_292058c552463272423fb34da7219ac0}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-assign\_\-binding\_\-variable)
+\item 
+EXPORT \hyperlink{syx-interp_8h_10ea4850e8d53efc10a3581d8b321e7b}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-mark\_\-arguments)
+\item 
+EXPORT \hyperlink{syx-interp_8h_e716214de5c9198cf24cc79921a6cd0c}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-send\_\-message)
+\item 
+EXPORT \hyperlink{syx-interp_8h_d81f03d5031351e56956a7b979683d88}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-send\_\-super)
+\item 
+EXPORT \hyperlink{syx-interp_8h_f81064b895c3d925f517ccd89f652133}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-send\_\-unary)
+\item 
+EXPORT \hyperlink{syx-interp_8h_bd8a612284c94f636ad4ec6b92a2487f}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-send\_\-binary)
+\item 
+EXPORT \hyperlink{syx-interp_8h_4effe2c2eb7ff02fabba95103cc52529}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-do\_\-special)
+\item 
+EXPORT \hyperlink{syx-interp_8h_50f705244d1caf2f54378f234e9c5b1c}{SYX\_\-FUNC\_\-INTERPRETER} (syx\_\-interp\_\-do\_\-extended)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{syx-interp_8h_c8a67ae79ddd303b4bbdbc71573a5090}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-FUNC\_\-INTERPRETER(name)}}
+\label{syx-interp_8h_c8a67ae79ddd303b4bbdbc71573a5090}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}syx_bool                                \
+  name (syx_uint16 argument)
+\end{verbatim}
+\end{Code}
+
+
+Definition at line 140 of file syx-interp.h.\hypertarget{syx-interp_8h_6d605406b1f829cbafb73bff1b959841}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-PRIMITIVE@{SYX\_\-FUNC\_\-PRIMITIVE}}
+\index{SYX\_\-FUNC\_\-PRIMITIVE@{SYX\_\-FUNC\_\-PRIMITIVE}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-FUNC\_\-PRIMITIVE(name)}}
+\label{syx-interp_8h_6d605406b1f829cbafb73bff1b959841}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}syx_bool                                                \
+  name (SyxInterpState *es, SyxOop method)
+\end{verbatim}
+\end{Code}
+
+
+Definition at line 107 of file syx-interp.h.\hypertarget{syx-interp_8h_441849bafd3d13926bea2008361f6d47}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-stack\_\-peek@{syx\_\-interp\_\-stack\_\-peek}}
+\index{syx\_\-interp\_\-stack\_\-peek@{syx\_\-interp\_\-stack\_\-peek}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-interp\_\-stack\_\-peek()~($\ast$(\_\-syx\_\-interp\_\-state.frame $\rightarrow$ stack-1))}}
+\label{syx-interp_8h_441849bafd3d13926bea2008361f6d47}
+
+
+Peek the last object pushed into the stack 
+
+Definition at line 154 of file syx-interp.h.\hypertarget{syx-interp_8h_45923c7b4635a8225267ddd73d208b1d}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-stack\_\-pop@{syx\_\-interp\_\-stack\_\-pop}}
+\index{syx\_\-interp\_\-stack\_\-pop@{syx\_\-interp\_\-stack\_\-pop}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-interp\_\-stack\_\-pop()~($\ast$(--\_\-syx\_\-interp\_\-state.frame $\rightarrow$ stack))}}
+\label{syx-interp_8h_45923c7b4635a8225267ddd73d208b1d}
+
+
+Pop an object from the stack 
+
+Definition at line 151 of file syx-interp.h.\hypertarget{syx-interp_8h_72950794ade0181c2f6dbb4f7eb56188}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-stack\_\-push@{syx\_\-interp\_\-stack\_\-push}}
+\index{syx\_\-interp\_\-stack\_\-push@{syx\_\-interp\_\-stack\_\-push}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-interp\_\-stack\_\-push(oop)~($\ast$(\_\-syx\_\-interp\_\-state.frame $\rightarrow$ stack++) = (oop))}}
+\label{syx-interp_8h_72950794ade0181c2f6dbb4f7eb56188}
+
+
+Push an object into the stack 
+
+Definition at line 148 of file syx-interp.h.
+
+Referenced by syx\_\-interp\_\-call\_\-primitive(), and syx\_\-interp\_\-leave\_\-and\_\-answer().\hypertarget{syx-interp_8h_36ed8b83722f6b5db96c921d75914c8b}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-INTERP\_\-STATE\_\-NEW@{SYX\_\-INTERP\_\-STATE\_\-NEW}}
+\index{SYX\_\-INTERP\_\-STATE\_\-NEW@{SYX\_\-INTERP\_\-STATE\_\-NEW}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-INTERP\_\-STATE\_\-NEW~\{0, 0, 0, 0, 0, 0, 0, 0, 0, \{0\}, 0\}}}
+\label{syx-interp_8h_36ed8b83722f6b5db96c921d75914c8b}
+
+
+
+
+Definition at line 35 of file syx-interp.h.
+
+Referenced by syx\_\-interp\_\-enter\_\-context(), and syx\_\-interp\_\-swap\_\-context().\hypertarget{syx-interp_8h_d4c3512abbc543dc8804970eef8b2ea3}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-PRIM\_\-ARGS@{SYX\_\-PRIM\_\-ARGS}}
+\index{SYX\_\-PRIM\_\-ARGS@{SYX\_\-PRIM\_\-ARGS}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PRIM\_\-ARGS(count)}}
+\label{syx-interp_8h_d4c3512abbc543dc8804970eef8b2ea3}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}if (count > _syx_interp_state.message_arguments_count)       \
+    {                                                          \
+      SYX_PRIM_FAIL;                                           \
+    }
+\end{verbatim}
+\end{Code}
+Assert the number of minimum number of arguments given. Call SYX\_\-PRIM\_\-FAIL if assert fails 
+
+Definition at line 97 of file syx-interp.h.\hypertarget{syx-interp_8h_0662d99c9b3fec34c01003ae66463756}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-PRIM\_\-FAIL@{SYX\_\-PRIM\_\-FAIL}}
+\index{SYX\_\-PRIM\_\-FAIL@{SYX\_\-PRIM\_\-FAIL}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PRIM\_\-FAIL}}
+\label{syx-interp_8h_0662d99c9b3fec34c01003ae66463756}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}_syx_interp_frame_prepare_new (&_syx_interp_state, method);           \
+  return FALSE
+\end{verbatim}
+\end{Code}
+Enter the method which contains the primitive call 
+
+Definition at line 92 of file syx-interp.h.
+
+Referenced by syx\_\-plugin\_\-call(), and syx\_\-plugin\_\-call\_\-interp().\hypertarget{syx-interp_8h_1fbd6d0a8b4dd7990d38e6ecb49a4a75}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-PRIM\_\-RETURN@{SYX\_\-PRIM\_\-RETURN}}
+\index{SYX\_\-PRIM\_\-RETURN@{SYX\_\-PRIM\_\-RETURN}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PRIM\_\-RETURN(object)}}
+\label{syx-interp_8h_1fbd6d0a8b4dd7990d38e6ecb49a4a75}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}syx_interp_stack_push (object);                                       \
+  return TRUE
+\end{verbatim}
+\end{Code}
+Back to the interpreter and push object into the stack 
+
+Definition at line 82 of file syx-interp.h.\hypertarget{syx-interp_8h_f3fa65412c46c97a00e4a496bfb07abe}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-PRIM\_\-YIELD@{SYX\_\-PRIM\_\-YIELD}}
+\index{SYX\_\-PRIM\_\-YIELD@{SYX\_\-PRIM\_\-YIELD}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PRIM\_\-YIELD(object)}}
+\label{syx-interp_8h_f3fa65412c46c97a00e4a496bfb07abe}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}syx_interp_stack_push (object);                \
+  return FALSE
+\end{verbatim}
+\end{Code}
+Same as SYX\_\-PRIM\_\-RETURN but the process yield the control 
+
+Definition at line 87 of file syx-interp.h.\hypertarget{syx-interp_8h_74a8bedcef0fe39a058e5c6beb5f6662}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-PRIMITIVES\_\-MAX@{SYX\_\-PRIMITIVES\_\-MAX}}
+\index{SYX\_\-PRIMITIVES\_\-MAX@{SYX\_\-PRIMITIVES\_\-MAX}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PRIMITIVES\_\-MAX~112}}
+\label{syx-interp_8h_74a8bedcef0fe39a058e5c6beb5f6662}
+
+
+The number of primitives 
+
+Definition at line 104 of file syx-interp.h.
+
+Referenced by syx\_\-primitive\_\-get\_\-entry(), and syx\_\-primitive\_\-get\_\-index().
+
+\subsection{Typedef Documentation}
+\hypertarget{syx-interp_8h_feb9a871de0ca32c4f2ee87a346b1125}{
+\index{syx-interp.h@{syx-interp.h}!SyxInterpFrame@{SyxInterpFrame}}
+\index{SyxInterpFrame@{SyxInterpFrame}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf SyxInterpFrame} {\bf SyxInterpFrame}}}
+\label{syx-interp_8h_feb9a871de0ca32c4f2ee87a346b1125}
+
+
+
+
+Definition at line 42 of file syx-interp.h.\hypertarget{syx-interp_8h_17bf8fdae73c510d8e75076664ce9e4b}{
+\index{syx-interp.h@{syx-interp.h}!SyxInterpreterFunc@{SyxInterpreterFunc}}
+\index{SyxInterpreterFunc@{SyxInterpreterFunc}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf syx\_\-bool}($\ast$  {\bf SyxInterpreterFunc})({\bf syx\_\-uint16} argument)}}
+\label{syx-interp_8h_17bf8fdae73c510d8e75076664ce9e4b}
+
+
+
+
+Definition at line 139 of file syx-interp.h.\hypertarget{syx-interp_8h_c5d43af3b7df53e03c2abec53c7a25c5}{
+\index{syx-interp.h@{syx-interp.h}!SyxInterpState@{SyxInterpState}}
+\index{SyxInterpState@{SyxInterpState}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf SyxInterpState} {\bf SyxInterpState}}}
+\label{syx-interp_8h_c5d43af3b7df53e03c2abec53c7a25c5}
+
+
+
+
+Definition at line 58 of file syx-interp.h.\hypertarget{syx-interp_8h_b335395931e5fbbf25141d208000a91f}{
+\index{syx-interp.h@{syx-interp.h}!SyxPrimitiveEntry@{SyxPrimitiveEntry}}
+\index{SyxPrimitiveEntry@{SyxPrimitiveEntry}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf SyxPrimitiveEntry} {\bf SyxPrimitiveEntry}}}
+\label{syx-interp_8h_b335395931e5fbbf25141d208000a91f}
+
+
+
+
+Definition at line 111 of file syx-interp.h.\hypertarget{syx-interp_8h_3c7eb85b3ff9105a45f6ff8a4efb6462}{
+\index{syx-interp.h@{syx-interp.h}!SyxPrimitiveFunc@{SyxPrimitiveFunc}}
+\index{SyxPrimitiveFunc@{SyxPrimitiveFunc}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf syx\_\-bool}($\ast$  {\bf SyxPrimitiveFunc})({\bf SyxInterpState} $\ast$es, {\bf SyxOop} method)}}
+\label{syx-interp_8h_3c7eb85b3ff9105a45f6ff8a4efb6462}
+
+
+
+
+Definition at line 106 of file syx-interp.h.
+
+\subsection{Function Documentation}
+\hypertarget{syx-interp_8h_50f705244d1caf2f54378f234e9c5b1c}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-do\_\-extended)}}
+\label{syx-interp_8h_50f705244d1caf2f54378f234e9c5b1c}
+
+
+\hypertarget{syx-interp_8h_4effe2c2eb7ff02fabba95103cc52529}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-do\_\-special)}}
+\label{syx-interp_8h_4effe2c2eb7ff02fabba95103cc52529}
+
+
+\hypertarget{syx-interp_8h_bd8a612284c94f636ad4ec6b92a2487f}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-send\_\-binary)}}
+\label{syx-interp_8h_bd8a612284c94f636ad4ec6b92a2487f}
+
+
+\hypertarget{syx-interp_8h_f81064b895c3d925f517ccd89f652133}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-send\_\-unary)}}
+\label{syx-interp_8h_f81064b895c3d925f517ccd89f652133}
+
+
+\hypertarget{syx-interp_8h_d81f03d5031351e56956a7b979683d88}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-send\_\-super)}}
+\label{syx-interp_8h_d81f03d5031351e56956a7b979683d88}
+
+
+\hypertarget{syx-interp_8h_e716214de5c9198cf24cc79921a6cd0c}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-send\_\-message)}}
+\label{syx-interp_8h_e716214de5c9198cf24cc79921a6cd0c}
+
+
+\hypertarget{syx-interp_8h_10ea4850e8d53efc10a3581d8b321e7b}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-mark\_\-arguments)}}
+\label{syx-interp_8h_10ea4850e8d53efc10a3581d8b321e7b}
+
+
+\hypertarget{syx-interp_8h_292058c552463272423fb34da7219ac0}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-assign\_\-binding\_\-variable)}}
+\label{syx-interp_8h_292058c552463272423fb34da7219ac0}
+
+
+\hypertarget{syx-interp_8h_533bdb40c884765460fe0bae489a5e53}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-assign\_\-temporary)}}
+\label{syx-interp_8h_533bdb40c884765460fe0bae489a5e53}
+
+
+\hypertarget{syx-interp_8h_de8bfe87ab591e15d025f6a3d768ec28}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-assign\_\-instance)}}
+\label{syx-interp_8h_de8bfe87ab591e15d025f6a3d768ec28}
+
+
+\hypertarget{syx-interp_8h_10b1b7a3e4254ef8fc5b78d527494502}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-push\_\-block\_\-closure)}}
+\label{syx-interp_8h_10b1b7a3e4254ef8fc5b78d527494502}
+
+
+\hypertarget{syx-interp_8h_bf880c666489c64cdd903d3d88d94ead}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-push\_\-array)}}
+\label{syx-interp_8h_bf880c666489c64cdd903d3d88d94ead}
+
+
+\hypertarget{syx-interp_8h_06ccc6ddebb2f2c838192a2696c61515}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-push\_\-binding\_\-variable)}}
+\label{syx-interp_8h_06ccc6ddebb2f2c838192a2696c61515}
+
+
+\hypertarget{syx-interp_8h_25428c9656a55f62d7bb473387f53638}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-push\_\-constant)}}
+\label{syx-interp_8h_25428c9656a55f62d7bb473387f53638}
+
+
+\hypertarget{syx-interp_8h_2355b0e443b14065e6e4425c159e5783}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-push\_\-literal)}}
+\label{syx-interp_8h_2355b0e443b14065e6e4425c159e5783}
+
+
+\hypertarget{syx-interp_8h_bd9368dc223c16d153755a3c683b6147}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-push\_\-temporary)}}
+\label{syx-interp_8h_bd9368dc223c16d153755a3c683b6147}
+
+
+\hypertarget{syx-interp_8h_b3211faac2a5031ccc2cf7377e9e0588}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-push\_\-argument)}}
+\label{syx-interp_8h_b3211faac2a5031ccc2cf7377e9e0588}
+
+
+\hypertarget{syx-interp_8h_54820f46e37cdbc55742dbe9280161a3}{
+\index{syx-interp.h@{syx-interp.h}!SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}}
+\index{SYX\_\-FUNC\_\-INTERPRETER@{SYX\_\-FUNC\_\-INTERPRETER}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT SYX\_\-FUNC\_\-INTERPRETER (syx\_\-interp\_\-push\_\-instance)}}
+\label{syx-interp_8h_54820f46e37cdbc55742dbe9280161a3}
+
+
+\hypertarget{syx-interp_8h_91229ee5f9766714c7bdfb51cfb34258}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-call\_\-primitive@{syx\_\-interp\_\-call\_\-primitive}}
+\index{syx\_\-interp\_\-call\_\-primitive@{syx\_\-interp\_\-call\_\-primitive}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-bool} syx\_\-interp\_\-call\_\-primitive ({\bf syx\_\-int16} {\em primitive}, \/  {\bf SyxOop} {\em method})}}
+\label{syx-interp_8h_91229ee5f9766714c7bdfb51cfb34258}
+
+
+Calls a primitive.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em primitive}]the primitive index \item[{\em method}]the method in which the primitive is defined \end{description}
+\end{Desc}
+
+
+Definition at line 168 of file syx-interp.h.\hypertarget{syx-interp_8h_5dffc11604b4760e555186fb26cce54c}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-context\_\-to\_\-frame@{syx\_\-interp\_\-context\_\-to\_\-frame}}
+\index{syx\_\-interp\_\-context\_\-to\_\-frame@{syx\_\-interp\_\-context\_\-to\_\-frame}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxInterpFrame}$\ast$ syx\_\-interp\_\-context\_\-to\_\-frame ({\bf SyxOop} {\em context})}}
+\label{syx-interp_8h_5dffc11604b4760e555186fb26cce54c}
+
+
+Returns the frame associated to the given context 
+
+Definition at line 165 of file syx-interp.c.
+
+Referenced by syx\_\-interp\_\-swap\_\-context().\hypertarget{syx-interp_8h_9a508ea64c04f29c84de6c4a320c86f8}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-enter\_\-context@{syx\_\-interp\_\-enter\_\-context}}
+\index{syx\_\-interp\_\-enter\_\-context@{syx\_\-interp\_\-enter\_\-context}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-bool} syx\_\-interp\_\-enter\_\-context ({\bf SyxOop} {\em process}, \/  {\bf SyxOop} {\em context})}}
+\label{syx-interp_8h_9a508ea64c04f29c84de6c4a320c86f8}
+
+
+Enters a new MethodContext or BlockContext.
+
+\begin{Desc}
+\item[Returns:]FALSE if the context was syx\_\-nil \end{Desc}
+
+
+Definition at line 271 of file syx-interp.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-do\_\-it\_\-blocking(), syx\_\-file\_\-in\_\-blocking(), syx\_\-initialize\_\-system(), syx\_\-memory\_\-clear(), syx\_\-object\_\-free(), syx\_\-object\_\-initialize(), syx\_\-signal(), and syx\_\-signal\_\-does\_\-not\_\-understand().\hypertarget{syx-interp_8h_237d9e66928c5fb95a9b6e273512951e}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-frame\_\-to\_\-context@{syx\_\-interp\_\-frame\_\-to\_\-context}}
+\index{syx\_\-interp\_\-frame\_\-to\_\-context@{syx\_\-interp\_\-frame\_\-to\_\-context}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-interp\_\-frame\_\-to\_\-context ({\bf SyxOop} {\em stack}, \/  {\bf SyxInterpFrame} $\ast$ {\em frame})}}
+\label{syx-interp_8h_237d9e66928c5fb95a9b6e273512951e}
+
+
+Creates a MethodContext or BlockContext from a frame
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em stack}]the OOP of the whole stack, e.g. SYX\_\-PROCESS\_\-STACK (aProcess). This will not be used if the frame has been detached. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]a new context \end{Desc}
+
+
+Definition at line 179 of file syx-interp.c.\hypertarget{syx-interp_8h_dbf95deb73b49620ce9b5c884e6cbcae}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-init@{syx\_\-interp\_\-init}}
+\index{syx\_\-interp\_\-init@{syx\_\-interp\_\-init}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-interp\_\-init (void)}}
+\label{syx-interp_8h_dbf95deb73b49620ce9b5c884e6cbcae}
+
+
+Initialize the interpreter to be ready to execute processes.
+
+This function is called internally by Syx and should not be called from user applications. 
+
+Definition at line 219 of file syx-interp.c.
+
+Referenced by syx\_\-fetch\_\-basic().\hypertarget{syx-interp_8h_f677bca3ba7ff8315ce0b1406b7a97b5}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-leave\_\-and\_\-answer@{syx\_\-interp\_\-leave\_\-and\_\-answer}}
+\index{syx\_\-interp\_\-leave\_\-and\_\-answer@{syx\_\-interp\_\-leave\_\-and\_\-answer}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-bool} syx\_\-interp\_\-leave\_\-and\_\-answer ({\bf SyxOop} {\em return\_\-object}, \/  {\bf syx\_\-bool} {\em use\_\-stack\_\-return})}}
+\label{syx-interp_8h_f677bca3ba7ff8315ce0b1406b7a97b5}
+
+
+Leaves the current frame and push an object into the returning context.
+
+Use the stack return frame use\_\-stack\_\-return is specified, otherwise use the parent frame. Then sets the returned object variable of the process to the specified object. Finally swap the context with the new one. Terminate the process if no valid return frame is found.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em return\_\-object}]the object to be pushed into the returning context \item[{\em use\_\-stack\_\-return}]TRUE to use the stack return frame, FALSE to use the parent frame \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FALSE if no valid return frame is found \end{Desc}
+
+
+Definition at line 334 of file syx-interp.c.\hypertarget{syx-interp_8h_7e6dca8bac2c5fc57dae4cb0d76f23eb}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-quit@{syx\_\-interp\_\-quit}}
+\index{syx\_\-interp\_\-quit@{syx\_\-interp\_\-quit}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-interp\_\-quit (void)}}
+\label{syx-interp_8h_7e6dca8bac2c5fc57dae4cb0d76f23eb}
+
+
+Finalize the execution of processes and free all the memory used by the interpreter.
+
+This function is called internally by Syx e should not be called from user applications 
+
+Definition at line 229 of file syx-interp.c.
+
+Referenced by syx\_\-quit().\hypertarget{syx-interp_8h_aaa4ae62114dedc402940a51711c5c14}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-interp\_\-swap\_\-context@{syx\_\-interp\_\-swap\_\-context}}
+\index{syx\_\-interp\_\-swap\_\-context@{syx\_\-interp\_\-swap\_\-context}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-bool} syx\_\-interp\_\-swap\_\-context ({\bf SyxOop} {\em process}, \/  {\bf SyxOop} {\em context})}}
+\label{syx-interp_8h_aaa4ae62114dedc402940a51711c5c14}
+
+
+Swap the current context with the given one. The context must be already existing in the process stack.
+
+\begin{Desc}
+\item[Returns:]FALSE if the context was syx\_\-nil \end{Desc}
+
+
+Definition at line 240 of file syx-interp.c.\hypertarget{syx-interp_8h_029bfe3a640d83819e4734b9994107b8}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-primitive\_\-get\_\-entry@{syx\_\-primitive\_\-get\_\-entry}}
+\index{syx\_\-primitive\_\-get\_\-entry@{syx\_\-primitive\_\-get\_\-entry}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxPrimitiveEntry}$\ast$ syx\_\-primitive\_\-get\_\-entry ({\bf syx\_\-int32} {\em index})}}
+\label{syx-interp_8h_029bfe3a640d83819e4734b9994107b8}
+
+
+Returns the entry of a primitive at a given index 
+
+Definition at line 124 of file syx-interp.h.
+
+Referenced by syx\_\-interp\_\-call\_\-primitive().\hypertarget{syx-interp_8h_ffbeb6d55f75e60ad16f0a87bb65a8a2}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-primitive\_\-get\_\-index@{syx\_\-primitive\_\-get\_\-index}}
+\index{syx\_\-primitive\_\-get\_\-index@{syx\_\-primitive\_\-get\_\-index}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-int32} syx\_\-primitive\_\-get\_\-index ({\bf syx\_\-symbol} {\em name})}}
+\label{syx-interp_8h_ffbeb6d55f75e60ad16f0a87bb65a8a2}
+
+
+Returns the index of a primitive having a specific name 
+
+Definition at line 2104 of file syx-primitives.c.\hypertarget{syx-interp_8h_1260b0caa0982d0e6d2d0a858bea5867}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-process\_\-execute\_\-blocking@{syx\_\-process\_\-execute\_\-blocking}}
+\index{syx\_\-process\_\-execute\_\-blocking@{syx\_\-process\_\-execute\_\-blocking}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-process\_\-execute\_\-blocking ({\bf SyxOop} {\em process})}}
+\label{syx-interp_8h_1260b0caa0982d0e6d2d0a858bea5867}
+
+
+Same as syx\_\-process\_\-execute\_\-scheduled but does not take care about the byteslice counter, and control is not yield until the process is terminated. 
+
+Definition at line 390 of file syx-interp.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-do\_\-it\_\-blocking(), syx\_\-file\_\-in\_\-blocking(), syx\_\-initialize\_\-system(), syx\_\-memory\_\-clear(), syx\_\-object\_\-free(), syx\_\-object\_\-initialize(), and syx\_\-signal().\hypertarget{syx-interp_8h_eafe6b33c73dafb5b724de995c487e1b}{
+\index{syx-interp.h@{syx-interp.h}!syx\_\-process\_\-execute\_\-scheduled@{syx\_\-process\_\-execute\_\-scheduled}}
+\index{syx\_\-process\_\-execute\_\-scheduled@{syx\_\-process\_\-execute\_\-scheduled}!syx-interp.h@{syx-interp.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-process\_\-execute\_\-scheduled ({\bf SyxOop} {\em process})}}
+\label{syx-interp_8h_eafe6b33c73dafb5b724de995c487e1b}
+
+
+Executes the given process and returns once the byteslice is reached, no more instructions left or yield has been requested.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em process}]must not be nil \end{description}
+\end{Desc}
+
+
+Definition at line 368 of file syx-interp.c.
+
+Referenced by syx\_\-scheduler\_\-iterate(), and syx\_\-scheduler\_\-run().

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="syx_object" kind="page">
+    <compoundname>syx_object</compoundname>
+    <title>Syx Object</title>
+    <detaileddescription>
+<sect1 id="syx_object_1Description">
+<title>Description</title>
+<para><ref refid="syx-object_8c" kindref="compound">syx-object.c</ref>: this file contains all the functions needed to work with Smalltalk objects.</para><para>Objects are the core of Syx. They can represent both instances or classes. <simplesect kind="note"><para>all objects are allocated in the Syx Memory </para></simplesect>
+</para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

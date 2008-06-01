@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="struct_syx_bytecode" kind="struct" prot="public">
+    <compoundname>SyxBytecode</compoundname>
+    <includes refid="syx-bytecode_8h" local="no">syx-bytecode.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_syx_bytecode_1412d52c66bcd286f5a2b1b8b9bb97744" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_15c0caeeeb45b4575061ab7f368f10337" kindref="member">syx_uint16</ref></type>
+        <definition>syx_uint16 SyxBytecode::code[SYX_BYTECODE_MAX+1]</definition>
+        <argsstring>[SYX_BYTECODE_MAX+1]</argsstring>
+        <name>code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hold 16-bit wide bytecodes </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.h" line="72" bodyfile="/media/common/projects/syx/syx/syx-bytecode.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_bytecode_10a67bb938887bf5878891840d70549dc" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_15c0caeeeb45b4575061ab7f368f10337" kindref="member">syx_uint16</ref></type>
+        <definition>syx_uint16 SyxBytecode::code_top</definition>
+        <argsstring></argsstring>
+        <name>code_top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.h" line="73" bodyfile="/media/common/projects/syx/syx/syx-bytecode.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="syx-bytecode_8h_1e034d74f4bcb6913a9b807e87f534b8a" compoundref="syx-bytecode_8c" startline="37" endline="47">syx_bytecode_new</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_bytecode_1116da03eb46630df968a72cd96c944ba" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxBytecode::literals[SYX_BYTECODE_MAX+1]</definition>
+        <argsstring>[SYX_BYTECODE_MAX+1]</argsstring>
+        <name>literals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>An Array of literals </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.h" line="75" bodyfile="/media/common/projects/syx/syx/syx-bytecode.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="syx-bytecode_8h_161cd2891a6644ee01481a4d43271efb9" compoundref="syx-bytecode_8c" startline="156" endline="170">syx_bytecode_gen_literal</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_bytecode_18abab30c958b6ff43f846bbcddb31c33" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_15c0caeeeb45b4575061ab7f368f10337" kindref="member">syx_uint16</ref></type>
+        <definition>syx_uint16 SyxBytecode::literals_top</definition>
+        <argsstring></argsstring>
+        <name>literals_top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.h" line="76" bodyfile="/media/common/projects/syx/syx/syx-bytecode.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="syx-bytecode_8h_161cd2891a6644ee01481a4d43271efb9" compoundref="syx-bytecode_8c" startline="156" endline="170">syx_bytecode_gen_literal</referencedby>
+        <referencedby refid="syx-bytecode_8h_1e034d74f4bcb6913a9b807e87f534b8a" compoundref="syx-bytecode_8c" startline="37" endline="47">syx_bytecode_new</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_bytecode_1b09840b5e68800427b584f3f75a754e5" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref></type>
+        <definition>syx_int32 SyxBytecode::stack_size</definition>
+        <argsstring></argsstring>
+        <name>stack_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Total number of objects that the method can push into the stack </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.h" line="79" bodyfile="/media/common/projects/syx/syx/syx-bytecode.h" bodystart="79" bodyend="-1"/>
+        <referencedby refid="syx-bytecode_8h_1e034d74f4bcb6913a9b807e87f534b8a" compoundref="syx-bytecode_8c" startline="37" endline="47">syx_bytecode_new</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A struct containing method bytecodes and literals </para>    </detaileddescription>
+    <location file="/media/common/projects/syx/syx/syx-bytecode.h" line="70" bodyfile="/media/common/projects/syx/syx/syx-bytecode.h" bodystart="70" bodyend="80"/>
+    <listofallmembers>
+      <member refid="struct_syx_bytecode_1412d52c66bcd286f5a2b1b8b9bb97744" prot="public" virt="non-virtual"><scope>SyxBytecode</scope><name>code</name></member>
+      <member refid="struct_syx_bytecode_10a67bb938887bf5878891840d70549dc" prot="public" virt="non-virtual"><scope>SyxBytecode</scope><name>code_top</name></member>
+      <member refid="struct_syx_bytecode_1116da03eb46630df968a72cd96c944ba" prot="public" virt="non-virtual"><scope>SyxBytecode</scope><name>literals</name></member>
+      <member refid="struct_syx_bytecode_18abab30c958b6ff43f846bbcddb31c33" prot="public" virt="non-virtual"><scope>SyxBytecode</scope><name>literals_top</name></member>
+      <member refid="struct_syx_bytecode_1b09840b5e68800427b584f3f75a754e5" prot="public" virt="non-virtual"><scope>SyxBytecode</scope><name>stack_size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

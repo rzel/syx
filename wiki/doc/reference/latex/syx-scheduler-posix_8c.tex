@@ -1,0 +1,52 @@
+\hypertarget{syx-scheduler-posix_8c}{
+\section{syx/syx-scheduler-posix.c File Reference}
+\label{syx-scheduler-posix_8c}\index{syx/syx-scheduler-posix.c@{syx/syx-scheduler-posix.c}}
+}
+{\tt \#include \char`\"{}syx-object.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-scheduler.h\char`\"{}}\par
+{\tt \#include $<$sys/time.h$>$}\par
+{\tt \#include $<$sys/types.h$>$}\par
+{\tt \#include $<$unistd.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{syx-scheduler-posix_8c_0f6beab52e1173b6a531ba23d437b2bf}{syx\_\-scheduler\_\-poll\_\-read\_\-register} (\hyperlink{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}{syx\_\-nint} fd, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} semaphore)
+\item 
+void \hyperlink{syx-scheduler-posix_8c_28eac1f77d3be9549426a9166ac5a9f3}{syx\_\-scheduler\_\-poll\_\-write\_\-register} (\hyperlink{syx-types_8h_488ad2504ade19c761a3e2a1726b4781}{syx\_\-nint} fd, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} semaphore)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{syx-scheduler-posix_8c_0f6beab52e1173b6a531ba23d437b2bf}{
+\index{syx-scheduler-posix.c@{syx-scheduler-posix.c}!syx\_\-scheduler\_\-poll\_\-read\_\-register@{syx\_\-scheduler\_\-poll\_\-read\_\-register}}
+\index{syx\_\-scheduler\_\-poll\_\-read\_\-register@{syx\_\-scheduler\_\-poll\_\-read\_\-register}!syx-scheduler-posix.c@{syx-scheduler-posix.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-scheduler\_\-poll\_\-read\_\-register ({\bf syx\_\-nint} {\em fd}, \/  {\bf SyxOop} {\em semaphore})}}
+\label{syx-scheduler-posix_8c_0f6beab52e1173b6a531ba23d437b2bf}
+
+
+Watch a file descriptor for writing
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fd}]the file descriptor \item[{\em semaphore}]to signal when fd is ready for reading \end{description}
+\end{Desc}
+
+
+Definition at line 150 of file syx-scheduler-posix.c.\hypertarget{syx-scheduler-posix_8c_28eac1f77d3be9549426a9166ac5a9f3}{
+\index{syx-scheduler-posix.c@{syx-scheduler-posix.c}!syx\_\-scheduler\_\-poll\_\-write\_\-register@{syx\_\-scheduler\_\-poll\_\-write\_\-register}}
+\index{syx\_\-scheduler\_\-poll\_\-write\_\-register@{syx\_\-scheduler\_\-poll\_\-write\_\-register}!syx-scheduler-posix.c@{syx-scheduler-posix.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-scheduler\_\-poll\_\-write\_\-register ({\bf syx\_\-nint} {\em fd}, \/  {\bf SyxOop} {\em semaphore})}}
+\label{syx-scheduler-posix_8c_28eac1f77d3be9549426a9166ac5a9f3}
+
+
+Watch a file descriptor for writing
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fd}]the file descriptor \item[{\em semaphore}]to signal when fd is ready for writing \end{description}
+\end{Desc}
+
+
+Definition at line 172 of file syx-scheduler-posix.c.

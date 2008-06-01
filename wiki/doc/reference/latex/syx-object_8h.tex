@@ -1,0 +1,2192 @@
+\hypertarget{syx-object_8h}{
+\section{syx/syx-object.h File Reference}
+\label{syx-object_8h}\index{syx/syx-object.h@{syx/syx-object.h}}
+}
+{\tt \#include \char`\"{}syx-utils.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-platform.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-enums.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-error.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-init.h\char`\"{}}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$gmp.h$>$}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_syx_object}{SyxObject}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{syx-object_8h_cfb2a79cbeaf42326b56948d009d6719}{SYX\_\-OBJECT}(oop)~((\hyperlink{struct_syx_object}{SyxObject} $\ast$) (oop))
+\item 
+\#define \hyperlink{syx-object_8h_5421190920571a4e33c3dbf3b9ef61b1}{SYX\_\-OBJECT\_\-FLOAT}(oop)~($\ast$((\hyperlink{syx-types_8h_cc7fcb78741daa005b6897ad40b7472b}{syx\_\-double} $\ast$)(SYX\_\-OBJECT(oop) $\rightarrow$ data)))
+\item 
+\#define \hyperlink{syx-object_8h_65df887ffb379b9452e3e6796532ada5}{SYX\_\-OBJECT\_\-LARGE\_\-INTEGER}(oop)~($\ast$(mpz\_\-t $\ast$)(SYX\_\-OBJECT(oop) $\rightarrow$ data))
+\item 
+\#define \hyperlink{syx-object_8h_5b9c62927be3b204756647a1ee461d1d}{SYX\_\-OBJECT\_\-SYMBOL}(oop)~((\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol})(SYX\_\-OBJECT(oop) $\rightarrow$ data))
+\item 
+\#define \hyperlink{syx-object_8h_d9120176c6ebd87a4075472386e6f748}{SYX\_\-OBJECT\_\-STRING}(oop)~((\hyperlink{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}{syx\_\-string})(SYX\_\-OBJECT(oop) $\rightarrow$ data))
+\item 
+\#define \hyperlink{syx-object_8h_e935c367e62b3662eb89fcb98fb173b6}{SYX\_\-OBJECT\_\-BYTE\_\-ARRAY}(oop)~((\hyperlink{syx-types_8h_7cb1870b8124a88e807c98f315f3d923}{syx\_\-uint8} $\ast$)(SYX\_\-OBJECT(oop) $\rightarrow$ data))
+\item 
+\#define \hyperlink{syx-object_8h_4b6aa57daec9c56e87fe8948101d99bc}{SYX\_\-OBJECT\_\-VARS}(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ vars)
+\item 
+\#define \hyperlink{syx-object_8h_6739da61250709a86d303df2aa297758}{SYX\_\-OBJECT\_\-DATA\_\-SIZE}(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ data\_\-size)
+\item 
+\#define \hyperlink{syx-object_8h_fc625eb398e3bd73c520d54112da754f}{SYX\_\-OBJECT\_\-DATA}(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ data)
+\item 
+\#define \hyperlink{syx-object_8h_b769a5f497b0d4a69c82db6ab587c96f}{SYX\_\-OBJECT\_\-HAS\_\-REFS}(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ has\_\-refs)
+\item 
+\#define \hyperlink{syx-object_8h_b510a0c36e6c8a70adde04426625ca7a}{SYX\_\-OBJECT\_\-IS\_\-MARKED}(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ is\_\-marked)
+\item 
+\#define \hyperlink{syx-object_8h_e63d2bc397e9f66e55b915520658bb95}{SYX\_\-OBJECT\_\-IS\_\-CONSTANT}(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ is\_\-constant)
+\item 
+\#define \hyperlink{syx-object_8h_a0618a2af4e0706b7080c6946ae43ee3}{SYX\_\-IS\_\-NIL}(oop)~((oop) == 0 $|$$|$ (oop) == \hyperlink{syx-object_8h_099047c2766cf0dea30c046d58f6f64f}{syx\_\-nil})
+\item 
+\#define \hyperlink{syx-object_8h_d906bc6552333687f0f006132d38c07b}{SYX\_\-IS\_\-TRUE}(oop)~((oop) == \hyperlink{syx-object_8h_ac2fe13e9bd66770ef58d98f2be8629d}{syx\_\-true})
+\item 
+\#define \hyperlink{syx-object_8h_bc047647f8b39be70f2e2a2e205a9923}{SYX\_\-IS\_\-FALSE}(oop)~((oop) == \hyperlink{syx-object_8h_d3170f4cecf092ffa04e6f55351d12d0}{syx\_\-false})
+\item 
+\#define \hyperlink{syx-object_8h_4748238146463f5f05f8c11ff422b6d3}{SYX\_\-IS\_\-BOOLEAN}(oop)~(SYX\_\-IS\_\-TRUE(oop) $|$$|$ SYX\_\-IS\_\-FALSE(oop))
+\item 
+\#define \hyperlink{syx-object_8h_0904e42bcfe1d2cb2522253294562c77}{SYX\_\-IS\_\-OBJECT}(oop)
+\item 
+\#define \hyperlink{syx-object_8h_2cf93a0e501e2f8742d71709cb796fef}{SYX\_\-IS\_\-CPOINTER}(oop)
+\item 
+\#define \hyperlink{syx-object_8h_d204bd0bc6eafc156499e29e5c33730d}{SYX\_\-OBJECT\_\-IS\_\-STRING}(oop)~(SYX\_\-IS\_\-OBJECT(oop) \&\& SYX\_\-OBJECT(oop) $\rightarrow$ klass == \hyperlink{syx-object_8h_e1c7125650c6406bf4809ce106de8b36}{syx\_\-string\_\-class})
+\item 
+\#define \hyperlink{syx-object_8h_d411630830fe2cd1696bce40096b181f}{SYX\_\-OBJECT\_\-IS\_\-SYMBOL}(oop)~(SYX\_\-IS\_\-OBJECT(oop) \&\& SYX\_\-OBJECT(oop) $\rightarrow$ klass == \hyperlink{syx-object_8h_e10f18ec5e45484612b5a7fe6b96518d}{syx\_\-symbol\_\-class})
+\item 
+\#define \hyperlink{syx-object_8h_ed76a2c170663e7169be0e737e8069a8}{SYX\_\-OBJECT\_\-IS\_\-FLOAT}(oop)~(SYX\_\-IS\_\-OBJECT(oop) \&\& SYX\_\-OBJECT(oop) $\rightarrow$ klass == \hyperlink{syx-object_8h_a99406e5776ba4d5b8584c9dba551379}{syx\_\-float\_\-class})
+\item 
+\#define \hyperlink{syx-object_8h_93ab1383db7e0cafc185af9d9ef1e591}{SYX\_\-OBJECT\_\-IS\_\-LARGE\_\-INTEGER}(oop)~(SYX\_\-IS\_\-OBJECT(oop) \&\& SYX\_\-OBJECT(oop) $\rightarrow$ klass == \hyperlink{syx-object_8h_56d7e3f1e550bc346b3fd6cbcb31c6a2}{syx\_\-large\_\-integer\_\-class})
+\item 
+\#define \hyperlink{syx-object_8h_2e720b85b8f2836a8326cd03674c3977}{SYX\_\-MEMORY\_\-INDEX\_\-OF}(oop)~((((\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop})oop) - (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop})\hyperlink{syx-object_8h_596eb1af08585a501808735d80503037}{syx\_\-memory}) / sizeof (\hyperlink{struct_syx_object}{SyxObject}))
+\item 
+\#define \hyperlink{syx-object_8h_a3c2d59b7296539517361dea284a0db7}{syx\_\-object\_\-new}(klass)~(syx\_\-object\_\-new\_\-vars ((klass), SYX\_\-SMALL\_\-INTEGER (SYX\_\-CLASS\_\-INSTANCE\_\-SIZE ((klass)))))
+\item 
+\#define \hyperlink{syx-object_8h_e164aa1036bfcc0f7e63e2f8e81c0f54}{syx\_\-object\_\-grow\_\-by}(oop, size)~(syx\_\-object\_\-resize((oop),SYX\_\-OBJECT\_\-DATA\_\-SIZE(oop)+size))
+\item 
+\#define \hyperlink{syx-object_8h_c3fb81a62dd8c0a741b3f78b0330f784}{syx\_\-symbol\_\-hash}(oop)~(SYX\_\-SMALL\_\-INTEGER (SYX\_\-SYMBOL\_\-HASH (oop)))
+\item 
+\#define \hyperlink{syx-object_8h_d772af235c9512a18d5cbb8e9d0bb022}{SYX\_\-CLASS\_\-NAME}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-NAME\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_5307ee0e36a40bca0cc49aec373c4232}{SYX\_\-CLASS\_\-SUPERCLASS}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-SUPERCLASS\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_57d3cc59dce77ddc68722cc919477a1e}{SYX\_\-CLASS\_\-INSTANCE\_\-VARIABLES}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-INSTANCE\_\-VARIABLES\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_1fdb5e90c4eb0bca307b103320486ccb}{SYX\_\-CLASS\_\-INSTANCE\_\-SIZE}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-INSTANCE\_\-SIZE\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_aa27d87840f036f2211dbe589cdb712d}{SYX\_\-CLASS\_\-METHODS}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-METHODS\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_a31a4efab7eb3f8fa35c78e9d9230102}{SYX\_\-CLASS\_\-SUBCLASSES}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-SUBCLASSES\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_fc8cf8d7967541cd3bc7c5e15cbb33ea}{SYX\_\-CLASS\_\-FINALIZATION}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-FINALIZATION\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_b45ebeb40447a8043cdab82455f73475}{SYX\_\-METACLASS\_\-INSTANCE\_\-CLASS}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METACLASS\_\-INSTANCE\_\-CLASS\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_53a52a78223a9b7b0e41326bb85500d7}{SYX\_\-CLASS\_\-CLASS\_\-VARIABLES}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-CLASS\_\-VARIABLES\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_e536b120cd5e071ff38023aa29045768}{SYX\_\-SYMBOL\_\-HASH}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-SYMBOL\_\-HASH\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_9a20885f5a52f4bc0b7a79eb39e8b96e}{SYX\_\-DICTIONARY\_\-TALLY}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-DICTIONARY\_\-TALLY\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_96eb58398db62043c949d60b43a640d3}{SYX\_\-ASSOCIATION\_\-KEY}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-ASSOCIATION\_\-KEY\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_30f472220bcb98f2882f5ad89bd7480e}{SYX\_\-ASSOCIATION\_\-VALUE}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-ASSOCIATION\_\-VALUE\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_dda1b5610b8bfa9ae2eb8928fc3db518}{SYX\_\-VARIABLE\_\-BINDING\_\-DICTIONARY}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-VARIABLE\_\-BINDING\_\-DICTIONARY\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_71157b1d4bedfbd25c8436122ddb24fd}{SYX\_\-CODE\_\-BYTECODES}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-BYTECODES\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_b5c4f1e16d1d4ac619621ab96b12d009}{SYX\_\-CODE\_\-ARGUMENTS\_\-COUNT}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-ARGUMENTS\_\-COUNT\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_4acfab65c2c72d409325dc662d34dc5b}{SYX\_\-CODE\_\-TEMPORARIES\_\-COUNT}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-TEMPORARIES\_\-COUNT\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_b1a48ee5d3b0c5e48a11450c343a0f29}{SYX\_\-CODE\_\-LITERALS}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-LITERALS\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_11c316115d1fc6959e463779cc7b42df}{SYX\_\-CODE\_\-STACK\_\-SIZE}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-STACK\_\-SIZE\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_8e1e73926a6cccc562a3888f4fdf84a8}{SYX\_\-CODE\_\-PRIMITIVE}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-PRIMITIVE\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_456cf11d874f9f0553fadd714775316d}{SYX\_\-CODE\_\-CLASS}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-CLASS\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_5fc722344cbf193793fcb270dc36607a}{SYX\_\-CODE\_\-TEXT}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-TEXT\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_ac97fbf967b26d249d0ba6afe235e39c}{SYX\_\-METHOD\_\-ARGUMENT\_\-STACK\_\-SIZE}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-ARGUMENT\_\-STACK\_\-SIZE\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_9cfacc4bce3b3d7004afe33c25b9d2c7}{SYX\_\-METHOD\_\-TEMPORARY\_\-STACK\_\-SIZE}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-TEMPORARY\_\-STACK\_\-SIZE\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_e98de75db34b515c3f1141bd3edbccd4}{SYX\_\-METHOD\_\-SELECTOR}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-SELECTOR\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_539c213e23ecd6648b7219ba0f1fe40b}{SYX\_\-METHOD\_\-PRIMITIVE}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-PRIMITIVE\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_3b6abd50b74d739d7866ac4a34c9186c}{SYX\_\-BLOCK\_\-CLOSURE\_\-BLOCK}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CLOSURE\_\-BLOCK\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_f517578c6962e7925851fb6d88ebfa98}{SYX\_\-BLOCK\_\-CLOSURE\_\-OUTER\_\-FRAME}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CLOSURE\_\-OUTER\_\-FRAME\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_d00ad7dc6539a466500aeeb34524437a}{SYX\_\-CONTEXT\_\-PART\_\-FRAME\_\-POINTER}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-FRAME\_\-POINTER\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_e749658ddae9b2e6f980f63a2a8cb2f5}{SYX\_\-CONTEXT\_\-PART\_\-STACK}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-STACK\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_2b5212d0c18b2ba6e55fdec8f33625b8}{SYX\_\-CONTEXT\_\-PART\_\-PARENT}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-PARENT\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_df6a9f8fef4d817ec6c930a40a9841bb}{SYX\_\-CONTEXT\_\-PART\_\-METHOD}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-METHOD\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_a84583cd063bb91509a65e846f2a0b68}{SYX\_\-CONTEXT\_\-PART\_\-ARGUMENTS}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-ARGUMENTS\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_55222831a7e6ae8717b66ecb10d077b5}{SYX\_\-METHOD\_\-CONTEXT\_\-RECEIVER}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-CONTEXT\_\-RECEIVER\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_ba94eb81806582fdd6ada41055269946}{SYX\_\-BLOCK\_\-CONTEXT\_\-CLOSURE}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-CLOSURE\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_901ec826ea0223727b4271aed6242876}{SYX\_\-BLOCK\_\-CONTEXT\_\-OUTER\_\-CONTEXT}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-OUTER\_\-CONTEXT\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_11ae3cc8275b7b52858768d9756f2604}{SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLED\_\-EXCEPTION}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-HANDLED\_\-EXCEPTION\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_375684bc34c3a90f590eda5b4b3ae62f}{SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLER\_\-BLOCK}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-HANDLER\_\-BLOCK\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_3616e0a78f2864fb41d8fb1763351d61}{SYX\_\-BLOCK\_\-CONTEXT\_\-ENSURE\_\-BLOCK}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-ENSURE\_\-BLOCK\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_7c831375f6160c5b537d391cab06e10e}{SYX\_\-PROCESS\_\-STACK}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-STACK\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_c49eda7223af44f10a46c7be40bc3fac}{SYX\_\-PROCESS\_\-FRAME\_\-POINTER}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-FRAME\_\-POINTER\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_68958798ba77455939de869231f6eee1}{SYX\_\-PROCESS\_\-SUSPENDED}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-SUSPENDED\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_c6e63002ff510661d3f5c92177d9018e}{SYX\_\-PROCESS\_\-RETURNED\_\-OBJECT}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-RETURNED\_\-OBJECT\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_0a046ecb9b0607671ce20996d5e986fe}{SYX\_\-PROCESS\_\-NEXT}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-NEXT\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_99cbfe2ae15b516f6d3a60c06a8a3915}{SYX\_\-PROCESS\_\-SCHEDULED}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-SCHEDULED\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_e7a5e7b65675b5e2c49e4ea412119615}{SYX\_\-PROCESSOR\_\-SCHEDULER\_\-ACTIVE\_\-PROCESS}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESSOR\_\-SCHEDULER\_\-ACTIVE\_\-PROCESS\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_f404b8c366724f2aee0d80cc416f4a61}{SYX\_\-PROCESSOR\_\-SCHEDULER\_\-BYTESLICE}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESSOR\_\-SCHEDULER\_\-BYTESLICE\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_f602bbb62e7ca09615625e04b4f5610c}{SYX\_\-SEMAPHORE\_\-LIST}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-SEMAPHORE\_\-LIST\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_7d7dca42d785621efdcdcd1c239d6013}{SYX\_\-SEMAPHORE\_\-SIGNALS}(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-SEMAPHORE\_\-SIGNALS\mbox{]})
+\item 
+\#define \hyperlink{syx-object_8h_affde2fe16c24eeb141ee81ed91fe267}{syx\_\-method\_\-new}()~(syx\_\-object\_\-new (\hyperlink{syx-object_8h_e73b435f28f6326845c790d616f0763f}{syx\_\-compiled\_\-method\_\-class}))
+\item 
+\#define \hyperlink{syx-object_8h_eac6ccd66510e9bee47fc73dc7022e57}{syx\_\-block\_\-new}()~(syx\_\-object\_\-new (\hyperlink{syx-object_8h_6b5b733fa1150efc8b27835298b58087}{syx\_\-compiled\_\-block\_\-class}))
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct \hyperlink{struct_syx_object}{SyxObject} \hyperlink{syx-object_8h_1bd7e679e4563ab6afb40a4ab1ccab7d}{SyxObject}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_2ad72ae9f822633bd80b9960fb758961}{syx\_\-object\_\-new\_\-vars} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} klass, \hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} vars\_\-size)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_df2f65814fe225be62a0cc96b5570d15}{syx\_\-object\_\-new\_\-size} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} klass, \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} has\_\-refs, \hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_4c50454bad3dd39c9e137207f870a2dc}{syx\_\-object\_\-new\_\-data} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} klass, \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} has\_\-refs, \hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} $\ast$data)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_4495a25fcf21daa1fff65760198a6f0c}{syx\_\-object\_\-copy} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} object)
+\item 
+EXPORT void \hyperlink{syx-object_8h_1183dd2393eabdaf754948e182dcb287}{syx\_\-object\_\-free} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} oop)
+\item 
+EXPORT void \hyperlink{syx-object_8h_8f1d632f929b4115e53dc9227ecac36b}{syx\_\-object\_\-resize} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} oop, \hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size)
+\item 
+EXPORT \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} \hyperlink{syx-object_8h_a0cd5dad65ba23e0dc1381396b283ab8}{syx\_\-object\_\-get\_\-variable\_\-index} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} self, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} name)
+\item 
+EXPORT void \hyperlink{syx-object_8h_00a861ab5f7d7224796beb8f9bf42296}{syx\_\-object\_\-initialize} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} oop)
+\item 
+INLINE \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} \hyperlink{syx-object_8h_d8c2625c436ff85103279e5d78f078a5}{syx\_\-object\_\-hash} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} object)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_88d1e4f8e61fb948d275e3900cec21fe}{syx\_\-object\_\-get\_\-class} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} object)
+\item 
+INLINE void \hyperlink{syx-object_8h_9c6faeef861a4eb3e3fb37ce9f8126f3}{syx\_\-object\_\-set\_\-class} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} object, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} klass)
+\item 
+EXPORT \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} $\ast$ \hyperlink{syx-object_8h_9023e67e65ca397b1fb0a54e71879d0f}{syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} klass)
+\item 
+EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-object_8h_3c39f91fa6304f6180cdb9888990ab75}{syx\_\-class\_\-is\_\-superclass\_\-of} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} klass, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} subclass)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_fbffd7cc207f40f18ba6da769f214ed4}{syx\_\-class\_\-lookup\_\-method} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} klass, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} selector)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_6f70b46648620575942260a24264cb8f}{syx\_\-class\_\-lookup\_\-method\_\-binding} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} klass, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} binding)
+\item 
+EXPORT \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} \hyperlink{syx-object_8h_4d007f448f92d47915f0f9b03abcffea}{syx\_\-dictionary\_\-index\_\-of} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} dict, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} key, \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} hash, \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} return\_\-nil\_\-index)
+\item 
+EXPORT void \hyperlink{syx-object_8h_29f9745780d60c8acb1ad0dc4364fe57}{syx\_\-dictionary\_\-rehash} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} dict)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_a7e087f1a8becf74a1e37463e3a7c5cc}{syx\_\-dictionary\_\-binding\_\-at\_\-symbol} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} dict, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} key)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_9712ba3f5f6614d91900aabce7a5ce53}{syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} dict, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} key, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} object)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_92ca3959db07b272c56e9ba5cb22dd7a}{syx\_\-dictionary\_\-bind} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} binding)
+\item 
+EXPORT void \hyperlink{syx-object_8h_05356bb26948688722ef15999e182fff}{syx\_\-dictionary\_\-bind\_\-set\_\-value} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} binding, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} value)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_b4f98861384da9ef7ae4017b0639e2ab}{syx\_\-dictionary\_\-at\_\-symbol} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} dict, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} key)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_6a48a39293c1dd5141d431f1ee8a8f7a}{syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} dict, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} key, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} object)
+\item 
+EXPORT void \hyperlink{syx-object_8h_1a46d03f5dad054ace2cc9bbe258f62e}{syx\_\-dictionary\_\-at\_\-symbol\_\-put} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} dict, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} key, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} value)
+\item 
+EXPORT \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} \hyperlink{syx-object_8h_20b65111a07600b8b06a64a6f473daab}{syx\_\-string\_\-hash} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} string)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_0c0151b9f4207e6e2d38c4eba9370d9d}{syx\_\-metaclass\_\-new} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} supermetaclass)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_15348943e9bdd2ca68f7c4aeee628c9a}{syx\_\-class\_\-new} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} superclass)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_6e4566798088986aa8af7c776a00b90b}{syx\_\-large\_\-integer\_\-new} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} string, \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} base)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_72fbd99412e7332f70d9a5a15945a33d}{syx\_\-large\_\-integer\_\-new\_\-integer} (\hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} integer)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_68aa419b497b02410024a4fd26cac062}{syx\_\-large\_\-integer\_\-new\_\-mpz} (\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} mpz)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_66d94b213daa6f81d344a80f6449c0ea}{syx\_\-symbol\_\-new} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} symbol)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_ff5c03485bac91b5a79c29a2a6b98dd7}{syx\_\-method\_\-context\_\-new} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} method, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} receiver, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} arguments)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_e8dbdd7232dd6da7e16ad59ac26c0cbe}{syx\_\-block\_\-context\_\-new} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} block, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} arguments)
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_cc28dff1a70eeea85e52a5501eda6b53}{syx\_\-process\_\-new} (void)
+\item 
+EXPORT \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-object_8h_84e829e1cfb191f82e954d90787f1722}{syx\_\-array\_\-remove} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} array, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} element)
+\item 
+EXPORT void \hyperlink{syx-object_8h_b322ffdd7c235f42e9bd992a6013c680}{syx\_\-array\_\-add} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} array, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} element, \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} unique)
+\item 
+INLINE \hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} \hyperlink{syx-object_8h_27fd8dfc7c2abc0d3e279624a676202b}{syx\_\-object\_\-vars\_\-size} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} object)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_3685f2e5efa8127ecee98dd3f37f320c}{syx\_\-float\_\-new} (\hyperlink{syx-types_8h_cc7fcb78741daa005b6897ad40b7472b}{syx\_\-double} floating)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_637a68800765eeec4dcc041b9e2c51db}{syx\_\-byte\_\-array\_\-new} (\hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size, \hyperlink{syx-types_8h_7cb1870b8124a88e807c98f315f3d923}{syx\_\-uint8} $\ast$data)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_7ef9b6014138610515cd6924192b1de2}{syx\_\-byte\_\-array\_\-new\_\-size} (\hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_0212b76e62e1e054559a7155504ff25e}{syx\_\-byte\_\-array\_\-new\_\-ref} (\hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size, \hyperlink{syx-types_8h_7cb1870b8124a88e807c98f315f3d923}{syx\_\-uint8} $\ast$data)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_73d606c8733a400233809b9dbdffdfb1}{syx\_\-array\_\-new} (\hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} $\ast$data)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_bae072a6a2e20392d22f98e09fdc42c0}{syx\_\-array\_\-new\_\-size} (\hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_5c63c40451ce204441acff87eea226bc}{syx\_\-array\_\-new\_\-ref} (\hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} $\ast$data)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_ef1b7868c0a729cc4f27596291a9e08d}{syx\_\-string\_\-new} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} string,...)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_014aa4f99148b5e1a79b34553f022a59}{syx\_\-string\_\-new\_\-ref} (\hyperlink{syx-types_8h_1bff1fd86072dd98849437bc9dcb35c3}{syx\_\-string} string)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_d806df239dc9f2669f3620623ec77c6f}{syx\_\-variable\_\-binding\_\-new} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} key, \hyperlink{syx-types_8h_9f31c17555a2dfcf25da84b5c4a2e55b}{syx\_\-int32} index, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} dictionary)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_1e80c1b5431ace50da81cf2ed99377c0}{syx\_\-semaphore\_\-new} (void)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_cdaeef35d6b8e61ddf3034ecb35c827b}{syx\_\-dictionary\_\-new} (\hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} size)
+\item 
+INLINE \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_cb77fae0f91d128285e504c1959f9fc9}{syx\_\-block\_\-closure\_\-new} (\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} block)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+EXPORT \hyperlink{struct_syx_object}{SyxObject} $\ast$ \hyperlink{syx-object_8h_596eb1af08585a501808735d80503037}{syx\_\-memory}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_099047c2766cf0dea30c046d58f6f64f}{syx\_\-nil}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_ac2fe13e9bd66770ef58d98f2be8629d}{syx\_\-true}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_d3170f4cecf092ffa04e6f55351d12d0}{syx\_\-false}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_c9c6222aa1286578c4d077429047ca3e}{syx\_\-metaclass\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_f534222f282de18e7b7b70237afb235a}{syx\_\-undefined\_\-object\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_9b2ffeb8a5dee3abb1ae31543cea132f}{syx\_\-true\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_6bb55cfd100e1c3614b1a4f941c22f9d}{syx\_\-false\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_7a13d4490f4ea23e10b62c5795dbf71a}{syx\_\-small\_\-integer\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_0620595819b6972d75adf8c49cddfad9}{syx\_\-character\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_ae4d22bf2cfb62dc988be9f421e97aee}{syx\_\-cpointer\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_56d7e3f1e550bc346b3fd6cbcb31c6a2}{syx\_\-large\_\-integer\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_a99406e5776ba4d5b8584c9dba551379}{syx\_\-float\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_e10f18ec5e45484612b5a7fe6b96518d}{syx\_\-symbol\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_e1c7125650c6406bf4809ce106de8b36}{syx\_\-string\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_ee7c988bfeb850b7107cb7a3cc568cb7}{syx\_\-byte\_\-array\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_93a0ea8cd9172fdef4a6b60b40fd0e4e}{syx\_\-array\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_4fb5b24130577a369d026a1849447dd1}{syx\_\-variable\_\-binding\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_fe9b69c223c0ab9ddb51d1f49b58dd96}{syx\_\-dictionary\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_e73b435f28f6326845c790d616f0763f}{syx\_\-compiled\_\-method\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_6b5b733fa1150efc8b27835298b58087}{syx\_\-compiled\_\-block\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_80d6a707deae30357e97c83c75473f14}{syx\_\-block\_\-closure\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_4273e7a4f4fe7836b8eba627661e2d06}{syx\_\-method\_\-context\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_df59508211830ba19845fcf2e48dedad}{syx\_\-block\_\-context\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_e3520eeaffb29e4a9780c6e257a022ce}{syx\_\-process\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_36a21dfe0c7f34b3f935ff11a48b6c0c}{syx\_\-processor\_\-scheduler\_\-class}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_f0e4dafb84c01e0dcd5a7bc7b800594e}{syx\_\-symbols}
+\item 
+EXPORT \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{syx-object_8h_c285844af2007d5ac653de1a0dfb7524}{syx\_\-globals}
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{syx-object_8h_96eb58398db62043c949d60b43a640d3}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-ASSOCIATION\_\-KEY@{SYX\_\-ASSOCIATION\_\-KEY}}
+\index{SYX\_\-ASSOCIATION\_\-KEY@{SYX\_\-ASSOCIATION\_\-KEY}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-ASSOCIATION\_\-KEY(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-ASSOCIATION\_\-KEY\mbox{]})}}
+\label{syx-object_8h_96eb58398db62043c949d60b43a640d3}
+
+
+
+
+Definition at line 271 of file syx-object.h.
+
+Referenced by syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), and syx\_\-variable\_\-binding\_\-new().\hypertarget{syx-object_8h_30f472220bcb98f2882f5ad89bd7480e}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-ASSOCIATION\_\-VALUE@{SYX\_\-ASSOCIATION\_\-VALUE}}
+\index{SYX\_\-ASSOCIATION\_\-VALUE@{SYX\_\-ASSOCIATION\_\-VALUE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-ASSOCIATION\_\-VALUE(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-ASSOCIATION\_\-VALUE\mbox{]})}}
+\label{syx-object_8h_30f472220bcb98f2882f5ad89bd7480e}
+
+
+
+
+Definition at line 272 of file syx-object.h.
+
+Referenced by syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), and syx\_\-variable\_\-binding\_\-new().\hypertarget{syx-object_8h_3b6abd50b74d739d7866ac4a34c9186c}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-BLOCK\_\-CLOSURE\_\-BLOCK@{SYX\_\-BLOCK\_\-CLOSURE\_\-BLOCK}}
+\index{SYX\_\-BLOCK\_\-CLOSURE\_\-BLOCK@{SYX\_\-BLOCK\_\-CLOSURE\_\-BLOCK}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BLOCK\_\-CLOSURE\_\-BLOCK(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CLOSURE\_\-BLOCK\mbox{]})}}
+\label{syx-object_8h_3b6abd50b74d739d7866ac4a34c9186c}
+
+
+
+
+Definition at line 290 of file syx-object.h.
+
+Referenced by syx\_\-block\_\-closure\_\-new(), and syx\_\-block\_\-context\_\-new().\hypertarget{syx-object_8h_f517578c6962e7925851fb6d88ebfa98}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-BLOCK\_\-CLOSURE\_\-OUTER\_\-FRAME@{SYX\_\-BLOCK\_\-CLOSURE\_\-OUTER\_\-FRAME}}
+\index{SYX\_\-BLOCK\_\-CLOSURE\_\-OUTER\_\-FRAME@{SYX\_\-BLOCK\_\-CLOSURE\_\-OUTER\_\-FRAME}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BLOCK\_\-CLOSURE\_\-OUTER\_\-FRAME(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CLOSURE\_\-OUTER\_\-FRAME\mbox{]})}}
+\label{syx-object_8h_f517578c6962e7925851fb6d88ebfa98}
+
+
+
+
+Definition at line 291 of file syx-object.h.\hypertarget{syx-object_8h_ba94eb81806582fdd6ada41055269946}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-BLOCK\_\-CONTEXT\_\-CLOSURE@{SYX\_\-BLOCK\_\-CONTEXT\_\-CLOSURE}}
+\index{SYX\_\-BLOCK\_\-CONTEXT\_\-CLOSURE@{SYX\_\-BLOCK\_\-CONTEXT\_\-CLOSURE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BLOCK\_\-CONTEXT\_\-CLOSURE(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-CLOSURE\mbox{]})}}
+\label{syx-object_8h_ba94eb81806582fdd6ada41055269946}
+
+
+
+
+Definition at line 301 of file syx-object.h.
+
+Referenced by syx\_\-block\_\-context\_\-new(), and syx\_\-interp\_\-enter\_\-context().\hypertarget{syx-object_8h_3616e0a78f2864fb41d8fb1763351d61}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-BLOCK\_\-CONTEXT\_\-ENSURE\_\-BLOCK@{SYX\_\-BLOCK\_\-CONTEXT\_\-ENSURE\_\-BLOCK}}
+\index{SYX\_\-BLOCK\_\-CONTEXT\_\-ENSURE\_\-BLOCK@{SYX\_\-BLOCK\_\-CONTEXT\_\-ENSURE\_\-BLOCK}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BLOCK\_\-CONTEXT\_\-ENSURE\_\-BLOCK(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-ENSURE\_\-BLOCK\mbox{]})}}
+\label{syx-object_8h_3616e0a78f2864fb41d8fb1763351d61}
+
+
+
+
+Definition at line 305 of file syx-object.h.\hypertarget{syx-object_8h_11ae3cc8275b7b52858768d9756f2604}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLED\_\-EXCEPTION@{SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLED\_\-EXCEPTION}}
+\index{SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLED\_\-EXCEPTION@{SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLED\_\-EXCEPTION}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLED\_\-EXCEPTION(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-HANDLED\_\-EXCEPTION\mbox{]})}}
+\label{syx-object_8h_11ae3cc8275b7b52858768d9756f2604}
+
+
+
+
+Definition at line 303 of file syx-object.h.\hypertarget{syx-object_8h_375684bc34c3a90f590eda5b4b3ae62f}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLER\_\-BLOCK@{SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLER\_\-BLOCK}}
+\index{SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLER\_\-BLOCK@{SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLER\_\-BLOCK}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BLOCK\_\-CONTEXT\_\-HANDLER\_\-BLOCK(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-HANDLER\_\-BLOCK\mbox{]})}}
+\label{syx-object_8h_375684bc34c3a90f590eda5b4b3ae62f}
+
+
+
+
+Definition at line 304 of file syx-object.h.\hypertarget{syx-object_8h_901ec826ea0223727b4271aed6242876}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-BLOCK\_\-CONTEXT\_\-OUTER\_\-CONTEXT@{SYX\_\-BLOCK\_\-CONTEXT\_\-OUTER\_\-CONTEXT}}
+\index{SYX\_\-BLOCK\_\-CONTEXT\_\-OUTER\_\-CONTEXT@{SYX\_\-BLOCK\_\-CONTEXT\_\-OUTER\_\-CONTEXT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BLOCK\_\-CONTEXT\_\-OUTER\_\-CONTEXT(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-BLOCK\_\-CONTEXT\_\-OUTER\_\-CONTEXT\mbox{]})}}
+\label{syx-object_8h_901ec826ea0223727b4271aed6242876}
+
+
+
+
+Definition at line 302 of file syx-object.h.\hypertarget{syx-object_8h_eac6ccd66510e9bee47fc73dc7022e57}{
+\index{syx-object.h@{syx-object.h}!syx\_\-block\_\-new@{syx\_\-block\_\-new}}
+\index{syx\_\-block\_\-new@{syx\_\-block\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-block\_\-new()~(syx\_\-object\_\-new ({\bf syx\_\-compiled\_\-block\_\-class}))}}
+\label{syx-object_8h_eac6ccd66510e9bee47fc73dc7022e57}
+
+
+Create a new raw CompiledBlock 
+
+Definition at line 483 of file syx-object.h.\hypertarget{syx-object_8h_53a52a78223a9b7b0e41326bb85500d7}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CLASS\_\-CLASS\_\-VARIABLES@{SYX\_\-CLASS\_\-CLASS\_\-VARIABLES}}
+\index{SYX\_\-CLASS\_\-CLASS\_\-VARIABLES@{SYX\_\-CLASS\_\-CLASS\_\-VARIABLES}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CLASS\_\-CLASS\_\-VARIABLES(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-CLASS\_\-VARIABLES\mbox{]})}}
+\label{syx-object_8h_53a52a78223a9b7b0e41326bb85500d7}
+
+
+
+
+Definition at line 265 of file syx-object.h.\hypertarget{syx-object_8h_fc8cf8d7967541cd3bc7c5e15cbb33ea}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CLASS\_\-FINALIZATION@{SYX\_\-CLASS\_\-FINALIZATION}}
+\index{SYX\_\-CLASS\_\-FINALIZATION@{SYX\_\-CLASS\_\-FINALIZATION}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CLASS\_\-FINALIZATION(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-FINALIZATION\mbox{]})}}
+\label{syx-object_8h_fc8cf8d7967541cd3bc7c5e15cbb33ea}
+
+
+
+
+Definition at line 261 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-clear(), and syx\_\-object\_\-free().\hypertarget{syx-object_8h_1fdb5e90c4eb0bca307b103320486ccb}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CLASS\_\-INSTANCE\_\-SIZE@{SYX\_\-CLASS\_\-INSTANCE\_\-SIZE}}
+\index{SYX\_\-CLASS\_\-INSTANCE\_\-SIZE@{SYX\_\-CLASS\_\-INSTANCE\_\-SIZE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CLASS\_\-INSTANCE\_\-SIZE(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-INSTANCE\_\-SIZE\mbox{]})}}
+\label{syx-object_8h_1fdb5e90c4eb0bca307b103320486ccb}
+
+
+
+
+Definition at line 258 of file syx-object.h.
+
+Referenced by syx\_\-class\_\-new(), syx\_\-metaclass\_\-new(), syx\_\-object\_\-copy(), and syx\_\-object\_\-vars\_\-size().\hypertarget{syx-object_8h_57d3cc59dce77ddc68722cc919477a1e}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CLASS\_\-INSTANCE\_\-VARIABLES@{SYX\_\-CLASS\_\-INSTANCE\_\-VARIABLES}}
+\index{SYX\_\-CLASS\_\-INSTANCE\_\-VARIABLES@{SYX\_\-CLASS\_\-INSTANCE\_\-VARIABLES}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CLASS\_\-INSTANCE\_\-VARIABLES(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-INSTANCE\_\-VARIABLES\mbox{]})}}
+\label{syx-object_8h_57d3cc59dce77ddc68722cc919477a1e}
+
+
+
+
+Definition at line 257 of file syx-object.h.
+
+Referenced by syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names(), syx\_\-class\_\-new(), and syx\_\-metaclass\_\-new().\hypertarget{syx-object_8h_aa27d87840f036f2211dbe589cdb712d}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CLASS\_\-METHODS@{SYX\_\-CLASS\_\-METHODS}}
+\index{SYX\_\-CLASS\_\-METHODS@{SYX\_\-CLASS\_\-METHODS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CLASS\_\-METHODS(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-METHODS\mbox{]})}}
+\label{syx-object_8h_aa27d87840f036f2211dbe589cdb712d}
+
+
+
+
+Definition at line 259 of file syx-object.h.
+
+Referenced by syx\_\-class\_\-lookup\_\-method(), syx\_\-class\_\-lookup\_\-method\_\-binding(), syx\_\-class\_\-new(), syx\_\-cold\_\-parse\_\-methods(), and syx\_\-metaclass\_\-new().\hypertarget{syx-object_8h_d772af235c9512a18d5cbb8e9d0bb022}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CLASS\_\-NAME@{SYX\_\-CLASS\_\-NAME}}
+\index{SYX\_\-CLASS\_\-NAME@{SYX\_\-CLASS\_\-NAME}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CLASS\_\-NAME(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-NAME\mbox{]})}}
+\label{syx-object_8h_d772af235c9512a18d5cbb8e9d0bb022}
+
+
+
+
+Definition at line 255 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-send\_\-binary\_\-message(), syx\_\-send\_\-unary\_\-message(), syx\_\-show\_\-traceback(), and syx\_\-vsend\_\-message().\hypertarget{syx-object_8h_a31a4efab7eb3f8fa35c78e9d9230102}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CLASS\_\-SUBCLASSES@{SYX\_\-CLASS\_\-SUBCLASSES}}
+\index{SYX\_\-CLASS\_\-SUBCLASSES@{SYX\_\-CLASS\_\-SUBCLASSES}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CLASS\_\-SUBCLASSES(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-SUBCLASSES\mbox{]})}}
+\label{syx-object_8h_a31a4efab7eb3f8fa35c78e9d9230102}
+
+
+
+
+Definition at line 260 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-class\_\-new(), and syx\_\-metaclass\_\-new().\hypertarget{syx-object_8h_5307ee0e36a40bca0cc49aec373c4232}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CLASS\_\-SUPERCLASS@{SYX\_\-CLASS\_\-SUPERCLASS}}
+\index{SYX\_\-CLASS\_\-SUPERCLASS@{SYX\_\-CLASS\_\-SUPERCLASS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CLASS\_\-SUPERCLASS(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CLASS\_\-SUPERCLASS\mbox{]})}}
+\label{syx-object_8h_5307ee0e36a40bca0cc49aec373c4232}
+
+
+
+
+Definition at line 256 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names(), syx\_\-class\_\-is\_\-superclass\_\-of(), syx\_\-class\_\-lookup\_\-method(), syx\_\-class\_\-lookup\_\-method\_\-binding(), syx\_\-class\_\-new(), and syx\_\-metaclass\_\-new().\hypertarget{syx-object_8h_b5c4f1e16d1d4ac619621ab96b12d009}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CODE\_\-ARGUMENTS\_\-COUNT@{SYX\_\-CODE\_\-ARGUMENTS\_\-COUNT}}
+\index{SYX\_\-CODE\_\-ARGUMENTS\_\-COUNT@{SYX\_\-CODE\_\-ARGUMENTS\_\-COUNT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CODE\_\-ARGUMENTS\_\-COUNT(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-ARGUMENTS\_\-COUNT\mbox{]})}}
+\label{syx-object_8h_b5c4f1e16d1d4ac619621ab96b12d009}
+
+
+
+
+Definition at line 277 of file syx-object.h.\hypertarget{syx-object_8h_71157b1d4bedfbd25c8436122ddb24fd}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CODE\_\-BYTECODES@{SYX\_\-CODE\_\-BYTECODES}}
+\index{SYX\_\-CODE\_\-BYTECODES@{SYX\_\-CODE\_\-BYTECODES}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CODE\_\-BYTECODES(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-BYTECODES\mbox{]})}}
+\label{syx-object_8h_71157b1d4bedfbd25c8436122ddb24fd}
+
+
+
+
+Definition at line 276 of file syx-object.h.
+
+Referenced by syx\_\-parser\_\-parse().\hypertarget{syx-object_8h_456cf11d874f9f0553fadd714775316d}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CODE\_\-CLASS@{SYX\_\-CODE\_\-CLASS}}
+\index{SYX\_\-CODE\_\-CLASS@{SYX\_\-CODE\_\-CLASS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CODE\_\-CLASS(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-CLASS\mbox{]})}}
+\label{syx-object_8h_456cf11d874f9f0553fadd714775316d}
+
+
+
+
+Definition at line 282 of file syx-object.h.
+
+Referenced by syx\_\-parser\_\-parse().\hypertarget{syx-object_8h_b1a48ee5d3b0c5e48a11450c343a0f29}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CODE\_\-LITERALS@{SYX\_\-CODE\_\-LITERALS}}
+\index{SYX\_\-CODE\_\-LITERALS@{SYX\_\-CODE\_\-LITERALS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CODE\_\-LITERALS(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-LITERALS\mbox{]})}}
+\label{syx-object_8h_b1a48ee5d3b0c5e48a11450c343a0f29}
+
+
+
+
+Definition at line 279 of file syx-object.h.
+
+Referenced by syx\_\-parser\_\-parse(), and syx\_\-plugin\_\-call\_\-interp().\hypertarget{syx-object_8h_8e1e73926a6cccc562a3888f4fdf84a8}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CODE\_\-PRIMITIVE@{SYX\_\-CODE\_\-PRIMITIVE}}
+\index{SYX\_\-CODE\_\-PRIMITIVE@{SYX\_\-CODE\_\-PRIMITIVE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CODE\_\-PRIMITIVE(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-PRIMITIVE\mbox{]})}}
+\label{syx-object_8h_8e1e73926a6cccc562a3888f4fdf84a8}
+
+
+
+
+Definition at line 281 of file syx-object.h.\hypertarget{syx-object_8h_11c316115d1fc6959e463779cc7b42df}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CODE\_\-STACK\_\-SIZE@{SYX\_\-CODE\_\-STACK\_\-SIZE}}
+\index{SYX\_\-CODE\_\-STACK\_\-SIZE@{SYX\_\-CODE\_\-STACK\_\-SIZE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CODE\_\-STACK\_\-SIZE(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-STACK\_\-SIZE\mbox{]})}}
+\label{syx-object_8h_11c316115d1fc6959e463779cc7b42df}
+
+
+
+
+Definition at line 280 of file syx-object.h.
+
+Referenced by syx\_\-parser\_\-parse().\hypertarget{syx-object_8h_4acfab65c2c72d409325dc662d34dc5b}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CODE\_\-TEMPORARIES\_\-COUNT@{SYX\_\-CODE\_\-TEMPORARIES\_\-COUNT}}
+\index{SYX\_\-CODE\_\-TEMPORARIES\_\-COUNT@{SYX\_\-CODE\_\-TEMPORARIES\_\-COUNT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CODE\_\-TEMPORARIES\_\-COUNT(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-TEMPORARIES\_\-COUNT\mbox{]})}}
+\label{syx-object_8h_4acfab65c2c72d409325dc662d34dc5b}
+
+
+
+
+Definition at line 278 of file syx-object.h.\hypertarget{syx-object_8h_5fc722344cbf193793fcb270dc36607a}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CODE\_\-TEXT@{SYX\_\-CODE\_\-TEXT}}
+\index{SYX\_\-CODE\_\-TEXT@{SYX\_\-CODE\_\-TEXT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CODE\_\-TEXT(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CODE\_\-TEXT\mbox{]})}}
+\label{syx-object_8h_5fc722344cbf193793fcb270dc36607a}
+
+
+
+
+Definition at line 283 of file syx-object.h.
+
+Referenced by syx\_\-parser\_\-parse().\hypertarget{syx-object_8h_a84583cd063bb91509a65e846f2a0b68}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CONTEXT\_\-PART\_\-ARGUMENTS@{SYX\_\-CONTEXT\_\-PART\_\-ARGUMENTS}}
+\index{SYX\_\-CONTEXT\_\-PART\_\-ARGUMENTS@{SYX\_\-CONTEXT\_\-PART\_\-ARGUMENTS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CONTEXT\_\-PART\_\-ARGUMENTS(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-ARGUMENTS\mbox{]})}}
+\label{syx-object_8h_a84583cd063bb91509a65e846f2a0b68}
+
+
+
+
+Definition at line 297 of file syx-object.h.
+
+Referenced by syx\_\-block\_\-context\_\-new(), syx\_\-interp\_\-enter\_\-context(), and syx\_\-method\_\-context\_\-new().\hypertarget{syx-object_8h_d00ad7dc6539a466500aeeb34524437a}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CONTEXT\_\-PART\_\-FRAME\_\-POINTER@{SYX\_\-CONTEXT\_\-PART\_\-FRAME\_\-POINTER}}
+\index{SYX\_\-CONTEXT\_\-PART\_\-FRAME\_\-POINTER@{SYX\_\-CONTEXT\_\-PART\_\-FRAME\_\-POINTER}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CONTEXT\_\-PART\_\-FRAME\_\-POINTER(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-FRAME\_\-POINTER\mbox{]})}}
+\label{syx-object_8h_d00ad7dc6539a466500aeeb34524437a}
+
+
+
+
+Definition at line 293 of file syx-object.h.
+
+Referenced by syx\_\-block\_\-context\_\-new(), syx\_\-interp\_\-context\_\-to\_\-frame(), syx\_\-interp\_\-enter\_\-context(), syx\_\-interp\_\-frame\_\-to\_\-context(), and syx\_\-method\_\-context\_\-new().\hypertarget{syx-object_8h_df6a9f8fef4d817ec6c930a40a9841bb}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CONTEXT\_\-PART\_\-METHOD@{SYX\_\-CONTEXT\_\-PART\_\-METHOD}}
+\index{SYX\_\-CONTEXT\_\-PART\_\-METHOD@{SYX\_\-CONTEXT\_\-PART\_\-METHOD}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CONTEXT\_\-PART\_\-METHOD(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-METHOD\mbox{]})}}
+\label{syx-object_8h_df6a9f8fef4d817ec6c930a40a9841bb}
+
+
+
+
+Definition at line 296 of file syx-object.h.
+
+Referenced by syx\_\-block\_\-context\_\-new(), syx\_\-interp\_\-enter\_\-context(), and syx\_\-method\_\-context\_\-new().\hypertarget{syx-object_8h_2b5212d0c18b2ba6e55fdec8f33625b8}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CONTEXT\_\-PART\_\-PARENT@{SYX\_\-CONTEXT\_\-PART\_\-PARENT}}
+\index{SYX\_\-CONTEXT\_\-PART\_\-PARENT@{SYX\_\-CONTEXT\_\-PART\_\-PARENT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CONTEXT\_\-PART\_\-PARENT(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-PARENT\mbox{]})}}
+\label{syx-object_8h_2b5212d0c18b2ba6e55fdec8f33625b8}
+
+
+
+
+Definition at line 295 of file syx-object.h.\hypertarget{syx-object_8h_e749658ddae9b2e6f980f63a2a8cb2f5}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-CONTEXT\_\-PART\_\-STACK@{SYX\_\-CONTEXT\_\-PART\_\-STACK}}
+\index{SYX\_\-CONTEXT\_\-PART\_\-STACK@{SYX\_\-CONTEXT\_\-PART\_\-STACK}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-CONTEXT\_\-PART\_\-STACK(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-CONTEXT\_\-PART\_\-STACK\mbox{]})}}
+\label{syx-object_8h_e749658ddae9b2e6f980f63a2a8cb2f5}
+
+
+
+
+Definition at line 294 of file syx-object.h.
+
+Referenced by syx\_\-interp\_\-frame\_\-to\_\-context().\hypertarget{syx-object_8h_9a20885f5a52f4bc0b7a79eb39e8b96e}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-DICTIONARY\_\-TALLY@{SYX\_\-DICTIONARY\_\-TALLY}}
+\index{SYX\_\-DICTIONARY\_\-TALLY@{SYX\_\-DICTIONARY\_\-TALLY}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-DICTIONARY\_\-TALLY(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-DICTIONARY\_\-TALLY\mbox{]})}}
+\label{syx-object_8h_9a20885f5a52f4bc0b7a79eb39e8b96e}
+
+
+
+
+Definition at line 269 of file syx-object.h.
+
+Referenced by syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-dictionary\_\-index\_\-of(), syx\_\-dictionary\_\-new(), syx\_\-dictionary\_\-rehash(), and syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_4748238146463f5f05f8c11ff422b6d3}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-IS\_\-BOOLEAN@{SYX\_\-IS\_\-BOOLEAN}}
+\index{SYX\_\-IS\_\-BOOLEAN@{SYX\_\-IS\_\-BOOLEAN}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IS\_\-BOOLEAN(oop)~(SYX\_\-IS\_\-TRUE(oop) $|$$|$ SYX\_\-IS\_\-FALSE(oop))}}
+\label{syx-object_8h_4748238146463f5f05f8c11ff422b6d3}
+
+
+
+
+Definition at line 64 of file syx-object.h.\hypertarget{syx-object_8h_2cf93a0e501e2f8742d71709cb796fef}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-IS\_\-CPOINTER@{SYX\_\-IS\_\-CPOINTER}}
+\index{SYX\_\-IS\_\-CPOINTER@{SYX\_\-IS\_\-CPOINTER}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IS\_\-CPOINTER(oop)}}
+\label{syx-object_8h_2cf93a0e501e2f8742d71709cb796fef}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}(SYX_IS_POINTER(oop) &&                    \
+                              ((oop) < (SyxOop)syx_memory ||            \
+                               (oop) >= (SyxOop)(syx_memory + _syx_memory_size)))
+\end{verbatim}
+\end{Code}
+
+
+Definition at line 68 of file syx-object.h.
+
+Referenced by syx\_\-object\_\-get\_\-class().\hypertarget{syx-object_8h_bc047647f8b39be70f2e2a2e205a9923}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-IS\_\-FALSE@{SYX\_\-IS\_\-FALSE}}
+\index{SYX\_\-IS\_\-FALSE@{SYX\_\-IS\_\-FALSE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IS\_\-FALSE(oop)~((oop) == {\bf syx\_\-false})}}
+\label{syx-object_8h_bc047647f8b39be70f2e2a2e205a9923}
+
+
+
+
+Definition at line 63 of file syx-object.h.\hypertarget{syx-object_8h_a0618a2af4e0706b7080c6946ae43ee3}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-IS\_\-NIL@{SYX\_\-IS\_\-NIL}}
+\index{SYX\_\-IS\_\-NIL@{SYX\_\-IS\_\-NIL}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IS\_\-NIL(oop)~((oop) == 0 $|$$|$ (oop) == {\bf syx\_\-nil})}}
+\label{syx-object_8h_a0618a2af4e0706b7080c6946ae43ee3}
+
+
+
+
+Definition at line 61 of file syx-object.h.
+
+Referenced by syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names(), syx\_\-class\_\-is\_\-superclass\_\-of(), syx\_\-class\_\-lookup\_\-method(), syx\_\-class\_\-lookup\_\-method\_\-binding(), syx\_\-cold\_\-parse\_\-methods(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), syx\_\-dictionary\_\-index\_\-of(), syx\_\-dictionary\_\-rehash(), syx\_\-initialize\_\-system(), syx\_\-interp\_\-context\_\-to\_\-frame(), syx\_\-interp\_\-enter\_\-context(), syx\_\-interp\_\-frame\_\-to\_\-context(), syx\_\-interp\_\-swap\_\-context(), syx\_\-memory\_\-clear(), syx\_\-memory\_\-load\_\-image(), syx\_\-memory\_\-save\_\-image(), syx\_\-object\_\-free(), syx\_\-object\_\-get\_\-class(), syx\_\-plugin\_\-call(), syx\_\-plugin\_\-call\_\-interp(), syx\_\-process\_\-execute\_\-blocking(), syx\_\-scheduler\_\-add\_\-process(), syx\_\-scheduler\_\-init(), syx\_\-scheduler\_\-iterate(), syx\_\-scheduler\_\-remove\_\-process(), syx\_\-scheduler\_\-run(), syx\_\-send\_\-binary\_\-message(), syx\_\-send\_\-unary\_\-message(), syx\_\-show\_\-traceback(), syx\_\-signal(), syx\_\-signal\_\-create\_\-context(), syx\_\-symbol\_\-new(), and syx\_\-vsend\_\-message().\hypertarget{syx-object_8h_0904e42bcfe1d2cb2522253294562c77}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-IS\_\-OBJECT@{SYX\_\-IS\_\-OBJECT}}
+\index{SYX\_\-IS\_\-OBJECT@{SYX\_\-IS\_\-OBJECT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IS\_\-OBJECT(oop)}}
+\label{syx-object_8h_0904e42bcfe1d2cb2522253294562c77}
+
+
+\textbf{Value:}
+
+\begin{Code}\begin{verbatim}(SYX_IS_POINTER(oop) &&                      \
+                            (oop) >= (SyxOop)syx_memory &&              \
+                            (oop) < (SyxOop)(syx_memory + _syx_memory_size))
+\end{verbatim}
+\end{Code}
+
+
+Definition at line 65 of file syx-object.h.
+
+Referenced by syx\_\-bytecode\_\-gen\_\-literal(), syx\_\-object\_\-copy(), syx\_\-object\_\-free(), syx\_\-object\_\-get\_\-class(), syx\_\-object\_\-hash(), syx\_\-object\_\-set\_\-class(), and syx\_\-parser\_\-new().\hypertarget{syx-object_8h_d906bc6552333687f0f006132d38c07b}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-IS\_\-TRUE@{SYX\_\-IS\_\-TRUE}}
+\index{SYX\_\-IS\_\-TRUE@{SYX\_\-IS\_\-TRUE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-IS\_\-TRUE(oop)~((oop) == {\bf syx\_\-true})}}
+\label{syx-object_8h_d906bc6552333687f0f006132d38c07b}
+
+
+
+
+Definition at line 62 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-clear(), syx\_\-object\_\-free(), and syx\_\-scheduler\_\-add\_\-process().\hypertarget{syx-object_8h_2e720b85b8f2836a8326cd03674c3977}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-MEMORY\_\-INDEX\_\-OF@{SYX\_\-MEMORY\_\-INDEX\_\-OF}}
+\index{SYX\_\-MEMORY\_\-INDEX\_\-OF@{SYX\_\-MEMORY\_\-INDEX\_\-OF}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-MEMORY\_\-INDEX\_\-OF(oop)~(((({\bf SyxOop})oop) - ({\bf SyxOop}){\bf syx\_\-memory}) / sizeof ({\bf SyxObject}))}}
+\label{syx-object_8h_2e720b85b8f2836a8326cd03674c3977}
+
+
+Returns the index of the oop in the object table 
+
+Definition at line 110 of file syx-object.h.
+
+Referenced by syx\_\-object\_\-hash(), and syx\_\-show\_\-traceback().\hypertarget{syx-object_8h_b45ebeb40447a8043cdab82455f73475}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-METACLASS\_\-INSTANCE\_\-CLASS@{SYX\_\-METACLASS\_\-INSTANCE\_\-CLASS}}
+\index{SYX\_\-METACLASS\_\-INSTANCE\_\-CLASS@{SYX\_\-METACLASS\_\-INSTANCE\_\-CLASS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-METACLASS\_\-INSTANCE\_\-CLASS(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METACLASS\_\-INSTANCE\_\-CLASS\mbox{]})}}
+\label{syx-object_8h_b45ebeb40447a8043cdab82455f73475}
+
+
+
+
+Definition at line 263 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-class\_\-new(), and syx\_\-show\_\-traceback().\hypertarget{syx-object_8h_ac97fbf967b26d249d0ba6afe235e39c}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-METHOD\_\-ARGUMENT\_\-STACK\_\-SIZE@{SYX\_\-METHOD\_\-ARGUMENT\_\-STACK\_\-SIZE}}
+\index{SYX\_\-METHOD\_\-ARGUMENT\_\-STACK\_\-SIZE@{SYX\_\-METHOD\_\-ARGUMENT\_\-STACK\_\-SIZE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-METHOD\_\-ARGUMENT\_\-STACK\_\-SIZE(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-ARGUMENT\_\-STACK\_\-SIZE\mbox{]})}}
+\label{syx-object_8h_ac97fbf967b26d249d0ba6afe235e39c}
+
+
+
+
+Definition at line 285 of file syx-object.h.\hypertarget{syx-object_8h_55222831a7e6ae8717b66ecb10d077b5}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-METHOD\_\-CONTEXT\_\-RECEIVER@{SYX\_\-METHOD\_\-CONTEXT\_\-RECEIVER}}
+\index{SYX\_\-METHOD\_\-CONTEXT\_\-RECEIVER@{SYX\_\-METHOD\_\-CONTEXT\_\-RECEIVER}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-METHOD\_\-CONTEXT\_\-RECEIVER(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-CONTEXT\_\-RECEIVER\mbox{]})}}
+\label{syx-object_8h_55222831a7e6ae8717b66ecb10d077b5}
+
+
+
+
+Definition at line 299 of file syx-object.h.
+
+Referenced by syx\_\-interp\_\-enter\_\-context(), and syx\_\-method\_\-context\_\-new().\hypertarget{syx-object_8h_affde2fe16c24eeb141ee81ed91fe267}{
+\index{syx-object.h@{syx-object.h}!syx\_\-method\_\-new@{syx\_\-method\_\-new}}
+\index{syx\_\-method\_\-new@{syx\_\-method\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-method\_\-new()~(syx\_\-object\_\-new ({\bf syx\_\-compiled\_\-method\_\-class}))}}
+\label{syx-object_8h_affde2fe16c24eeb141ee81ed91fe267}
+
+
+Create a new raw CompiledMethod 
+
+Definition at line 480 of file syx-object.h.
+
+Referenced by syx\_\-cold\_\-parse\_\-methods().\hypertarget{syx-object_8h_539c213e23ecd6648b7219ba0f1fe40b}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-METHOD\_\-PRIMITIVE@{SYX\_\-METHOD\_\-PRIMITIVE}}
+\index{SYX\_\-METHOD\_\-PRIMITIVE@{SYX\_\-METHOD\_\-PRIMITIVE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-METHOD\_\-PRIMITIVE(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-PRIMITIVE\mbox{]})}}
+\label{syx-object_8h_539c213e23ecd6648b7219ba0f1fe40b}
+
+
+
+
+Definition at line 288 of file syx-object.h.\hypertarget{syx-object_8h_e98de75db34b515c3f1141bd3edbccd4}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-METHOD\_\-SELECTOR@{SYX\_\-METHOD\_\-SELECTOR}}
+\index{SYX\_\-METHOD\_\-SELECTOR@{SYX\_\-METHOD\_\-SELECTOR}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-METHOD\_\-SELECTOR(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-SELECTOR\mbox{]})}}
+\label{syx-object_8h_e98de75db34b515c3f1141bd3edbccd4}
+
+
+
+
+Definition at line 287 of file syx-object.h.
+
+Referenced by syx\_\-cold\_\-parse\_\-methods(), syx\_\-interp\_\-leave\_\-and\_\-answer(), and syx\_\-show\_\-traceback().\hypertarget{syx-object_8h_9cfacc4bce3b3d7004afe33c25b9d2c7}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-METHOD\_\-TEMPORARY\_\-STACK\_\-SIZE@{SYX\_\-METHOD\_\-TEMPORARY\_\-STACK\_\-SIZE}}
+\index{SYX\_\-METHOD\_\-TEMPORARY\_\-STACK\_\-SIZE@{SYX\_\-METHOD\_\-TEMPORARY\_\-STACK\_\-SIZE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-METHOD\_\-TEMPORARY\_\-STACK\_\-SIZE(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-METHOD\_\-TEMPORARY\_\-STACK\_\-SIZE\mbox{]})}}
+\label{syx-object_8h_9cfacc4bce3b3d7004afe33c25b9d2c7}
+
+
+
+
+Definition at line 286 of file syx-object.h.\hypertarget{syx-object_8h_cfb2a79cbeaf42326b56948d009d6719}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT@{SYX\_\-OBJECT}}
+\index{SYX\_\-OBJECT@{SYX\_\-OBJECT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT(oop)~(({\bf SyxObject} $\ast$) (oop))}}
+\label{syx-object_8h_cfb2a79cbeaf42326b56948d009d6719}
+
+
+
+
+Definition at line 44 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-memory\_\-free(), syx\_\-memory\_\-save\_\-image(), syx\_\-object\_\-copy(), syx\_\-object\_\-get\_\-class(), syx\_\-object\_\-new\_\-data(), syx\_\-object\_\-new\_\-size(), syx\_\-object\_\-new\_\-vars(), syx\_\-object\_\-set\_\-class(), and syx\_\-scheduler\_\-run().\hypertarget{syx-object_8h_e935c367e62b3662eb89fcb98fb173b6}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-BYTE\_\-ARRAY@{SYX\_\-OBJECT\_\-BYTE\_\-ARRAY}}
+\index{SYX\_\-OBJECT\_\-BYTE\_\-ARRAY@{SYX\_\-OBJECT\_\-BYTE\_\-ARRAY}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-BYTE\_\-ARRAY(oop)~(({\bf syx\_\-uint8} $\ast$)(SYX\_\-OBJECT(oop) $\rightarrow$ data))}}
+\label{syx-object_8h_e935c367e62b3662eb89fcb98fb173b6}
+
+
+
+
+Definition at line 53 of file syx-object.h.
+
+Referenced by syx\_\-send\_\-binary\_\-message(), and syx\_\-vsend\_\-message().\hypertarget{syx-object_8h_fc625eb398e3bd73c520d54112da754f}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-DATA@{SYX\_\-OBJECT\_\-DATA}}
+\index{SYX\_\-OBJECT\_\-DATA@{SYX\_\-OBJECT\_\-DATA}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-DATA(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ data)}}
+\label{syx-object_8h_fc625eb398e3bd73c520d54112da754f}
+
+
+
+
+Definition at line 56 of file syx-object.h.
+
+Referenced by syx\_\-array\_\-add(), syx\_\-array\_\-new\_\-ref(), syx\_\-array\_\-remove(), syx\_\-byte\_\-array\_\-new\_\-ref(), syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names(), syx\_\-dictionary\_\-at\_\-symbol(), syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent(), syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent(), syx\_\-dictionary\_\-index\_\-of(), syx\_\-dictionary\_\-rehash(), syx\_\-initialize\_\-system(), syx\_\-interp\_\-enter\_\-context(), syx\_\-memory\_\-load\_\-image(), syx\_\-object\_\-free(), syx\_\-object\_\-resize(), syx\_\-plugin\_\-call\_\-interp(), syx\_\-process\_\-new(), syx\_\-semaphore\_\-signal(), syx\_\-semaphore\_\-wait(), syx\_\-send\_\-binary\_\-message(), syx\_\-show\_\-traceback(), syx\_\-symbol\_\-new(), and syx\_\-vsend\_\-message().\hypertarget{syx-object_8h_6739da61250709a86d303df2aa297758}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-DATA\_\-SIZE@{SYX\_\-OBJECT\_\-DATA\_\-SIZE}}
+\index{SYX\_\-OBJECT\_\-DATA\_\-SIZE@{SYX\_\-OBJECT\_\-DATA\_\-SIZE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-DATA\_\-SIZE(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ data\_\-size)}}
+\label{syx-object_8h_6739da61250709a86d303df2aa297758}
+
+
+
+
+Definition at line 55 of file syx-object.h.
+
+Referenced by syx\_\-array\_\-add(), syx\_\-array\_\-remove(), syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names(), syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-index\_\-of(), syx\_\-dictionary\_\-rehash(), syx\_\-interp\_\-enter\_\-context(), syx\_\-object\_\-resize(), syx\_\-semaphore\_\-signal(), syx\_\-semaphore\_\-wait(), and syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_5421190920571a4e33c3dbf3b9ef61b1}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-FLOAT@{SYX\_\-OBJECT\_\-FLOAT}}
+\index{SYX\_\-OBJECT\_\-FLOAT@{SYX\_\-OBJECT\_\-FLOAT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-FLOAT(oop)~($\ast$(({\bf syx\_\-double} $\ast$)(SYX\_\-OBJECT(oop) $\rightarrow$ data)))}}
+\label{syx-object_8h_5421190920571a4e33c3dbf3b9ef61b1}
+
+
+
+
+Definition at line 45 of file syx-object.h.
+
+Referenced by syx\_\-float\_\-new().\hypertarget{syx-object_8h_e164aa1036bfcc0f7e63e2f8e81c0f54}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-grow\_\-by@{syx\_\-object\_\-grow\_\-by}}
+\index{syx\_\-object\_\-grow\_\-by@{syx\_\-object\_\-grow\_\-by}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-object\_\-grow\_\-by(oop, \/  size)~(syx\_\-object\_\-resize((oop),SYX\_\-OBJECT\_\-DATA\_\-SIZE(oop)+size))}}
+\label{syx-object_8h_e164aa1036bfcc0f7e63e2f8e81c0f54}
+
+
+
+
+Definition at line 156 of file syx-object.h.
+
+Referenced by syx\_\-array\_\-add(), and syx\_\-semaphore\_\-wait().\hypertarget{syx-object_8h_b769a5f497b0d4a69c82db6ab587c96f}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-HAS\_\-REFS@{SYX\_\-OBJECT\_\-HAS\_\-REFS}}
+\index{SYX\_\-OBJECT\_\-HAS\_\-REFS@{SYX\_\-OBJECT\_\-HAS\_\-REFS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-HAS\_\-REFS(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ has\_\-refs)}}
+\label{syx-object_8h_b769a5f497b0d4a69c82db6ab587c96f}
+
+
+
+
+Definition at line 57 of file syx-object.h.
+
+Referenced by syx\_\-object\_\-resize().\hypertarget{syx-object_8h_e63d2bc397e9f66e55b915520658bb95}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-IS\_\-CONSTANT@{SYX\_\-OBJECT\_\-IS\_\-CONSTANT}}
+\index{SYX\_\-OBJECT\_\-IS\_\-CONSTANT@{SYX\_\-OBJECT\_\-IS\_\-CONSTANT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-IS\_\-CONSTANT(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ is\_\-constant)}}
+\label{syx-object_8h_e63d2bc397e9f66e55b915520658bb95}
+
+
+
+
+Definition at line 59 of file syx-object.h.
+
+Referenced by syx\_\-bytecode\_\-gen\_\-literal().\hypertarget{syx-object_8h_ed76a2c170663e7169be0e737e8069a8}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-IS\_\-FLOAT@{SYX\_\-OBJECT\_\-IS\_\-FLOAT}}
+\index{SYX\_\-OBJECT\_\-IS\_\-FLOAT@{SYX\_\-OBJECT\_\-IS\_\-FLOAT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-IS\_\-FLOAT(oop)~(SYX\_\-IS\_\-OBJECT(oop) \&\& SYX\_\-OBJECT(oop) $\rightarrow$ klass == {\bf syx\_\-float\_\-class})}}
+\label{syx-object_8h_ed76a2c170663e7169be0e737e8069a8}
+
+
+
+
+Definition at line 74 of file syx-object.h.\hypertarget{syx-object_8h_93ab1383db7e0cafc185af9d9ef1e591}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-IS\_\-LARGE\_\-INTEGER@{SYX\_\-OBJECT\_\-IS\_\-LARGE\_\-INTEGER}}
+\index{SYX\_\-OBJECT\_\-IS\_\-LARGE\_\-INTEGER@{SYX\_\-OBJECT\_\-IS\_\-LARGE\_\-INTEGER}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-IS\_\-LARGE\_\-INTEGER(oop)~(SYX\_\-IS\_\-OBJECT(oop) \&\& SYX\_\-OBJECT(oop) $\rightarrow$ klass == {\bf syx\_\-large\_\-integer\_\-class})}}
+\label{syx-object_8h_93ab1383db7e0cafc185af9d9ef1e591}
+
+
+
+
+Definition at line 75 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-save\_\-image().\hypertarget{syx-object_8h_b510a0c36e6c8a70adde04426625ca7a}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-IS\_\-MARKED@{SYX\_\-OBJECT\_\-IS\_\-MARKED}}
+\index{SYX\_\-OBJECT\_\-IS\_\-MARKED@{SYX\_\-OBJECT\_\-IS\_\-MARKED}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-IS\_\-MARKED(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ is\_\-marked)}}
+\label{syx-object_8h_b510a0c36e6c8a70adde04426625ca7a}
+
+
+
+
+Definition at line 58 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-alloc(), and syx\_\-memory\_\-gc\_\-end().\hypertarget{syx-object_8h_d204bd0bc6eafc156499e29e5c33730d}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-IS\_\-STRING@{SYX\_\-OBJECT\_\-IS\_\-STRING}}
+\index{SYX\_\-OBJECT\_\-IS\_\-STRING@{SYX\_\-OBJECT\_\-IS\_\-STRING}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-IS\_\-STRING(oop)~(SYX\_\-IS\_\-OBJECT(oop) \&\& SYX\_\-OBJECT(oop) $\rightarrow$ klass == {\bf syx\_\-string\_\-class})}}
+\label{syx-object_8h_d204bd0bc6eafc156499e29e5c33730d}
+
+
+
+
+Definition at line 72 of file syx-object.h.
+
+Referenced by syx\_\-signal().\hypertarget{syx-object_8h_d411630830fe2cd1696bce40096b181f}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-IS\_\-SYMBOL@{SYX\_\-OBJECT\_\-IS\_\-SYMBOL}}
+\index{SYX\_\-OBJECT\_\-IS\_\-SYMBOL@{SYX\_\-OBJECT\_\-IS\_\-SYMBOL}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-IS\_\-SYMBOL(oop)~(SYX\_\-IS\_\-OBJECT(oop) \&\& SYX\_\-OBJECT(oop) $\rightarrow$ klass == {\bf syx\_\-symbol\_\-class})}}
+\label{syx-object_8h_d411630830fe2cd1696bce40096b181f}
+
+
+
+
+Definition at line 73 of file syx-object.h.
+
+Referenced by syx\_\-signal().\hypertarget{syx-object_8h_65df887ffb379b9452e3e6796532ada5}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-LARGE\_\-INTEGER@{SYX\_\-OBJECT\_\-LARGE\_\-INTEGER}}
+\index{SYX\_\-OBJECT\_\-LARGE\_\-INTEGER@{SYX\_\-OBJECT\_\-LARGE\_\-INTEGER}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-LARGE\_\-INTEGER(oop)~($\ast$(mpz\_\-t $\ast$)(SYX\_\-OBJECT(oop) $\rightarrow$ data))}}
+\label{syx-object_8h_65df887ffb379b9452e3e6796532ada5}
+
+
+
+
+Definition at line 48 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-load\_\-image(), and syx\_\-memory\_\-save\_\-image().\hypertarget{syx-object_8h_a3c2d59b7296539517361dea284a0db7}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-new@{syx\_\-object\_\-new}}
+\index{syx\_\-object\_\-new@{syx\_\-object\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-object\_\-new(klass)~(syx\_\-object\_\-new\_\-vars ((klass), SYX\_\-SMALL\_\-INTEGER (SYX\_\-CLASS\_\-INSTANCE\_\-SIZE ((klass)))))}}
+\label{syx-object_8h_a3c2d59b7296539517361dea284a0db7}
+
+
+
+
+Definition at line 150 of file syx-object.h.
+
+Referenced by syx\_\-block\_\-closure\_\-new(), syx\_\-block\_\-context\_\-new(), syx\_\-class\_\-new(), syx\_\-metaclass\_\-new(), syx\_\-method\_\-context\_\-new(), syx\_\-object\_\-new\_\-data(), syx\_\-object\_\-new\_\-size(), syx\_\-process\_\-new(), syx\_\-scheduler\_\-init(), syx\_\-semaphore\_\-new(), and syx\_\-variable\_\-binding\_\-new().\hypertarget{syx-object_8h_d9120176c6ebd87a4075472386e6f748}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-STRING@{SYX\_\-OBJECT\_\-STRING}}
+\index{SYX\_\-OBJECT\_\-STRING@{SYX\_\-OBJECT\_\-STRING}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-STRING(oop)~(({\bf syx\_\-string})(SYX\_\-OBJECT(oop) $\rightarrow$ data))}}
+\label{syx-object_8h_d9120176c6ebd87a4075472386e6f748}
+
+
+
+
+Definition at line 52 of file syx-object.h.
+
+Referenced by syx\_\-interp\_\-leave\_\-and\_\-answer(), and syx\_\-send\_\-unary\_\-message().\hypertarget{syx-object_8h_5b9c62927be3b204756647a1ee461d1d}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-SYMBOL@{SYX\_\-OBJECT\_\-SYMBOL}}
+\index{SYX\_\-OBJECT\_\-SYMBOL@{SYX\_\-OBJECT\_\-SYMBOL}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-SYMBOL(oop)~(({\bf syx\_\-symbol})(SYX\_\-OBJECT(oop) $\rightarrow$ data))}}
+\label{syx-object_8h_5b9c62927be3b204756647a1ee461d1d}
+
+
+
+
+Definition at line 51 of file syx-object.h.
+
+Referenced by syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names(), syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), syx\_\-dictionary\_\-index\_\-of(), syx\_\-memory\_\-load\_\-image(), syx\_\-memory\_\-save\_\-image(), syx\_\-plugin\_\-call\_\-interp(), syx\_\-show\_\-traceback(), and syx\_\-signal().\hypertarget{syx-object_8h_4b6aa57daec9c56e87fe8948101d99bc}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-OBJECT\_\-VARS@{SYX\_\-OBJECT\_\-VARS}}
+\index{SYX\_\-OBJECT\_\-VARS@{SYX\_\-OBJECT\_\-VARS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-OBJECT\_\-VARS(oop)~(SYX\_\-OBJECT(oop) $\rightarrow$ vars)}}
+\label{syx-object_8h_4b6aa57daec9c56e87fe8948101d99bc}
+
+
+
+
+Definition at line 54 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-dictionary\_\-rehash(), syx\_\-initialize\_\-system(), and syx\_\-object\_\-free().\hypertarget{syx-object_8h_c49eda7223af44f10a46c7be40bc3fac}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-PROCESS\_\-FRAME\_\-POINTER@{SYX\_\-PROCESS\_\-FRAME\_\-POINTER}}
+\index{SYX\_\-PROCESS\_\-FRAME\_\-POINTER@{SYX\_\-PROCESS\_\-FRAME\_\-POINTER}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PROCESS\_\-FRAME\_\-POINTER(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-FRAME\_\-POINTER\mbox{]})}}
+\label{syx-object_8h_c49eda7223af44f10a46c7be40bc3fac}
+
+
+
+
+Definition at line 308 of file syx-object.h.
+
+Referenced by syx\_\-interp\_\-enter\_\-context(), and syx\_\-process\_\-new().\hypertarget{syx-object_8h_0a046ecb9b0607671ce20996d5e986fe}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-PROCESS\_\-NEXT@{SYX\_\-PROCESS\_\-NEXT}}
+\index{SYX\_\-PROCESS\_\-NEXT@{SYX\_\-PROCESS\_\-NEXT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PROCESS\_\-NEXT(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-NEXT\mbox{]})}}
+\label{syx-object_8h_0a046ecb9b0607671ce20996d5e986fe}
+
+
+
+
+Definition at line 311 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-save\_\-image(), syx\_\-scheduler\_\-add\_\-process(), and syx\_\-scheduler\_\-remove\_\-process().\hypertarget{syx-object_8h_c6e63002ff510661d3f5c92177d9018e}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-PROCESS\_\-RETURNED\_\-OBJECT@{SYX\_\-PROCESS\_\-RETURNED\_\-OBJECT}}
+\index{SYX\_\-PROCESS\_\-RETURNED\_\-OBJECT@{SYX\_\-PROCESS\_\-RETURNED\_\-OBJECT}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PROCESS\_\-RETURNED\_\-OBJECT(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-RETURNED\_\-OBJECT\mbox{]})}}
+\label{syx-object_8h_c6e63002ff510661d3f5c92177d9018e}
+
+
+
+
+Definition at line 310 of file syx-object.h.
+
+Referenced by syx\_\-do\_\-it\_\-blocking(), syx\_\-file\_\-in\_\-blocking(), and syx\_\-interp\_\-leave\_\-and\_\-answer().\hypertarget{syx-object_8h_99cbfe2ae15b516f6d3a60c06a8a3915}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-PROCESS\_\-SCHEDULED@{SYX\_\-PROCESS\_\-SCHEDULED}}
+\index{SYX\_\-PROCESS\_\-SCHEDULED@{SYX\_\-PROCESS\_\-SCHEDULED}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PROCESS\_\-SCHEDULED(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-SCHEDULED\mbox{]})}}
+\label{syx-object_8h_99cbfe2ae15b516f6d3a60c06a8a3915}
+
+
+
+
+Definition at line 312 of file syx-object.h.
+
+Referenced by syx\_\-process\_\-new(), syx\_\-scheduler\_\-add\_\-process(), and syx\_\-scheduler\_\-remove\_\-process().\hypertarget{syx-object_8h_7c831375f6160c5b537d391cab06e10e}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-PROCESS\_\-STACK@{SYX\_\-PROCESS\_\-STACK}}
+\index{SYX\_\-PROCESS\_\-STACK@{SYX\_\-PROCESS\_\-STACK}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PROCESS\_\-STACK(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-STACK\mbox{]})}}
+\label{syx-object_8h_7c831375f6160c5b537d391cab06e10e}
+
+
+
+
+Definition at line 307 of file syx-object.h.
+
+Referenced by syx\_\-process\_\-new(), and syx\_\-show\_\-traceback().\hypertarget{syx-object_8h_68958798ba77455939de869231f6eee1}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-PROCESS\_\-SUSPENDED@{SYX\_\-PROCESS\_\-SUSPENDED}}
+\index{SYX\_\-PROCESS\_\-SUSPENDED@{SYX\_\-PROCESS\_\-SUSPENDED}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PROCESS\_\-SUSPENDED(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESS\_\-SUSPENDED\mbox{]})}}
+\label{syx-object_8h_68958798ba77455939de869231f6eee1}
+
+
+
+
+Definition at line 309 of file syx-object.h.
+
+Referenced by syx\_\-process\_\-new(), syx\_\-semaphore\_\-signal(), and syx\_\-semaphore\_\-wait().\hypertarget{syx-object_8h_e7a5e7b65675b5e2c49e4ea412119615}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-PROCESSOR\_\-SCHEDULER\_\-ACTIVE\_\-PROCESS@{SYX\_\-PROCESSOR\_\-SCHEDULER\_\-ACTIVE\_\-PROCESS}}
+\index{SYX\_\-PROCESSOR\_\-SCHEDULER\_\-ACTIVE\_\-PROCESS@{SYX\_\-PROCESSOR\_\-SCHEDULER\_\-ACTIVE\_\-PROCESS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PROCESSOR\_\-SCHEDULER\_\-ACTIVE\_\-PROCESS(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESSOR\_\-SCHEDULER\_\-ACTIVE\_\-PROCESS\mbox{]})}}
+\label{syx-object_8h_e7a5e7b65675b5e2c49e4ea412119615}
+
+
+
+
+Definition at line 314 of file syx-object.h.
+
+Referenced by syx\_\-scheduler\_\-init().\hypertarget{syx-object_8h_f404b8c366724f2aee0d80cc416f4a61}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-PROCESSOR\_\-SCHEDULER\_\-BYTESLICE@{SYX\_\-PROCESSOR\_\-SCHEDULER\_\-BYTESLICE}}
+\index{SYX\_\-PROCESSOR\_\-SCHEDULER\_\-BYTESLICE@{SYX\_\-PROCESSOR\_\-SCHEDULER\_\-BYTESLICE}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-PROCESSOR\_\-SCHEDULER\_\-BYTESLICE(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-PROCESSOR\_\-SCHEDULER\_\-BYTESLICE\mbox{]})}}
+\label{syx-object_8h_f404b8c366724f2aee0d80cc416f4a61}
+
+
+
+
+Definition at line 315 of file syx-object.h.
+
+Referenced by syx\_\-scheduler\_\-init().\hypertarget{syx-object_8h_f602bbb62e7ca09615625e04b4f5610c}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-SEMAPHORE\_\-LIST@{SYX\_\-SEMAPHORE\_\-LIST}}
+\index{SYX\_\-SEMAPHORE\_\-LIST@{SYX\_\-SEMAPHORE\_\-LIST}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-SEMAPHORE\_\-LIST(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-SEMAPHORE\_\-LIST\mbox{]})}}
+\label{syx-object_8h_f602bbb62e7ca09615625e04b4f5610c}
+
+
+
+
+Definition at line 317 of file syx-object.h.
+
+Referenced by syx\_\-semaphore\_\-signal(), and syx\_\-semaphore\_\-wait().\hypertarget{syx-object_8h_7d7dca42d785621efdcdcd1c239d6013}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-SEMAPHORE\_\-SIGNALS@{SYX\_\-SEMAPHORE\_\-SIGNALS}}
+\index{SYX\_\-SEMAPHORE\_\-SIGNALS@{SYX\_\-SEMAPHORE\_\-SIGNALS}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-SEMAPHORE\_\-SIGNALS(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-SEMAPHORE\_\-SIGNALS\mbox{]})}}
+\label{syx-object_8h_7d7dca42d785621efdcdcd1c239d6013}
+
+
+
+
+Definition at line 318 of file syx-object.h.
+
+Referenced by syx\_\-semaphore\_\-signal().\hypertarget{syx-object_8h_e536b120cd5e071ff38023aa29045768}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-SYMBOL\_\-HASH@{SYX\_\-SYMBOL\_\-HASH}}
+\index{SYX\_\-SYMBOL\_\-HASH@{SYX\_\-SYMBOL\_\-HASH}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-SYMBOL\_\-HASH(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-SYMBOL\_\-HASH\mbox{]})}}
+\label{syx-object_8h_e536b120cd5e071ff38023aa29045768}
+
+
+
+
+Definition at line 267 of file syx-object.h.
+
+Referenced by syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_c3fb81a62dd8c0a741b3f78b0330f784}{
+\index{syx-object.h@{syx-object.h}!syx\_\-symbol\_\-hash@{syx\_\-symbol\_\-hash}}
+\index{syx\_\-symbol\_\-hash@{syx\_\-symbol\_\-hash}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define syx\_\-symbol\_\-hash(oop)~(SYX\_\-SMALL\_\-INTEGER (SYX\_\-SYMBOL\_\-HASH (oop)))}}
+\label{syx-object_8h_c3fb81a62dd8c0a741b3f78b0330f784}
+
+
+
+
+Definition at line 236 of file syx-object.h.
+
+Referenced by syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), and syx\_\-dictionary\_\-bind\_\-set\_\-value().\hypertarget{syx-object_8h_dda1b5610b8bfa9ae2eb8928fc3db518}{
+\index{syx-object.h@{syx-object.h}!SYX\_\-VARIABLE\_\-BINDING\_\-DICTIONARY@{SYX\_\-VARIABLE\_\-BINDING\_\-DICTIONARY}}
+\index{SYX\_\-VARIABLE\_\-BINDING\_\-DICTIONARY@{SYX\_\-VARIABLE\_\-BINDING\_\-DICTIONARY}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-VARIABLE\_\-BINDING\_\-DICTIONARY(oop)~(SYX\_\-OBJECT\_\-VARS(oop)\mbox{[}SYX\_\-VARS\_\-VARIABLE\_\-BINDING\_\-DICTIONARY\mbox{]})}}
+\label{syx-object_8h_dda1b5610b8bfa9ae2eb8928fc3db518}
+
+
+
+
+Definition at line 274 of file syx-object.h.
+
+Referenced by syx\_\-class\_\-lookup\_\-method\_\-binding(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), and syx\_\-variable\_\-binding\_\-new().
+
+\subsection{Typedef Documentation}
+\hypertarget{syx-object_8h_1bd7e679e4563ab6afb40a4ab1ccab7d}{
+\index{syx-object.h@{syx-object.h}!SyxObject@{SyxObject}}
+\index{SyxObject@{SyxObject}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf SyxObject} {\bf SyxObject}}}
+\label{syx-object_8h_1bd7e679e4563ab6afb40a4ab1ccab7d}
+
+
+
+
+Definition at line 79 of file syx-object.h.
+
+\subsection{Function Documentation}
+\hypertarget{syx-object_8h_b322ffdd7c235f42e9bd992a6013c680}{
+\index{syx-object.h@{syx-object.h}!syx\_\-array\_\-add@{syx\_\-array\_\-add}}
+\index{syx\_\-array\_\-add@{syx\_\-array\_\-add}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-array\_\-add ({\bf SyxOop} {\em array}, \/  {\bf SyxOop} {\em element}, \/  {\bf syx\_\-bool} {\em unique})}}
+\label{syx-object_8h_b322ffdd7c235f42e9bd992a6013c680}
+
+
+Add an element to an Array.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em unique}]TRUE if the element shouldn't be added if already present in the array \end{description}
+\end{Desc}
+
+
+Definition at line 289 of file syx-object.c.
+
+Referenced by syx\_\-class\_\-new(), and syx\_\-metaclass\_\-new().\hypertarget{syx-object_8h_73d606c8733a400233809b9dbdffdfb1}{
+\index{syx-object.h@{syx-object.h}!syx\_\-array\_\-new@{syx\_\-array\_\-new}}
+\index{syx\_\-array\_\-new@{syx\_\-array\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-array\_\-new ({\bf syx\_\-varsize} {\em size}, \/  {\bf SyxOop} $\ast$ {\em data})}}
+\label{syx-object_8h_73d606c8733a400233809b9dbdffdfb1}
+
+
+Creates a new Array instance.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em size}]the number of elements \item[{\em data}]already initialized data for the array \end{description}
+\end{Desc}
+
+
+Definition at line 383 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-class\_\-new(), and syx\_\-metaclass\_\-new().\hypertarget{syx-object_8h_5c63c40451ce204441acff87eea226bc}{
+\index{syx-object.h@{syx-object.h}!syx\_\-array\_\-new\_\-ref@{syx\_\-array\_\-new\_\-ref}}
+\index{syx\_\-array\_\-new\_\-ref@{syx\_\-array\_\-new\_\-ref}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-array\_\-new\_\-ref ({\bf syx\_\-varsize} {\em size}, \/  {\bf SyxOop} $\ast$ {\em data})}}
+\label{syx-object_8h_5c63c40451ce204441acff87eea226bc}
+
+
+Like syx\_\-array\_\-new but duplicates the data 
+
+Definition at line 397 of file syx-object.h.
+
+Referenced by syx\_\-parser\_\-parse(), and syx\_\-semaphore\_\-signal().\hypertarget{syx-object_8h_bae072a6a2e20392d22f98e09fdc42c0}{
+\index{syx-object.h@{syx-object.h}!syx\_\-array\_\-new\_\-size@{syx\_\-array\_\-new\_\-size}}
+\index{syx\_\-array\_\-new\_\-size@{syx\_\-array\_\-new\_\-size}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-array\_\-new\_\-size ({\bf syx\_\-varsize} {\em size})}}
+\label{syx-object_8h_bae072a6a2e20392d22f98e09fdc42c0}
+
+
+Creates a sized Array 
+
+Definition at line 390 of file syx-object.h.
+
+Referenced by syx\_\-array\_\-new\_\-ref(), syx\_\-initialize\_\-system(), syx\_\-process\_\-new(), syx\_\-send\_\-binary\_\-message(), and syx\_\-vsend\_\-message().\hypertarget{syx-object_8h_84e829e1cfb191f82e954d90787f1722}{
+\index{syx-object.h@{syx-object.h}!syx\_\-array\_\-remove@{syx\_\-array\_\-remove}}
+\index{syx\_\-array\_\-remove@{syx\_\-array\_\-remove}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-bool} syx\_\-array\_\-remove ({\bf SyxOop} {\em array}, \/  {\bf SyxOop} {\em element})}}
+\label{syx-object_8h_84e829e1cfb191f82e954d90787f1722}
+
+
+Remove an element from an Array.
+
+\begin{Desc}
+\item[Returns:]TRUE if element was found and removed, else FALSE \end{Desc}
+
+
+Definition at line 260 of file syx-object.c.\hypertarget{syx-object_8h_cb77fae0f91d128285e504c1959f9fc9}{
+\index{syx-object.h@{syx-object.h}!syx\_\-block\_\-closure\_\-new@{syx\_\-block\_\-closure\_\-new}}
+\index{syx\_\-block\_\-closure\_\-new@{syx\_\-block\_\-closure\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-block\_\-closure\_\-new ({\bf SyxOop} {\em block})}}
+\label{syx-object_8h_cb77fae0f91d128285e504c1959f9fc9}
+
+
+Create a new BlockClosure.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em block}]a CompiledBlock \end{description}
+\end{Desc}
+
+
+Definition at line 471 of file syx-object.h.\hypertarget{syx-object_8h_e8dbdd7232dd6da7e16ad59ac26c0cbe}{
+\index{syx-object.h@{syx-object.h}!syx\_\-block\_\-context\_\-new@{syx\_\-block\_\-context\_\-new}}
+\index{syx\_\-block\_\-context\_\-new@{syx\_\-block\_\-context\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-block\_\-context\_\-new ({\bf SyxOop} {\em closure}, \/  {\bf SyxOop} {\em arguments})}}
+\label{syx-object_8h_e8dbdd7232dd6da7e16ad59ac26c0cbe}
+
+
+Same as syx\_\-method\_\-context\_\-new but for BlockContexts. The receiver is guessed by looking at the outer context.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em closure}]a BlockClosure \end{description}
+\end{Desc}
+
+
+Definition at line 694 of file syx-object.c.
+
+Referenced by syx\_\-interp\_\-frame\_\-to\_\-context().\hypertarget{syx-object_8h_637a68800765eeec4dcc041b9e2c51db}{
+\index{syx-object.h@{syx-object.h}!syx\_\-byte\_\-array\_\-new@{syx\_\-byte\_\-array\_\-new}}
+\index{syx\_\-byte\_\-array\_\-new@{syx\_\-byte\_\-array\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-byte\_\-array\_\-new ({\bf syx\_\-varsize} {\em size}, \/  {\bf syx\_\-uint8} $\ast$ {\em data})}}
+\label{syx-object_8h_637a68800765eeec4dcc041b9e2c51db}
+
+
+Creates a new ByteArray instance.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em size}]the number of elements \item[{\em data}]already initialized data for the byte array \end{description}
+\end{Desc}
+
+
+Definition at line 355 of file syx-object.h.\hypertarget{syx-object_8h_0212b76e62e1e054559a7155504ff25e}{
+\index{syx-object.h@{syx-object.h}!syx\_\-byte\_\-array\_\-new\_\-ref@{syx\_\-byte\_\-array\_\-new\_\-ref}}
+\index{syx\_\-byte\_\-array\_\-new\_\-ref@{syx\_\-byte\_\-array\_\-new\_\-ref}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-byte\_\-array\_\-new\_\-ref ({\bf syx\_\-varsize} {\em size}, \/  {\bf syx\_\-uint8} $\ast$ {\em data})}}
+\label{syx-object_8h_0212b76e62e1e054559a7155504ff25e}
+
+
+Like syx\_\-byte\_\-array\_\-new but duplicates the data 
+
+Definition at line 369 of file syx-object.h.
+
+Referenced by syx\_\-parser\_\-parse().\hypertarget{syx-object_8h_7ef9b6014138610515cd6924192b1de2}{
+\index{syx-object.h@{syx-object.h}!syx\_\-byte\_\-array\_\-new\_\-size@{syx\_\-byte\_\-array\_\-new\_\-size}}
+\index{syx\_\-byte\_\-array\_\-new\_\-size@{syx\_\-byte\_\-array\_\-new\_\-size}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-byte\_\-array\_\-new\_\-size ({\bf syx\_\-varsize} {\em size})}}
+\label{syx-object_8h_7ef9b6014138610515cd6924192b1de2}
+
+
+Creates a new ByteArray instance with the given size 
+
+Definition at line 362 of file syx-object.h.
+
+Referenced by syx\_\-byte\_\-array\_\-new\_\-ref().\hypertarget{syx-object_8h_9023e67e65ca397b1fb0a54e71879d0f}{
+\index{syx-object.h@{syx-object.h}!syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names@{syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names}}
+\index{syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names@{syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-symbol}$\ast$ syx\_\-class\_\-get\_\-all\_\-instance\_\-variable\_\-names ({\bf SyxOop} {\em klass})}}
+\label{syx-object_8h_9023e67e65ca397b1fb0a54e71879d0f}
+
+
+Get a list of all instance variable names defined in a class.
+
+The returned list is ordered to be used by the interpreter to access the variables directly using the list index.
+
+\begin{Desc}
+\item[Returns:]A syx\_\-symbol list or NULL. The list must be freed once unused \end{Desc}
+
+
+Definition at line 868 of file syx-object.c.
+
+Referenced by syx\_\-parser\_\-new().\hypertarget{syx-object_8h_3c39f91fa6304f6180cdb9888990ab75}{
+\index{syx-object.h@{syx-object.h}!syx\_\-class\_\-is\_\-superclass\_\-of@{syx\_\-class\_\-is\_\-superclass\_\-of}}
+\index{syx\_\-class\_\-is\_\-superclass\_\-of@{syx\_\-class\_\-is\_\-superclass\_\-of}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-bool} syx\_\-class\_\-is\_\-superclass\_\-of ({\bf SyxOop} {\em klass}, \/  {\bf SyxOop} {\em subclass})}}
+\label{syx-object_8h_3c39f91fa6304f6180cdb9888990ab75}
+
+
+Check if a class is a superclass of another one.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em class}]a class \item[{\em subclass}]a class that should be a subclass of the former \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]TRUE if the first is a superclass of the second \end{Desc}
+
+
+Definition at line 847 of file syx-object.c.\hypertarget{syx-object_8h_fbffd7cc207f40f18ba6da769f214ed4}{
+\index{syx-object.h@{syx-object.h}!syx\_\-class\_\-lookup\_\-method@{syx\_\-class\_\-lookup\_\-method}}
+\index{syx\_\-class\_\-lookup\_\-method@{syx\_\-class\_\-lookup\_\-method}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-class\_\-lookup\_\-method ({\bf SyxOop} {\em klass}, \/  {\bf syx\_\-symbol} {\em selector})}}
+\label{syx-object_8h_fbffd7cc207f40f18ba6da769f214ed4}
+
+
+Returns a method in a class having the given selector.
+
+\begin{Desc}
+\item[Returns:]syx\_\-nil if no method has been found \end{Desc}
+
+
+Definition at line 905 of file syx-object.c.
+
+Referenced by syx\_\-send\_\-binary\_\-message(), syx\_\-send\_\-unary\_\-message(), and syx\_\-vsend\_\-message().\hypertarget{syx-object_8h_6f70b46648620575942260a24264cb8f}{
+\index{syx-object.h@{syx-object.h}!syx\_\-class\_\-lookup\_\-method\_\-binding@{syx\_\-class\_\-lookup\_\-method\_\-binding}}
+\index{syx\_\-class\_\-lookup\_\-method\_\-binding@{syx\_\-class\_\-lookup\_\-method\_\-binding}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-class\_\-lookup\_\-method\_\-binding ({\bf SyxOop} {\em klass}, \/  {\bf SyxOop} {\em binding})}}
+\label{syx-object_8h_6f70b46648620575942260a24264cb8f}
+
+
+A mix between syx\_\-class\_\-lookup\_\-method and syx\_\-dictionary\_\-bind\_\-if\_\-absent.
+
+\begin{Desc}
+\item[Returns:]syx\_\-nil if no method has been found \end{Desc}
+
+
+Definition at line 929 of file syx-object.c.\hypertarget{syx-object_8h_15348943e9bdd2ca68f7c4aeee628c9a}{
+\index{syx-object.h@{syx-object.h}!syx\_\-class\_\-new@{syx\_\-class\_\-new}}
+\index{syx\_\-class\_\-new@{syx\_\-class\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-class\_\-new ({\bf SyxOop} {\em superclass})}}
+\label{syx-object_8h_15348943e9bdd2ca68f7c4aeee628c9a}
+
+
+Creates a new class.
+
+This function automatically creates the metaclass for the new class with syx\_\-metaclass\_\-new. The new class is an instance of the metaclass.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em superclass}]the superclass of the new class \end{description}
+\end{Desc}
+
+
+Definition at line 161 of file syx-object.c.\hypertarget{syx-object_8h_b4f98861384da9ef7ae4017b0639e2ab}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-at\_\-symbol@{syx\_\-dictionary\_\-at\_\-symbol}}
+\index{syx\_\-dictionary\_\-at\_\-symbol@{syx\_\-dictionary\_\-at\_\-symbol}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-dictionary\_\-at\_\-symbol ({\bf SyxOop} {\em dict}, \/  {\bf syx\_\-symbol} {\em key})}}
+\label{syx-object_8h_b4f98861384da9ef7ae4017b0639e2ab}
+
+
+Lookup a key by symbol in the dictionary. Raise an error if not found.
+
+Take care the dictionary MUST contain only symbol keys 
+
+Definition at line 576 of file syx-object.c.\hypertarget{syx-object_8h_6a48a39293c1dd5141d431f1ee8a8f7a}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent@{syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent}}
+\index{syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent@{syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent ({\bf SyxOop} {\em dict}, \/  {\bf syx\_\-symbol} {\em key}, \/  {\bf SyxOop} {\em object})}}
+\label{syx-object_8h_6a48a39293c1dd5141d431f1ee8a8f7a}
+
+
+Lookup a key by symbol in the dictionary. Return the given object if not found.
+
+Take care the dictionary MUST contain only key symbols 
+
+Definition at line 594 of file syx-object.c.
+
+Referenced by syx\_\-class\_\-lookup\_\-method().\hypertarget{syx-object_8h_1a46d03f5dad054ace2cc9bbe258f62e}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-at\_\-symbol\_\-put@{syx\_\-dictionary\_\-at\_\-symbol\_\-put}}
+\index{syx\_\-dictionary\_\-at\_\-symbol\_\-put@{syx\_\-dictionary\_\-at\_\-symbol\_\-put}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-dictionary\_\-at\_\-symbol\_\-put ({\bf SyxOop} {\em dict}, \/  {\bf SyxOop} {\em key}, \/  {\bf SyxOop} {\em value})}}
+\label{syx-object_8h_1a46d03f5dad054ace2cc9bbe258f62e}
+
+
+Insert key -$>$ value in the dictionary 
+
+Definition at line 635 of file syx-object.c.
+
+Referenced by syx\_\-cold\_\-parse\_\-methods(), and syx\_\-dictionary\_\-rehash().\hypertarget{syx-object_8h_92ca3959db07b272c56e9ba5cb22dd7a}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-bind@{syx\_\-dictionary\_\-bind}}
+\index{syx\_\-dictionary\_\-bind@{syx\_\-dictionary\_\-bind}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-dictionary\_\-bind ({\bf SyxOop} {\em binding})}}
+\label{syx-object_8h_92ca3959db07b272c56e9ba5cb22dd7a}
+
+
+Binds a VariableBinding returned by syx\_\-dictionary\_\-binding\_\-at\_\-symbol. Raise an exception if not bound.
+
+The function get the dictionary entry at the index (the value of the given association) then compare the two keys. If they're equal, then return the value of the dictionary entry; if not, lookup the key and change the the index of the binding.
+
+\begin{Desc}
+\item[Returns:]The bound Object \end{Desc}
+
+
+Definition at line 467 of file syx-object.c.\hypertarget{syx-object_8h_05356bb26948688722ef15999e182fff}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-bind\_\-set\_\-value@{syx\_\-dictionary\_\-bind\_\-set\_\-value}}
+\index{syx\_\-dictionary\_\-bind\_\-set\_\-value@{syx\_\-dictionary\_\-bind\_\-set\_\-value}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-dictionary\_\-bind\_\-set\_\-value ({\bf SyxOop} {\em binding}, \/  {\bf SyxOop} {\em value})}}
+\label{syx-object_8h_05356bb26948688722ef15999e182fff}
+
+
+Set the object value of the binding returned by syx\_\-dictionary\_\-binding\_\-at\_\-symbol. Raise an exception if not found.
+
+The function does the same thing ot syx\_\-dictionary\_\-bind, except that it sets the value in the Dictionary entry 
+
+Definition at line 540 of file syx-object.c.\hypertarget{syx-object_8h_a7e087f1a8becf74a1e37463e3a7c5cc}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-binding\_\-at\_\-symbol@{syx\_\-dictionary\_\-binding\_\-at\_\-symbol}}
+\index{syx\_\-dictionary\_\-binding\_\-at\_\-symbol@{syx\_\-dictionary\_\-binding\_\-at\_\-symbol}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-dictionary\_\-binding\_\-at\_\-symbol ({\bf SyxOop} {\em dict}, \/  {\bf syx\_\-symbol} {\em key})}}
+\label{syx-object_8h_a7e087f1a8becf74a1e37463e3a7c5cc}
+
+
+Create an association key -$>$ index to be used as binding. Raise an error if not found.
+
+Take care the dictionary MUST contain only key symbols
+
+\begin{Desc}
+\item[Returns:]An Association \end{Desc}
+
+
+Definition at line 426 of file syx-object.c.\hypertarget{syx-object_8h_9712ba3f5f6614d91900aabce7a5ce53}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent@{syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent}}
+\index{syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent@{syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent ({\bf SyxOop} {\em dict}, \/  {\bf syx\_\-symbol} {\em key}, \/  {\bf SyxOop} {\em object})}}
+\label{syx-object_8h_9712ba3f5f6614d91900aabce7a5ce53}
+
+
+Create an association key -$>$ index to be used as binding. Return the given object if not found.
+
+Take care the dictionary MUST contain only symbol keys
+
+\begin{Desc}
+\item[Returns:]An Association \end{Desc}
+
+
+Definition at line 448 of file syx-object.c.\hypertarget{syx-object_8h_4d007f448f92d47915f0f9b03abcffea}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-index\_\-of@{syx\_\-dictionary\_\-index\_\-of}}
+\index{syx\_\-dictionary\_\-index\_\-of@{syx\_\-dictionary\_\-index\_\-of}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-int32} syx\_\-dictionary\_\-index\_\-of ({\bf SyxOop} {\em dict}, \/  {\bf syx\_\-symbol} {\em key}, \/  {\bf syx\_\-int32} {\em hash}, \/  {\bf syx\_\-bool} {\em return\_\-nil\_\-index})}}
+\label{syx-object_8h_4d007f448f92d47915f0f9b03abcffea}
+
+
+Returns the index of the given symbol, the index of an empty entry or -1 if the key was not found.
+
+Take care the dictionary MUST contain only key symbols
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em hash}]the hash code of the key symbol \item[{\em return\_\-nil\_\-index}]if TRUE returns the index of the first nil entry \end{description}
+\end{Desc}
+
+
+Definition at line 379 of file syx-object.c.
+
+Referenced by syx\_\-dictionary\_\-at\_\-symbol(), syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent(), syx\_\-dictionary\_\-at\_\-symbol\_\-put(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-bind\_\-if\_\-absent(), syx\_\-dictionary\_\-bind\_\-set\_\-value(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent(), and syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_cdaeef35d6b8e61ddf3034ecb35c827b}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-new@{syx\_\-dictionary\_\-new}}
+\index{syx\_\-dictionary\_\-new@{syx\_\-dictionary\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-dictionary\_\-new ({\bf syx\_\-varsize} {\em size})}}
+\label{syx-object_8h_cdaeef35d6b8e61ddf3034ecb35c827b}
+
+
+Creates a new dictionary and its hash table.
+
+The effective size of the hash table is size $\ast$ 2 
+
+Definition at line 458 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-class\_\-new(), syx\_\-cold\_\-parse\_\-methods(), syx\_\-dictionary\_\-rehash(), and syx\_\-metaclass\_\-new().\hypertarget{syx-object_8h_29f9745780d60c8acb1ad0dc4364fe57}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-rehash@{syx\_\-dictionary\_\-rehash}}
+\index{syx\_\-dictionary\_\-rehash@{syx\_\-dictionary\_\-rehash}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-dictionary\_\-rehash ({\bf SyxOop} {\em dict})}}
+\label{syx-object_8h_29f9745780d60c8acb1ad0dc4364fe57}
+
+
+Grow the dictionary and rehash all data 
+
+Definition at line 605 of file syx-object.c.
+
+Referenced by syx\_\-dictionary\_\-at\_\-symbol\_\-put(), and syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_3685f2e5efa8127ecee98dd3f37f320c}{
+\index{syx-object.h@{syx-object.h}!syx\_\-float\_\-new@{syx\_\-float\_\-new}}
+\index{syx\_\-float\_\-new@{syx\_\-float\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-float\_\-new ({\bf syx\_\-double} {\em floating})}}
+\label{syx-object_8h_3685f2e5efa8127ecee98dd3f37f320c}
+
+
+Create a Float object 
+
+Definition at line 340 of file syx-object.h.\hypertarget{syx-object_8h_6e4566798088986aa8af7c776a00b90b}{
+\index{syx-object.h@{syx-object.h}!syx\_\-large\_\-integer\_\-new@{syx\_\-large\_\-integer\_\-new}}
+\index{syx\_\-large\_\-integer\_\-new@{syx\_\-large\_\-integer\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-large\_\-integer\_\-new ({\bf syx\_\-symbol} {\em string}, \/  {\bf syx\_\-int32} {\em base})}}
+\label{syx-object_8h_6e4566798088986aa8af7c776a00b90b}
+
+
+Create a new LargeInteger.
+
+{\bf This} function is available only if Syx has been linked with the GMP library
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em string}]a textual representation of the number \item[{\em base}]the radix of the representation \end{description}
+\end{Desc}
+
+
+Definition at line 185 of file syx-object.c.\hypertarget{syx-object_8h_72fbd99412e7332f70d9a5a15945a33d}{
+\index{syx-object.h@{syx-object.h}!syx\_\-large\_\-integer\_\-new\_\-integer@{syx\_\-large\_\-integer\_\-new\_\-integer}}
+\index{syx\_\-large\_\-integer\_\-new\_\-integer@{syx\_\-large\_\-integer\_\-new\_\-integer}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-large\_\-integer\_\-new\_\-integer ({\bf syx\_\-int32} {\em i})}}
+\label{syx-object_8h_72fbd99412e7332f70d9a5a15945a33d}
+
+
+Transform a 32-bit integer to a multiple precision integer.
+
+{\bf This} function is available only if Syx has been linked with the GMP library 
+
+Definition at line 215 of file syx-object.c.\hypertarget{syx-object_8h_68aa419b497b02410024a4fd26cac062}{
+\index{syx-object.h@{syx-object.h}!syx\_\-large\_\-integer\_\-new\_\-mpz@{syx\_\-large\_\-integer\_\-new\_\-mpz}}
+\index{syx\_\-large\_\-integer\_\-new\_\-mpz@{syx\_\-large\_\-integer\_\-new\_\-mpz}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-large\_\-integer\_\-new\_\-mpz ({\bf syx\_\-pointer} {\em mpz})}}
+\label{syx-object_8h_68aa419b497b02410024a4fd26cac062}
+
+
+Create a new LargeInteger with the given mpz 
+
+Definition at line 199 of file syx-object.c.\hypertarget{syx-object_8h_0c0151b9f4207e6e2d38c4eba9370d9d}{
+\index{syx-object.h@{syx-object.h}!syx\_\-metaclass\_\-new@{syx\_\-metaclass\_\-new}}
+\index{syx\_\-metaclass\_\-new@{syx\_\-metaclass\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-metaclass\_\-new ({\bf SyxOop} {\em supermetaclass})}}
+\label{syx-object_8h_0c0151b9f4207e6e2d38c4eba9370d9d}
+
+
+Creates a new metaclass.
+
+The metaclass will be an instance of the Metaclass class. Instance size is inherited by superclass
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em supermetaclass}]the superclass of the new metaclass \end{description}
+\end{Desc}
+
+
+Definition at line 139 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), and syx\_\-class\_\-new().\hypertarget{syx-object_8h_ff5c03485bac91b5a79c29a2a6b98dd7}{
+\index{syx-object.h@{syx-object.h}!syx\_\-method\_\-context\_\-new@{syx\_\-method\_\-context\_\-new}}
+\index{syx\_\-method\_\-context\_\-new@{syx\_\-method\_\-context\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-method\_\-context\_\-new ({\bf SyxOop} {\em method}, \/  {\bf SyxOop} {\em receiver}, \/  {\bf SyxOop} {\em arguments})}}
+\label{syx-object_8h_ff5c03485bac91b5a79c29a2a6b98dd7}
+
+
+Create a new MethodContext.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em method}]a CompiledMethod \item[{\em receiver}]an Object receiving the message \item[{\em arguments}]the arguments passed to the message \end{description}
+\end{Desc}
+
+
+Definition at line 665 of file syx-object.c.
+
+Referenced by syx\_\-interp\_\-frame\_\-to\_\-context(), syx\_\-send\_\-binary\_\-message(), syx\_\-send\_\-unary\_\-message(), and syx\_\-vsend\_\-message().\hypertarget{syx-object_8h_4495a25fcf21daa1fff65760198a6f0c}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-copy@{syx\_\-object\_\-copy}}
+\index{syx\_\-object\_\-copy@{syx\_\-object\_\-copy}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-object\_\-copy ({\bf SyxOop} {\em object})}}
+\label{syx-object_8h_4495a25fcf21daa1fff65760198a6f0c}
+
+
+Make a shallow copy of an object 
+
+Definition at line 776 of file syx-object.c.\hypertarget{syx-object_8h_1183dd2393eabdaf754948e182dcb287}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-free@{syx\_\-object\_\-free}}
+\index{syx\_\-object\_\-free@{syx\_\-object\_\-free}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-object\_\-free ({\bf SyxOop} {\em object})}}
+\label{syx-object_8h_1183dd2393eabdaf754948e182dcb287}
+
+
+Frees all the memory used by the object.
+
+If the class has finalizationRequest set to true, perform finalize on the object 
+
+Definition at line 814 of file syx-object.c.\hypertarget{syx-object_8h_88d1e4f8e61fb948d275e3900cec21fe}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-get\_\-class@{syx\_\-object\_\-get\_\-class}}
+\index{syx\_\-object\_\-get\_\-class@{syx\_\-object\_\-get\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-object\_\-get\_\-class ({\bf SyxOop} {\em object})}}
+\label{syx-object_8h_88d1e4f8e61fb948d275e3900cec21fe}
+
+
+Get the class of an object.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em object}]can be an SyxOop \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]For small integers return SmallInteger and for characters the Character class \end{Desc}
+
+
+Definition at line 180 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-class\_\-new(), syx\_\-cold\_\-parse\_\-methods(), syx\_\-interp\_\-enter\_\-context(), syx\_\-object\_\-free(), syx\_\-object\_\-vars\_\-size(), syx\_\-send\_\-binary\_\-message(), syx\_\-send\_\-unary\_\-message(), syx\_\-show\_\-traceback(), and syx\_\-vsend\_\-message().\hypertarget{syx-object_8h_a0cd5dad65ba23e0dc1381396b283ab8}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-get\_\-variable\_\-index@{syx\_\-object\_\-get\_\-variable\_\-index}}
+\index{syx\_\-object\_\-get\_\-variable\_\-index@{syx\_\-object\_\-get\_\-variable\_\-index}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-int32} syx\_\-object\_\-get\_\-variable\_\-index ({\bf SyxOop} {\em self}, \/  {\bf syx\_\-symbol} {\em name})}}
+\label{syx-object_8h_a0cd5dad65ba23e0dc1381396b283ab8}
+
+
+\hypertarget{syx-object_8h_d8c2625c436ff85103279e5d78f078a5}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-hash@{syx\_\-object\_\-hash}}
+\index{syx\_\-object\_\-hash@{syx\_\-object\_\-hash}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-int32} syx\_\-object\_\-hash ({\bf SyxOop} {\em object})}}
+\label{syx-object_8h_d8c2625c436ff85103279e5d78f078a5}
+
+
+Answer the hash of an Object 
+
+Definition at line 163 of file syx-object.h.\hypertarget{syx-object_8h_00a861ab5f7d7224796beb8f9bf42296}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-initialize@{syx\_\-object\_\-initialize}}
+\index{syx\_\-object\_\-initialize@{syx\_\-object\_\-initialize}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-object\_\-initialize ({\bf SyxOop} {\em oop})}}
+\label{syx-object_8h_00a861ab5f7d7224796beb8f9bf42296}
+
+
+Initialize a class from the Smalltalk-side
+
+Create a new process, a new context and send the initialize message to the class. The process is executed in blocking mode.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em class}]the class to be initialized \end{description}
+\end{Desc}
+
+
+Definition at line 95 of file syx-object.c.
+
+Referenced by syx\_\-semaphore\_\-new().\hypertarget{syx-object_8h_4c50454bad3dd39c9e137207f870a2dc}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-new\_\-data@{syx\_\-object\_\-new\_\-data}}
+\index{syx\_\-object\_\-new\_\-data@{syx\_\-object\_\-new\_\-data}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-object\_\-new\_\-data ({\bf SyxOop} {\em klass}, \/  {\bf syx\_\-bool} {\em has\_\-refs}, \/  {\bf syx\_\-varsize} {\em size}, \/  {\bf SyxOop} $\ast$ {\em data})}}
+\label{syx-object_8h_4c50454bad3dd39c9e137207f870a2dc}
+
+
+Create a new object of the given size with the given data.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em has\_\-refs}]specify if the created object must be Object indexable or Byte indexable \item[{\em size}]number of objects/bytes to hold \item[{\em data}]the data of the object (must be an array of SyxOop or syx\_\-int8) \end{description}
+\end{Desc}
+
+
+Definition at line 763 of file syx-object.c.
+
+Referenced by syx\_\-array\_\-new(), syx\_\-byte\_\-array\_\-new(), syx\_\-large\_\-integer\_\-new(), syx\_\-large\_\-integer\_\-new\_\-integer(), syx\_\-large\_\-integer\_\-new\_\-mpz(), syx\_\-string\_\-new(), syx\_\-string\_\-new\_\-ref(), and syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_df2f65814fe225be62a0cc96b5570d15}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-new\_\-size@{syx\_\-object\_\-new\_\-size}}
+\index{syx\_\-object\_\-new\_\-size@{syx\_\-object\_\-new\_\-size}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-object\_\-new\_\-size ({\bf SyxOop} {\em klass}, \/  {\bf syx\_\-bool} {\em has\_\-refs}, \/  {\bf syx\_\-varsize} {\em size})}}
+\label{syx-object_8h_df2f65814fe225be62a0cc96b5570d15}
+
+
+Create a new object of the given size.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em has\_\-refs}]specify if the created object must be Object indexable or Byte indexable \item[{\em size}]number of objects/bytes to hold \end{description}
+\end{Desc}
+
+
+Definition at line 743 of file syx-object.c.
+
+Referenced by syx\_\-array\_\-new\_\-size(), syx\_\-byte\_\-array\_\-new\_\-size(), syx\_\-dictionary\_\-new(), and syx\_\-float\_\-new().\hypertarget{syx-object_8h_2ad72ae9f822633bd80b9960fb758961}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-new\_\-vars@{syx\_\-object\_\-new\_\-vars}}
+\index{syx\_\-object\_\-new\_\-vars@{syx\_\-object\_\-new\_\-vars}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-object\_\-new\_\-vars ({\bf SyxOop} {\em klass}, \/  {\bf syx\_\-varsize} {\em vars\_\-size})}}
+\label{syx-object_8h_2ad72ae9f822633bd80b9960fb758961}
+
+
+Create a new object specifying an arbitrary number of instance variables.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em class}]the class of the new instance \item[{\em vars\_\-size}]number of instance variables the instance must hold \end{description}
+\end{Desc}
+
+
+Definition at line 721 of file syx-object.c.\hypertarget{syx-object_8h_8f1d632f929b4115e53dc9227ecac36b}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-resize@{syx\_\-object\_\-resize}}
+\index{syx\_\-object\_\-resize@{syx\_\-object\_\-resize}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-object\_\-resize ({\bf SyxOop} {\em object}, \/  {\bf syx\_\-varsize} {\em size})}}
+\label{syx-object_8h_8f1d632f929b4115e53dc9227ecac36b}
+
+
+Resize \hyperlink{struct_syx_object_1613092e651dd77e4a0c1d0a1ec413cb}{SyxObject::data} to the given size, being careful of object indexables and byte indexables.
+
+Warning, if the new size is lesser than the current, the data at the end of the array will be lost 
+
+Definition at line 116 of file syx-object.c.
+
+Referenced by syx\_\-array\_\-remove().\hypertarget{syx-object_8h_9c6faeef861a4eb3e3fb37ce9f8126f3}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-set\_\-class@{syx\_\-object\_\-set\_\-class}}
+\index{syx\_\-object\_\-set\_\-class@{syx\_\-object\_\-set\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE void syx\_\-object\_\-set\_\-class ({\bf SyxOop} {\em object}, \/  {\bf SyxOop} {\em klass})}}
+\label{syx-object_8h_9c6faeef861a4eb3e3fb37ce9f8126f3}
+
+
+Set the class of an object.
+
+If the object is a constant, a small integer or a character, no operation is done 
+
+Definition at line 211 of file syx-object.h.
+
+Referenced by syx\_\-build\_\-basic().\hypertarget{syx-object_8h_27fd8dfc7c2abc0d3e279624a676202b}{
+\index{syx-object.h@{syx-object.h}!syx\_\-object\_\-vars\_\-size@{syx\_\-object\_\-vars\_\-size}}
+\index{syx\_\-object\_\-vars\_\-size@{syx\_\-object\_\-vars\_\-size}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf syx\_\-varsize} syx\_\-object\_\-vars\_\-size ({\bf SyxOop} {\em object})}}
+\label{syx-object_8h_27fd8dfc7c2abc0d3e279624a676202b}
+
+
+Returns the number of instance variables held by the object.
+
+This method obtain the size of the instance from the instanceSize of its class 
+
+Definition at line 328 of file syx-object.h.\hypertarget{syx-object_8h_cc28dff1a70eeea85e52a5501eda6b53}{
+\index{syx-object.h@{syx-object.h}!syx\_\-process\_\-new@{syx\_\-process\_\-new}}
+\index{syx\_\-process\_\-new@{syx\_\-process\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-process\_\-new (void)}}
+\label{syx-object_8h_cc28dff1a70eeea85e52a5501eda6b53}
+
+
+Create a new suspended Process and schedule it.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em context}]a MethodContext or BlockContext \end{description}
+\end{Desc}
+
+
+Definition at line 234 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-do\_\-it\_\-blocking(), syx\_\-file\_\-in\_\-blocking(), syx\_\-initialize\_\-system(), syx\_\-memory\_\-clear(), syx\_\-object\_\-free(), syx\_\-object\_\-initialize(), and syx\_\-signal().\hypertarget{syx-object_8h_1e80c1b5431ace50da81cf2ed99377c0}{
+\index{syx-object.h@{syx-object.h}!syx\_\-semaphore\_\-new@{syx\_\-semaphore\_\-new}}
+\index{syx\_\-semaphore\_\-new@{syx\_\-semaphore\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-semaphore\_\-new (void)}}
+\label{syx-object_8h_1e80c1b5431ace50da81cf2ed99377c0}
+
+
+Creates a new Semaphore and initializes it from Smalltalk itself. 
+
+Definition at line 445 of file syx-object.h.\hypertarget{syx-object_8h_20b65111a07600b8b06a64a6f473daab}{
+\index{syx-object.h@{syx-object.h}!syx\_\-string\_\-hash@{syx\_\-string\_\-hash}}
+\index{syx\_\-string\_\-hash@{syx\_\-string\_\-hash}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-int32} syx\_\-string\_\-hash ({\bf syx\_\-symbol} {\em string})}}
+\label{syx-object_8h_20b65111a07600b8b06a64a6f473daab}
+
+
+Returns the hash of a String 
+
+Definition at line 358 of file syx-object.c.
+
+Referenced by syx\_\-dictionary\_\-at\_\-symbol(), syx\_\-dictionary\_\-at\_\-symbol\_\-if\_\-absent(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent(), and syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_ef1b7868c0a729cc4f27596291a9e08d}{
+\index{syx-object.h@{syx-object.h}!syx\_\-string\_\-new@{syx\_\-string\_\-new}}
+\index{syx\_\-string\_\-new@{syx\_\-string\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-string\_\-new ({\bf syx\_\-symbol} {\em string}, \/   {\em ...})}}
+\label{syx-object_8h_ef1b7868c0a729cc4f27596291a9e08d}
+
+
+Returns a new String instance. Duplicates the string in input.
+
+Use of variadic arguments is allowed to create a new string like using sprintf. 
+
+Definition at line 410 of file syx-object.h.
+
+Referenced by syx\_\-do\_\-it\_\-blocking(), syx\_\-fetch\_\-basic(), syx\_\-file\_\-in\_\-blocking(), syx\_\-initialize\_\-system(), and syx\_\-parser\_\-parse().\hypertarget{syx-object_8h_014aa4f99148b5e1a79b34553f022a59}{
+\index{syx-object.h@{syx-object.h}!syx\_\-string\_\-new\_\-ref@{syx\_\-string\_\-new\_\-ref}}
+\index{syx\_\-string\_\-new\_\-ref@{syx\_\-string\_\-new\_\-ref}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-string\_\-new\_\-ref ({\bf syx\_\-string} {\em string})}}
+\label{syx-object_8h_014aa4f99148b5e1a79b34553f022a59}
+
+
+Returns a new String instance. 
+
+Definition at line 422 of file syx-object.h.\hypertarget{syx-object_8h_66d94b213daa6f81d344a80f6449c0ea}{
+\index{syx-object.h@{syx-object.h}!syx\_\-symbol\_\-new@{syx\_\-symbol\_\-new}}
+\index{syx\_\-symbol\_\-new@{syx\_\-symbol\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} syx\_\-symbol\_\-new ({\bf syx\_\-symbol} {\em symbol})}}
+\label{syx-object_8h_66d94b213daa6f81d344a80f6449c0ea}
+
+
+Returns a Symbol instance.
+
+Lookups into syx\_\-symbols dictionary to check the existance of the symbol, otherwise create a new one and insert it into the dictionary. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em symbol}]a plain constant string \end{description}
+\end{Desc}
+
+
+Definition at line 315 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-bytecode\_\-gen\_\-message(), syx\_\-dictionary\_\-at\_\-symbol(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol(), syx\_\-fetch\_\-basic(), and syx\_\-scheduler\_\-init().\hypertarget{syx-object_8h_d806df239dc9f2669f3620623ec77c6f}{
+\index{syx-object.h@{syx-object.h}!syx\_\-variable\_\-binding\_\-new@{syx\_\-variable\_\-binding\_\-new}}
+\index{syx\_\-variable\_\-binding\_\-new@{syx\_\-variable\_\-binding\_\-new}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE {\bf SyxOop} syx\_\-variable\_\-binding\_\-new ({\bf SyxOop} {\em key}, \/  {\bf syx\_\-int32} {\em index}, \/  {\bf SyxOop} {\em dictionary})}}
+\label{syx-object_8h_d806df239dc9f2669f3620623ec77c6f}
+
+
+Creates a new VariableBinding key -$>$ index on a dictionary 
+
+Definition at line 432 of file syx-object.h.
+
+Referenced by syx\_\-bytecode\_\-gen\_\-message(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol(), and syx\_\-dictionary\_\-binding\_\-at\_\-symbol\_\-if\_\-absent().
+
+\subsection{Variable Documentation}
+\hypertarget{syx-object_8h_93a0ea8cd9172fdef4a6b60b40fd0e4e}{
+\index{syx-object.h@{syx-object.h}!syx\_\-array\_\-class@{syx\_\-array\_\-class}}
+\index{syx\_\-array\_\-class@{syx\_\-array\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-array\_\-class}}}
+\label{syx-object_8h_93a0ea8cd9172fdef4a6b60b40fd0e4e}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-array\_\-new(), syx\_\-array\_\-new\_\-size(), syx\_\-build\_\-basic(), and syx\_\-fetch\_\-basic().\hypertarget{syx-object_8h_80d6a707deae30357e97c83c75473f14}{
+\index{syx-object.h@{syx-object.h}!syx\_\-block\_\-closure\_\-class@{syx\_\-block\_\-closure\_\-class}}
+\index{syx\_\-block\_\-closure\_\-class@{syx\_\-block\_\-closure\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-block\_\-closure\_\-class}}}
+\label{syx-object_8h_80d6a707deae30357e97c83c75473f14}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-block\_\-closure\_\-new(), syx\_\-fetch\_\-basic(), and syx\_\-memory\_\-save\_\-image().\hypertarget{syx-object_8h_df59508211830ba19845fcf2e48dedad}{
+\index{syx-object.h@{syx-object.h}!syx\_\-block\_\-context\_\-class@{syx\_\-block\_\-context\_\-class}}
+\index{syx\_\-block\_\-context\_\-class@{syx\_\-block\_\-context\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-block\_\-context\_\-class}}}
+\label{syx-object_8h_df59508211830ba19845fcf2e48dedad}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-block\_\-context\_\-new(), syx\_\-fetch\_\-basic(), and syx\_\-interp\_\-enter\_\-context().\hypertarget{syx-object_8h_ee7c988bfeb850b7107cb7a3cc568cb7}{
+\index{syx-object.h@{syx-object.h}!syx\_\-byte\_\-array\_\-class@{syx\_\-byte\_\-array\_\-class}}
+\index{syx\_\-byte\_\-array\_\-class@{syx\_\-byte\_\-array\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-byte\_\-array\_\-class}}}
+\label{syx-object_8h_ee7c988bfeb850b7107cb7a3cc568cb7}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-byte\_\-array\_\-new(), syx\_\-byte\_\-array\_\-new\_\-size(), and syx\_\-fetch\_\-basic().\hypertarget{syx-object_8h_0620595819b6972d75adf8c49cddfad9}{
+\index{syx-object.h@{syx-object.h}!syx\_\-character\_\-class@{syx\_\-character\_\-class}}
+\index{syx\_\-character\_\-class@{syx\_\-character\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-character\_\-class}}}
+\label{syx-object_8h_0620595819b6972d75adf8c49cddfad9}
+
+
+
+
+Definition at line 50 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-fetch\_\-basic(), and syx\_\-object\_\-get\_\-class().\hypertarget{syx-object_8h_6b5b733fa1150efc8b27835298b58087}{
+\index{syx-object.h@{syx-object.h}!syx\_\-compiled\_\-block\_\-class@{syx\_\-compiled\_\-block\_\-class}}
+\index{syx\_\-compiled\_\-block\_\-class@{syx\_\-compiled\_\-block\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-compiled\_\-block\_\-class}}}
+\label{syx-object_8h_6b5b733fa1150efc8b27835298b58087}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-fetch\_\-basic().\hypertarget{syx-object_8h_e73b435f28f6326845c790d616f0763f}{
+\index{syx-object.h@{syx-object.h}!syx\_\-compiled\_\-method\_\-class@{syx\_\-compiled\_\-method\_\-class}}
+\index{syx\_\-compiled\_\-method\_\-class@{syx\_\-compiled\_\-method\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-compiled\_\-method\_\-class}}}
+\label{syx-object_8h_e73b435f28f6326845c790d616f0763f}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-fetch\_\-basic().\hypertarget{syx-object_8h_ae4d22bf2cfb62dc988be9f421e97aee}{
+\index{syx-object.h@{syx-object.h}!syx\_\-cpointer\_\-class@{syx\_\-cpointer\_\-class}}
+\index{syx\_\-cpointer\_\-class@{syx\_\-cpointer\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-cpointer\_\-class}}}
+\label{syx-object_8h_ae4d22bf2cfb62dc988be9f421e97aee}
+
+
+
+
+Definition at line 50 of file syx-object.c.
+
+Referenced by syx\_\-fetch\_\-basic(), and syx\_\-object\_\-get\_\-class().\hypertarget{syx-object_8h_fe9b69c223c0ab9ddb51d1f49b58dd96}{
+\index{syx-object.h@{syx-object.h}!syx\_\-dictionary\_\-class@{syx\_\-dictionary\_\-class}}
+\index{syx\_\-dictionary\_\-class@{syx\_\-dictionary\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-dictionary\_\-class}}}
+\label{syx-object_8h_fe9b69c223c0ab9ddb51d1f49b58dd96}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-dictionary\_\-new(), and syx\_\-fetch\_\-basic().\hypertarget{syx-object_8h_d3170f4cecf092ffa04e6f55351d12d0}{
+\index{syx-object.h@{syx-object.h}!syx\_\-false@{syx\_\-false}}
+\index{syx\_\-false@{syx\_\-false}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-false}}}
+\label{syx-object_8h_d3170f4cecf092ffa04e6f55351d12d0}
+
+
+
+
+Definition at line 50 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-fetch\_\-basic(), syx\_\-process\_\-new(), syx\_\-scheduler\_\-remove\_\-process(), and syx\_\-semaphore\_\-signal().\hypertarget{syx-object_8h_6bb55cfd100e1c3614b1a4f941c22f9d}{
+\index{syx-object.h@{syx-object.h}!syx\_\-false\_\-class@{syx\_\-false\_\-class}}
+\index{syx\_\-false\_\-class@{syx\_\-false\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-false\_\-class}}}
+\label{syx-object_8h_6bb55cfd100e1c3614b1a4f941c22f9d}
+
+
+
+
+Definition at line 50 of file syx-object.c.\hypertarget{syx-object_8h_a99406e5776ba4d5b8584c9dba551379}{
+\index{syx-object.h@{syx-object.h}!syx\_\-float\_\-class@{syx\_\-float\_\-class}}
+\index{syx\_\-float\_\-class@{syx\_\-float\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-float\_\-class}}}
+\label{syx-object_8h_a99406e5776ba4d5b8584c9dba551379}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-fetch\_\-basic(), and syx\_\-float\_\-new().\hypertarget{syx-object_8h_c285844af2007d5ac653de1a0dfb7524}{
+\index{syx-object.h@{syx-object.h}!syx\_\-globals@{syx\_\-globals}}
+\index{syx\_\-globals@{syx\_\-globals}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-globals}}}
+\label{syx-object_8h_c285844af2007d5ac653de1a0dfb7524}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-initialize\_\-system(), syx\_\-memory\_\-gc(), syx\_\-memory\_\-load\_\-image(), and syx\_\-memory\_\-save\_\-image().\hypertarget{syx-object_8h_56d7e3f1e550bc346b3fd6cbcb31c6a2}{
+\index{syx-object.h@{syx-object.h}!syx\_\-large\_\-integer\_\-class@{syx\_\-large\_\-integer\_\-class}}
+\index{syx\_\-large\_\-integer\_\-class@{syx\_\-large\_\-integer\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-large\_\-integer\_\-class}}}
+\label{syx-object_8h_56d7e3f1e550bc346b3fd6cbcb31c6a2}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-fetch\_\-basic(), syx\_\-large\_\-integer\_\-new(), syx\_\-large\_\-integer\_\-new\_\-integer(), and syx\_\-large\_\-integer\_\-new\_\-mpz().\hypertarget{syx-object_8h_596eb1af08585a501808735d80503037}{
+\index{syx-object.h@{syx-object.h}!syx\_\-memory@{syx\_\-memory}}
+\index{syx\_\-memory@{syx\_\-memory}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxObject}$\ast$ {\bf syx\_\-memory}}}
+\label{syx-object_8h_596eb1af08585a501808735d80503037}
+
+
+
+
+Definition at line 50 of file syx-memory.c.
+
+Referenced by syx\_\-fetch\_\-basic(), and syx\_\-show\_\-traceback().\hypertarget{syx-object_8h_c9c6222aa1286578c4d077429047ca3e}{
+\index{syx-object.h@{syx-object.h}!syx\_\-metaclass\_\-class@{syx\_\-metaclass\_\-class}}
+\index{syx\_\-metaclass\_\-class@{syx\_\-metaclass\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-metaclass\_\-class}}}
+\label{syx-object_8h_c9c6222aa1286578c4d077429047ca3e}
+
+
+
+
+Definition at line 50 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-fetch\_\-basic(), and syx\_\-metaclass\_\-new().\hypertarget{syx-object_8h_4273e7a4f4fe7836b8eba627661e2d06}{
+\index{syx-object.h@{syx-object.h}!syx\_\-method\_\-context\_\-class@{syx\_\-method\_\-context\_\-class}}
+\index{syx\_\-method\_\-context\_\-class@{syx\_\-method\_\-context\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-method\_\-context\_\-class}}}
+\label{syx-object_8h_4273e7a4f4fe7836b8eba627661e2d06}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-fetch\_\-basic(), and syx\_\-method\_\-context\_\-new().\hypertarget{syx-object_8h_099047c2766cf0dea30c046d58f6f64f}{
+\index{syx-object.h@{syx-object.h}!syx\_\-nil@{syx\_\-nil}}
+\index{syx\_\-nil@{syx\_\-nil}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-nil}}}
+\label{syx-object_8h_099047c2766cf0dea30c046d58f6f64f}
+
+
+
+
+Definition at line 50 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-bytecode\_\-gen\_\-message(), syx\_\-class\_\-lookup\_\-method(), syx\_\-class\_\-lookup\_\-method\_\-binding(), syx\_\-dictionary\_\-bind(), syx\_\-dictionary\_\-binding\_\-at\_\-symbol(), syx\_\-fetch\_\-basic(), syx\_\-interp\_\-frame\_\-to\_\-context(), syx\_\-large\_\-integer\_\-new(), syx\_\-large\_\-integer\_\-new\_\-integer(), syx\_\-large\_\-integer\_\-new\_\-mpz(), syx\_\-object\_\-get\_\-class(), syx\_\-scheduler\_\-init(), syx\_\-scheduler\_\-remove\_\-process(), syx\_\-send\_\-unary\_\-message(), syx\_\-signal\_\-create\_\-context(), syx\_\-string\_\-new(), syx\_\-string\_\-new\_\-ref(), and syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_e3520eeaffb29e4a9780c6e257a022ce}{
+\index{syx-object.h@{syx-object.h}!syx\_\-process\_\-class@{syx\_\-process\_\-class}}
+\index{syx\_\-process\_\-class@{syx\_\-process\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-process\_\-class}}}
+\label{syx-object_8h_e3520eeaffb29e4a9780c6e257a022ce}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-fetch\_\-basic(), and syx\_\-process\_\-new().\hypertarget{syx-object_8h_36a21dfe0c7f34b3f935ff11a48b6c0c}{
+\index{syx-object.h@{syx-object.h}!syx\_\-processor\_\-scheduler\_\-class@{syx\_\-processor\_\-scheduler\_\-class}}
+\index{syx\_\-processor\_\-scheduler\_\-class@{syx\_\-processor\_\-scheduler\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-processor\_\-scheduler\_\-class}}}
+\label{syx-object_8h_36a21dfe0c7f34b3f935ff11a48b6c0c}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-fetch\_\-basic(), and syx\_\-scheduler\_\-init().\hypertarget{syx-object_8h_7a13d4490f4ea23e10b62c5795dbf71a}{
+\index{syx-object.h@{syx-object.h}!syx\_\-small\_\-integer\_\-class@{syx\_\-small\_\-integer\_\-class}}
+\index{syx\_\-small\_\-integer\_\-class@{syx\_\-small\_\-integer\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-small\_\-integer\_\-class}}}
+\label{syx-object_8h_7a13d4490f4ea23e10b62c5795dbf71a}
+
+
+
+
+Definition at line 50 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-fetch\_\-basic(), and syx\_\-object\_\-get\_\-class().\hypertarget{syx-object_8h_e1c7125650c6406bf4809ce106de8b36}{
+\index{syx-object.h@{syx-object.h}!syx\_\-string\_\-class@{syx\_\-string\_\-class}}
+\index{syx\_\-string\_\-class@{syx\_\-string\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-string\_\-class}}}
+\label{syx-object_8h_e1c7125650c6406bf4809ce106de8b36}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-fetch\_\-basic(), syx\_\-string\_\-new(), and syx\_\-string\_\-new\_\-ref().\hypertarget{syx-object_8h_e10f18ec5e45484612b5a7fe6b96518d}{
+\index{syx-object.h@{syx-object.h}!syx\_\-symbol\_\-class@{syx\_\-symbol\_\-class}}
+\index{syx\_\-symbol\_\-class@{syx\_\-symbol\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-symbol\_\-class}}}
+\label{syx-object_8h_e10f18ec5e45484612b5a7fe6b96518d}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-fetch\_\-basic(), and syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_f0e4dafb84c01e0dcd5a7bc7b800594e}{
+\index{syx-object.h@{syx-object.h}!syx\_\-symbols@{syx\_\-symbols}}
+\index{syx\_\-symbols@{syx\_\-symbols}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-symbols}}}
+\label{syx-object_8h_f0e4dafb84c01e0dcd5a7bc7b800594e}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-memory\_\-gc(), syx\_\-memory\_\-load\_\-image(), syx\_\-memory\_\-save\_\-image(), and syx\_\-symbol\_\-new().\hypertarget{syx-object_8h_ac2fe13e9bd66770ef58d98f2be8629d}{
+\index{syx-object.h@{syx-object.h}!syx\_\-true@{syx\_\-true}}
+\index{syx\_\-true@{syx\_\-true}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-true}}}
+\label{syx-object_8h_ac2fe13e9bd66770ef58d98f2be8629d}
+
+
+
+
+Definition at line 50 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-fetch\_\-basic(), syx\_\-process\_\-new(), syx\_\-scheduler\_\-add\_\-process(), and syx\_\-semaphore\_\-wait().\hypertarget{syx-object_8h_9b2ffeb8a5dee3abb1ae31543cea132f}{
+\index{syx-object.h@{syx-object.h}!syx\_\-true\_\-class@{syx\_\-true\_\-class}}
+\index{syx\_\-true\_\-class@{syx\_\-true\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-true\_\-class}}}
+\label{syx-object_8h_9b2ffeb8a5dee3abb1ae31543cea132f}
+
+
+
+
+Definition at line 50 of file syx-object.c.\hypertarget{syx-object_8h_f534222f282de18e7b7b70237afb235a}{
+\index{syx-object.h@{syx-object.h}!syx\_\-undefined\_\-object\_\-class@{syx\_\-undefined\_\-object\_\-class}}
+\index{syx\_\-undefined\_\-object\_\-class@{syx\_\-undefined\_\-object\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-undefined\_\-object\_\-class}}}
+\label{syx-object_8h_f534222f282de18e7b7b70237afb235a}
+
+
+
+
+Definition at line 50 of file syx-object.c.
+
+Referenced by syx\_\-fetch\_\-basic(), and syx\_\-object\_\-get\_\-class().\hypertarget{syx-object_8h_4fb5b24130577a369d026a1849447dd1}{
+\index{syx-object.h@{syx-object.h}!syx\_\-variable\_\-binding\_\-class@{syx\_\-variable\_\-binding\_\-class}}
+\index{syx\_\-variable\_\-binding\_\-class@{syx\_\-variable\_\-binding\_\-class}!syx-object.h@{syx-object.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxOop} {\bf syx\_\-variable\_\-binding\_\-class}}}
+\label{syx-object_8h_4fb5b24130577a369d026a1849447dd1}
+
+
+
+
+Definition at line 62 of file syx-object.c.
+
+Referenced by syx\_\-build\_\-basic(), syx\_\-fetch\_\-basic(), and syx\_\-variable\_\-binding\_\-new().

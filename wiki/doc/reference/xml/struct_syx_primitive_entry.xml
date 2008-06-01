@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="struct_syx_primitive_entry" kind="struct" prot="public">
+    <compoundname>SyxPrimitiveEntry</compoundname>
+    <includes refid="syx-interp_8h" local="no">syx-interp.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_syx_primitive_entry_14659f741751ee8361827fbc4ee325895" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+        <definition>syx_symbol SyxPrimitiveEntry::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="116" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_primitive_entry_1282d8d064c8dbf853587ce64485f2bf0" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-interp_8h_13c7eb85b3ff9105a45f6ff8a4efb6462" kindref="member">SyxPrimitiveFunc</ref></type>
+        <definition>SyxPrimitiveFunc SyxPrimitiveEntry::func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="117" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="syx-interp_8h_191229ee5f9766714c7bdfb51cfb34258" compoundref="syx-interp_8h" startline="168" endline="186">syx_interp_call_primitive</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Used for keeping primitive informations into a static table to be used by the interpreter for primitive class </para>    </detaileddescription>
+    <location file="/media/common/projects/syx/syx/syx-interp.h" line="115" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="115" bodyend="118"/>
+    <listofallmembers>
+      <member refid="struct_syx_primitive_entry_1282d8d064c8dbf853587ce64485f2bf0" prot="public" virt="non-virtual"><scope>SyxPrimitiveEntry</scope><name>func</name></member>
+      <member refid="struct_syx_primitive_entry_14659f741751ee8361827fbc4ee325895" prot="public" virt="non-virtual"><scope>SyxPrimitiveEntry</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

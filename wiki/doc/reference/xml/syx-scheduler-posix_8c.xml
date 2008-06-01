@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="syx-scheduler-posix_8c" kind="file">
+    <compoundname>syx-scheduler-posix.c</compoundname>
+    <includes refid="syx-object_8h" local="yes">syx-object.h</includes>
+    <includes refid="syx-scheduler_8h" local="yes">syx-scheduler.h</includes>
+    <includes local="no">sys/time.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">unistd.h</includes>
+    <incdepgraph>
+      <node id="675">
+        <label>syx-types.h</label>
+        <link refid="syx-types_8h"/>
+        <childnode refid="672" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="677" relation="include">
+        </childnode>
+        <childnode refid="678" relation="include">
+        </childnode>
+        <childnode refid="679" relation="include">
+        </childnode>
+        <childnode refid="680" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+        <childnode refid="682" relation="include">
+        </childnode>
+      </node>
+      <node id="674">
+        <label>stdarg.h</label>
+      </node>
+      <node id="683">
+        <label>syx-lexer.h</label>
+        <link refid="syx-lexer_8h"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+        <childnode refid="684" relation="include">
+        </childnode>
+      </node>
+      <node id="687">
+        <label>syx-scheduler.h</label>
+        <link refid="syx-scheduler_8h"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="669" relation="include">
+        </childnode>
+        <childnode refid="680" relation="include">
+        </childnode>
+      </node>
+      <node id="678">
+        <label>stdint.h</label>
+      </node>
+      <node id="681">
+        <label>stdlib.h</label>
+      </node>
+      <node id="685">
+        <label>syx-error.h</label>
+        <link refid="syx-error_8h"/>
+        <childnode refid="680" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="672" relation="include">
+        </childnode>
+        <childnode refid="670" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+      </node>
+      <node id="677">
+        <label>limits.h</label>
+      </node>
+      <node id="668">
+        <label>syx/syx-scheduler-posix.c</label>
+        <link refid="syx-scheduler-posix.c"/>
+        <childnode refid="669" relation="include">
+        </childnode>
+        <childnode refid="687" relation="include">
+        </childnode>
+        <childnode refid="688" relation="include">
+        </childnode>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+      </node>
+      <node id="669">
+        <label>syx-object.h</label>
+        <link refid="syx-object_8h"/>
+        <childnode refid="670" relation="include">
+        </childnode>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+        <childnode refid="685" relation="include">
+        </childnode>
+        <childnode refid="686" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
+        </childnode>
+        <childnode refid="682" relation="include">
+        </childnode>
+        <childnode refid="684" relation="include">
+        </childnode>
+      </node>
+      <node id="679">
+        <label>wchar.h</label>
+      </node>
+      <node id="689">
+        <label>sys/types.h</label>
+      </node>
+      <node id="682">
+        <label>string.h</label>
+      </node>
+      <node id="670">
+        <label>syx-utils.h</label>
+        <link refid="syx-utils_8h"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="683" relation="include">
+        </childnode>
+      </node>
+      <node id="690">
+        <label>unistd.h</label>
+      </node>
+      <node id="673">
+        <label>byteswap.h</label>
+      </node>
+      <node id="686">
+        <label>syx-init.h</label>
+        <link refid="syx-init_8h"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="669" relation="include">
+        </childnode>
+      </node>
+      <node id="672">
+        <label>syx-config.h</label>
+      </node>
+      <node id="684">
+        <label>gmp.h</label>
+      </node>
+      <node id="688">
+        <label>sys/time.h</label>
+      </node>
+      <node id="676">
+        <label>syx-enums.h</label>
+        <link refid="syx-enums_8h"/>
+        <childnode refid="671" relation="include">
+        </childnode>
+      </node>
+      <node id="671">
+        <label>syx-platform.h</label>
+        <link refid="syx-platform_8h"/>
+        <childnode refid="672" relation="include">
+        </childnode>
+        <childnode refid="673" relation="include">
+        </childnode>
+      </node>
+      <node id="680">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="syx-scheduler-posix_8c_10f6beab52e1173b6a531ba23d437b2bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void syx_scheduler_poll_read_register</definition>
+        <argsstring>(syx_nint fd, SyxOop semaphore)</argsstring>
+        <name>syx_scheduler_poll_read_register</name>
+        <param>
+          <type><ref refid="syx-types_8h_1488ad2504ade19c761a3e2a1726b4781" kindref="member">syx_nint</ref></type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+          <declname>semaphore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Watch a file descriptor for writing</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>semaphore</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to signal when fd is ready for reading </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-scheduler-posix.c" line="151" bodyfile="/media/common/projects/syx/syx/syx-scheduler-posix.c" bodystart="150" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="syx-scheduler-posix_8c_128eac1f77d3be9549426a9166ac5a9f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void syx_scheduler_poll_write_register</definition>
+        <argsstring>(syx_nint fd, SyxOop semaphore)</argsstring>
+        <name>syx_scheduler_poll_write_register</name>
+        <param>
+          <type><ref refid="syx-types_8h_1488ad2504ade19c761a3e2a1726b4781" kindref="member">syx_nint</ref></type>
+          <declname>fd</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+          <declname>semaphore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Watch a file descriptor for writing</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file descriptor </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>semaphore</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to signal when fd is ready for writing </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-scheduler-posix.c" line="173" bodyfile="/media/common/projects/syx/syx/syx-scheduler-posix.c" bodystart="172" bodyend="185"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/>Copyright<sp/>(c)<sp/>2007-2008<sp/>Luca<sp/>Bruno</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Smalltalk<sp/>YX.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,<sp/><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-object_8h" kindref="compound">syx-object.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-scheduler_8h" kindref="compound">syx-scheduler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_SYS_TIME_H</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_UNISTD_H</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref><sp/>*_syx_scheduler_poll_read<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref><sp/>*_syx_scheduler_poll_write<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>fd_set<sp/>_syx_scheduler_poll_rfds;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>fd_set<sp/>_syx_scheduler_poll_wfds;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref><sp/>_syx_scheduler_poll_nfds<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">_syx_scheduler_process_poll<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>res,<sp/><ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref><sp/>*poll,<sp/>fd_set<sp/>*fds)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref><sp/>*p,<sp/>*oldp,<sp/>*tmp;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(oldp=NULL,<sp/>p=poll;<sp/>p<sp/>&amp;&amp;<sp/>res<sp/>&gt;<sp/>0;)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(FD_ISSET<sp/>(p-&gt;<ref refid="struct_syx_scheduler_poll_16d209958f2d43ab3f79dc8959c220d7b" kindref="member">fd</ref>,<sp/>fds))</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(oldp)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldp-&gt;<ref refid="struct_syx_scheduler_poll_1805f9e5a3c5ceefc63f8d054129deb55" kindref="member">next</ref><sp/>=<sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_1805f9e5a3c5ceefc63f8d054129deb55" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_syx_scheduler_poll_read<sp/>=<sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_1805f9e5a3c5ceefc63f8d054129deb55" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="syx-object_8c_1eb6e7d880d0aa1250eb4ad3f0b55cb11" kindref="member">syx_semaphore_signal</ref><sp/>(p-&gt;<ref refid="struct_syx_scheduler_poll_129351d80c985a867917f0d81ec6a790f" kindref="member">semaphore</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Unset<sp/>the<sp/>fd<sp/>from<sp/>the<sp/>original<sp/>fd_set<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FD_CLR<sp/>(p-&gt;<ref refid="struct_syx_scheduler_poll_16d209958f2d43ab3f79dc8959c220d7b" kindref="member">fd</ref>,<sp/>fds);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_1805f9e5a3c5ceefc63f8d054129deb55" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="syx-types_8h_11659cf99572438c55385f05f6a090d03" kindref="member">syx_free</ref><sp/>(tmp);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Decrement<sp/>res<sp/>to<sp/>stop<sp/>the<sp/>loop<sp/>once<sp/>we<sp/>found<sp/>all<sp/>the<sp/>ready<sp/>descriptors<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res--;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Save<sp/>the<sp/>maximum<sp/>file<sp/>descriptor<sp/>number<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p-&gt;<ref refid="struct_syx_scheduler_poll_16d209958f2d43ab3f79dc8959c220d7b" kindref="member">fd</ref><sp/>&gt;<sp/>_syx_scheduler_poll_nfds)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_syx_scheduler_poll_nfds<sp/>=<sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_16d209958f2d43ab3f79dc8959c220d7b" kindref="member">fd</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>oldp<sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_1805f9e5a3c5ceefc63f8d054129deb55" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">_syx_scheduler_init_platform<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>FD_ZERO(&amp;_syx_scheduler_poll_rfds);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>FD_ZERO(&amp;_syx_scheduler_poll_wfds);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">_syx_scheduler_poll_wait_platform<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">timeval<sp/>tv<sp/>=<sp/>{0,<sp/>1};</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><ref refid="syx-types_8h_19f31c17555a2dfcf25da84b5c4a2e55b" kindref="member">syx_int32</ref><sp/>res;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>we<sp/>copy<sp/>file<sp/>descriptors<sp/>because<sp/>select<sp/>will<sp/>change<sp/>them<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>fd_set<sp/>r<sp/>=<sp/>_syx_scheduler_poll_rfds;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>fd_set<sp/>w<sp/>=<sp/>_syx_scheduler_poll_wfds;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>res<sp/>=<sp/>select<sp/>(_syx_scheduler_poll_nfds<sp/>+<sp/>1,<sp/>&amp;r,<sp/>&amp;w,<sp/>NULL,<sp/>&amp;tv);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(res<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(res<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>_syx_scheduler_poll_nfds<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>=<sp/>_syx_scheduler_process_poll<sp/>(res,<sp/>_syx_scheduler_poll_read,<sp/>&amp;_syx_scheduler_poll_rfds);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>(void)<sp/>_syx_scheduler_process_poll<sp/>(res,<sp/>_syx_scheduler_poll_write,<sp/>&amp;_syx_scheduler_poll_wfds);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">_syx_scheduler_quit_platform<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref><sp/>*p,<sp/>*pp;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(p=_syx_scheduler_poll_read;<sp/>p;)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pp<sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_1805f9e5a3c5ceefc63f8d054129deb55" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="syx-types_8h_11659cf99572438c55385f05f6a090d03" kindref="member">syx_free</ref><sp/>(pp);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>_syx_scheduler_poll_read<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(p=_syx_scheduler_poll_write;<sp/>p;)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pp<sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_1805f9e5a3c5ceefc63f8d054129deb55" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="syx-types_8h_11659cf99572438c55385f05f6a090d03" kindref="member">syx_free</ref><sp/>(pp);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>_syx_scheduler_poll_write<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>WARNING:<sp/>save<sp/>and<sp/>read<sp/>from<sp/>the<sp/>image<sp/>is<sp/>not<sp/>safe<sp/>and<sp/>tested.<sp/>It<sp/>has<sp/>been<sp/>written<sp/>a<sp/>long<sp/>time<sp/>ago<sp/>and<sp/>never<sp/>revised.<sp/>It<sp/>needs<sp/>to<sp/>be<sp/>rethinked<sp/>to<sp/>work<sp/>properly<sp/>since<sp/>file<sp/>descriptors<sp/>are<sp/>no<sp/>alive<sp/>after<sp/>the<sp/>interpreter<sp/>shuts<sp/>down<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">_syx_scheduler_save<sp/>(FILE<sp/>*image)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO:<sp/>save<sp/>valid<sp/>data<sp/>for<sp/>being<sp/>safely<sp/>reopened*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">_syx_scheduler_load<sp/>(FILE<sp/>*image)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO:<sp/>implement<sp/>reopening<sp/>descriptors<sp/>safely<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="syx-scheduler_8h_1599aa809cfc6c0074cc0736fd3ec64f7" refkind="member"><highlight class="normal"><ref refid="syx-scheduler-posix_8c_10f6beab52e1173b6a531ba23d437b2bf" kindref="member">syx_scheduler_poll_read_register</ref><sp/>(<ref refid="syx-types_8h_1488ad2504ade19c761a3e2a1726b4781" kindref="member">syx_nint</ref><sp/>fd,<sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>semaphore)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref><sp/>*p<sp/>=<sp/>(<ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref><sp/>*)<sp/><ref refid="syx-types_8h_17446426502808204156e54c87ac180bf" kindref="member">syx_malloc</ref><sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref>));</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_16d209958f2d43ab3f79dc8959c220d7b" kindref="member">fd</ref><sp/>=<sp/>fd;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fd<sp/>&gt;<sp/>_syx_scheduler_poll_nfds)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>_syx_scheduler_poll_nfds<sp/>=<sp/>fd;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>FD_SET(fd,<sp/>&amp;_syx_scheduler_poll_rfds);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_129351d80c985a867917f0d81ec6a790f" kindref="member">semaphore</ref><sp/>=<sp/>semaphore;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_1805f9e5a3c5ceefc63f8d054129deb55" kindref="member">next</ref><sp/>=<sp/>_syx_scheduler_poll_read;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>_syx_scheduler_poll_read<sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172" refid="syx-scheduler_8h_17fa996684cc72d14c8d575539c027b64" refkind="member"><highlight class="normal"><ref refid="syx-scheduler-posix_8c_128eac1f77d3be9549426a9166ac5a9f3" kindref="member">syx_scheduler_poll_write_register</ref><sp/>(<ref refid="syx-types_8h_1488ad2504ade19c761a3e2a1726b4781" kindref="member">syx_nint</ref><sp/>fd,<sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>semaphore)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref><sp/>*p<sp/>=<sp/>(<ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref><sp/>*)<sp/><ref refid="syx-types_8h_17446426502808204156e54c87ac180bf" kindref="member">syx_malloc</ref><sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<ref refid="struct_syx_scheduler_poll" kindref="compound">SyxSchedulerPoll</ref>));</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_16d209958f2d43ab3f79dc8959c220d7b" kindref="member">fd</ref><sp/>=<sp/>fd;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fd<sp/>&gt;<sp/>_syx_scheduler_poll_nfds)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>_syx_scheduler_poll_nfds<sp/>=<sp/>fd;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>FD_SET(fd,<sp/>&amp;_syx_scheduler_poll_wfds);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_129351d80c985a867917f0d81ec6a790f" kindref="member">semaphore</ref><sp/>=<sp/>semaphore;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>p-&gt;<ref refid="struct_syx_scheduler_poll_1805f9e5a3c5ceefc63f8d054129deb55" kindref="member">next</ref><sp/>=<sp/>_syx_scheduler_poll_write;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>_syx_scheduler_poll_write<sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/media/common/projects/syx/syx/syx-scheduler-posix.c"/>
+  </compounddef>
+</doxygen>

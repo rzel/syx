@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="struct_syx_parser" kind="struct" prot="public">
+    <compoundname>SyxParser</compoundname>
+    <includes refid="syx-parser_8h" local="no">syx-parser.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_syx_parser_17e3cac3a7e91eb1bc0076981daef1568" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_syx_lexer" kindref="compound">SyxLexer</ref> *</type>
+        <definition>SyxLexer* SyxParser::lexer</definition>
+        <argsstring></argsstring>
+        <name>lexer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-parser.h" line="51" bodyfile="/media/common/projects/syx/syx/syx-parser.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_parser_1142af50e1b05b7a5709b07781f40c9aa" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxParser::method</definition>
+        <argsstring></argsstring>
+        <name>method</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-parser.h" line="52" bodyfile="/media/common/projects/syx/syx/syx-parser.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="syx-utils_8h_1a7c09f55d7e8a1e33a4f40b6e3644995" compoundref="syx-utils_8c" startline="269" endline="348">syx_cold_parse_methods</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_parser_1e0f443e4febc0a9c32b5b8a2db4af651" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxParser::klass</definition>
+        <argsstring></argsstring>
+        <name>klass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-parser.h" line="53" bodyfile="/media/common/projects/syx/syx/syx-parser.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_parser_18c501f2674cef13a7c57b17dd12da0a9" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref> *</type>
+        <definition>SyxBytecode* SyxParser::bytecode</definition>
+        <argsstring></argsstring>
+        <name>bytecode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-parser.h" line="54" bodyfile="/media/common/projects/syx/syx/syx-parser.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_parser_1073d58efe7b5816532014aed095179ec" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref> *</type>
+        <definition>syx_symbol* SyxParser::instance_names</definition>
+        <argsstring></argsstring>
+        <name>instance_names</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-parser.h" line="55" bodyfile="/media/common/projects/syx/syx/syx-parser.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Parses the grammar of Smalltalk code into bytecode-commands for creating CompiledMethods </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="20">
+        <label>SyxBytecode</label>
+        <link refid="struct_syx_bytecode"/>
+      </node>
+      <node id="18">
+        <label>SyxLexer</label>
+        <link refid="struct_syx_lexer"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>last_token</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>SyxParser</label>
+        <link refid="struct_syx_parser"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>lexer</edgelabel>
+        </childnode>
+        <childnode refid="20" relation="usage">
+          <edgelabel>bytecode</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>SyxToken</label>
+        <link refid="struct_syx_token"/>
+      </node>
+    </collaborationgraph>
+    <location file="/media/common/projects/syx/syx/syx-parser.h" line="50" bodyfile="/media/common/projects/syx/syx/syx-parser.h" bodystart="49" bodyend="69"/>
+    <listofallmembers>
+      <member refid="struct_syx_parser_18c501f2674cef13a7c57b17dd12da0a9" prot="public" virt="non-virtual"><scope>SyxParser</scope><name>bytecode</name></member>
+      <member refid="struct_syx_parser_1073d58efe7b5816532014aed095179ec" prot="public" virt="non-virtual"><scope>SyxParser</scope><name>instance_names</name></member>
+      <member refid="struct_syx_parser_1e0f443e4febc0a9c32b5b8a2db4af651" prot="public" virt="non-virtual"><scope>SyxParser</scope><name>klass</name></member>
+      <member refid="struct_syx_parser_17e3cac3a7e91eb1bc0076981daef1568" prot="public" virt="non-virtual"><scope>SyxParser</scope><name>lexer</name></member>
+      <member refid="struct_syx_parser_1142af50e1b05b7a5709b07781f40c9aa" prot="public" virt="non-virtual"><scope>SyxParser</scope><name>method</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

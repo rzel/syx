@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="syx_memory" kind="page">
+    <compoundname>syx_memory</compoundname>
+    <title>Syx Memory</title>
+    <detaileddescription>
+<para>The objects are inserted into a whole space allocated in the heap (<ref refid="syx-memory_8c" kindref="compound">syx-memory.c</ref>):</para><para><programlisting><codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_syx_object" kindref="compound">SyxObject</ref><sp/>*_syx_memory;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_syx_object" kindref="compound">SyxObject</ref><sp/>**_syx_freed_memory;</highlight></codeline>
+</programlisting></para><para>The idea is to keep a stack containing free memory pointers. Once we free an object, we push on top of the stack of freed locations When we allocate a new <ref refid="struct_syx_object" kindref="compound">SyxObject</ref>, we just pop the pointer from this stack.</para><para>Take a look at <ref refid="syx-memory_8c" kindref="compound">syx-memory.c</ref> for more detailed informations. <simplesect kind="note"><para>the <ref refid="struct_syx_object_11613092e651dd77e4a0c1d0a1ec413cb" kindref="member">SyxObject::data</ref> field, containing <ref refid="struct_syx_object" kindref="compound">SyxObject</ref> pointers, is allocated outside this memory. </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

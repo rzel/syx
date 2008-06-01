@@ -1,0 +1,239 @@
+\hypertarget{syx-plugins_8c}{
+\section{syx/syx-plugins.c File Reference}
+\label{syx-plugins_8c}\index{syx/syx-plugins.c@{syx/syx-plugins.c}}
+}
+{\tt \#include \char`\"{}syx-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-types.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-platform.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-parser.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-lexer.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-plugins.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-error.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-interp.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \hyperlink{syx-plugins_8c_50f74dbc73f9dd07eed9abdc542f599f}{syx\_\-plugins\_\-init} (void)
+\item 
+void \hyperlink{syx-plugins_8c_a1d8890400fc665042cabbd6467ad38b}{syx\_\-plugins\_\-quit} (void)
+\item 
+\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} \hyperlink{syx-plugins_8c_85042890723bb68c8c38269b24a452ff}{syx\_\-library\_\-open} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} location)
+\item 
+\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} \hyperlink{syx-plugins_8c_8657d2487cbbf5b77f3956c3056a4790}{syx\_\-library\_\-symbol} (\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} handle, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} name)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-plugins_8c_a5b2684eeb91a217aac36985a65098f3}{syx\_\-library\_\-close} (\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} handle)
+\item 
+\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} \hyperlink{syx-plugins_8c_3a83182999fbe72d438b68bcf78d1dcf}{syx\_\-plugin\_\-load} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} name)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-plugins_8c_93dae14d03f2f02c702c84e3a516b9c9}{syx\_\-plugin\_\-unload} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} plugin)
+\item 
+void \hyperlink{syx-plugins_8c_2fdd83073eecb3faae4d70d95d0891e1}{syx\_\-plugin\_\-finalize\_\-all} (void)
+\item 
+\hyperlink{syx-types_8h_51c518ab1f082eb4330ca143afb1584f}{syx\_\-pointer} \hyperlink{syx-plugins_8c_a502d3b593c9e0feabd2f6575d4326f0}{syx\_\-plugin\_\-symbol} (\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} plugin\_\-name, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} symbol\_\-name)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-plugins_8c_5f38432e4548b44f86339de097cc50c6}{syx\_\-plugin\_\-call\_\-interp} (\hyperlink{struct_syx_interp_state}{SyxInterpState} $\ast$es, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} method)
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{syx-plugins_8c_5ab057c34bb472f81221770f79b90664}{syx\_\-plugin\_\-call} (\hyperlink{struct_syx_interp_state}{SyxInterpState} $\ast$es, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} plugin\_\-name, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} func\_\-name, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} method)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{syx-plugins_8c_a5b2684eeb91a217aac36985a65098f3}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-library\_\-close@{syx\_\-library\_\-close}}
+\index{syx\_\-library\_\-close@{syx\_\-library\_\-close}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-library\_\-close ({\bf syx\_\-pointer} {\em handle})}}
+\label{syx-plugins_8c_a5b2684eeb91a217aac36985a65098f3}
+
+
+Close a library handle.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em handle}]the handle retruedn by syx\_\-library\_\-open \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FALSE if the handle exists but can't be closed \end{Desc}
+
+
+Definition at line 204 of file syx-plugins.c.
+
+Referenced by syx\_\-plugin\_\-finalize\_\-all(), and syx\_\-plugin\_\-unload().\hypertarget{syx-plugins_8c_85042890723bb68c8c38269b24a452ff}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-library\_\-open@{syx\_\-library\_\-open}}
+\index{syx\_\-library\_\-open@{syx\_\-library\_\-open}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-pointer} syx\_\-library\_\-open ({\bf syx\_\-symbol} {\em location})}}
+\label{syx-plugins_8c_85042890723bb68c8c38269b24a452ff}
+
+
+Load a dynamic library and return its handle.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em location}]the location of the library \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the handle or NULL \end{Desc}
+
+
+Definition at line 141 of file syx-plugins.c.
+
+Referenced by syx\_\-plugin\_\-load().\hypertarget{syx-plugins_8c_8657d2487cbbf5b77f3956c3056a4790}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-library\_\-symbol@{syx\_\-library\_\-symbol}}
+\index{syx\_\-library\_\-symbol@{syx\_\-library\_\-symbol}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-pointer} syx\_\-library\_\-symbol ({\bf syx\_\-pointer} {\em handle}, \/  {\bf syx\_\-symbol} {\em name})}}
+\label{syx-plugins_8c_8657d2487cbbf5b77f3956c3056a4790}
+
+
+Resolve a symbol in a library.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em handle}]the handle returned by syx\_\-library\_\-open \item[{\em name}]the symbol name \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the symbol or NULL \end{Desc}
+
+
+Definition at line 171 of file syx-plugins.c.
+
+Referenced by syx\_\-plugin\_\-finalize\_\-all(), syx\_\-plugin\_\-load(), syx\_\-plugin\_\-symbol(), and syx\_\-plugin\_\-unload().\hypertarget{syx-plugins_8c_5ab057c34bb472f81221770f79b90664}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-plugin\_\-call@{syx\_\-plugin\_\-call}}
+\index{syx\_\-plugin\_\-call@{syx\_\-plugin\_\-call}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-plugin\_\-call ({\bf SyxInterpState} $\ast$ {\em es}, \/  {\bf syx\_\-symbol} {\em plugin\_\-name}, \/  {\bf syx\_\-symbol} {\em func\_\-name}, \/  {\bf SyxOop} {\em method})}}
+\label{syx-plugins_8c_5ab057c34bb472f81221770f79b90664}
+
+
+Calls a function of a plugin from within the interpreter.
+
+If the plugin is not loaded yet, then load the plugin and call the requested primitive.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em es}]the execution state \item[{\em plugin\_\-name}]the name of the plugin \item[{\em func\_\-name}]the name of the function to be called \item[{\em method}]method to execute if the primitive fails or syx\_\-nil \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FALSE to yield the process \end{Desc}
+
+
+Definition at line 474 of file syx-plugins.c.
+
+Referenced by syx\_\-plugin\_\-call\_\-interp().\hypertarget{syx-plugins_8c_5f38432e4548b44f86339de097cc50c6}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-plugin\_\-call\_\-interp@{syx\_\-plugin\_\-call\_\-interp}}
+\index{syx\_\-plugin\_\-call\_\-interp@{syx\_\-plugin\_\-call\_\-interp}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-plugin\_\-call\_\-interp ({\bf SyxInterpState} $\ast$ {\em es}, \/  {\bf SyxOop} {\em method})}}
+\label{syx-plugins_8c_5f38432e4548b44f86339de097cc50c6}
+
+
+Calls a function of a plugin from within the interpreter.
+
+If the plugin is not loaded yet, then load the plugin and call the requested primitive.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em es}]the execution state \item[{\em method}]method in which the primitive call has been requested \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FALSE to yield the process \end{Desc}
+
+
+Definition at line 440 of file syx-plugins.c.\hypertarget{syx-plugins_8c_2fdd83073eecb3faae4d70d95d0891e1}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-plugin\_\-finalize\_\-all@{syx\_\-plugin\_\-finalize\_\-all}}
+\index{syx\_\-plugin\_\-finalize\_\-all@{syx\_\-plugin\_\-finalize\_\-all}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-plugin\_\-finalize\_\-all (void)}}
+\label{syx-plugins_8c_2fdd83073eecb3faae4d70d95d0891e1}
+
+
+Finalize all plugins.
+
+This function is usually called internally and user programs don't need to call this manually. 
+
+Definition at line 363 of file syx-plugins.c.
+
+Referenced by syx\_\-plugins\_\-quit().\hypertarget{syx-plugins_8c_3a83182999fbe72d438b68bcf78d1dcf}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-plugin\_\-load@{syx\_\-plugin\_\-load}}
+\index{syx\_\-plugin\_\-load@{syx\_\-plugin\_\-load}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-pointer} syx\_\-plugin\_\-load ({\bf syx\_\-symbol} {\em name})}}
+\label{syx-plugins_8c_3a83182999fbe72d438b68bcf78d1dcf}
+
+
+Open a dynamic library and initialize the plugin.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]the name of the plugin \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the plugin handle or NULL \end{Desc}
+
+
+Definition at line 233 of file syx-plugins.c.
+
+Referenced by syx\_\-plugin\_\-symbol().\hypertarget{syx-plugins_8c_a502d3b593c9e0feabd2f6575d4326f0}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-plugin\_\-symbol@{syx\_\-plugin\_\-symbol}}
+\index{syx\_\-plugin\_\-symbol@{syx\_\-plugin\_\-symbol}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-pointer} syx\_\-plugin\_\-symbol ({\bf syx\_\-symbol} {\em plugin\_\-name}, \/  {\bf syx\_\-symbol} {\em symbol\_\-name})}}
+\label{syx-plugins_8c_a502d3b593c9e0feabd2f6575d4326f0}
+
+
+Lookup a symbol of the given plugin.
+
+If the plugin is not loaded yet, then load the plugin.
+
+\begin{Desc}
+\item[Returns:]the pointer to the looked up symbol or NULL \end{Desc}
+
+
+Definition at line 399 of file syx-plugins.c.
+
+Referenced by syx\_\-plugin\_\-call().\hypertarget{syx-plugins_8c_93dae14d03f2f02c702c84e3a516b9c9}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-plugin\_\-unload@{syx\_\-plugin\_\-unload}}
+\index{syx\_\-plugin\_\-unload@{syx\_\-plugin\_\-unload}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} syx\_\-plugin\_\-unload ({\bf syx\_\-symbol} {\em plugin})}}
+\label{syx-plugins_8c_93dae14d03f2f02c702c84e3a516b9c9}
+
+
+Close the library handle and finalize the plugin.
+
+This function finalize the plugin but it's not sure it closes the library handler.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em handler}]the plugin handler \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FALSE if the handler exists but can't be closed \end{Desc}
+
+
+Definition at line 320 of file syx-plugins.c.\hypertarget{syx-plugins_8c_50f74dbc73f9dd07eed9abdc542f599f}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-plugins\_\-init@{syx\_\-plugins\_\-init}}
+\index{syx\_\-plugins\_\-init@{syx\_\-plugins\_\-init}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-plugins\_\-init (void)}}
+\label{syx-plugins_8c_50f74dbc73f9dd07eed9abdc542f599f}
+
+
+Initialize the plugin system.
+
+This function is called internally, usually applications don't need to use this function directly. 
+
+Definition at line 58 of file syx-plugins.c.
+
+Referenced by syx\_\-fetch\_\-basic().\hypertarget{syx-plugins_8c_a1d8890400fc665042cabbd6467ad38b}{
+\index{syx-plugins.c@{syx-plugins.c}!syx\_\-plugins\_\-quit@{syx\_\-plugins\_\-quit}}
+\index{syx\_\-plugins\_\-quit@{syx\_\-plugins\_\-quit}!syx-plugins.c@{syx-plugins.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-plugins\_\-quit (void)}}
+\label{syx-plugins_8c_a1d8890400fc665042cabbd6467ad38b}
+
+
+Finalize the plugin system and all loaded plugins.
+
+This function is called internally, usually applications don't need to use this function directly. 
+
+Definition at line 99 of file syx-plugins.c.
+
+Referenced by syx\_\-quit().

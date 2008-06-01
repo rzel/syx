@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="syx_utils" kind="page">
+    <compoundname>syx_utils</compoundname>
+    <title>Syx Utils</title>
+    <detaileddescription>
+<sect1 id="syx_utils_1sec">
+<title>Description</title>
+<para><ref refid="syx-utils_8c" kindref="compound">syx-utils.c</ref>: This module collects some useful functions like parsing class declarations and interfacing Smalltalk from C </para></sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="struct_syx_token" kind="struct" prot="public">
+    <compoundname>SyxToken</compoundname>
+    <includes refid="syx-lexer_8h" local="no">syx-lexer.h</includes>
+    <innerclass refid="union_syx_token_1_1_syx_token_value" prot="public">SyxToken::SyxTokenValue</innerclass>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_syx_token_114d3e8e7f62702363005bd355fbf08d3" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-enums_8h_107b7e5545aac6b353ad9df2846fd96a9" kindref="member">SyxTokenType</ref></type>
+        <definition>SyxTokenType SyxToken::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-lexer.h" line="44" bodyfile="/media/common/projects/syx/syx/syx-lexer.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="syx-utils_8h_164a1dbecdc9c844cd8e09dba2b7adf6d" compoundref="syx-utils_8c" startline="356" endline="375">syx_cold_parse</referencedby>
+        <referencedby refid="syx-utils_8h_1a7c09f55d7e8a1e33a4f40b6e3644995" compoundref="syx-utils_8c" startline="269" endline="348">syx_cold_parse_methods</referencedby>
+        <referencedby refid="syx-lexer_8h_1061a773b9e83d79b82913bc1397afb6d" compoundref="syx-lexer_8c" startline="513" endline="544">syx_lexer_next_chunk</referencedby>
+        <referencedby refid="syx-lexer_8h_13d9cd96e5073feeb727cf1e53db5a7c0" compoundref="syx-lexer_8c" startline="439" endline="505">syx_lexer_next_token</referencedby>
+        <referencedby refid="syx-parser_8h_1980d776f2ab5aaee6828520cb6df2f13" compoundref="syx-parser_8c" startline="141" endline="182">syx_parser_parse</referencedby>
+        <referencedby refid="syx-lexer_8h_161906561dfa01694449abc504d9b913a" compoundref="syx-lexer_8c" startline="101" endline="105">syx_token_free</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_token_19f8db78333f031cc628495af76ae9388" prot="public" static="no" mutable="no">
+        <type>union SyxToken::SyxTokenValue</type>
+        <definition>union SyxToken::SyxTokenValue  SyxToken::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-lexer.h" line="54"/>
+        <referencedby refid="syx-utils_8h_1a7c09f55d7e8a1e33a4f40b6e3644995" compoundref="syx-utils_8c" startline="269" endline="348">syx_cold_parse_methods</referencedby>
+        <referencedby refid="syx-lexer_8h_1061a773b9e83d79b82913bc1397afb6d" compoundref="syx-lexer_8c" startline="513" endline="544">syx_lexer_next_chunk</referencedby>
+        <referencedby refid="syx-lexer_8h_13d9cd96e5073feeb727cf1e53db5a7c0" compoundref="syx-lexer_8c" startline="439" endline="505">syx_lexer_next_token</referencedby>
+        <referencedby refid="syx-lexer_8h_161906561dfa01694449abc504d9b913a" compoundref="syx-lexer_8c" startline="101" endline="105">syx_token_free</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Token data returned by the lexer </para>    </detaileddescription>
+    <location file="/media/common/projects/syx/syx/syx-lexer.h" line="43" bodyfile="/media/common/projects/syx/syx/syx-lexer.h" bodystart="43" bodyend="55"/>
+    <listofallmembers>
+      <member refid="struct_syx_token_114d3e8e7f62702363005bd355fbf08d3" prot="public" virt="non-virtual"><scope>SyxToken</scope><name>type</name></member>
+      <member refid="struct_syx_token_19f8db78333f031cc628495af76ae9388" prot="public" virt="non-virtual"><scope>SyxToken</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

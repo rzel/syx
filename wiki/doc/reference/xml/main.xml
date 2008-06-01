@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="main" kind="page">
+    <compoundname>main</compoundname>
+    <title>Smalltalk YX</title>
+    <detaileddescription>
+<para><bold>Smalltalk</bold> <bold>YX</bold> is an open source Smalltalk-80 implementation. It&apos;s written in C and has these purposes:</para><para><itemizedlist>
+<listitem><para>Readable code</para></listitem><listitem><para>Flexibility trough easy creations of plugins</para></listitem><listitem><para>Highly portable</para></listitem><listitem><para>Optimized</para></listitem><listitem><para>Modern</para></listitem><listitem><para>Embedding in C applications</para></listitem><listitem><para>Easy to use, powerful and well-structured environment</para></listitem><listitem><para>Small </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

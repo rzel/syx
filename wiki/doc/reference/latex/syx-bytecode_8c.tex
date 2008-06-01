@@ -1,0 +1,144 @@
+\hypertarget{syx-bytecode_8c}{
+\section{syx/syx-bytecode.c File Reference}
+\label{syx-bytecode_8c}\index{syx/syx-bytecode.c@{syx/syx-bytecode.c}}
+}
+{\tt \#include \char`\"{}syx-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-platform.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-types.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-object.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-bytecode.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$ \hyperlink{syx-bytecode_8c_66169f5d9d84f663e2f04aba3502f179}{syx\_\-bytecode\_\-new} (void)
+\item 
+void \hyperlink{syx-bytecode_8c_ffb00acd600dc431d1cfe10edae1ee69}{syx\_\-bytecode\_\-gen\_\-instruction} (\hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$bytecode, \hyperlink{syx-types_8h_7cb1870b8124a88e807c98f315f3d923}{syx\_\-uint8} high, \hyperlink{syx-types_8h_5c0caeeeb45b4575061ab7f368f10337}{syx\_\-uint16} low)
+\item 
+void \hyperlink{syx-bytecode_8c_6e08f49fece1127fa50ab8be456774d2}{syx\_\-bytecode\_\-gen\_\-message} (\hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$bytecode, \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} to\_\-super, \hyperlink{syx-types_8h_eb2d8221bf07737360750e4c0ec66a99}{syx\_\-uint32} argument\_\-count, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} selector)
+\item 
+\hyperlink{syx-types_8h_eb2d8221bf07737360750e4c0ec66a99}{syx\_\-uint32} \hyperlink{syx-bytecode_8c_ba09d19921e45c7b3a186762c622ead5}{syx\_\-bytecode\_\-gen\_\-literal} (\hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$bytecode, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} literal)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} \hyperlink{syx-bytecode_8c_2d5efd1c4984dc8e4a86ac7062a41716}{syx\_\-bytecode\_\-unary\_\-messages} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} \hyperlink{syx-bytecode_8c_90d7e46b6b031c996ce7cc81083a6fa7}{syx\_\-bytecode\_\-binary\_\-messages} \mbox{[}$\,$\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{syx-bytecode_8c_ffb00acd600dc431d1cfe10edae1ee69}{
+\index{syx-bytecode.c@{syx-bytecode.c}!syx\_\-bytecode\_\-gen\_\-instruction@{syx\_\-bytecode\_\-gen\_\-instruction}}
+\index{syx\_\-bytecode\_\-gen\_\-instruction@{syx\_\-bytecode\_\-gen\_\-instruction}!syx-bytecode.c@{syx-bytecode.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-bytecode\_\-gen\_\-instruction ({\bf SyxBytecode} $\ast$ {\em bytecode}, \/  {\bf syx\_\-uint8} {\em high}, \/  {\bf syx\_\-uint16} {\em low})}}
+\label{syx-bytecode_8c_ffb00acd600dc431d1cfe10edae1ee69}
+
+
+Manually generate an instruction.
+
+This function creates an instruction and insert it into the code array. If the low argument is higher than the max value, then generate a SYX\_\-BYTECODE\_\-EXTENDED instruction with the command as argument. The low argument is put to the next code slot.
+
+Look at SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS and SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX for more informations.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em high}]a SyxBytecodeCommand value \item[{\em low}]an arbitrary number identifying an argument \end{description}
+\end{Desc}
+
+
+Definition at line 76 of file syx-bytecode.c.
+
+Referenced by syx\_\-bytecode\_\-gen\_\-instruction(), and syx\_\-bytecode\_\-gen\_\-message().\hypertarget{syx-bytecode_8c_ba09d19921e45c7b3a186762c622ead5}{
+\index{syx-bytecode.c@{syx-bytecode.c}!syx\_\-bytecode\_\-gen\_\-literal@{syx\_\-bytecode\_\-gen\_\-literal}}
+\index{syx\_\-bytecode\_\-gen\_\-literal@{syx\_\-bytecode\_\-gen\_\-literal}!syx-bytecode.c@{syx-bytecode.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-uint32} syx\_\-bytecode\_\-gen\_\-literal ({\bf SyxBytecode} $\ast$ {\em bytecode}, \/  {\bf SyxOop} {\em literal})}}
+\label{syx-bytecode_8c_ba09d19921e45c7b3a186762c622ead5}
+
+
+Generate a literal.
+
+Insert the given literal into the literals array if it's not already there.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em literal}]an object \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The position of literal into the literals array \end{Desc}
+
+
+Definition at line 156 of file syx-bytecode.c.
+
+Referenced by syx\_\-bytecode\_\-gen\_\-message().\hypertarget{syx-bytecode_8c_6e08f49fece1127fa50ab8be456774d2}{
+\index{syx-bytecode.c@{syx-bytecode.c}!syx\_\-bytecode\_\-gen\_\-message@{syx\_\-bytecode\_\-gen\_\-message}}
+\index{syx\_\-bytecode\_\-gen\_\-message@{syx\_\-bytecode\_\-gen\_\-message}!syx-bytecode.c@{syx-bytecode.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void syx\_\-bytecode\_\-gen\_\-message ({\bf SyxBytecode} $\ast$ {\em bytecode}, \/  {\bf syx\_\-bool} {\em to\_\-super}, \/  {\bf syx\_\-uint32} {\em argument\_\-count}, \/  {\bf syx\_\-symbol} {\em selector})}}
+\label{syx-bytecode_8c_6e08f49fece1127fa50ab8be456774d2}
+
+
+Generate a message instruction.
+
+If the message shouldn't be sent to super and the selector is known to be a common unary or binary message, send SYX\_\-BYTECODE\_\-SEND\_\-UNARY or SYX\_\-BYTECODE\_\-SEND\_\-BINARY with its relative index into syx\_\-bytecode\_\-unary\_\-messages or syx\_\-bytecode\_\-binary\_\-messages.
+
+If it's a non-specific message, then specify the number of arguments with the SYX\_\-BYTECODE\_\-MARK\_\-ARGUMENTS instruction and generate a SYX\_\-BYTECODE\_\-SEND\_\-MESSAGE or SYX\_\-BYTECODE\_\-SEND\_\-SUPER instruction.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em to\_\-super}]TRUE if the message must be sent to the superclass \item[{\em argument\_\-count}]the number of arguments the message requires \item[{\em selector}]a message pattern \end{description}
+\end{Desc}
+
+
+Definition at line 100 of file syx-bytecode.c.\hypertarget{syx-bytecode_8c_66169f5d9d84f663e2f04aba3502f179}{
+\index{syx-bytecode.c@{syx-bytecode.c}!syx\_\-bytecode\_\-new@{syx\_\-bytecode\_\-new}}
+\index{syx\_\-bytecode\_\-new@{syx\_\-bytecode\_\-new}!syx-bytecode.c@{syx-bytecode.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf SyxBytecode}$\ast$ syx\_\-bytecode\_\-new (void)}}
+\label{syx-bytecode_8c_66169f5d9d84f663e2f04aba3502f179}
+
+
+Creates a new bytecode holder.
+
+\begin{Desc}
+\item[Returns:]A \hyperlink{struct_syx_bytecode}{SyxBytecode} instance \end{Desc}
+
+
+Definition at line 37 of file syx-bytecode.c.
+
+Referenced by syx\_\-parser\_\-new().
+
+\subsection{Variable Documentation}
+\hypertarget{syx-bytecode_8c_90d7e46b6b031c996ce7cc81083a6fa7}{
+\index{syx-bytecode.c@{syx-bytecode.c}!syx\_\-bytecode\_\-binary\_\-messages@{syx\_\-bytecode\_\-binary\_\-messages}}
+\index{syx\_\-bytecode\_\-binary\_\-messages@{syx\_\-bytecode\_\-binary\_\-messages}!syx-bytecode.c@{syx-bytecode.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-symbol} {\bf syx\_\-bytecode\_\-binary\_\-messages}\mbox{[}$\,$\mbox{]}}}
+\label{syx-bytecode_8c_90d7e46b6b031c996ce7cc81083a6fa7}
+
+
+\textbf{Initial value:}
+
+\begin{Code}\begin{verbatim} {"+", "-", "<", ">", "<=", ">=", "=", "~=", "at:",
+                                             "do:", "value:", "valueWithArguments:",
+                                             "new:", "to:", "basicAt:", NULL}
+\end{verbatim}
+\end{Code}
+Same as syx\_\-bytecode\_\-unary\_\-messages but contains binary messages and keyword messages with a single argument 
+
+Definition at line 58 of file syx-bytecode.c.\hypertarget{syx-bytecode_8c_2d5efd1c4984dc8e4a86ac7062a41716}{
+\index{syx-bytecode.c@{syx-bytecode.c}!syx\_\-bytecode\_\-unary\_\-messages@{syx\_\-bytecode\_\-unary\_\-messages}}
+\index{syx\_\-bytecode\_\-unary\_\-messages@{syx\_\-bytecode\_\-unary\_\-messages}!syx-bytecode.c@{syx-bytecode.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-symbol} {\bf syx\_\-bytecode\_\-unary\_\-messages}\mbox{[}$\,$\mbox{]}}}
+\label{syx-bytecode_8c_2d5efd1c4984dc8e4a86ac7062a41716}
+
+
+\textbf{Initial value:}
+
+\begin{Code}\begin{verbatim} {"isNil", "notNil", "value", "new", "class", "superclass",
+                                            "print", "printNl", "printString", "unity", NULL}
+\end{verbatim}
+\end{Code}
+Contains common unary messages avoiding them to be inserted into method literals. 
+
+Definition at line 52 of file syx-bytecode.c.

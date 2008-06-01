@@ -1,0 +1,280 @@
+\hypertarget{syx-bytecode_8h}{
+\section{syx/syx-bytecode.h File Reference}
+\label{syx-bytecode_8h}\index{syx/syx-bytecode.h@{syx/syx-bytecode.h}}
+}
+{\tt \#include \char`\"{}syx-types.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-object.h\char`\"{}}\par
+{\tt \#include \char`\"{}syx-memory.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct \hyperlink{struct_syx_bytecode}{SyxBytecode}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \hyperlink{syx-bytecode_8h_f8aefeca70ebc9c5d4833644b92e4d00}{SYX\_\-BYTECODE\_\-BITS}~16
+\item 
+\#define \hyperlink{syx-bytecode_8h_f343d91f1534f8a23d607daea1c345c5}{SYX\_\-BYTECODE\_\-MAX}~((1 $<$$<$ SYX\_\-BYTECODE\_\-BITS) - 1)
+\item 
+\#define \hyperlink{syx-bytecode_8h_7bd85efbfd4cd98e34446ca7ab1369ee}{SYX\_\-BYTECODE\_\-COMMAND\_\-BITS}~5
+\item 
+\#define \hyperlink{syx-bytecode_8h_8fc4c49360ef9a755b02bf82693b45dd}{SYX\_\-BYTECODE\_\-COMMAND\_\-MAX}~((1 $<$$<$ SYX\_\-BYTECODE\_\-COMMAND\_\-BITS) - 1)
+\item 
+\#define \hyperlink{syx-bytecode_8h_ce0a31c234c06b8e49fc61c5ce4ef9ed}{SYX\_\-BYTECODE\_\-COMMAND\_\-MASK}~(SYX\_\-BYTECODE\_\-COMMAND\_\-MAX $<$$<$ (SYX\_\-BYTECODE\_\-BITS - SYX\_\-BYTECODE\_\-COMMAND\_\-BITS))
+\item 
+\#define \hyperlink{syx-bytecode_8h_a30b8b0de5a0088b12f90cbe95ab59c1}{SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS}~(SYX\_\-BYTECODE\_\-BITS - SYX\_\-BYTECODE\_\-COMMAND\_\-BITS)
+\item 
+\#define \hyperlink{syx-bytecode_8h_9e9106c938b74972a023d9035368f3e6}{SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX}~((1 $<$$<$ SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS) - 1)
+\item 
+\#define \hyperlink{syx-bytecode_8h_a7d9adeaec378162bd06f516142722e4}{SYX\_\-BYTECODE\_\-ARGUMENT\_\-MASK}~(SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX)
+\item 
+\#define \hyperlink{syx-bytecode_8h_70a15bed0a327462ec2fc007522c8cae}{SYX\_\-FUNC\_\-BYTECODE}(name, arg)~INLINE void syx\_\-bytecode\_\- \#\# name (\hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$bytecode, arg)
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct \hyperlink{struct_syx_bytecode}{SyxBytecode} \hyperlink{syx-bytecode_8h_ddefdc0e904f306046ea2d02b89f5f97}{SyxBytecode}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+EXPORT \hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$ \hyperlink{syx-bytecode_8h_e034d74f4bcb6913a9b807e87f534b8a}{syx\_\-bytecode\_\-new} (void)
+\item 
+INLINE void \hyperlink{syx-bytecode_8h_0a5a5bc160ebdb86668efd589066c390}{syx\_\-bytecode\_\-free} (\hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$bytecode)
+\item 
+EXPORT void \hyperlink{syx-bytecode_8h_5377d7f12378a8c64ef0b01d1adbe1b2}{syx\_\-bytecode\_\-gen\_\-instruction} (\hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$bytecode, \hyperlink{syx-types_8h_7cb1870b8124a88e807c98f315f3d923}{syx\_\-uint8} high, \hyperlink{syx-types_8h_5c0caeeeb45b4575061ab7f368f10337}{syx\_\-uint16} low)
+\item 
+EXPORT void \hyperlink{syx-bytecode_8h_e40b3f23b473b3006cea4818dbdf507d}{syx\_\-bytecode\_\-gen\_\-message} (\hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$bytecode, \hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} to\_\-super, \hyperlink{syx-types_8h_eb2d8221bf07737360750e4c0ec66a99}{syx\_\-uint32} argument\_\-count, \hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} selector)
+\item 
+EXPORT \hyperlink{syx-types_8h_eb2d8221bf07737360750e4c0ec66a99}{syx\_\-uint32} \hyperlink{syx-bytecode_8h_61cd2891a6644ee01481a4d43271efb9}{syx\_\-bytecode\_\-gen\_\-literal} (\hyperlink{struct_syx_bytecode}{SyxBytecode} $\ast$bytecode, \hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} literal)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} \hyperlink{syx-bytecode_8h_2d5efd1c4984dc8e4a86ac7062a41716}{syx\_\-bytecode\_\-unary\_\-messages} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{syx-types_8h_9663af54b7b72f5d8be5f754ef356525}{syx\_\-symbol} \hyperlink{syx-bytecode_8h_90d7e46b6b031c996ce7cc81083a6fa7}{syx\_\-bytecode\_\-binary\_\-messages} \mbox{[}$\,$\mbox{]}
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{syx-bytecode_8h_a30b8b0de5a0088b12f90cbe95ab59c1}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS@{SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS}}
+\index{SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS@{SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS~(SYX\_\-BYTECODE\_\-BITS - SYX\_\-BYTECODE\_\-COMMAND\_\-BITS)}}
+\label{syx-bytecode_8h_a30b8b0de5a0088b12f90cbe95ab59c1}
+
+
+Bits used to represent an argument into a bytecode 
+
+Definition at line 55 of file syx-bytecode.h.
+
+Referenced by syx\_\-bytecode\_\-gen\_\-instruction().\hypertarget{syx-bytecode_8h_a7d9adeaec378162bd06f516142722e4}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SYX\_\-BYTECODE\_\-ARGUMENT\_\-MASK@{SYX\_\-BYTECODE\_\-ARGUMENT\_\-MASK}}
+\index{SYX\_\-BYTECODE\_\-ARGUMENT\_\-MASK@{SYX\_\-BYTECODE\_\-ARGUMENT\_\-MASK}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BYTECODE\_\-ARGUMENT\_\-MASK~(SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX)}}
+\label{syx-bytecode_8h_a7d9adeaec378162bd06f516142722e4}
+
+
+A mask to be used with bit-wise AND to retrieve the command from a bytecode 
+
+Definition at line 59 of file syx-bytecode.h.\hypertarget{syx-bytecode_8h_9e9106c938b74972a023d9035368f3e6}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX@{SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX}}
+\index{SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX@{SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX~((1 $<$$<$ SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS) - 1)}}
+\label{syx-bytecode_8h_9e9106c938b74972a023d9035368f3e6}
+
+
+Max value of an argument 
+
+Definition at line 57 of file syx-bytecode.h.
+
+Referenced by syx\_\-bytecode\_\-gen\_\-instruction().\hypertarget{syx-bytecode_8h_f8aefeca70ebc9c5d4833644b92e4d00}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SYX\_\-BYTECODE\_\-BITS@{SYX\_\-BYTECODE\_\-BITS}}
+\index{SYX\_\-BYTECODE\_\-BITS@{SYX\_\-BYTECODE\_\-BITS}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BYTECODE\_\-BITS~16}}
+\label{syx-bytecode_8h_f8aefeca70ebc9c5d4833644b92e4d00}
+
+
+Number of bits used for a bytecode 
+
+Definition at line 42 of file syx-bytecode.h.\hypertarget{syx-bytecode_8h_7bd85efbfd4cd98e34446ca7ab1369ee}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SYX\_\-BYTECODE\_\-COMMAND\_\-BITS@{SYX\_\-BYTECODE\_\-COMMAND\_\-BITS}}
+\index{SYX\_\-BYTECODE\_\-COMMAND\_\-BITS@{SYX\_\-BYTECODE\_\-COMMAND\_\-BITS}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BYTECODE\_\-COMMAND\_\-BITS~5}}
+\label{syx-bytecode_8h_7bd85efbfd4cd98e34446ca7ab1369ee}
+
+
+Bits used to represent a command into a bytecode 
+
+Definition at line 48 of file syx-bytecode.h.\hypertarget{syx-bytecode_8h_ce0a31c234c06b8e49fc61c5ce4ef9ed}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SYX\_\-BYTECODE\_\-COMMAND\_\-MASK@{SYX\_\-BYTECODE\_\-COMMAND\_\-MASK}}
+\index{SYX\_\-BYTECODE\_\-COMMAND\_\-MASK@{SYX\_\-BYTECODE\_\-COMMAND\_\-MASK}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BYTECODE\_\-COMMAND\_\-MASK~(SYX\_\-BYTECODE\_\-COMMAND\_\-MAX $<$$<$ (SYX\_\-BYTECODE\_\-BITS - SYX\_\-BYTECODE\_\-COMMAND\_\-BITS))}}
+\label{syx-bytecode_8h_ce0a31c234c06b8e49fc61c5ce4ef9ed}
+
+
+A mask to be used with bit-wise AND to retrieve the command from a bytecode 
+
+Definition at line 52 of file syx-bytecode.h.\hypertarget{syx-bytecode_8h_8fc4c49360ef9a755b02bf82693b45dd}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SYX\_\-BYTECODE\_\-COMMAND\_\-MAX@{SYX\_\-BYTECODE\_\-COMMAND\_\-MAX}}
+\index{SYX\_\-BYTECODE\_\-COMMAND\_\-MAX@{SYX\_\-BYTECODE\_\-COMMAND\_\-MAX}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BYTECODE\_\-COMMAND\_\-MAX~((1 $<$$<$ SYX\_\-BYTECODE\_\-COMMAND\_\-BITS) - 1)}}
+\label{syx-bytecode_8h_8fc4c49360ef9a755b02bf82693b45dd}
+
+
+Max number of commands 
+
+Definition at line 50 of file syx-bytecode.h.\hypertarget{syx-bytecode_8h_f343d91f1534f8a23d607daea1c345c5}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SYX\_\-BYTECODE\_\-MAX@{SYX\_\-BYTECODE\_\-MAX}}
+\index{SYX\_\-BYTECODE\_\-MAX@{SYX\_\-BYTECODE\_\-MAX}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-BYTECODE\_\-MAX~((1 $<$$<$ SYX\_\-BYTECODE\_\-BITS) - 1)}}
+\label{syx-bytecode_8h_f343d91f1534f8a23d607daea1c345c5}
+
+
+The total length of an instruction 
+
+Definition at line 45 of file syx-bytecode.h.\hypertarget{syx-bytecode_8h_70a15bed0a327462ec2fc007522c8cae}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SYX\_\-FUNC\_\-BYTECODE@{SYX\_\-FUNC\_\-BYTECODE}}
+\index{SYX\_\-FUNC\_\-BYTECODE@{SYX\_\-FUNC\_\-BYTECODE}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SYX\_\-FUNC\_\-BYTECODE(name, \/  arg)~INLINE void syx\_\-bytecode\_\- \#\# name ({\bf SyxBytecode} $\ast$bytecode, arg)}}
+\label{syx-bytecode_8h_70a15bed0a327462ec2fc007522c8cae}
+
+
+
+
+Definition at line 64 of file syx-bytecode.h.
+
+\subsection{Typedef Documentation}
+\hypertarget{syx-bytecode_8h_ddefdc0e904f306046ea2d02b89f5f97}{
+\index{syx-bytecode.h@{syx-bytecode.h}!SyxBytecode@{SyxBytecode}}
+\index{SyxBytecode@{SyxBytecode}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf SyxBytecode} {\bf SyxBytecode}}}
+\label{syx-bytecode_8h_ddefdc0e904f306046ea2d02b89f5f97}
+
+
+
+
+Definition at line 67 of file syx-bytecode.h.
+
+\subsection{Function Documentation}
+\hypertarget{syx-bytecode_8h_0a5a5bc160ebdb86668efd589066c390}{
+\index{syx-bytecode.h@{syx-bytecode.h}!syx\_\-bytecode\_\-free@{syx\_\-bytecode\_\-free}}
+\index{syx\_\-bytecode\_\-free@{syx\_\-bytecode\_\-free}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}INLINE void syx\_\-bytecode\_\-free ({\bf SyxBytecode} $\ast$ {\em bytecode})}}
+\label{syx-bytecode_8h_0a5a5bc160ebdb86668efd589066c390}
+
+
+Frees the memory allocated for a \hyperlink{struct_syx_bytecode}{SyxBytecode} by syx\_\-bytecode\_\-new.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bytecode}]the \hyperlink{struct_syx_bytecode}{SyxBytecode} to be freed \end{description}
+\end{Desc}
+
+
+Definition at line 90 of file syx-bytecode.h.
+
+Referenced by syx\_\-parser\_\-free().\hypertarget{syx-bytecode_8h_5377d7f12378a8c64ef0b01d1adbe1b2}{
+\index{syx-bytecode.h@{syx-bytecode.h}!syx\_\-bytecode\_\-gen\_\-instruction@{syx\_\-bytecode\_\-gen\_\-instruction}}
+\index{syx\_\-bytecode\_\-gen\_\-instruction@{syx\_\-bytecode\_\-gen\_\-instruction}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-bytecode\_\-gen\_\-instruction ({\bf SyxBytecode} $\ast$ {\em bytecode}, \/  {\bf syx\_\-uint8} {\em high}, \/  {\bf syx\_\-uint16} {\em low})}}
+\label{syx-bytecode_8h_5377d7f12378a8c64ef0b01d1adbe1b2}
+
+
+Manually generate an instruction.
+
+This function creates an instruction and insert it into the code array. If the low argument is higher than the max value, then generate a SYX\_\-BYTECODE\_\-EXTENDED instruction with the command as argument. The low argument is put to the next code slot.
+
+Look at SYX\_\-BYTECODE\_\-ARGUMENT\_\-BITS and SYX\_\-BYTECODE\_\-ARGUMENT\_\-MAX for more informations.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em high}]a SyxBytecodeCommand value \item[{\em low}]an arbitrary number identifying an argument \end{description}
+\end{Desc}
+
+
+Definition at line 76 of file syx-bytecode.c.
+
+Referenced by syx\_\-bytecode\_\-gen\_\-instruction(), and syx\_\-bytecode\_\-gen\_\-message().\hypertarget{syx-bytecode_8h_61cd2891a6644ee01481a4d43271efb9}{
+\index{syx-bytecode.h@{syx-bytecode.h}!syx\_\-bytecode\_\-gen\_\-literal@{syx\_\-bytecode\_\-gen\_\-literal}}
+\index{syx\_\-bytecode\_\-gen\_\-literal@{syx\_\-bytecode\_\-gen\_\-literal}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf syx\_\-uint32} syx\_\-bytecode\_\-gen\_\-literal ({\bf SyxBytecode} $\ast$ {\em bytecode}, \/  {\bf SyxOop} {\em literal})}}
+\label{syx-bytecode_8h_61cd2891a6644ee01481a4d43271efb9}
+
+
+Generate a literal.
+
+Insert the given literal into the literals array if it's not already there.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em literal}]an object \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The position of literal into the literals array \end{Desc}
+
+
+Definition at line 156 of file syx-bytecode.c.
+
+Referenced by syx\_\-bytecode\_\-gen\_\-message().\hypertarget{syx-bytecode_8h_e40b3f23b473b3006cea4818dbdf507d}{
+\index{syx-bytecode.h@{syx-bytecode.h}!syx\_\-bytecode\_\-gen\_\-message@{syx\_\-bytecode\_\-gen\_\-message}}
+\index{syx\_\-bytecode\_\-gen\_\-message@{syx\_\-bytecode\_\-gen\_\-message}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT void syx\_\-bytecode\_\-gen\_\-message ({\bf SyxBytecode} $\ast$ {\em bytecode}, \/  {\bf syx\_\-bool} {\em to\_\-super}, \/  {\bf syx\_\-uint32} {\em argument\_\-count}, \/  {\bf syx\_\-symbol} {\em selector})}}
+\label{syx-bytecode_8h_e40b3f23b473b3006cea4818dbdf507d}
+
+
+Generate a message instruction.
+
+If the message shouldn't be sent to super and the selector is known to be a common unary or binary message, send SYX\_\-BYTECODE\_\-SEND\_\-UNARY or SYX\_\-BYTECODE\_\-SEND\_\-BINARY with its relative index into syx\_\-bytecode\_\-unary\_\-messages or syx\_\-bytecode\_\-binary\_\-messages.
+
+If it's a non-specific message, then specify the number of arguments with the SYX\_\-BYTECODE\_\-MARK\_\-ARGUMENTS instruction and generate a SYX\_\-BYTECODE\_\-SEND\_\-MESSAGE or SYX\_\-BYTECODE\_\-SEND\_\-SUPER instruction.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em to\_\-super}]TRUE if the message must be sent to the superclass \item[{\em argument\_\-count}]the number of arguments the message requires \item[{\em selector}]a message pattern \end{description}
+\end{Desc}
+
+
+Definition at line 100 of file syx-bytecode.c.\hypertarget{syx-bytecode_8h_e034d74f4bcb6913a9b807e87f534b8a}{
+\index{syx-bytecode.h@{syx-bytecode.h}!syx\_\-bytecode\_\-new@{syx\_\-bytecode\_\-new}}
+\index{syx\_\-bytecode\_\-new@{syx\_\-bytecode\_\-new}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXPORT {\bf SyxBytecode}$\ast$ syx\_\-bytecode\_\-new (void)}}
+\label{syx-bytecode_8h_e034d74f4bcb6913a9b807e87f534b8a}
+
+
+Creates a new bytecode holder.
+
+\begin{Desc}
+\item[Returns:]A \hyperlink{struct_syx_bytecode}{SyxBytecode} instance \end{Desc}
+
+
+Definition at line 37 of file syx-bytecode.c.
+
+Referenced by syx\_\-parser\_\-new().
+
+\subsection{Variable Documentation}
+\hypertarget{syx-bytecode_8h_90d7e46b6b031c996ce7cc81083a6fa7}{
+\index{syx-bytecode.h@{syx-bytecode.h}!syx\_\-bytecode\_\-binary\_\-messages@{syx\_\-bytecode\_\-binary\_\-messages}}
+\index{syx\_\-bytecode\_\-binary\_\-messages@{syx\_\-bytecode\_\-binary\_\-messages}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-symbol} {\bf syx\_\-bytecode\_\-binary\_\-messages}\mbox{[}$\,$\mbox{]}}}
+\label{syx-bytecode_8h_90d7e46b6b031c996ce7cc81083a6fa7}
+
+
+Same as syx\_\-bytecode\_\-unary\_\-messages but contains binary messages and keyword messages with a single argument 
+
+Definition at line 58 of file syx-bytecode.c.\hypertarget{syx-bytecode_8h_2d5efd1c4984dc8e4a86ac7062a41716}{
+\index{syx-bytecode.h@{syx-bytecode.h}!syx\_\-bytecode\_\-unary\_\-messages@{syx\_\-bytecode\_\-unary\_\-messages}}
+\index{syx\_\-bytecode\_\-unary\_\-messages@{syx\_\-bytecode\_\-unary\_\-messages}!syx-bytecode.h@{syx-bytecode.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-symbol} {\bf syx\_\-bytecode\_\-unary\_\-messages}\mbox{[}$\,$\mbox{]}}}
+\label{syx-bytecode_8h_2d5efd1c4984dc8e4a86ac7062a41716}
+
+
+Contains common unary messages avoiding them to be inserted into method literals. 
+
+Definition at line 52 of file syx-bytecode.c.

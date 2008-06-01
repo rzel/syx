@@ -1,0 +1,493 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="syx-bytecode_8c" kind="file">
+    <compoundname>syx-bytecode.c</compoundname>
+    <includes refid="syx-memory_8h" local="yes">syx-memory.h</includes>
+    <includes refid="syx-platform_8h" local="yes">syx-platform.h</includes>
+    <includes refid="syx-types_8h" local="yes">syx-types.h</includes>
+    <includes refid="syx-object_8h" local="yes">syx-object.h</includes>
+    <includes refid="syx-bytecode_8h" local="yes">syx-bytecode.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>syx-types.h</label>
+        <link refid="syx-types_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stdarg.h</label>
+      </node>
+      <node id="16">
+        <label>syx-lexer.h</label>
+        <link refid="syx-lexer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="0">
+        <label>syx/syx-bytecode.c</label>
+        <link refid="syx-bytecode.c"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>syx-bytecode.h</label>
+        <link refid="syx-bytecode_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdlib.h</label>
+      </node>
+      <node id="18">
+        <label>syx-error.h</label>
+        <link refid="syx-error_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>limits.h</label>
+      </node>
+      <node id="5">
+        <label>syx-object.h</label>
+        <link refid="syx-object_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>wchar.h</label>
+      </node>
+      <node id="15">
+        <label>string.h</label>
+      </node>
+      <node id="6">
+        <label>syx-utils.h</label>
+        <link refid="syx-utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>syx-memory.h</label>
+        <link refid="syx-memory_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>byteswap.h</label>
+      </node>
+      <node id="19">
+        <label>syx-init.h</label>
+        <link refid="syx-init_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>syx-config.h</label>
+      </node>
+      <node id="17">
+        <label>gmp.h</label>
+      </node>
+      <node id="9">
+        <label>syx-enums.h</label>
+        <link refid="syx-enums_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>syx-platform.h</label>
+        <link refid="syx-platform_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="syx-bytecode_8c_12d5efd1c4984dc8e4a86ac7062a41716" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+        <definition>syx_symbol syx_bytecode_unary_messages[]</definition>
+        <argsstring>[]</argsstring>
+        <name>syx_bytecode_unary_messages</name>
+        <initializer> {&quot;isNil&quot;, &quot;notNil&quot;, &quot;value&quot;, &quot;new&quot;, &quot;class&quot;, &quot;superclass&quot;,
+                                            &quot;print&quot;, &quot;printNl&quot;, &quot;printString&quot;, &quot;unity&quot;, NULL}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Contains common unary messages avoiding them to be inserted into method literals. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.c" line="53" bodyfile="/media/common/projects/syx/syx/syx-bytecode.c" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="syx-bytecode_8c_190d7e46b6b031c996ce7cc81083a6fa7" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+        <definition>syx_symbol syx_bytecode_binary_messages[]</definition>
+        <argsstring>[]</argsstring>
+        <name>syx_bytecode_binary_messages</name>
+        <initializer> {&quot;+&quot;, &quot;-&quot;, &quot;&lt;&quot;, &quot;&gt;&quot;, &quot;&lt;=&quot;, &quot;&gt;=&quot;, &quot;=&quot;, &quot;~=&quot;, &quot;at:&quot;,
+                                             &quot;do:&quot;, &quot;value:&quot;, &quot;valueWithArguments:&quot;,
+                                             &quot;new:&quot;, &quot;to:&quot;, &quot;basicAt:&quot;, NULL}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Same as syx_bytecode_unary_messages but contains binary messages and keyword messages with a single argument </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.c" line="60" bodyfile="/media/common/projects/syx/syx/syx-bytecode.c" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="syx-bytecode_8c_166169f5d9d84f663e2f04aba3502f179" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref> *</type>
+        <definition>SyxBytecode* syx_bytecode_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>syx_bytecode_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new bytecode holder.</para><para><simplesect kind="return"><para>A <ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref> instance </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.c" line="38" bodyfile="/media/common/projects/syx/syx/syx-bytecode.c" bodystart="37" bodyend="47"/>
+        <referencedby refid="syx-parser_8h_142ba7420dc7ded6be9ca7e1b44823ce0" compoundref="syx-parser_8c" startline="71" endline="92">syx_parser_new</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-bytecode_8c_1ffb00acd600dc431d1cfe10edae1ee69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void syx_bytecode_gen_instruction</definition>
+        <argsstring>(SyxBytecode *bytecode, syx_uint8 high, syx_uint16 low)</argsstring>
+        <name>syx_bytecode_gen_instruction</name>
+        <param>
+          <type><ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref> *</type>
+          <declname>bytecode</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_17cb1870b8124a88e807c98f315f3d923" kindref="member">syx_uint8</ref></type>
+          <declname>high</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_15c0caeeeb45b4575061ab7f368f10337" kindref="member">syx_uint16</ref></type>
+          <declname>low</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Manually generate an instruction.</para><para>This function creates an instruction and insert it into the code array. If the low argument is higher than the max value, then generate a SYX_BYTECODE_EXTENDED instruction with the command as argument. The low argument is put to the next code slot.</para><para>Look at SYX_BYTECODE_ARGUMENT_BITS and SYX_BYTECODE_ARGUMENT_MAX for more informations.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>high</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a SyxBytecodeCommand value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>low</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an arbitrary number identifying an argument </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.c" line="77" bodyfile="/media/common/projects/syx/syx/syx-bytecode.c" bodystart="76" bodyend="85"/>
+        <referencedby refid="syx-bytecode_8h_15377d7f12378a8c64ef0b01d1adbe1b2" compoundref="syx-bytecode_8c" startline="76" endline="85">syx_bytecode_gen_instruction</referencedby>
+        <referencedby refid="syx-bytecode_8h_1e40b3f23b473b3006cea4818dbdf507d" compoundref="syx-bytecode_8c" startline="100" endline="145">syx_bytecode_gen_message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="syx-bytecode_8c_16e08f49fece1127fa50ab8be456774d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void syx_bytecode_gen_message</definition>
+        <argsstring>(SyxBytecode *bytecode, syx_bool to_super, syx_uint32 argument_count, syx_symbol selector)</argsstring>
+        <name>syx_bytecode_gen_message</name>
+        <param>
+          <type><ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref> *</type>
+          <declname>bytecode</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref></type>
+          <declname>to_super</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_1eb2d8221bf07737360750e4c0ec66a99" kindref="member">syx_uint32</ref></type>
+          <declname>argument_count</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref></type>
+          <declname>selector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a message instruction.</para><para>If the message shouldn&apos;t be sent to super and the selector is known to be a common unary or binary message, send SYX_BYTECODE_SEND_UNARY or SYX_BYTECODE_SEND_BINARY with its relative index into syx_bytecode_unary_messages or syx_bytecode_binary_messages.</para><para>If it&apos;s a non-specific message, then specify the number of arguments with the SYX_BYTECODE_MARK_ARGUMENTS instruction and generate a SYX_BYTECODE_SEND_MESSAGE or SYX_BYTECODE_SEND_SUPER instruction.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>to_super</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TRUE if the message must be sent to the superclass </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argument_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of arguments the message requires </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>selector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a message pattern </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.c" line="101" bodyfile="/media/common/projects/syx/syx/syx-bytecode.c" bodystart="100" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="syx-bytecode_8c_1ba09d19921e45c7b3a186762c622ead5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="syx-types_8h_1eb2d8221bf07737360750e4c0ec66a99" kindref="member">syx_uint32</ref></type>
+        <definition>syx_uint32 syx_bytecode_gen_literal</definition>
+        <argsstring>(SyxBytecode *bytecode, SyxOop literal)</argsstring>
+        <name>syx_bytecode_gen_literal</name>
+        <param>
+          <type><ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref> *</type>
+          <declname>bytecode</declname>
+        </param>
+        <param>
+          <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+          <declname>literal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Generate a literal.</para><para>Insert the given literal into the literals array if it&apos;s not already there.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>literal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The position of literal into the literals array </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-bytecode.c" line="157" bodyfile="/media/common/projects/syx/syx/syx-bytecode.c" bodystart="156" bodyend="170"/>
+        <referencedby refid="syx-bytecode_8h_1e40b3f23b473b3006cea4818dbdf507d" compoundref="syx-bytecode_8c" startline="100" endline="145">syx_bytecode_gen_message</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/>Copyright<sp/>(c)<sp/>2007-2008<sp/>Luca<sp/>Bruno</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Smalltalk<sp/>YX.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/><sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/><sp/><sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/><sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,<sp/><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-memory_8h" kindref="compound">syx-memory.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-platform_8h" kindref="compound">syx-platform.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-types_8h" kindref="compound">syx-types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-object_8h" kindref="compound">syx-object.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="syx-bytecode_8h" kindref="compound">syx-bytecode.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref><sp/>*</highlight></codeline>
+<codeline lineno="37" refid="syx-bytecode_8h_1e034d74f4bcb6913a9b807e87f534b8a" refkind="member"><highlight class="normal"><ref refid="syx-bytecode_8c_166169f5d9d84f663e2f04aba3502f179" kindref="member">syx_bytecode_new</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref><sp/>*bytecode;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>bytecode<sp/>=<sp/>(<ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref><sp/>*)<ref refid="syx-types_8h_17446426502808204156e54c87ac180bf" kindref="member">syx_malloc</ref><sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref>));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>bytecode-&gt;<ref refid="struct_syx_bytecode_10a67bb938887bf5878891840d70549dc" kindref="member">code_top</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>bytecode-&gt;<ref refid="struct_syx_bytecode_18abab30c958b6ff43f846bbcddb31c33" kindref="member">literals_top</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>bytecode-&gt;<ref refid="struct_syx_bytecode_1b09840b5e68800427b584f3f75a754e5" kindref="member">stack_size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bytecode;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="syx-bytecode_8h_12d5efd1c4984dc8e4a86ac7062a41716" refkind="member"><highlight class="normal"><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/><ref refid="syx-bytecode_8c_12d5efd1c4984dc8e4a86ac7062a41716" kindref="member">syx_bytecode_unary_messages</ref>[]<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;isNil&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;notNil&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;new&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;class&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;superclass&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;print&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;printNl&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;printString&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;unity&quot;</highlight><highlight class="normal">,<sp/>NULL};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="syx-bytecode_8h_190d7e46b6b031c996ce7cc81083a6fa7" refkind="member"><highlight class="normal"><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/><ref refid="syx-bytecode_8c_190d7e46b6b031c996ce7cc81083a6fa7" kindref="member">syx_bytecode_binary_messages</ref>[]<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;+&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&lt;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&gt;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&lt;=&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&gt;=&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;=&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;~=&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;at:&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;do:&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;value:&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;valueWithArguments:&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;new:&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;to:&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;basicAt:&quot;</highlight><highlight class="normal">,<sp/>NULL};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="syx-bytecode_8h_15377d7f12378a8c64ef0b01d1adbe1b2" refkind="member"><highlight class="normal"><ref refid="syx-bytecode_8c_1ffb00acd600dc431d1cfe10edae1ee69" kindref="member">syx_bytecode_gen_instruction</ref><sp/>(<ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref><sp/>*bytecode,<sp/><ref refid="syx-types_8h_17cb1870b8124a88e807c98f315f3d923" kindref="member">syx_uint8</ref><sp/>high,<sp/><ref refid="syx-types_8h_15c0caeeeb45b4575061ab7f368f10337" kindref="member">syx_uint16</ref><sp/>low)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(low<sp/>&gt;<sp/><ref refid="syx-bytecode_8h_19e9106c938b74972a023d9035368f3e6" kindref="member">SYX_BYTECODE_ARGUMENT_MAX</ref>)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="syx-bytecode_8c_1ffb00acd600dc431d1cfe10edae1ee69" kindref="member">syx_bytecode_gen_instruction</ref><sp/>(bytecode,<sp/><ref refid="syx-enums_8h_1d6d0f1ac8587fceead1a94be2bf9648a8cf90bc409aa8c6feeef4a9b907069fb" kindref="member">SYX_BYTECODE_EXTENDED</ref>,<sp/>high);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>syx_bytecode_gen_code<sp/>(bytecode,<sp/>low);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>syx_bytecode_gen_code<sp/>(bytecode,<sp/>(high<sp/>&lt;&lt;<sp/><ref refid="syx-bytecode_8h_1a30b8b0de5a0088b12f90cbe95ab59c1" kindref="member">SYX_BYTECODE_ARGUMENT_BITS</ref>)<sp/>+<sp/>low);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="syx-bytecode_8h_1e40b3f23b473b3006cea4818dbdf507d" refkind="member"><highlight class="normal"><ref refid="syx-bytecode_8c_16e08f49fece1127fa50ab8be456774d2" kindref="member">syx_bytecode_gen_message</ref><sp/>(<ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref><sp/>*bytecode,<sp/><ref refid="syx-types_8h_1c6dc09b276b99fa1956364359139daab" kindref="member">syx_bool</ref><sp/>to_super,<sp/><ref refid="syx-types_8h_1eb2d8221bf07737360750e4c0ec66a99" kindref="member">syx_uint32</ref><sp/>argument_count,<sp/><ref refid="syx-types_8h_19663af54b7b72f5d8be5f754ef356525" kindref="member">syx_symbol</ref><sp/>selector)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>binding;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/>syx_int16<sp/>i;</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/>SyxOop<sp/>selbinding;</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/>if<sp/>(!to_super)</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(i=0;<sp/>syx_bytecode_unary_messages[i];<sp/>i++)</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(!strcmp<sp/>(syx_bytecode_unary_messages[i],<sp/>selector))</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>binding<sp/>=<sp/>syx_variable_binding_new<sp/>(syx_symbol_new<sp/>(selector),<sp/>0,<sp/>syx_nil);</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>selbinding<sp/>=<sp/>syx_object_new<sp/>(syx_globals_at<sp/>(&quot;Association&quot;));</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SYX_ASSOCIATION_KEY<sp/>(selbinding)<sp/>=<sp/>syx_small_integer_new<sp/>(i);</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SYX_ASSOCIATION_VALUE<sp/>(selbinding)<sp/>=<sp/>binding;</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syx_bytecode_gen_instruction<sp/>(bytecode,<sp/>SYX_BYTECODE_SEND_UNARY,</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syx_bytecode_gen_literal<sp/>(bytecode,<sp/>selbinding));</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(i=0;<sp/>syx_bytecode_binary_messages[i];<sp/>i++)</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(!strcmp<sp/>(syx_bytecode_binary_messages[i],<sp/>selector))</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>binding<sp/>=<sp/>syx_variable_binding_new<sp/>(syx_symbol_new<sp/>(selector),<sp/>0,<sp/>syx_nil);</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>selbinding<sp/>=<sp/>syx_object_new<sp/>(syx_globals_at<sp/>(&quot;Association&quot;));</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SYX_ASSOCIATION_KEY<sp/>(selbinding)<sp/>=<sp/>syx_small_integer_new<sp/>(i);</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SYX_ASSOCIATION_VALUE<sp/>(selbinding)<sp/>=<sp/>binding;</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syx_bytecode_gen_instruction<sp/>(bytecode,<sp/>SYX_BYTECODE_SEND_BINARY,</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>syx_bytecode_gen_literal<sp/>(bytecode,<sp/>selbinding));</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>binding<sp/>=<sp/><ref refid="syx-object_8h_1d806df239dc9f2669f3620623ec77c6f" kindref="member">syx_variable_binding_new</ref><sp/>(<ref refid="syx-object_8c_16ef910113cd4a2eea7885781a54a2bc7" kindref="member">syx_symbol_new</ref><sp/>(selector),<sp/>0,<sp/><ref refid="syx-object_8c_1b1522ab23d05036a843da6f50860c45d" kindref="member">syx_nil</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><ref refid="syx-bytecode_8c_1ffb00acd600dc431d1cfe10edae1ee69" kindref="member">syx_bytecode_gen_instruction</ref><sp/>(bytecode,<sp/><ref refid="syx-enums_8h_1d6d0f1ac8587fceead1a94be2bf9648a2d2ad961e2feae8400817938a5827c7c" kindref="member">SYX_BYTECODE_MARK_ARGUMENTS</ref>,<sp/>argument_count);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(to_super)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="syx-bytecode_8c_1ffb00acd600dc431d1cfe10edae1ee69" kindref="member">syx_bytecode_gen_instruction</ref><sp/>(bytecode,<sp/><ref refid="syx-enums_8h_1d6d0f1ac8587fceead1a94be2bf9648a54e0d5ca2d42aeec438f56d3d2d22e3e" kindref="member">SYX_BYTECODE_SEND_SUPER</ref>,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="syx-bytecode_8c_1ba09d19921e45c7b3a186762c622ead5" kindref="member">syx_bytecode_gen_literal</ref><sp/>(bytecode,<sp/>binding));</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="syx-bytecode_8c_1ffb00acd600dc431d1cfe10edae1ee69" kindref="member">syx_bytecode_gen_instruction</ref><sp/>(bytecode,<sp/><ref refid="syx-enums_8h_1d6d0f1ac8587fceead1a94be2bf9648aa08406264493f13860cc2aac822e1ae1" kindref="member">SYX_BYTECODE_SEND_MESSAGE</ref>,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="syx-bytecode_8c_1ba09d19921e45c7b3a186762c622ead5" kindref="member">syx_bytecode_gen_literal</ref><sp/>(bytecode,<sp/>binding));</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><ref refid="syx-types_8h_1eb2d8221bf07737360750e4c0ec66a99" kindref="member">syx_uint32</ref></highlight></codeline>
+<codeline lineno="156" refid="syx-bytecode_8h_161cd2891a6644ee01481a4d43271efb9" refkind="member"><highlight class="normal"><ref refid="syx-bytecode_8c_1ba09d19921e45c7b3a186762c622ead5" kindref="member">syx_bytecode_gen_literal</ref><sp/>(<ref refid="struct_syx_bytecode" kindref="compound">SyxBytecode</ref><sp/>*bytecode,<sp/><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref><sp/>literal)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><ref refid="syx-types_8h_15c0caeeeb45b4575061ab7f368f10337" kindref="member">syx_uint16</ref><sp/>i;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=0;<sp/>i<sp/>&lt;<sp/>bytecode-&gt;<ref refid="struct_syx_bytecode_18abab30c958b6ff43f846bbcddb31c33" kindref="member">literals_top</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="syx-types_8h_111cbe8792a6a199aa5562be393851ab5" kindref="member">SYX_OOP_EQ</ref><sp/>(bytecode-&gt;<ref refid="struct_syx_bytecode_1116da03eb46630df968a72cd96c944ba" kindref="member">literals</ref>[i],<sp/>literal))</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="syx-object_8h_10904e42bcfe1d2cb2522253294562c77" kindref="member">SYX_IS_OBJECT</ref><sp/>(literal))</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="syx-object_8h_1e63d2bc397e9f66e55b915520658bb95" kindref="member">SYX_OBJECT_IS_CONSTANT</ref>(literal)<sp/>=<sp/><ref refid="syx-types_8h_1a8cecfc5c5c054d2875c03e77b7be15d" kindref="member">TRUE</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>bytecode-&gt;<ref refid="struct_syx_bytecode_1116da03eb46630df968a72cd96c944ba" kindref="member">literals</ref>[bytecode-&gt;<ref refid="struct_syx_bytecode_18abab30c958b6ff43f846bbcddb31c33" kindref="member">literals_top</ref>++]<sp/>=<sp/>literal;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bytecode-&gt;<ref refid="struct_syx_bytecode_18abab30c958b6ff43f846bbcddb31c33" kindref="member">literals_top</ref><sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/media/common/projects/syx/syx/syx-bytecode.c"/>
+  </compounddef>
+</doxygen>

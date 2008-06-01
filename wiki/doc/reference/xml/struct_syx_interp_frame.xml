@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
+  <compounddef id="struct_syx_interp_frame" kind="struct" prot="public">
+    <compoundname>SyxInterpFrame</compoundname>
+    <includes refid="syx-interp_8h" local="no">syx-interp.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_syx_interp_frame_137d33bf761d4f34c55da10cbf9d3df63" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxInterpFrame::this_context</definition>
+        <argsstring></argsstring>
+        <name>this_context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="45" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="syx-interp_8h_19a508ea64c04f29c84de6c4a320c86f8" compoundref="syx-interp_8c" startline="271" endline="320">syx_interp_enter_context</referencedby>
+        <referencedby refid="syx-interp_8h_1237d9e66928c5fb95a9b6e273512951e" compoundref="syx-interp_8c" startline="179" endline="211">syx_interp_frame_to_context</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_1f3ecaeed999a18d99d3fd27e9450ab41" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxInterpFrame::detached_frame</definition>
+        <argsstring></argsstring>
+        <name>detached_frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="46" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="syx-interp_8h_1237d9e66928c5fb95a9b6e273512951e" compoundref="syx-interp_8c" startline="179" endline="211">syx_interp_frame_to_context</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_1e1b68af7dec8776cd14b3d1df923409c" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_syx_interp_frame" kindref="compound">SyxInterpFrame</ref> *</type>
+        <definition>SyxInterpFrame* SyxInterpFrame::parent_frame</definition>
+        <argsstring></argsstring>
+        <name>parent_frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="47" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="syx-interp_8h_19a508ea64c04f29c84de6c4a320c86f8" compoundref="syx-interp_8c" startline="271" endline="320">syx_interp_enter_context</referencedby>
+        <referencedby refid="syx-interp_8h_1f677bca3ba7ff8315ce0b1406b7a97b5" compoundref="syx-interp_8c" startline="334" endline="359">syx_interp_leave_and_answer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_1335377c41e8c70178ad2a5ddf66508b4" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_syx_interp_frame" kindref="compound">SyxInterpFrame</ref> *</type>
+        <definition>SyxInterpFrame* SyxInterpFrame::outer_frame</definition>
+        <argsstring></argsstring>
+        <name>outer_frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="48" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="syx-utils_8h_182cfea58c47c3a90582124eb1f9c3b4b" compoundref="syx-utils_8c" startline="609" endline="704">syx_show_traceback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_1da8f1ef4a738fbc3289aad49cf419a6e" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_syx_interp_frame" kindref="compound">SyxInterpFrame</ref> *</type>
+        <definition>SyxInterpFrame* SyxInterpFrame::stack_return_frame</definition>
+        <argsstring></argsstring>
+        <name>stack_return_frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="49" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="syx-interp_8h_19a508ea64c04f29c84de6c4a320c86f8" compoundref="syx-interp_8c" startline="271" endline="320">syx_interp_enter_context</referencedby>
+        <referencedby refid="syx-interp_8h_1f677bca3ba7ff8315ce0b1406b7a97b5" compoundref="syx-interp_8c" startline="334" endline="359">syx_interp_leave_and_answer</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_185720d5804b47e6f194e492075cad886" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxInterpFrame::method</definition>
+        <argsstring></argsstring>
+        <name>method</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="50" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="syx-interp_8h_19a508ea64c04f29c84de6c4a320c86f8" compoundref="syx-interp_8c" startline="271" endline="320">syx_interp_enter_context</referencedby>
+        <referencedby refid="syx-interp_8h_1237d9e66928c5fb95a9b6e273512951e" compoundref="syx-interp_8c" startline="179" endline="211">syx_interp_frame_to_context</referencedby>
+        <referencedby refid="syx-interp_8h_1f677bca3ba7ff8315ce0b1406b7a97b5" compoundref="syx-interp_8c" startline="334" endline="359">syx_interp_leave_and_answer</referencedby>
+        <referencedby refid="syx-utils_8h_182cfea58c47c3a90582124eb1f9c3b4b" compoundref="syx-utils_8c" startline="609" endline="704">syx_show_traceback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_18b361a6a8c7a7756bd7bf49adb6ebffd" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxInterpFrame::closure</definition>
+        <argsstring></argsstring>
+        <name>closure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="51" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="syx-interp_8h_1237d9e66928c5fb95a9b6e273512951e" compoundref="syx-interp_8c" startline="179" endline="211">syx_interp_frame_to_context</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_1d45f49115a5305fc901fceca4c72d32e" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_1488ad2504ade19c761a3e2a1726b4781" kindref="member">syx_nint</ref></type>
+        <definition>syx_nint SyxInterpFrame::next_instruction</definition>
+        <argsstring></argsstring>
+        <name>next_instruction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="52" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_1034d55521abf77019c77090a5bef941f" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref> *</type>
+        <definition>SyxOop* SyxInterpFrame::stack</definition>
+        <argsstring></argsstring>
+        <name>stack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="53" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="syx-object_8h_1cc28dff1a70eeea85e52a5501eda6b53" compoundref="syx-object_8c" startline="234" endline="251">syx_process_new</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_1c40cce129c0dadcfe2bae7ccdbdc431b" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxInterpFrame::receiver</definition>
+        <argsstring></argsstring>
+        <name>receiver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="54" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="syx-interp_8h_1237d9e66928c5fb95a9b6e273512951e" compoundref="syx-interp_8c" startline="179" endline="211">syx_interp_frame_to_context</referencedby>
+        <referencedby refid="syx-utils_8h_182cfea58c47c3a90582124eb1f9c3b4b" compoundref="syx-utils_8c" startline="609" endline="704">syx_show_traceback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_syx_interp_frame_1f98a9a47dea773894bddcac57c9dddb3" prot="public" static="no" mutable="no">
+        <type><ref refid="syx-types_8h_11121caba2d40b2ce090b640762744ccd" kindref="member">SyxOop</ref></type>
+        <definition>SyxOop SyxInterpFrame::local</definition>
+        <argsstring></argsstring>
+        <name>local</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/media/common/projects/syx/syx/syx-interp.h" line="55" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>SyxInterpFrame</label>
+        <link refid="struct_syx_interp_frame"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>outer_frame
+stack_return_frame
+parent_frame</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/media/common/projects/syx/syx/syx-interp.h" line="44" bodyfile="/media/common/projects/syx/syx/syx-interp.h" bodystart="43" bodyend="56"/>
+    <listofallmembers>
+      <member refid="struct_syx_interp_frame_18b361a6a8c7a7756bd7bf49adb6ebffd" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>closure</name></member>
+      <member refid="struct_syx_interp_frame_1f3ecaeed999a18d99d3fd27e9450ab41" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>detached_frame</name></member>
+      <member refid="struct_syx_interp_frame_1f98a9a47dea773894bddcac57c9dddb3" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>local</name></member>
+      <member refid="struct_syx_interp_frame_185720d5804b47e6f194e492075cad886" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>method</name></member>
+      <member refid="struct_syx_interp_frame_1d45f49115a5305fc901fceca4c72d32e" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>next_instruction</name></member>
+      <member refid="struct_syx_interp_frame_1335377c41e8c70178ad2a5ddf66508b4" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>outer_frame</name></member>
+      <member refid="struct_syx_interp_frame_1e1b68af7dec8776cd14b3d1df923409c" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>parent_frame</name></member>
+      <member refid="struct_syx_interp_frame_1c40cce129c0dadcfe2bae7ccdbdc431b" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>receiver</name></member>
+      <member refid="struct_syx_interp_frame_1034d55521abf77019c77090a5bef941f" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>stack</name></member>
+      <member refid="struct_syx_interp_frame_1da8f1ef4a738fbc3289aad49cf419a6e" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>stack_return_frame</name></member>
+      <member refid="struct_syx_interp_frame_137d33bf761d4f34c55da10cbf9d3df63" prot="public" virt="non-virtual"><scope>SyxInterpFrame</scope><name>this_context</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

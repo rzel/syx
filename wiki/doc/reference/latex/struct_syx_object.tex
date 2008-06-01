@@ -1,0 +1,113 @@
+\hypertarget{struct_syx_object}{
+\section{SyxObject Struct Reference}
+\label{struct_syx_object}\index{SyxObject@{SyxObject}}
+}
+{\tt \#include $<$syx-object.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} \hyperlink{struct_syx_object_8539164fe2b5659f7ea6c831f7e349a6}{klass}
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{struct_syx_object_653836c4f8256fd84d945f5b37297475}{has\_\-refs}
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{struct_syx_object_756671a0c1dddca22d76219e5e28c2c4}{is\_\-marked}
+\item 
+\hyperlink{syx-types_8h_c6dc09b276b99fa1956364359139daab}{syx\_\-bool} \hyperlink{struct_syx_object_a263627fc658b6d457bfa59962133612}{is\_\-constant}
+\item 
+\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} $\ast$ \hyperlink{struct_syx_object_6f4addae6397d0901b4df39bc69621f9}{vars}
+\item 
+\hyperlink{syx-types_8h_18e1a1417591a1efb670b97ce320f535}{syx\_\-varsize} \hyperlink{struct_syx_object_9bde6747e06b47579dc52aa1c1bc878d}{data\_\-size}
+\item 
+\hyperlink{syx-types_8h_1121caba2d40b2ce090b640762744ccd}{SyxOop} $\ast$ \hyperlink{struct_syx_object_1613092e651dd77e4a0c1d0a1ec413cb}{data}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+The core class of Syx holding necessary informations for each concrete object. 
+
+Definition at line 82 of file syx-object.h.
+
+\subsection{Field Documentation}
+\hypertarget{struct_syx_object_8539164fe2b5659f7ea6c831f7e349a6}{
+\index{SyxObject@{SyxObject}!klass@{klass}}
+\index{klass@{klass}!SyxObject@{SyxObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf SyxOop} {\bf SyxObject::klass}}}
+\label{struct_syx_object_8539164fe2b5659f7ea6c831f7e349a6}
+
+
+Holds the class of the instance. Please use syx\_\-object\_\-get\_\-class to obtain a class from a SyxOop 
+
+Definition at line 85 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-clear(), syx\_\-memory\_\-save\_\-image(), and syx\_\-object\_\-copy().\hypertarget{struct_syx_object_653836c4f8256fd84d945f5b37297475}{
+\index{SyxObject@{SyxObject}!has\_\-refs@{has\_\-refs}}
+\index{has\_\-refs@{has\_\-refs}!SyxObject@{SyxObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} {\bf SyxObject::has\_\-refs}}}
+\label{struct_syx_object_653836c4f8256fd84d945f5b37297475}
+
+
+Specify if this object contains references to other objects in its data 
+
+Definition at line 88 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-save\_\-image(), and syx\_\-object\_\-copy().\hypertarget{struct_syx_object_756671a0c1dddca22d76219e5e28c2c4}{
+\index{SyxObject@{SyxObject}!is\_\-marked@{is\_\-marked}}
+\index{is\_\-marked@{is\_\-marked}!SyxObject@{SyxObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} {\bf SyxObject::is\_\-marked}}}
+\label{struct_syx_object_756671a0c1dddca22d76219e5e28c2c4}
+
+
+Used to mark the object by the garbage collector 
+
+Definition at line 91 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-save\_\-image().\hypertarget{struct_syx_object_a263627fc658b6d457bfa59962133612}{
+\index{SyxObject@{SyxObject}!is\_\-constant@{is\_\-constant}}
+\index{is\_\-constant@{is\_\-constant}!SyxObject@{SyxObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-bool} {\bf SyxObject::is\_\-constant}}}
+\label{struct_syx_object_a263627fc658b6d457bfa59962133612}
+
+
+Set to TRUE if data shouldn't be modified 
+
+Definition at line 94 of file syx-object.h.
+
+Referenced by syx\_\-object\_\-copy().\hypertarget{struct_syx_object_6f4addae6397d0901b4df39bc69621f9}{
+\index{SyxObject@{SyxObject}!vars@{vars}}
+\index{vars@{vars}!SyxObject@{SyxObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf SyxOop}$\ast$ {\bf SyxObject::vars}}}
+\label{struct_syx_object_6f4addae6397d0901b4df39bc69621f9}
+
+
+A list of SyxOop containing instance variables. 
+
+Definition at line 97 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-clear(), syx\_\-memory\_\-save\_\-image(), and syx\_\-object\_\-copy().\hypertarget{struct_syx_object_9bde6747e06b47579dc52aa1c1bc878d}{
+\index{SyxObject@{SyxObject}!data\_\-size@{data\_\-size}}
+\index{data\_\-size@{data\_\-size}!SyxObject@{SyxObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf syx\_\-varsize} {\bf SyxObject::data\_\-size}}}
+\label{struct_syx_object_9bde6747e06b47579dc52aa1c1bc878d}
+
+
+The number of data elements held by the object 
+
+Definition at line 100 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-save\_\-image(), and syx\_\-object\_\-copy().\hypertarget{struct_syx_object_1613092e651dd77e4a0c1d0a1ec413cb}{
+\index{SyxObject@{SyxObject}!data@{data}}
+\index{data@{data}!SyxObject@{SyxObject}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf SyxOop}$\ast$ {\bf SyxObject::data}}}
+\label{struct_syx_object_1613092e651dd77e4a0c1d0a1ec413cb}
+
+
+This holds the data stored for the object. These can be oops, bytes, doubles and so on. 
+
+Definition at line 103 of file syx-object.h.
+
+Referenced by syx\_\-memory\_\-clear(), syx\_\-memory\_\-save\_\-image(), and syx\_\-object\_\-copy().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+syx/\hyperlink{syx-object_8h}{syx-object.h}\end{CompactItemize}
