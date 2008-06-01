@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
-  <compounddef id="syx_lexer" kind="page">
-    <compoundname>syx_lexer</compoundname>
-    <title>Syx Lexer</title>
-    <detaileddescription>
-<para>Tokenize all the given code into <ref refid="struct_syx_token" kindref="compound">SyxToken</ref> structures. Take look at <ref refid="syx-lexer_8c" kindref="compound">syx-lexer.c</ref> for more detailed informations. </para>    </detaileddescription>
-  </compounddef>
-</doxygen>

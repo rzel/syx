@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
-  <compounddef id="syx_types" kind="page">
-    <compoundname>syx_types</compoundname>
-    <title>Syx Types</title>
-    <detaileddescription>
-<para>Contains various C data types definition, including SyxOop </para>    </detaileddescription>
-  </compounddef>
-</doxygen>

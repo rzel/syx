@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.5">
-  <compounddef id="syx_bytecode" kind="page">
-    <compoundname>syx_bytecode</compoundname>
-    <title>Syx Bytecode</title>
-    <detaileddescription>
-<para>Binary representation of a bytecode. Command is b while the argument is k.</para><para>bbbbbkkk kkkkkkkk </para>    </detaileddescription>
-  </compounddef>
-</doxygen>
