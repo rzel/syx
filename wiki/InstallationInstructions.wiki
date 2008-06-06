@@ -25,19 +25,22 @@ Syx has been tested on the following platforms:
 
 *SEE BELOW FOR SOURCES INSTALLATION INSTRUCTIONS*
 
-*SOME PACKAGES/ARCHIVES ARE NOT UPDATED YET TO VERSION 0.1.6*
+*SOME PACKAGES/ARCHIVES ARE NOT UPDATED YET TO VERSION 0.1.7*
 
 = Windows XP =
 
-To install Syx on your Windows XP system, you must [http://code.google.com/p/syx/downloads/detail?name=Syx-0.1.6.exe&can=2&q= download the installer here].
+To install Syx on your Windows XP system, you must [http://code.google.com/p/syx/downloads/detail?name=Syx-0.1.7.exe&can=2&q= download the installer here].
+
+Alternatively, if you are on a limited system, you can still [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.7-bin-win32.zip&can=2&q= download the binaries archive here].
+Extract the archive then Syx is ready to be used. File types are not updated though to match .st and .sim files.
 
 Once you downloaded it, double click on it and then follow the instructions.
 
 = Windows CE (PocketPC and Smartphone) =
 
-To install Syx on your handled system you must [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.6-bin-wince.zip&can=2&q= download the binary archive here].
+To install Syx on your handled system you must [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.7-bin-wince.zip&can=2&q= download the binary archive here].
 
-Extract the archive; a new directory will be created named *syx-0.1.6-bin-wince*. Upload the contents of the directory (not the directory) into the root of your device.
+Extract the archive; a new directory will be created named *syx-0.1.7-bin-wince*. Upload the contents of the directory (not the directory) into the root of your device.
 
 To run it just click on the *syx* application in your handled device.
 
@@ -84,21 +87,23 @@ emerge syx
 
 _*Syx works on many other platforms, but below you'll see only available downloads from this website.*_
 
-The following are the Smalltalk YX 0.1.6 archives:
+The following are the Smalltalk YX 0.1.7 archives:
 
-[http://syx.googlecode.com/svn/wiki/images/linux-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.6-bin-linux-x86_64.tar.gz&can=2&q= Linux x86-64]
+[http://syx.googlecode.com/svn/wiki/images/linux-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.7-bin-linux-x86_64.tar.gz&can=2&q= Linux x86-64]
 
-[http://syx.googlecode.com/svn/wiki/images/freebsd-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-FreeBSD.6.1-x86-32.tar.gz&can=2&q= FreeBSD 6.1 x86] (thanks to blufox)
+[http://syx.googlecode.com/svn/wiki/images/solaris-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.6-bin-solaris11-sparc.tar.gz&can=4&q= Solaris 11 (Sparc 64-bit)] (thanks to blufox)
 
-[http://syx.googlecode.com/svn/wiki/images/solaris-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-solaris11-sparc-64.tar.gz&can=2&q= Solaris 11 (Sparc 64-bit)] (thanks to blufox)
+[http://syx.googlecode.com/svn/wiki/images/solaris-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.6-bin-solaris11-x86.tar.gz&can=4&q= Solaris 11 x86] (thanks to blufox)
 
 [http://syx.googlecode.com/svn/wiki/images/solaris-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-solaris11-x86-64.tar.gz&can=2&q= Solaris 11 x86-64] (thanks to blufox)
+
+[http://syx.googlecode.com/svn/wiki/images/freebsd-logo.gif] [http://code.google.com/p/syx/downloads/detail?name=syx-0.1.5-bin-FreeBSD.6.1-x86-32.tar.gz&can=2&q= FreeBSD 6.1 x86] (thanks to blufox)
 
 Once downloaded, please read the *README* or *README-BINARIES* file.
 
 = Installing from Sources =
 
-Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.6.tar.gz]
+Obtain source archive here: [http://syx.googlecode.com/files/syx-0.1.7.tar.gz]
 Find more archives in the [http://code.google.com/p/syx/downloads/list Downloads] section.
 
 === Unstable ===
