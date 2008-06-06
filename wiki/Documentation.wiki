@@ -7,6 +7,18 @@
  * [PackagingInstructions How to create a binary package for Syx]
  * [FAQ Frequently asked questions]
  * [Examples Examples of common uses of Syx]
+ * [http://syx.netsons.org/doc/manpage/syx.1.html Man page of the *syx* command]
+
+== Manual ==
+
+You can find an online version of the work in progress [http://syx.netsons.org/doc/manual/html/index.html manual of the Syx language and environment here].
+Please report any issue you find reading the document.
+
+== C Reference ==
+
+You can find an online version of the Doxygen auto-generated [http://syx.netsons.org/doc/reference/html/index.html C reference documentation here].
+
+Alternatively you can download the PDF 
 
 == Architecture ==
 
