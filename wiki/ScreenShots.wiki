@@ -7,7 +7,7 @@
 
 _Release 0.1.7. Screenshots of Syx under Windows XP, both the console and the graphical workspace.
 
-[http://syx.googlecode.com/files/winxp-console-06-06-08.jpg] [http://syx.googlecode.com/files/winxp-workspace-06-06-08.jpg]
+[http://syx.googlecode.com/svn/wiki/images/winxp-console-06-06-08.jpg] [http://syx.googlecode.com/svn/wiki/images/winxp-workspace-06-06-08.jpg]
 
 *August 11 2007*
 
